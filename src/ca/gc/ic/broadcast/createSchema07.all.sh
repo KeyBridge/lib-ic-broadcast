@@ -15,8 +15,13 @@ echo "|    dir: $PWD"
 echo "+------------------------------------------------------------------------+"
 
 
-schemagen -cp $CLASSPATH:.:entity/ \
-    entity/*.java 
+schemagen -cp $CLASSPATH:.:entity/:entity/enumerated/:enumerated/:interfaces/:util/ \
+    entity/*.java \
+    entity/enumerated/*.java \
+    whitespace/*.java \
+    enumerated/*.java \
+    util/*.java \
+   interfaces/*.java 
 
 find . -name "*.class" -exec rm {} \;
 

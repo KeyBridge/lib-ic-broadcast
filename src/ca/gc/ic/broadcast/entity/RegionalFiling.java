@@ -116,7 +116,7 @@ public class RegionalFiling implements Serializable {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
   @OneToOne(optional = false)
-  @XmlAttribute
+  @XmlTransient
   private CanadaStation canadaStation;
 
   public RegionalFiling() {

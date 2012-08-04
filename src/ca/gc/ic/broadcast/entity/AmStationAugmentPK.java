@@ -19,6 +19,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 
 /**
@@ -26,6 +28,7 @@ import javax.xml.bind.annotation.XmlAttribute;
  * @author jesse
  */
 @Embeddable
+@XmlAccessorType(XmlAccessType.FIELD)
 public class AmStationAugmentPK implements Serializable {
 
   @Basic(optional = false)

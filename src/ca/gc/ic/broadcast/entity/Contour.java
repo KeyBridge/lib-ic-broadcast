@@ -69,7 +69,7 @@ public class Contour implements Serializable {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToOne
-  @XmlAttribute
+  @XmlTransient
   private CanadaStation canadaStation;
 
   public Contour() {

@@ -249,31 +249,22 @@ public class CanadaStation implements Serializable {
   @XmlAttribute
   private float usaLand;
   @ManyToMany(mappedBy = "canadaStationList")
-  @XmlAttribute
   private List<Antenna> antennaList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  @XmlAttribute
   private RegionalFiling regionalFiling;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  @XmlAttribute
   private FeedSignal feedSignal;
   @OneToMany(mappedBy = "canadaStation")
-  @XmlAttribute
   private List<Contour> contourList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  @XmlAttribute
   private AmStationExtendedHours amStationExtendedHours;
   @OneToMany(mappedBy = "canadaStation")
-  @XmlAttribute
   private List<AmStationParameter> amStationParameterList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  @XmlAttribute
   private Tsid tsid;
   @OneToMany(mappedBy = "canadaStation")
-  @XmlAttribute
   private List<AmStationAugment> amStationAugmentList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  @XmlAttribute
   private Comment comment;
 
   public CanadaStation() {

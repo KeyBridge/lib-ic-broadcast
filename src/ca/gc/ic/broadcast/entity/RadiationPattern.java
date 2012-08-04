@@ -25,7 +25,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlTransient;
@@ -52,7 +51,7 @@ public class RadiationPattern implements Serializable {
   protected RadiationPatternPK radiationPatternPK;
   @JoinColumn(name = "patt_key", referencedColumnName = "patt_key", nullable = false, insertable = false, updatable = false)
   @ManyToOne(optional = false)
-  @XmlAttribute
+  @XmlTransient
   private Antenna antenna;
 
   public RadiationPattern() {

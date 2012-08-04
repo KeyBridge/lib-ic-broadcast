@@ -3,169 +3,110 @@
 
   <xs:import namespace="http://ca.gc.ic/broadcast/entity" schemaLocation="schema1.xsd"/>
 
-  <xs:element name="amStation" type="ns1:amStation"/>
-
   <xs:element name="amStationAugment" type="ns1:amStationAugment"/>
 
   <xs:element name="amStationExtendedHours" type="ns1:amStationExtendedHours"/>
 
   <xs:element name="amStationParameter" type="ns1:amStationParameter"/>
 
-  <xs:element name="antennaPatternData" type="ns1:antennaPatternData"/>
+  <xs:element name="antenna" type="ns1:antenna"/>
 
-  <xs:element name="antennaPatternDescription" type="ns1:antennaPatternDescription"/>
+  <xs:element name="canadaStation" type="ns1:canadaStation"/>
 
-  <xs:element name="antennaPatternLookup" type="ns1:antennaPatternLookup"/>
+  <xs:element name="comment" type="ns1:comment"/>
 
-  <xs:element name="feed" type="ns1:feed"/>
+  <xs:element name="contour" type="ns1:contour"/>
 
-  <xs:element name="fmStation" type="ns1:fmStation"/>
-
-  <xs:element name="lookoupRegion" type="ns1:lookoupRegion"/>
-
-  <xs:element name="lookupCity" type="ns1:lookupCity"/>
+  <xs:element name="feedSignal" type="ns1:feedSignal"/>
 
   <xs:element name="lookupDbCode" type="ns1:lookupDbCode"/>
 
-  <xs:element name="lookupDistanceToBorder" type="ns1:lookupDistanceToBorder"/>
+  <xs:element name="radiationPattern" type="ns1:radiationPattern"/>
 
-  <xs:element name="lookupLimitCode" type="ns1:lookupLimitCode"/>
-
-  <xs:element name="lookupProvince" type="ns1:lookupProvince"/>
-
-  <xs:element name="sDars" type="ns1:sDars"/>
-
-  <xs:element name="station" type="ns1:station"/>
-
-  <xs:element name="stationComment" type="ns1:stationComment"/>
-
-  <xs:element name="stationContour" type="ns1:stationContour"/>
+  <xs:element name="regionalFiling" type="ns1:regionalFiling"/>
 
   <xs:element name="tsid" type="ns1:tsid"/>
 
-  <xs:element name="tvStation" type="ns1:tvStation"/>
-
-
-  <xs:complexType name="amStationPK">
-    <xs:sequence>
-      <xs:element name="banner" type="xs:string" minOccurs="0"/>
-      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
 
   <xs:complexType name="amStationAugmentPK">
-    <xs:sequence>
-      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
-      <xs:element name="dncCode" type="xs:string" minOccurs="0"/>
-      <xs:element name="number" type="xs:float"/>
-    </xs:sequence>
+    <xs:sequence/>
+    <xs:attribute name="callsBanr" type="xs:string"/>
+    <xs:attribute name="dncCode" type="xs:string"/>
+    <xs:attribute name="number" type="xs:float" use="required"/>
   </xs:complexType>
 
+
+  <xs:complexType name="amStationExtendedHoursPK">
+    <xs:sequence/>
+    <xs:attribute name="callSign" type="xs:string"/>
+    <xs:attribute name="banner" type="xs:string"/>
+  </xs:complexType>
 
 
   <xs:complexType name="amStationParameterPK">
-    <xs:sequence>
-      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
-      <xs:element name="dncCode" type="xs:string" minOccurs="0"/>
-      <xs:element name="towerNumb" type="xs:int"/>
-    </xs:sequence>
-  </xs:complexType>
-
-
-  <xs:complexType name="antennaPatternDataPK">
-    <xs:sequence>
-      <xs:element name="angle" type="xs:float"/>
-      <xs:element name="gain" type="xs:float"/>
-      <xs:element name="pattKey" type="xs:int"/>
-    </xs:sequence>
+    <xs:sequence/>
+    <xs:attribute name="callsBanr" type="xs:string"/>
+    <xs:attribute name="dncCode" type="xs:string"/>
+    <xs:attribute name="towerNumb" type="xs:int" use="required"/>
   </xs:complexType>
 
 
 
-  <xs:complexType name="antennaPatternLookupPK">
-    <xs:sequence>
-      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
-      <xs:element name="pattKey" type="xs:int"/>
-    </xs:sequence>
+  <xs:complexType name="radiationPatternPK">
+    <xs:sequence/>
+    <xs:attribute name="pattKey" type="xs:int"/>
+    <xs:attribute name="angle" type="xs:float" use="required"/>
+    <xs:attribute name="gain" type="xs:float" use="required"/>
   </xs:complexType>
 
 
-
-  <xs:complexType name="fmStationPK">
-    <xs:sequence>
-      <xs:element name="banner" type="xs:string" minOccurs="0"/>
-      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
+  <xs:complexType name="canadaStationPK">
+    <xs:sequence/>
+    <xs:attribute name="banner" type="xs:string"/>
+    <xs:attribute name="callSign" type="xs:string"/>
   </xs:complexType>
 
 
-
-  <xs:complexType name="lookupCityPK">
-    <xs:sequence>
-      <xs:element name="name" type="xs:string" minOccurs="0"/>
-      <xs:element name="province" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
+  <xs:complexType name="regionalFilingPK">
+    <xs:sequence/>
+    <xs:attribute name="callSign" type="xs:string"/>
+    <xs:attribute name="banner" type="xs:string"/>
   </xs:complexType>
 
 
-  <xs:complexType name="lookupDbCodePK">
-    <xs:sequence>
-      <xs:element name="code" type="xs:string" minOccurs="0"/>
-      <xs:element name="fieldname" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
+  <xs:complexType name="feedSignalPK">
+    <xs:sequence/>
+    <xs:attribute name="callSign" type="xs:string"/>
+    <xs:attribute name="banner" type="xs:string"/>
   </xs:complexType>
 
 
-  <xs:complexType name="lookupDistanceToBorderPK">
-    <xs:sequence>
-      <xs:element name="latCanada" type="xs:float"/>
-      <xs:element name="lonCanada" type="xs:float"/>
-    </xs:sequence>
-  </xs:complexType>
-
-
-
-  <xs:complexType name="lookupProvincePK">
-    <xs:sequence>
-      <xs:element name="country" type="xs:string" minOccurs="0"/>
-      <xs:element name="province" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-
-
-  <xs:complexType name="stationPK">
-    <xs:sequence>
-      <xs:element name="banner" type="xs:string" minOccurs="0"/>
-      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-
-
-  <xs:complexType name="stationContourPK">
-    <xs:sequence>
-      <xs:element name="azimuth" type="xs:float"/>
-      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
-      <xs:element name="valuDist" type="xs:float"/>
-    </xs:sequence>
+  <xs:complexType name="contourPK">
+    <xs:sequence/>
+    <xs:attribute name="callsBanr" type="xs:string"/>
+    <xs:attribute name="azimuth" type="xs:float" use="required"/>
+    <xs:attribute name="valuDist" type="xs:float" use="required"/>
   </xs:complexType>
 
 
   <xs:complexType name="tsidPK">
-    <xs:sequence>
-      <xs:element name="banner" type="xs:string" minOccurs="0"/>
-      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
+    <xs:sequence/>
+    <xs:attribute name="callSign" type="xs:string"/>
+    <xs:attribute name="banner" type="xs:string"/>
   </xs:complexType>
 
 
-  <xs:complexType name="tvStationPK">
-    <xs:sequence>
-      <xs:element name="banner" type="xs:string" minOccurs="0"/>
-      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
+  <xs:complexType name="commentPK">
+    <xs:sequence/>
+    <xs:attribute name="callSign" type="xs:string"/>
+    <xs:attribute name="banner" type="xs:string"/>
+  </xs:complexType>
+
+
+  <xs:complexType name="lookupDbCodePK">
+    <xs:sequence/>
+    <xs:attribute name="fieldname" type="xs:string"/>
+    <xs:attribute name="code" type="xs:string"/>
   </xs:complexType>
 </xs:schema>
 

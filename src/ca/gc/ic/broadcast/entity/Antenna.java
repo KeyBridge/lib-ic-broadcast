@@ -87,10 +87,9 @@ public class Antenna implements Serializable {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToMany
-  @XmlAttribute
+  @XmlTransient
   private List<CanadaStation> canadaStationList;
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "antenna")
-  @XmlAttribute
   private List<RadiationPattern> radiationPatternList;
 
   public Antenna() {
