@@ -24,20 +24,16 @@ import javax.persistence.JoinColumns;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author jesse
  */
 @Entity
+@Table(name = "tsid")
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "Tsid.findAll", query = "SELECT t FROM Tsid t"),
   @NamedQuery(name = "Tsid.findByProvince", query = "SELECT t FROM Tsid t WHERE t.province = :province"),
@@ -47,26 +43,22 @@ import javax.xml.bind.annotation.XmlType;
   @NamedQuery(name = "Tsid.findByChannel", query = "SELECT t FROM Tsid t WHERE t.channel = :channel"),
   @NamedQuery(name = "Tsid.findByTsid", query = "SELECT t FROM Tsid t WHERE t.tsid = :tsid")})
 public class Tsid implements Serializable {
-
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected TsidPK tsidPK;
-  @Column(length = 2)
-  @XmlAttribute
+  @Column(name = "province", length = 2)
   private String province;
-  @Column(length = 32)
-  @XmlAttribute
+  @Column(name = "city", length = 32)
   private String city;
-  @XmlAttribute
+  @Column(name = "channel")
   private Integer channel;
-  @Column(length = 4)
-  @XmlAttribute
+  @Column(name = "tsid", length = 4)
   private String tsid;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
   @OneToOne(optional = false)
-  private TvStation tvStation;
+  private CanadaStation canadaStation;
 
   public Tsid() {
   }
@@ -119,12 +111,12 @@ public class Tsid implements Serializable {
     this.tsid = tsid;
   }
 
-  public TvStation getTvStation() {
-    return tvStation;
+  public CanadaStation getCanadaStation() {
+    return canadaStation;
   }
 
-  public void setTvStation(TvStation tvStation) {
-    this.tvStation = tvStation;
+  public void setCanadaStation(CanadaStation canadaStation) {
+    this.canadaStation = canadaStation;
   }
 
   @Override
@@ -151,4 +143,5 @@ public class Tsid implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.Tsid[ tsidPK=" + tsidPK + " ]";
   }
+
 }

@@ -19,35 +19,30 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
  * @author jesse
  */
 @Embeddable
-public class ServiceContourPK implements Serializable {
-
+public class AmStationParameterPK implements Serializable {
   @Basic(optional = false)
   @Column(name = "calls_banr", nullable = false, length = 32)
-  @XmlAttribute
   private String callsBanr;
   @Basic(optional = false)
-  @Column(nullable = false)
-  @XmlAttribute
-  private float azimuth;
+  @Column(name = "dnc_code", nullable = false, length = 1)
+  private String dncCode;
   @Basic(optional = false)
-  @Column(name = "valu_dist", nullable = false)
-  @XmlAttribute
-  private float valuDist;
+  @Column(name = "tower_numb", nullable = false)
+  private int towerNumb;
 
-  public ServiceContourPK() {
+  public AmStationParameterPK() {
   }
 
-  public ServiceContourPK(String callsBanr, float azimuth, float valuDist) {
+  public AmStationParameterPK(String callsBanr, String dncCode, int towerNumb) {
     this.callsBanr = callsBanr;
-    this.azimuth = azimuth;
-    this.valuDist = valuDist;
+    this.dncCode = dncCode;
+    this.towerNumb = towerNumb;
   }
 
   public String getCallsBanr() {
@@ -58,45 +53,45 @@ public class ServiceContourPK implements Serializable {
     this.callsBanr = callsBanr;
   }
 
-  public float getAzimuth() {
-    return azimuth;
+  public String getDncCode() {
+    return dncCode;
   }
 
-  public void setAzimuth(float azimuth) {
-    this.azimuth = azimuth;
+  public void setDncCode(String dncCode) {
+    this.dncCode = dncCode;
   }
 
-  public float getValuDist() {
-    return valuDist;
+  public int getTowerNumb() {
+    return towerNumb;
   }
 
-  public void setValuDist(float valuDist) {
-    this.valuDist = valuDist;
+  public void setTowerNumb(int towerNumb) {
+    this.towerNumb = towerNumb;
   }
 
   @Override
   public int hashCode() {
     int hash = 0;
     hash += (callsBanr != null ? callsBanr.hashCode() : 0);
-    hash += (int) azimuth;
-    hash += (int) valuDist;
+    hash += (dncCode != null ? dncCode.hashCode() : 0);
+    hash += (int) towerNumb;
     return hash;
   }
 
   @Override
   public boolean equals(Object object) {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof ServiceContourPK)) {
+    if (!(object instanceof AmStationParameterPK)) {
       return false;
     }
-    ServiceContourPK other = (ServiceContourPK) object;
+    AmStationParameterPK other = (AmStationParameterPK) object;
     if ((this.callsBanr == null && other.callsBanr != null) || (this.callsBanr != null && !this.callsBanr.equals(other.callsBanr))) {
       return false;
     }
-    if (this.azimuth != other.azimuth) {
+    if ((this.dncCode == null && other.dncCode != null) || (this.dncCode != null && !this.dncCode.equals(other.dncCode))) {
       return false;
     }
-    if (this.valuDist != other.valuDist) {
+    if (this.towerNumb != other.towerNumb) {
       return false;
     }
     return true;
@@ -104,6 +99,7 @@ public class ServiceContourPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.ServiceContourPK[ callsBanr=" + callsBanr + ", azimuth=" + azimuth + ", valuDist=" + valuDist + " ]";
+    return "ca.gc.ic.broadcast.entity.AmStationParameterPK[ callsBanr=" + callsBanr + ", dncCode=" + dncCode + ", towerNumb=" + towerNumb + " ]";
   }
+
 }

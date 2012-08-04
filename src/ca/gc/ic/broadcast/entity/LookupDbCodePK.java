@@ -19,7 +19,6 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
@@ -27,14 +26,11 @@ import javax.xml.bind.annotation.XmlAttribute;
  */
 @Embeddable
 public class LookupDbCodePK implements Serializable {
-
   @Basic(optional = false)
-  @Column(nullable = false, length = 32)
-  @XmlAttribute
+  @Column(name = "fieldname", nullable = false, length = 32)
   private String fieldname;
   @Basic(optional = false)
-  @Column(nullable = false, length = 8)
-  @XmlAttribute
+  @Column(name = "code", nullable = false, length = 8)
   private String code;
 
   public LookupDbCodePK() {
@@ -89,4 +85,5 @@ public class LookupDbCodePK implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.LookupDbCodePK[ fieldname=" + fieldname + ", code=" + code + " ]";
   }
+
 }

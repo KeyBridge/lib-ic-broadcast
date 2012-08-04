@@ -26,7 +26,6 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class AmStationAugmentPK implements Serializable {
-
   @Basic(optional = false)
   @Column(name = "calls_banr", nullable = false, length = 32)
   private String callsBanr;
@@ -34,7 +33,7 @@ public class AmStationAugmentPK implements Serializable {
   @Column(name = "dnc_code", nullable = false, length = 1)
   private String dncCode;
   @Basic(optional = false)
-  @Column(nullable = false)
+  @Column(name = "number", nullable = false)
   private float number;
 
   public AmStationAugmentPK() {
@@ -102,4 +101,5 @@ public class AmStationAugmentPK implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.AmStationAugmentPK[ callsBanr=" + callsBanr + ", dncCode=" + dncCode + ", number=" + number + " ]";
   }
+
 }

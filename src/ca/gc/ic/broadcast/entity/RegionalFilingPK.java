@@ -19,28 +19,24 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
  * @author jesse
  */
 @Embeddable
-public class TvStationPK implements Serializable {
-
+public class RegionalFilingPK implements Serializable {
   @Basic(optional = false)
-  @Column(name = "call_sign", nullable = false, length = 16)
-  @XmlAttribute
+  @Column(name = "call_sign", nullable = false, length = 12)
   private String callSign;
   @Basic(optional = false)
-  @Column(nullable = false, length = 2)
-  @XmlAttribute
+  @Column(name = "banner", nullable = false, length = 2)
   private String banner;
 
-  public TvStationPK() {
+  public RegionalFilingPK() {
   }
 
-  public TvStationPK(String callSign, String banner) {
+  public RegionalFilingPK(String callSign, String banner) {
     this.callSign = callSign;
     this.banner = banner;
   }
@@ -72,10 +68,10 @@ public class TvStationPK implements Serializable {
   @Override
   public boolean equals(Object object) {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof TvStationPK)) {
+    if (!(object instanceof RegionalFilingPK)) {
       return false;
     }
-    TvStationPK other = (TvStationPK) object;
+    RegionalFilingPK other = (RegionalFilingPK) object;
     if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
       return false;
     }
@@ -87,6 +83,7 @@ public class TvStationPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.TvStationPK[ callSign=" + callSign + ", banner=" + banner + " ]";
+    return "ca.gc.ic.broadcast.entity.RegionalFilingPK[ callSign=" + callSign + ", banner=" + banner + " ]";
   }
+
 }

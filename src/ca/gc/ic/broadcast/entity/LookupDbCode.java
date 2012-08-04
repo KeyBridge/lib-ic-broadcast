@@ -23,10 +23,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -35,8 +31,6 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @Table(name = "lookup")
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "LookupDbCode.findAll", query = "SELECT l FROM LookupDbCode l"),
   @NamedQuery(name = "LookupDbCode.findByFieldname", query = "SELECT l FROM LookupDbCode l WHERE l.lookupDbCodePK.fieldname = :fieldname"),
@@ -44,15 +38,12 @@ import javax.xml.bind.annotation.XmlType;
   @NamedQuery(name = "LookupDbCode.findByDescriptionEnglish", query = "SELECT l FROM LookupDbCode l WHERE l.descriptionEnglish = :descriptionEnglish"),
   @NamedQuery(name = "LookupDbCode.findByDescriptionFrench", query = "SELECT l FROM LookupDbCode l WHERE l.descriptionFrench = :descriptionFrench")})
 public class LookupDbCode implements Serializable {
-
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected LookupDbCodePK lookupDbCodePK;
   @Column(name = "description_english", length = 128)
-  @XmlAttribute
   private String descriptionEnglish;
   @Column(name = "description_french", length = 128)
-  @XmlAttribute
   private String descriptionFrench;
 
   public LookupDbCode() {
@@ -114,4 +105,5 @@ public class LookupDbCode implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.LookupDbCode[ lookupDbCodePK=" + lookupDbCodePK + " ]";
   }
+
 }

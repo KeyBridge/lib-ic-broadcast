@@ -19,67 +19,63 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
  * @author jesse
  */
 @Embeddable
-public class CA_ProvincePK implements Serializable {
-
+public class CommentPK implements Serializable {
   @Basic(optional = false)
-  @Column(nullable = false, length = 2)
-  @XmlAttribute
-  private String province;
+  @Column(name = "call_sign", nullable = false, length = 12)
+  private String callSign;
   @Basic(optional = false)
-  @Column(nullable = false, length = 2)
-  @XmlAttribute
-  private String country;
+  @Column(name = "banner", nullable = false, length = 2)
+  private String banner;
 
-  public CA_ProvincePK() {
+  public CommentPK() {
   }
 
-  public CA_ProvincePK(String province, String country) {
-    this.province = province;
-    this.country = country;
+  public CommentPK(String callSign, String banner) {
+    this.callSign = callSign;
+    this.banner = banner;
   }
 
-  public String getProvince() {
-    return province;
+  public String getCallSign() {
+    return callSign;
   }
 
-  public void setProvince(String province) {
-    this.province = province;
+  public void setCallSign(String callSign) {
+    this.callSign = callSign;
   }
 
-  public String getCountry() {
-    return country;
+  public String getBanner() {
+    return banner;
   }
 
-  public void setCountry(String country) {
-    this.country = country;
+  public void setBanner(String banner) {
+    this.banner = banner;
   }
 
   @Override
   public int hashCode() {
     int hash = 0;
-    hash += (province != null ? province.hashCode() : 0);
-    hash += (country != null ? country.hashCode() : 0);
+    hash += (callSign != null ? callSign.hashCode() : 0);
+    hash += (banner != null ? banner.hashCode() : 0);
     return hash;
   }
 
   @Override
   public boolean equals(Object object) {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof CA_ProvincePK)) {
+    if (!(object instanceof CommentPK)) {
       return false;
     }
-    CA_ProvincePK other = (CA_ProvincePK) object;
-    if ((this.province == null && other.province != null) || (this.province != null && !this.province.equals(other.province))) {
+    CommentPK other = (CommentPK) object;
+    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
       return false;
     }
-    if ((this.country == null && other.country != null) || (this.country != null && !this.country.equals(other.country))) {
+    if ((this.banner == null && other.banner != null) || (this.banner != null && !this.banner.equals(other.banner))) {
       return false;
     }
     return true;
@@ -87,6 +83,7 @@ public class CA_ProvincePK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.CA_ProvincePK[ province=" + province + ", country=" + country + " ]";
+    return "ca.gc.ic.broadcast.entity.CommentPK[ callSign=" + callSign + ", banner=" + banner + " ]";
   }
+
 }

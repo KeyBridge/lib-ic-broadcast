@@ -16,21 +16,16 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -39,8 +34,6 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @Table(name = "comments")
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "Comment.findAll", query = "SELECT c FROM Comment c"),
   @NamedQuery(name = "Comment.findByCallsBanr", query = "SELECT c FROM Comment c WHERE c.callsBanr = :callsBanr"),
@@ -52,55 +45,59 @@ import javax.xml.bind.annotation.XmlType;
   @NamedQuery(name = "Comment.findByHqcomm", query = "SELECT c FROM Comment c WHERE c.hqcomm = :hqcomm"),
   @NamedQuery(name = "Comment.findByRgcomm", query = "SELECT c FROM Comment c WHERE c.rgcomm = :rgcomm"),
   @NamedQuery(name = "Comment.findByEdetails", query = "SELECT c FROM Comment c WHERE c.edetails = :edetails"),
-  @NamedQuery(name = "Comment.findByFdetails", query = "SELECT c FROM Comment c WHERE c.fdetails = :fdetails")})
+  @NamedQuery(name = "Comment.findByFdetails", query = "SELECT c FROM Comment c WHERE c.fdetails = :fdetails"),
+  @NamedQuery(name = "Comment.findByCallSign", query = "SELECT c FROM Comment c WHERE c.commentPK.callSign = :callSign"),
+  @NamedQuery(name = "Comment.findByBanner", query = "SELECT c FROM Comment c WHERE c.commentPK.banner = :banner")})
 public class Comment implements Serializable {
-
   private static final long serialVersionUID = 1L;
-  @Id
-  @Basic(optional = false)
-  @Column(name = "calls_banr", nullable = false, length = 32)
-  @XmlAttribute
+  @EmbeddedId
+  protected CommentPK commentPK;
+  @Column(name = "calls_banr", length = 32)
   private String callsBanr;
-  @Column(length = 40)
-  @XmlAttribute
+  @Column(name = "name", length = 40)
   private String name;
-  @Column(length = 40)
-  @XmlAttribute
+  @Column(name = "addr1", length = 40)
   private String addr1;
-  @Column(length = 40)
-  @XmlAttribute
+  @Column(name = "addr2", length = 40)
   private String addr2;
-  @Column(length = 40)
-  @XmlAttribute
+  @Column(name = "addr3", length = 40)
   private String addr3;
-  @Column(length = 40)
-  @XmlAttribute
+  @Column(name = "addr4", length = 40)
   private String addr4;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
-  @Column(precision = 12)
-  @XmlAttribute
+  @Column(name = "hqcomm", precision = 12)
   private Float hqcomm;
-  @Column(precision = 12)
-  @XmlAttribute
+  @Column(name = "rgcomm", precision = 12)
   private Float rgcomm;
-  @Column(precision = 12)
-  @XmlAttribute
+  @Column(name = "edetails", precision = 12)
   private Float edetails;
-  @Column(precision = 12)
-  @XmlAttribute
+  @Column(name = "fdetails", precision = 12)
   private Float fdetails;
-//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign",nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner",nullable = false)})  @ManyToOne  private AmStation amStation;
-//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign",nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner",nullable = false)})  @ManyToOne  private AmStation fmStation;
-//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign",nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner",nullable = false)})  @ManyToOne  private AmStation tvStation;
+  @JoinColumns({
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
+    @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
+  @OneToOne(optional = false)
+  private CanadaStation canadaStation;
 
   public Comment() {
   }
 
-  public Comment(String callsBanr) {
-    this.callsBanr = callsBanr;
+  public Comment(CommentPK commentPK) {
+    this.commentPK = commentPK;
   }
 
-  //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
+  public Comment(String callSign, String banner) {
+    this.commentPK = new CommentPK(callSign, banner);
+  }
+
+  public CommentPK getCommentPK() {
+    return commentPK;
+  }
+
+  public void setCommentPK(CommentPK commentPK) {
+    this.commentPK = commentPK;
+  }
+
   public String getCallsBanr() {
     return callsBanr;
   }
@@ -181,11 +178,18 @@ public class Comment implements Serializable {
     this.fdetails = fdetails;
   }
 
-  //</editor-fold>
+  public CanadaStation getCanadaStation() {
+    return canadaStation;
+  }
+
+  public void setCanadaStation(CanadaStation canadaStation) {
+    this.canadaStation = canadaStation;
+  }
+
   @Override
   public int hashCode() {
     int hash = 0;
-    hash += (callsBanr != null ? callsBanr.hashCode() : 0);
+    hash += (commentPK != null ? commentPK.hashCode() : 0);
     return hash;
   }
 
@@ -196,7 +200,7 @@ public class Comment implements Serializable {
       return false;
     }
     Comment other = (Comment) object;
-    if ((this.callsBanr == null && other.callsBanr != null) || (this.callsBanr != null && !this.callsBanr.equals(other.callsBanr))) {
+    if ((this.commentPK == null && other.commentPK != null) || (this.commentPK != null && !this.commentPK.equals(other.commentPK))) {
       return false;
     }
     return true;
@@ -204,6 +208,7 @@ public class Comment implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.Comment[ callsBanr=" + callsBanr + " ]";
+    return "ca.gc.ic.broadcast.entity.Comment[ commentPK=" + commentPK + " ]";
   }
+
 }

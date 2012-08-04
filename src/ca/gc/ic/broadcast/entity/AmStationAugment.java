@@ -26,10 +26,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -38,8 +34,6 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @Table(name = "augment")
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "AmStationAugment.findAll", query = "SELECT a FROM AmStationAugment a"),
   @NamedQuery(name = "AmStationAugment.findByCallsBanr", query = "SELECT a FROM AmStationAugment a WHERE a.amStationAugmentPK.callsBanr = :callsBanr"),
@@ -49,22 +43,20 @@ import javax.xml.bind.annotation.XmlType;
   @NamedQuery(name = "AmStationAugment.findByCenterAz", query = "SELECT a FROM AmStationAugment a WHERE a.centerAz = :centerAz"),
   @NamedQuery(name = "AmStationAugment.findBySpan", query = "SELECT a FROM AmStationAugment a WHERE a.span = :span")})
 public class AmStationAugment implements Serializable {
-
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected AmStationAugmentPK amStationAugmentPK;
-  @XmlAttribute
+  @Column(name = "radiation")
   private Integer radiation;
   @Column(name = "center_az")
-  @XmlAttribute
   private Integer centerAz;
-  @XmlAttribute
+  @Column(name = "span")
   private Integer span;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToOne
-  private AmStation amStation;
+  private CanadaStation canadaStation;
 
   public AmStationAugment() {
   }
@@ -109,12 +101,12 @@ public class AmStationAugment implements Serializable {
     this.span = span;
   }
 
-  public AmStation getAmStation() {
-    return amStation;
+  public CanadaStation getCanadaStation() {
+    return canadaStation;
   }
 
-  public void setAmStation(AmStation amStation) {
-    this.amStation = amStation;
+  public void setCanadaStation(CanadaStation canadaStation) {
+    this.canadaStation = canadaStation;
   }
 
   @Override
@@ -141,4 +133,5 @@ public class AmStationAugment implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.AmStationAugment[ amStationAugmentPK=" + amStationAugmentPK + " ]";
   }
+
 }

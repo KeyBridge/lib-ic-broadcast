@@ -16,23 +16,16 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -41,82 +34,83 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @Table(name = "region")
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
-  @NamedQuery(name = "CA_Region.findAll", query = "SELECT c FROM CA_Region c"),
-  @NamedQuery(name = "CA_Region.findByCallsBanr", query = "SELECT c FROM CA_Region c WHERE c.callsBanr = :callsBanr"),
-  @NamedQuery(name = "CA_Region.findByRegion", query = "SELECT c FROM CA_Region c WHERE c.region = :region"),
-  @NamedQuery(name = "CA_Region.findByDistrict", query = "SELECT c FROM CA_Region c WHERE c.district = :district"),
-  @NamedQuery(name = "CA_Region.findByInspecRep", query = "SELECT c FROM CA_Region c WHERE c.inspecRep = :inspecRep"),
-  @NamedQuery(name = "CA_Region.findByPainting", query = "SELECT c FROM CA_Region c WHERE c.painting = :painting"),
-  @NamedQuery(name = "CA_Region.findBySprDat", query = "SELECT c FROM CA_Region c WHERE c.sprDat = :sprDat"),
-  @NamedQuery(name = "CA_Region.findByRspDat", query = "SELECT c FROM CA_Region c WHERE c.rspDat = :rspDat"),
-  @NamedQuery(name = "CA_Region.findByStdett", query = "SELECT c FROM CA_Region c WHERE c.stdett = :stdett"),
-  @NamedQuery(name = "CA_Region.findByAirClear", query = "SELECT c FROM CA_Region c WHERE c.airClear = :airClear"),
-  @NamedQuery(name = "CA_Region.findByInspecDat", query = "SELECT c FROM CA_Region c WHERE c.inspecDat = :inspecDat"),
-  @NamedQuery(name = "CA_Region.findByRcfDat", query = "SELECT c FROM CA_Region c WHERE c.rcfDat = :rcfDat"),
-  @NamedQuery(name = "CA_Region.findByStatType", query = "SELECT c FROM CA_Region c WHERE c.statType = :statType"),
-  @NamedQuery(name = "CA_Region.findByDocfex", query = "SELECT c FROM CA_Region c WHERE c.docfex = :docfex"),
-  @NamedQuery(name = "CA_Region.findByProvince", query = "SELECT c FROM CA_Region c WHERE c.province = :province"),
-  @NamedQuery(name = "CA_Region.findByCountry", query = "SELECT c FROM CA_Region c WHERE c.country = :country")})
-public class CA_Region implements Serializable {
-
+  @NamedQuery(name = "RegionalFiling.findAll", query = "SELECT r FROM RegionalFiling r"),
+  @NamedQuery(name = "RegionalFiling.findByCallsBanr", query = "SELECT r FROM RegionalFiling r WHERE r.callsBanr = :callsBanr"),
+  @NamedQuery(name = "RegionalFiling.findByRegion", query = "SELECT r FROM RegionalFiling r WHERE r.region = :region"),
+  @NamedQuery(name = "RegionalFiling.findByDistrict", query = "SELECT r FROM RegionalFiling r WHERE r.district = :district"),
+  @NamedQuery(name = "RegionalFiling.findByInspecRep", query = "SELECT r FROM RegionalFiling r WHERE r.inspecRep = :inspecRep"),
+  @NamedQuery(name = "RegionalFiling.findByPainting", query = "SELECT r FROM RegionalFiling r WHERE r.painting = :painting"),
+  @NamedQuery(name = "RegionalFiling.findBySprDat", query = "SELECT r FROM RegionalFiling r WHERE r.sprDat = :sprDat"),
+  @NamedQuery(name = "RegionalFiling.findByRspDat", query = "SELECT r FROM RegionalFiling r WHERE r.rspDat = :rspDat"),
+  @NamedQuery(name = "RegionalFiling.findByStdett", query = "SELECT r FROM RegionalFiling r WHERE r.stdett = :stdett"),
+  @NamedQuery(name = "RegionalFiling.findByAirClear", query = "SELECT r FROM RegionalFiling r WHERE r.airClear = :airClear"),
+  @NamedQuery(name = "RegionalFiling.findByInspecDat", query = "SELECT r FROM RegionalFiling r WHERE r.inspecDat = :inspecDat"),
+  @NamedQuery(name = "RegionalFiling.findByRcfDat", query = "SELECT r FROM RegionalFiling r WHERE r.rcfDat = :rcfDat"),
+  @NamedQuery(name = "RegionalFiling.findByStatType", query = "SELECT r FROM RegionalFiling r WHERE r.statType = :statType"),
+  @NamedQuery(name = "RegionalFiling.findByDocfex", query = "SELECT r FROM RegionalFiling r WHERE r.docfex = :docfex"),
+  @NamedQuery(name = "RegionalFiling.findByProvince", query = "SELECT r FROM RegionalFiling r WHERE r.province = :province"),
+  @NamedQuery(name = "RegionalFiling.findByCountry", query = "SELECT r FROM RegionalFiling r WHERE r.country = :country"),
+  @NamedQuery(name = "RegionalFiling.findByCallSign", query = "SELECT r FROM RegionalFiling r WHERE r.regionalFilingPK.callSign = :callSign"),
+  @NamedQuery(name = "RegionalFiling.findByBanner", query = "SELECT r FROM RegionalFiling r WHERE r.regionalFilingPK.banner = :banner")})
+public class RegionalFiling implements Serializable {
   private static final long serialVersionUID = 1L;
-  @Id
-  @Basic(optional = false)
-  @Column(name = "calls_banr", nullable = false, length = 32)
-  @XmlTransient
+  @EmbeddedId
+  protected RegionalFilingPK regionalFilingPK;
+  @Column(name = "calls_banr", length = 32)
   private String callsBanr;
-  @Column(length = 1)
-  @XmlAttribute
+  @Column(name = "region", length = 1)
   private String region;
-  @Column(length = 2)
-  @XmlAttribute
+  @Column(name = "district", length = 2)
   private String district;
   @Column(name = "inspec_rep", length = 1)
-  @XmlAttribute
   private String inspecRep;
-  @Column(length = 4)
-  @XmlAttribute
+  @Column(name = "painting", length = 4)
   private String painting;
+  // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "spr_dat", precision = 12)
-  @XmlAttribute
   private Float sprDat;
   @Column(name = "rsp_dat", precision = 12)
-  @XmlAttribute
   private Float rspDat;
-  @Column(precision = 12)
-  @XmlAttribute
+  @Column(name = "stdett", precision = 12)
   private Float stdett;
   @Column(name = "air_clear", precision = 12)
-  @XmlAttribute
   private Float airClear;
   @Column(name = "inspec_dat", precision = 12)
-  @XmlAttribute
   private Float inspecDat;
   @Column(name = "rcf_dat", precision = 12)
-  @XmlAttribute
   private Float rcfDat;
   @Column(name = "stat_type", length = 2)
-  @XmlAttribute
   private String statType;
-  @Column(length = 4)
-  @XmlAttribute
+  @Column(name = "docfex", length = 4)
   private String docfex;
-  @Column(length = 2)
-  @XmlAttribute
+  @Column(name = "province", length = 2)
   private String province;
-  @Column(length = 2)
-  @XmlAttribute
+  @Column(name = "country", length = 2)
   private String country;
-//  @OneToOne(mappedBy = "caRegion")  @XmlTransient  private AmStation amStation;
+  @JoinColumns({
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
+    @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
+  @OneToOne(optional = false)
+  private CanadaStation canadaStation;
 
-  public CA_Region() {
+  public RegionalFiling() {
   }
 
-  public CA_Region(String callsBanr) {
-    this.callsBanr = callsBanr;
+  public RegionalFiling(RegionalFilingPK regionalFilingPK) {
+    this.regionalFilingPK = regionalFilingPK;
+  }
+
+  public RegionalFiling(String callSign, String banner) {
+    this.regionalFilingPK = new RegionalFilingPK(callSign, banner);
+  }
+
+  public RegionalFilingPK getRegionalFilingPK() {
+    return regionalFilingPK;
+  }
+
+  public void setRegionalFilingPK(RegionalFilingPK regionalFilingPK) {
+    this.regionalFilingPK = regionalFilingPK;
   }
 
   public String getCallsBanr() {
@@ -239,21 +233,29 @@ public class CA_Region implements Serializable {
     this.country = country;
   }
 
+  public CanadaStation getCanadaStation() {
+    return canadaStation;
+  }
+
+  public void setCanadaStation(CanadaStation canadaStation) {
+    this.canadaStation = canadaStation;
+  }
+
   @Override
   public int hashCode() {
     int hash = 0;
-    hash += (callsBanr != null ? callsBanr.hashCode() : 0);
+    hash += (regionalFilingPK != null ? regionalFilingPK.hashCode() : 0);
     return hash;
   }
 
   @Override
   public boolean equals(Object object) {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof CA_Region)) {
+    if (!(object instanceof RegionalFiling)) {
       return false;
     }
-    CA_Region other = (CA_Region) object;
-    if ((this.callsBanr == null && other.callsBanr != null) || (this.callsBanr != null && !this.callsBanr.equals(other.callsBanr))) {
+    RegionalFiling other = (RegionalFiling) object;
+    if ((this.regionalFilingPK == null && other.regionalFilingPK != null) || (this.regionalFilingPK != null && !this.regionalFilingPK.equals(other.regionalFilingPK))) {
       return false;
     }
     return true;
@@ -261,6 +263,7 @@ public class CA_Region implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.CA_Region[ callsBanr=" + callsBanr + " ]";
+    return "ca.gc.ic.broadcast.entity.RegionalFiling[ regionalFilingPK=" + regionalFilingPK + " ]";
   }
+
 }

@@ -19,37 +19,25 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
  * @author jesse
  */
 @Embeddable
-public class FmStationPK implements Serializable {
-
+public class CanadaStationPK implements Serializable {
   @Basic(optional = false)
-  @Column(name = "call_sign", nullable = false, length = 16)
-  @XmlAttribute
-  private String callSign;
-  @Basic(optional = false)
-  @Column(nullable = false, length = 2)
-  @XmlAttribute
+  @Column(name = "banner", nullable = false, length = 2)
   private String banner;
+  @Basic(optional = false)
+  @Column(name = "call_sign", nullable = false, length = 12)
+  private String callSign;
 
-  public FmStationPK() {
+  public CanadaStationPK() {
   }
 
-  public FmStationPK(String callSign, String banner) {
-    this.callSign = callSign;
+  public CanadaStationPK(String banner, String callSign) {
     this.banner = banner;
-  }
-
-  public String getCallSign() {
-    return callSign;
-  }
-
-  public void setCallSign(String callSign) {
     this.callSign = callSign;
   }
 
@@ -61,25 +49,33 @@ public class FmStationPK implements Serializable {
     this.banner = banner;
   }
 
+  public String getCallSign() {
+    return callSign;
+  }
+
+  public void setCallSign(String callSign) {
+    this.callSign = callSign;
+  }
+
   @Override
   public int hashCode() {
     int hash = 0;
-    hash += (callSign != null ? callSign.hashCode() : 0);
     hash += (banner != null ? banner.hashCode() : 0);
+    hash += (callSign != null ? callSign.hashCode() : 0);
     return hash;
   }
 
   @Override
   public boolean equals(Object object) {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof FmStationPK)) {
+    if (!(object instanceof CanadaStationPK)) {
       return false;
     }
-    FmStationPK other = (FmStationPK) object;
-    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
-      return false;
-    }
+    CanadaStationPK other = (CanadaStationPK) object;
     if ((this.banner == null && other.banner != null) || (this.banner != null && !this.banner.equals(other.banner))) {
+      return false;
+    }
+    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
       return false;
     }
     return true;
@@ -87,6 +83,7 @@ public class FmStationPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.FmStationPK[ callSign=" + callSign + ", banner=" + banner + " ]";
+    return "ca.gc.ic.broadcast.entity.CanadaStationPK[ banner=" + banner + ", callSign=" + callSign + " ]";
   }
+
 }

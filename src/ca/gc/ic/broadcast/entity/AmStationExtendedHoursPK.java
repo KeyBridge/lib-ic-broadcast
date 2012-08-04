@@ -25,73 +25,57 @@ import javax.persistence.Embeddable;
  * @author jesse
  */
 @Embeddable
-public class RadiationPatternPK implements Serializable {
+public class AmStationExtendedHoursPK implements Serializable {
   @Basic(optional = false)
-  @Column(name = "patt_key", nullable = false)
-  private int pattKey;
+  @Column(name = "call_sign", nullable = false, length = 12)
+  private String callSign;
   @Basic(optional = false)
-  @Column(name = "angle", nullable = false)
-  private float angle;
-  @Basic(optional = false)
-  @Column(name = "gain", nullable = false)
-  private float gain;
+  @Column(name = "banner", nullable = false, length = 2)
+  private String banner;
 
-  public RadiationPatternPK() {
+  public AmStationExtendedHoursPK() {
   }
 
-  public RadiationPatternPK(int pattKey, float angle, float gain) {
-    this.pattKey = pattKey;
-    this.angle = angle;
-    this.gain = gain;
+  public AmStationExtendedHoursPK(String callSign, String banner) {
+    this.callSign = callSign;
+    this.banner = banner;
   }
 
-  public int getPattKey() {
-    return pattKey;
+  public String getCallSign() {
+    return callSign;
   }
 
-  public void setPattKey(int pattKey) {
-    this.pattKey = pattKey;
+  public void setCallSign(String callSign) {
+    this.callSign = callSign;
   }
 
-  public float getAngle() {
-    return angle;
+  public String getBanner() {
+    return banner;
   }
 
-  public void setAngle(float angle) {
-    this.angle = angle;
-  }
-
-  public float getGain() {
-    return gain;
-  }
-
-  public void setGain(float gain) {
-    this.gain = gain;
+  public void setBanner(String banner) {
+    this.banner = banner;
   }
 
   @Override
   public int hashCode() {
     int hash = 0;
-    hash += (int) pattKey;
-    hash += (int) angle;
-    hash += (int) gain;
+    hash += (callSign != null ? callSign.hashCode() : 0);
+    hash += (banner != null ? banner.hashCode() : 0);
     return hash;
   }
 
   @Override
   public boolean equals(Object object) {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof RadiationPatternPK)) {
+    if (!(object instanceof AmStationExtendedHoursPK)) {
       return false;
     }
-    RadiationPatternPK other = (RadiationPatternPK) object;
-    if (this.pattKey != other.pattKey) {
+    AmStationExtendedHoursPK other = (AmStationExtendedHoursPK) object;
+    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
       return false;
     }
-    if (this.angle != other.angle) {
-      return false;
-    }
-    if (this.gain != other.gain) {
+    if ((this.banner == null && other.banner != null) || (this.banner != null && !this.banner.equals(other.banner))) {
       return false;
     }
     return true;
@@ -99,7 +83,7 @@ public class RadiationPatternPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.RadiationPatternPK[ pattKey=" + pattKey + ", angle=" + angle + ", gain=" + gain + " ]";
+    return "ca.gc.ic.broadcast.entity.AmStationExtendedHoursPK[ callSign=" + callSign + ", banner=" + banner + " ]";
   }
 
 }

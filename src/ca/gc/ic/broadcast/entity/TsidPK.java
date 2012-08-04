@@ -26,12 +26,11 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class TsidPK implements Serializable {
-
   @Basic(optional = false)
-  @Column(name = "call_sign", nullable = false, length = 16)
+  @Column(name = "call_sign", nullable = false, length = 12)
   private String callSign;
   @Basic(optional = false)
-  @Column(nullable = false, length = 2)
+  @Column(name = "banner", nullable = false, length = 2)
   private String banner;
 
   public TsidPK() {
@@ -86,4 +85,5 @@ public class TsidPK implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.TsidPK[ callSign=" + callSign + ", banner=" + banner + " ]";
   }
+
 }
