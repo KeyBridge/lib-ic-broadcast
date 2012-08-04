@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ca.gc.ic/broadcast/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import schemaLocation="schema2.xsd"/>
+
+  <xs:complexType name="amStation">
+    <xs:sequence>
+      <xs:element name="amStationPK" type="amStationPK" minOccurs="0"/>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="frequency" type="xs:float"/>
+      <xs:element name="clazz" type="xs:string" minOccurs="0"/>
+      <xs:element name="latitudeDMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitudeDMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="status1" type="xs:string" minOccurs="0"/>
+      <xs:element name="status2" type="xs:string" minOccurs="0"/>
+      <xs:element name="latitude2DMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitude2DMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="brdrLat" type="xs:string" minOccurs="0"/>
+      <xs:element name="brdrLong" type="xs:string" minOccurs="0"/>
+      <xs:element name="border" type="xs:float"/>
+      <xs:element name="canLand" type="xs:float"/>
+      <xs:element name="usaLand" type="xs:float"/>
+      <xs:element name="freLand" type="xs:float"/>
+      <xs:element name="date_stCreat" type="xs:string" minOccurs="0"/>
+      <xs:element name="date_stMod" type="xs:string" minOccurs="0"/>
+      <xs:element name="date_okDump" type="xs:string" minOccurs="0"/>
+      <xs:element name="docFile" type="xs:int"/>
+      <xs:element name="decNumber" type="xs:int"/>
+      <xs:element name="ifrbnD" type="xs:float"/>
+      <xs:element name="ifrbnN" type="xs:float"/>
+      <xs:element name="clist1" type="xs:float"/>
+      <xs:element name="clist2" type="xs:float"/>
+      <xs:element name="clist3" type="xs:float"/>
+      <xs:element name="clist4" type="xs:float"/>
+      <xs:element name="clist5" type="xs:float"/>
+      <xs:element name="clist6" type="xs:float"/>
+      <xs:element name="clist7" type="xs:float"/>
+      <xs:element name="clist8" type="xs:float"/>
+      <xs:element name="clist9" type="xs:float"/>
+      <xs:element name="clist10" type="xs:float"/>
+      <xs:element name="network" type="xs:string" minOccurs="0"/>
+      <xs:element name="certNumb" type="xs:string" minOccurs="0"/>
+      <xs:element name="bcMode" type="xs:string" minOccurs="0"/>
+      <xs:element name="unattended" type="xs:string" minOccurs="0"/>
+      <xs:element name="autoProg" type="xs:string" minOccurs="0"/>
+      <xs:element name="euvalu" type="xs:float"/>
+      <xs:element name="powerday" type="xs:float"/>
+      <xs:element name="parRmsD" type="xs:float"/>
+      <xs:element name="qDay" type="xs:float"/>
+      <xs:element name="powernight" type="xs:float"/>
+      <xs:element name="parRmsN" type="xs:float"/>
+      <xs:element name="qNight" type="xs:float"/>
+      <xs:element name="powercrit" type="xs:float"/>
+      <xs:element name="parRmsC" type="xs:float"/>
+      <xs:element name="qCrit" type="xs:float"/>
+      <xs:element name="channel" type="xs:int"/>
+      <xs:element name="latitude" type="xs:float"/>
+      <xs:element name="longitude" type="xs:float"/>
+      <xs:element name="latitude2" type="xs:float"/>
+      <xs:element name="longitude2" type="xs:float"/>
+      <xs:element name="latitudeBorder" type="xs:float"/>
+      <xs:element name="longitudeBorder" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="amStationAugment">
+    <xs:sequence>
+      <xs:element name="amStationAugmentPK" type="amStationAugmentPK" minOccurs="0"/>
+      <xs:element name="radiation" type="xs:int" minOccurs="0"/>
+      <xs:element name="centerAz" type="xs:int" minOccurs="0"/>
+      <xs:element name="span" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="amStationExtendedHours">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="number" type="xs:float" minOccurs="0"/>
+      <xs:element name="antSystem" type="xs:string" minOccurs="0"/>
+      <xs:element name="start1" type="xs:string" minOccurs="0"/>
+      <xs:element name="end1" type="xs:string" minOccurs="0"/>
+      <xs:element name="start2" type="xs:float" minOccurs="0"/>
+      <xs:element name="end2" type="xs:float" minOccurs="0"/>
+      <xs:element name="power" type="xs:float" minOccurs="0"/>
+      <xs:element name="rms" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="amStationParameter">
+    <xs:sequence>
+      <xs:element name="amStationParameterPK" type="amStationParameterPK" minOccurs="0"/>
+      <xs:element name="fieldratio" type="xs:float" minOccurs="0"/>
+      <xs:element name="spacing" type="xs:float" minOccurs="0"/>
+      <xs:element name="orienta" type="xs:float" minOccurs="0"/>
+      <xs:element name="phasing" type="xs:float" minOccurs="0"/>
+      <xs:element name="height" type="xs:float" minOccurs="0"/>
+      <xs:element name="typeAnt" type="xs:int" minOccurs="0"/>
+      <xs:element name="a" type="xs:float" minOccurs="0"/>
+      <xs:element name="b" type="xs:float" minOccurs="0"/>
+      <xs:element name="c" type="xs:float" minOccurs="0"/>
+      <xs:element name="d" type="xs:float" minOccurs="0"/>
+      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="antennaPatternData">
+    <xs:sequence>
+      <xs:element name="antennaPatternDataPK" type="antennaPatternDataPK" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="antennaPatternDescription">
+    <xs:sequence>
+      <xs:element name="pattKey" type="xs:int" minOccurs="0"/>
+      <xs:element name="horVer" type="xs:string" minOccurs="0"/>
+      <xs:element name="pattNumb" type="xs:float" minOccurs="0"/>
+      <xs:element name="pattType" type="xs:string" minOccurs="0"/>
+      <xs:element name="punits" type="xs:float" minOccurs="0"/>
+      <xs:element name="numpoints" type="xs:float" minOccurs="0"/>
+      <xs:element name="pattDate" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="antennaPatternLookup">
+    <xs:sequence>
+      <xs:element name="antennaPatternLookupPK" type="antennaPatternLookupPK" minOccurs="0"/>
+      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="feed">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedId" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedChan" type="xs:float" minOccurs="0"/>
+      <xs:element name="linkType" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedCall" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedLat" type="xs:float" minOccurs="0"/>
+      <xs:element name="feedLong" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fmStation">
+    <xs:sequence>
+      <xs:element name="fmStationPK" type="fmStationPK" minOccurs="0"/>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="frequency" type="xs:float"/>
+      <xs:element name="clazz" type="xs:string" minOccurs="0"/>
+      <xs:element name="latitudeDMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitudeDMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="ssCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="network" type="xs:string" minOccurs="0"/>
+      <xs:element name="antMode" type="xs:string" minOccurs="0"/>
+      <xs:element name="bcMode" type="xs:string" minOccurs="0"/>
+      <xs:element name="brdrLat" type="xs:string" minOccurs="0"/>
+      <xs:element name="brdrLong" type="xs:string" minOccurs="0"/>
+      <xs:element name="border" type="xs:float"/>
+      <xs:element name="canLand" type="xs:float"/>
+      <xs:element name="usaLand" type="xs:float"/>
+      <xs:element name="freLand" type="xs:float"/>
+      <xs:element name="date_stCreat" type="xs:string" minOccurs="0"/>
+      <xs:element name="date_stMod" type="xs:string" minOccurs="0"/>
+      <xs:element name="date_okDump" type="xs:string" minOccurs="0"/>
+      <xs:element name="docFile" type="xs:int"/>
+      <xs:element name="decNumber" type="xs:int"/>
+      <xs:element name="unattended" type="xs:string" minOccurs="0"/>
+      <xs:element name="certNumb" type="xs:string" minOccurs="0"/>
+      <xs:element name="scmo" type="xs:string" minOccurs="0"/>
+      <xs:element name="autoProg" type="xs:string" minOccurs="0"/>
+      <xs:element name="beamTilt" type="xs:float"/>
+      <xs:element name="ehaatt" type="xs:float"/>
+      <xs:element name="erpvav" type="xs:float"/>
+      <xs:element name="erpvpk" type="xs:float"/>
+      <xs:element name="erphav" type="xs:float"/>
+      <xs:element name="erphpk" type="xs:float"/>
+      <xs:element name="groundLev" type="xs:float"/>
+      <xs:element name="overallH" type="xs:float"/>
+      <xs:element name="radCenter" type="xs:float"/>
+      <xs:element name="channel" type="xs:int"/>
+      <xs:element name="latitude" type="xs:float"/>
+      <xs:element name="longitude" type="xs:float"/>
+      <xs:element name="latitudeBorder" type="xs:float"/>
+      <xs:element name="longitudeBorder" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lookoupRegion">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="region" type="xs:string" minOccurs="0"/>
+      <xs:element name="district" type="xs:string" minOccurs="0"/>
+      <xs:element name="inspecRep" type="xs:string" minOccurs="0"/>
+      <xs:element name="painting" type="xs:string" minOccurs="0"/>
+      <xs:element name="sprDat" type="xs:float" minOccurs="0"/>
+      <xs:element name="rspDat" type="xs:float" minOccurs="0"/>
+      <xs:element name="stdett" type="xs:float" minOccurs="0"/>
+      <xs:element name="airClear" type="xs:float" minOccurs="0"/>
+      <xs:element name="inspecDat" type="xs:float" minOccurs="0"/>
+      <xs:element name="rcfDat" type="xs:float" minOccurs="0"/>
+      <xs:element name="statType" type="xs:string" minOccurs="0"/>
+      <xs:element name="docfex" type="xs:string" minOccurs="0"/>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lookupCity">
+    <xs:sequence>
+      <xs:element name="lookupCityPK" type="lookupCityPK" minOccurs="0"/>
+      <xs:element name="latitude" type="xs:float" minOccurs="0"/>
+      <xs:element name="longitude" type="xs:float" minOccurs="0"/>
+      <xs:element name="creatDt" type="xs:float" minOccurs="0"/>
+      <xs:element name="modDt" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lookupDbCode">
+    <xs:sequence>
+      <xs:element name="lookupDbCodePK" type="lookupDbCodePK" minOccurs="0"/>
+      <xs:element name="descriptionEnglish" type="xs:string" minOccurs="0"/>
+      <xs:element name="descriptionFrench" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lookupDistanceToBorder">
+    <xs:sequence>
+      <xs:element name="lookupDistanceToBorderPK" type="lookupDistanceToBorderPK" minOccurs="0"/>
+      <xs:element name="latAlaska" type="xs:float" minOccurs="0"/>
+      <xs:element name="lonAlaska" type="xs:float" minOccurs="0"/>
+      <xs:element name="latUsBorder" type="xs:float" minOccurs="0"/>
+      <xs:element name="lonUsBorder" type="xs:float" minOccurs="0"/>
+      <xs:element name="latUsLand" type="xs:float" minOccurs="0"/>
+      <xs:element name="lonUsLand" type="xs:float" minOccurs="0"/>
+      <xs:element name="latFrance" type="xs:float" minOccurs="0"/>
+      <xs:element name="lonFrance" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lookupLimitCode">
+    <xs:sequence>
+      <xs:element name="statType" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="language" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="oldCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="limitCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lookupProvince">
+    <xs:sequence>
+      <xs:element name="lookupProvincePK" type="lookupProvincePK" minOccurs="0"/>
+      <xs:element name="lowLat" type="xs:float" minOccurs="0"/>
+      <xs:element name="highLat" type="xs:float" minOccurs="0"/>
+      <xs:element name="lowLong" type="xs:float" minOccurs="0"/>
+      <xs:element name="highLong" type="xs:float" minOccurs="0"/>
+      <xs:element name="creatDt" type="xs:float" minOccurs="0"/>
+      <xs:element name="modDt" type="xs:float" minOccurs="0"/>
+      <xs:element name="engdesc" type="xs:string" minOccurs="0"/>
+      <xs:element name="frndesc" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sDars">
+    <xs:sequence>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
+      <xs:element name="frequency" type="xs:float" minOccurs="0"/>
+      <xs:element name="clazz" type="xs:string" minOccurs="0"/>
+      <xs:element name="latitudeDMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitudeDMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="banner" type="xs:string" minOccurs="0"/>
+      <xs:element name="limitCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="network" type="xs:string" minOccurs="0"/>
+      <xs:element name="antMode" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="bcMode" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="offset" type="xs:int" minOccurs="0"/>
+      <xs:element name="offPrec" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="brdrLat" type="xs:string" minOccurs="0"/>
+      <xs:element name="brdrLong" type="xs:string" minOccurs="0"/>
+      <xs:element name="border" type="xs:float" minOccurs="0"/>
+      <xs:element name="canLand" type="xs:float" minOccurs="0"/>
+      <xs:element name="usaLand" type="xs:float" minOccurs="0"/>
+      <xs:element name="freLand" type="xs:float" minOccurs="0"/>
+      <xs:element name="dateStCreat" type="xs:string" minOccurs="0"/>
+      <xs:element name="dateStMod" type="xs:string" minOccurs="0"/>
+      <xs:element name="dateOkDump" type="xs:string" minOccurs="0"/>
+      <xs:element name="docFile" type="xs:int" minOccurs="0"/>
+      <xs:element name="decNumber" type="xs:int" minOccurs="0"/>
+      <xs:element name="unattended" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="certNumb" type="xs:int" minOccurs="0"/>
+      <xs:element name="closeCap" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="allocZone" type="xs:int" minOccurs="0"/>
+      <xs:element name="beamTilt" type="xs:float" minOccurs="0"/>
+      <xs:element name="ehaatt" type="xs:float" minOccurs="0"/>
+      <xs:element name="erpvav" type="xs:float" minOccurs="0"/>
+      <xs:element name="erpvpk" type="xs:float" minOccurs="0"/>
+      <xs:element name="erpaav" type="xs:float" minOccurs="0"/>
+      <xs:element name="erpapk" type="xs:float" minOccurs="0"/>
+      <xs:element name="erpvta" type="xs:float" minOccurs="0"/>
+      <xs:element name="erpata" type="xs:float" minOccurs="0"/>
+      <xs:element name="groundLev" type="xs:float" minOccurs="0"/>
+      <xs:element name="overallH" type="xs:float" minOccurs="0"/>
+      <xs:element name="radCenter" type="xs:float" minOccurs="0"/>
+      <xs:element name="channel" type="xs:int" minOccurs="0"/>
+      <xs:element name="latitude" type="xs:float"/>
+      <xs:element name="longitude" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="station">
+    <xs:sequence>
+      <xs:element name="stationPK" type="stationPK" minOccurs="0"/>
+      <xs:element name="type" type="xs:string" minOccurs="0"/>
+      <xs:element name="dateCrtcApp" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stationComment">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="addr1" type="xs:string" minOccurs="0"/>
+      <xs:element name="addr2" type="xs:string" minOccurs="0"/>
+      <xs:element name="addr3" type="xs:string" minOccurs="0"/>
+      <xs:element name="addr4" type="xs:string" minOccurs="0"/>
+      <xs:element name="hqcomm" type="xs:float" minOccurs="0"/>
+      <xs:element name="rgcomm" type="xs:float" minOccurs="0"/>
+      <xs:element name="edetails" type="xs:float" minOccurs="0"/>
+      <xs:element name="fdetails" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stationContour">
+    <xs:sequence>
+      <xs:element name="stationContourPK" type="stationContourPK" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="latEnd" type="xs:float" minOccurs="0"/>
+      <xs:element name="longEnd" type="xs:float" minOccurs="0"/>
+      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tsid">
+    <xs:sequence>
+      <xs:element name="tsidPK" type="tsidPK" minOccurs="0"/>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="channel" type="xs:int" minOccurs="0"/>
+      <xs:element name="tsid" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tvStation">
+    <xs:sequence>
+      <xs:element name="tvStationPK" type="tvStationPK" minOccurs="0"/>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="frequency" type="xs:float"/>
+      <xs:element name="clazz" type="xs:string" minOccurs="0"/>
+      <xs:element name="latitudeDMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitudeDMS" type="xs:string" minOccurs="0"/>
+      <xs:element name="limitCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="network" type="xs:string" minOccurs="0"/>
+      <xs:element name="antMode" type="xs:string" minOccurs="0"/>
+      <xs:element name="bcMode" type="xs:string" minOccurs="0"/>
+      <xs:element name="offset" type="xs:string" minOccurs="0"/>
+      <xs:element name="offPrec" type="xs:string" minOccurs="0"/>
+      <xs:element name="brdrLat" type="xs:string" minOccurs="0"/>
+      <xs:element name="brdrLong" type="xs:string" minOccurs="0"/>
+      <xs:element name="border" type="xs:float"/>
+      <xs:element name="canLand" type="xs:float"/>
+      <xs:element name="usaLand" type="xs:float"/>
+      <xs:element name="freLand" type="xs:float"/>
+      <xs:element name="date_stCreat" type="xs:string" minOccurs="0"/>
+      <xs:element name="date_stMod" type="xs:string" minOccurs="0"/>
+      <xs:element name="date_okDump" type="xs:string" minOccurs="0"/>
+      <xs:element name="docFile" type="xs:int"/>
+      <xs:element name="decNumber" type="xs:int"/>
+      <xs:element name="unattended" type="xs:string" minOccurs="0"/>
+      <xs:element name="certNumb" type="xs:string" minOccurs="0"/>
+      <xs:element name="closeCap" type="xs:string" minOccurs="0"/>
+      <xs:element name="allocZone" type="xs:float"/>
+      <xs:element name="beamTilt" type="xs:float"/>
+      <xs:element name="ehaatt" type="xs:float"/>
+      <xs:element name="erpvav" type="xs:float"/>
+      <xs:element name="erpvpk" type="xs:float"/>
+      <xs:element name="erpaav" type="xs:float"/>
+      <xs:element name="erpapk" type="xs:float"/>
+      <xs:element name="erpvta" type="xs:float"/>
+      <xs:element name="erpata" type="xs:float"/>
+      <xs:element name="groundLev" type="xs:float"/>
+      <xs:element name="overallH" type="xs:float"/>
+      <xs:element name="radCenter" type="xs:float"/>
+      <xs:element name="channel" type="xs:int"/>
+      <xs:element name="latitude" type="xs:float"/>
+      <xs:element name="longitude" type="xs:float"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
