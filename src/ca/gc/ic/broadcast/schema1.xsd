@@ -1,218 +1,205 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" targetNamespace="http://ca.gc.ic/broadcast/entity" xmlns:tns="http://ca.gc.ic/broadcast/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-  <xs:import schemaLocation="schema2.xsd"/>
-
-  <xs:complexType name="amStationAugment">
-    <xs:sequence>
-      <xs:element name="amStationAugmentPK" type="amStationAugmentPK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="radiation" type="xs:int" use="required"/>
-    <xs:attribute name="centerAz" type="xs:int" use="required"/>
-    <xs:attribute name="span" type="xs:int" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="amStationExtendedHours">
-    <xs:sequence>
-      <xs:element name="amStationExtendedHoursPK" type="amStationExtendedHoursPK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="number" type="xs:float" use="required"/>
-    <xs:attribute name="antSystem" type="xs:string"/>
-    <xs:attribute name="start1" type="xs:string"/>
-    <xs:attribute name="end1" type="xs:string"/>
-    <xs:attribute name="start2" type="xs:float" use="required"/>
-    <xs:attribute name="end2" type="xs:float" use="required"/>
-    <xs:attribute name="power" type="xs:float" use="required"/>
-    <xs:attribute name="rms" type="xs:int" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="amStationParameter">
-    <xs:sequence>
-      <xs:element name="amStationParameterPK" type="amStationParameterPK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="fieldratio" type="xs:float" use="required"/>
-    <xs:attribute name="spacing" type="xs:float" use="required"/>
-    <xs:attribute name="orienta" type="xs:float" use="required"/>
-    <xs:attribute name="phasing" type="xs:float" use="required"/>
-    <xs:attribute name="height" type="xs:float" use="required"/>
-    <xs:attribute name="typeAnt" type="xs:int" use="required"/>
-    <xs:attribute name="a" type="xs:float" use="required"/>
-    <xs:attribute name="b" type="xs:float" use="required"/>
-    <xs:attribute name="c" type="xs:float" use="required"/>
-    <xs:attribute name="d" type="xs:float" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="antenna">
-    <xs:sequence>
-      <xs:element name="radiationPatternList" type="tns:radiationPattern" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-    <xs:attribute name="pattKey" type="xs:int"/>
-    <xs:attribute name="horVer" type="xs:string"/>
-    <xs:attribute name="pattNumb" type="xs:float" use="required"/>
-    <xs:attribute name="pattType" type="xs:string"/>
-    <xs:attribute name="punits" type="xs:float" use="required"/>
-    <xs:attribute name="numpoints" type="xs:float" use="required"/>
-    <xs:attribute name="pattDate" type="xs:float" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="radiationPattern">
-    <xs:sequence>
-      <xs:element name="radiationPatternPK" type="radiationPatternPK" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="canadaStation">
-    <xs:sequence>
-      <xs:element name="canadaStationPK" type="canadaStationPK" minOccurs="0"/>
-      <xs:element name="antennaList" type="tns:antenna" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element ref="regionalFiling" minOccurs="0"/>
-      <xs:element ref="feedSignal" minOccurs="0"/>
-      <xs:element name="contourList" type="tns:contour" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element ref="amStationExtendedHours" minOccurs="0"/>
-      <xs:element name="amStationParameterList" type="tns:amStationParameter" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element ref="tsid" minOccurs="0"/>
-      <xs:element name="amStationAugmentList" type="tns:amStationAugment" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element ref="comment" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="stationType" type="xs:string"/>
-    <xs:attribute name="channel" type="xs:int" use="required"/>
-    <xs:attribute name="erpvpk" type="xs:float" use="required"/>
-    <xs:attribute name="haat" type="xs:float" use="required"/>
-    <xs:attribute name="hagl" type="xs:float" use="required"/>
-    <xs:attribute name="latitude" type="xs:float" use="required"/>
-    <xs:attribute name="longitude" type="xs:float" use="required"/>
-    <xs:attribute name="allocZone" type="xs:int" use="required"/>
-    <xs:attribute name="antMode" type="xs:unsignedShort"/>
-    <xs:attribute name="autoProg" type="xs:string"/>
-    <xs:attribute name="bcMode" type="xs:unsignedShort"/>
-    <xs:attribute name="beamTilt" type="xs:float" use="required"/>
-    <xs:attribute name="border" type="xs:float" use="required"/>
-    <xs:attribute name="brdrLat" type="xs:string"/>
-    <xs:attribute name="brdrLong" type="xs:string"/>
-    <xs:attribute name="canLand" type="xs:float" use="required"/>
-    <xs:attribute name="certNumb" type="xs:string"/>
-    <xs:attribute name="city" type="xs:string"/>
-    <xs:attribute name="clazz" type="xs:string"/>
-    <xs:attribute name="closeCap" type="xs:unsignedShort"/>
-    <xs:attribute name="decNumber" type="xs:int" use="required"/>
-    <xs:attribute name="docFile" type="xs:int" use="required"/>
-    <xs:attribute name="erpaav" type="xs:float" use="required"/>
-    <xs:attribute name="erpapk" type="xs:float" use="required"/>
-    <xs:attribute name="erpata" type="xs:int" use="required"/>
-    <xs:attribute name="erphav" type="xs:float" use="required"/>
-    <xs:attribute name="erphpk" type="xs:float" use="required"/>
-    <xs:attribute name="erpvav" type="xs:float" use="required"/>
-    <xs:attribute name="erpvta" type="xs:float" use="required"/>
-    <xs:attribute name="euvalu" type="xs:float" use="required"/>
-    <xs:attribute name="freLand" type="xs:float" use="required"/>
-    <xs:attribute name="frequency" type="xs:float" use="required"/>
-    <xs:attribute name="groundLev" type="xs:float" use="required"/>
-    <xs:attribute name="ifrbnD" type="xs:float" use="required"/>
-    <xs:attribute name="ifrbnN" type="xs:float" use="required"/>
-    <xs:attribute name="latitude2" type="xs:string"/>
-    <xs:attribute name="limitCode" type="xs:string"/>
-    <xs:attribute name="longitude2" type="xs:string"/>
-    <xs:attribute name="network" type="xs:string"/>
-    <xs:attribute name="offPrec" type="xs:unsignedShort"/>
-    <xs:attribute name="offset" type="xs:unsignedShort"/>
-    <xs:attribute name="okDump" type="xs:string"/>
-    <xs:attribute name="parRmsC" type="xs:float" use="required"/>
-    <xs:attribute name="parRmsD" type="xs:float" use="required"/>
-    <xs:attribute name="parRmsN" type="xs:float" use="required"/>
-    <xs:attribute name="powercrit" type="xs:float" use="required"/>
-    <xs:attribute name="powerday" type="xs:float" use="required"/>
-    <xs:attribute name="powernight" type="xs:float" use="required"/>
-    <xs:attribute name="province" type="xs:string"/>
-    <xs:attribute name="qCrit" type="xs:float" use="required"/>
-    <xs:attribute name="qDay" type="xs:float" use="required"/>
-    <xs:attribute name="qNight" type="xs:float" use="required"/>
-    <xs:attribute name="radCenter" type="xs:float" use="required"/>
-    <xs:attribute name="scmo" type="xs:unsignedShort"/>
-    <xs:attribute name="ssCode" type="xs:string"/>
-    <xs:attribute name="stCreat" type="xs:string"/>
-    <xs:attribute name="stMod" type="xs:string"/>
-    <xs:attribute name="status1" type="xs:string"/>
-    <xs:attribute name="status2" type="xs:string"/>
-    <xs:attribute name="unattended" type="xs:unsignedShort"/>
-    <xs:attribute name="usaLand" type="xs:float" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="regionalFiling">
-    <xs:sequence>
-      <xs:element name="regionalFilingPK" type="regionalFilingPK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="region" type="xs:string"/>
-    <xs:attribute name="district" type="xs:string"/>
-    <xs:attribute name="inspecRep" type="xs:string"/>
-    <xs:attribute name="painting" type="xs:string"/>
-    <xs:attribute name="sprDat" type="xs:float" use="required"/>
-    <xs:attribute name="rspDat" type="xs:float" use="required"/>
-    <xs:attribute name="stdett" type="xs:float" use="required"/>
-    <xs:attribute name="airClear" type="xs:float" use="required"/>
-    <xs:attribute name="inspecDat" type="xs:float" use="required"/>
-    <xs:attribute name="rcfDat" type="xs:float" use="required"/>
-    <xs:attribute name="statType" type="xs:string"/>
-    <xs:attribute name="docfex" type="xs:string"/>
-    <xs:attribute name="province" type="xs:string"/>
-    <xs:attribute name="country" type="xs:string"/>
-  </xs:complexType>
-
-  <xs:complexType name="feedSignal">
-    <xs:sequence>
-      <xs:element name="feedSignalPK" type="feedSignalPK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="feedId" type="xs:string"/>
-    <xs:attribute name="feedChan" type="xs:float" use="required"/>
-    <xs:attribute name="linkType" type="xs:string"/>
-    <xs:attribute name="feedCall" type="xs:string"/>
-    <xs:attribute name="feedLat" type="xs:float" use="required"/>
-    <xs:attribute name="feedLong" type="xs:float" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="contour">
-    <xs:sequence>
-      <xs:element name="contourPK" type="contourPK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="name" type="xs:string"/>
-    <xs:attribute name="latEnd" type="xs:float" use="required"/>
-    <xs:attribute name="longEnd" type="xs:float" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="tsid">
-    <xs:sequence>
-      <xs:element name="tsidPK" type="tsidPK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="province" type="xs:string"/>
-    <xs:attribute name="city" type="xs:string"/>
-    <xs:attribute name="channel" type="xs:int" use="required"/>
-    <xs:attribute name="tsid" type="xs:string"/>
-  </xs:complexType>
-
-  <xs:complexType name="comment">
-    <xs:sequence>
-      <xs:element name="commentPK" type="commentPK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="name" type="xs:string"/>
-    <xs:attribute name="addr1" type="xs:string"/>
-    <xs:attribute name="addr2" type="xs:string"/>
-    <xs:attribute name="addr3" type="xs:string"/>
-    <xs:attribute name="addr4" type="xs:string"/>
-    <xs:attribute name="hqcomm" type="xs:float" use="required"/>
-    <xs:attribute name="rgcomm" type="xs:float" use="required"/>
-    <xs:attribute name="edetails" type="xs:float" use="required"/>
-    <xs:attribute name="fdetails" type="xs:float" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="lookupDbCode">
-    <xs:sequence>
-      <xs:element name="lookupDbCodePK" type="lookupDbCodePK" minOccurs="0"/>
-    </xs:sequence>
-    <xs:attribute name="descriptionEnglish" type="xs:string"/>
-    <xs:attribute name="descriptionFrench" type="xs:string"/>
-  </xs:complexType>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by XMLSpy (wineclient) -->
+<xs:schema xmlns:tns="http://ca.gc.ic/broadcast/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ca.gc.ic/broadcast/entity" version="1.0">
+	<xs:import schemaLocation="schema2.xsd"/>
+	<xs:complexType name="amStationAugment">
+		<xs:sequence>
+			<xs:element name="amStationAugmentPK" type="amStationAugmentPK" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="radiation" type="xs:int" use="required"/>
+		<xs:attribute name="centerAz" type="xs:int" use="required"/>
+		<xs:attribute name="span" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="amStationExtendedHours">
+		<xs:sequence>
+			<xs:element name="amStationExtendedHoursPK" type="amStationExtendedHoursPK"/>
+		</xs:sequence>
+		<xs:attribute name="callsBanr" type="xs:string"/>
+		<xs:attribute name="number" type="xs:float" use="required"/>
+		<xs:attribute name="antSystem" type="xs:string"/>
+		<xs:attribute name="start1" type="xs:string"/>
+		<xs:attribute name="end1" type="xs:string"/>
+		<xs:attribute name="start2" type="xs:float" use="required"/>
+		<xs:attribute name="end2" type="xs:float" use="required"/>
+		<xs:attribute name="power" type="xs:float" use="required"/>
+		<xs:attribute name="rms" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="amStationParameter">
+		<xs:sequence>
+			<xs:element name="amStationParameterPK" type="amStationParameterPK" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="fieldratio" type="xs:float" use="required"/>
+		<xs:attribute name="spacing" type="xs:float" use="required"/>
+		<xs:attribute name="orienta" type="xs:float" use="required"/>
+		<xs:attribute name="phasing" type="xs:float" use="required"/>
+		<xs:attribute name="height" type="xs:float" use="required"/>
+		<xs:attribute name="typeAnt" type="xs:int" use="required"/>
+		<xs:attribute name="a" type="xs:float" use="required"/>
+		<xs:attribute name="b" type="xs:float" use="required"/>
+		<xs:attribute name="c" type="xs:float" use="required"/>
+		<xs:attribute name="d" type="xs:float" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="antenna">
+		<xs:sequence>
+			<xs:element name="radiationPatternList" type="tns:radiationPattern" nillable="true" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="pattKey" type="xs:int" use="required"/>
+		<xs:attribute name="horVer" type="xs:string" use="required"/>
+		<xs:attribute name="pattNumb" type="xs:float" use="required"/>
+		<xs:attribute name="pattType" type="xs:string" use="required"/>
+		<xs:attribute name="punits" type="xs:float" use="required"/>
+		<xs:attribute name="numpoints" type="xs:float" use="required"/>
+		<xs:attribute name="pattDate" type="xs:float" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="radiationPattern">
+		<xs:sequence>
+			<xs:element name="radiationPatternPK" type="radiationPatternPK"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="canadaStation">
+		<xs:sequence>
+			<xs:element name="canadaStationPK" type="canadaStationPK"/>
+			<xs:element name="antennaList" type="tns:antenna" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="contourList" type="tns:contour" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="regionalFiling" minOccurs="0"/>
+			<xs:element ref="feedSignal" minOccurs="0"/>
+			<xs:element name="amStationAugmentList" type="tns:amStationAugment" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="amStationExtendedHours" minOccurs="0"/>
+			<xs:element name="amStationParameterList" type="tns:amStationParameter" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="tsid" minOccurs="0"/>
+			<xs:element ref="comment" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="stationType" type="xs:string" use="required"/>
+		<xs:attribute name="channel" type="xs:int" use="required"/>
+		<xs:attribute name="erpvpk" type="xs:float" use="required"/>
+		<xs:attribute name="haat" type="xs:float" use="required"/>
+		<xs:attribute name="hagl" type="xs:float" use="required"/>
+		<xs:attribute name="latitude" type="xs:float" use="required"/>
+		<xs:attribute name="longitude" type="xs:float" use="required"/>
+		<xs:attribute name="allocZone" type="xs:int" use="required"/>
+		<xs:attribute name="antMode" type="xs:unsignedShort" use="required"/>
+		<xs:attribute name="autoProg" type="xs:string"/>
+		<xs:attribute name="bcMode" type="xs:unsignedShort"/>
+		<xs:attribute name="beamTilt" type="xs:float"/>
+		<xs:attribute name="border" type="xs:float"/>
+		<xs:attribute name="brdrLat" type="xs:string"/>
+		<xs:attribute name="brdrLong" type="xs:string"/>
+		<xs:attribute name="canLand" type="xs:float"/>
+		<xs:attribute name="certNumb" type="xs:string"/>
+		<xs:attribute name="city" type="xs:string"/>
+		<xs:attribute name="clazz" type="xs:string"/>
+		<xs:attribute name="closeCap" type="xs:unsignedShort"/>
+		<xs:attribute name="decNumber" type="xs:int"/>
+		<xs:attribute name="docFile" type="xs:int"/>
+		<xs:attribute name="erpaav" type="xs:float"/>
+		<xs:attribute name="erpapk" type="xs:float"/>
+		<xs:attribute name="erpata" type="xs:int" use="required"/>
+		<xs:attribute name="erphav" type="xs:float"/>
+		<xs:attribute name="erphpk" type="xs:float"/>
+		<xs:attribute name="erpvav" type="xs:float"/>
+		<xs:attribute name="erpvta" type="xs:float"/>
+		<xs:attribute name="euvalu" type="xs:float"/>
+		<xs:attribute name="freLand" type="xs:float"/>
+		<xs:attribute name="frequency" type="xs:float"/>
+		<xs:attribute name="groundLev" type="xs:float"/>
+		<xs:attribute name="ifrbnD" type="xs:float"/>
+		<xs:attribute name="ifrbnN" type="xs:float"/>
+		<xs:attribute name="latitude2" type="xs:string"/>
+		<xs:attribute name="limitCode" type="xs:string"/>
+		<xs:attribute name="longitude2" type="xs:string"/>
+		<xs:attribute name="network" type="xs:string"/>
+		<xs:attribute name="offPrec" type="xs:unsignedShort"/>
+		<xs:attribute name="offset" type="xs:unsignedShort"/>
+		<xs:attribute name="okDump" type="xs:string"/>
+		<xs:attribute name="parRmsC" type="xs:float"/>
+		<xs:attribute name="parRmsD" type="xs:float"/>
+		<xs:attribute name="parRmsN" type="xs:float"/>
+		<xs:attribute name="powercrit" type="xs:float"/>
+		<xs:attribute name="powerday" type="xs:float"/>
+		<xs:attribute name="powernight" type="xs:float"/>
+		<xs:attribute name="province" type="xs:string"/>
+		<xs:attribute name="qCrit" type="xs:float"/>
+		<xs:attribute name="qDay" type="xs:float"/>
+		<xs:attribute name="qNight" type="xs:float"/>
+		<xs:attribute name="radCenter" type="xs:float"/>
+		<xs:attribute name="scmo" type="xs:unsignedShort"/>
+		<xs:attribute name="ssCode" type="xs:string"/>
+		<xs:attribute name="stCreat" type="xs:string"/>
+		<xs:attribute name="stMod" type="xs:string"/>
+		<xs:attribute name="status1" type="xs:string"/>
+		<xs:attribute name="status2" type="xs:string"/>
+		<xs:attribute name="unattended" type="xs:unsignedShort"/>
+		<xs:attribute name="usaLand" type="xs:float"/>
+	</xs:complexType>
+	<xs:complexType name="regionalFiling">
+		<xs:sequence>
+			<xs:element name="regionalFilingPK" type="regionalFilingPK"/>
+		</xs:sequence>
+		<xs:attribute name="callsBanr" type="xs:string"/>
+		<xs:attribute name="region" type="xs:string"/>
+		<xs:attribute name="district" type="xs:string"/>
+		<xs:attribute name="inspecRep" type="xs:string"/>
+		<xs:attribute name="painting" type="xs:string"/>
+		<xs:attribute name="sprDat" type="xs:float"/>
+		<xs:attribute name="rspDat" type="xs:float"/>
+		<xs:attribute name="stdett" type="xs:float"/>
+		<xs:attribute name="airClear" type="xs:float"/>
+		<xs:attribute name="inspecDat" type="xs:float"/>
+		<xs:attribute name="rcfDat" type="xs:float"/>
+		<xs:attribute name="statType" type="xs:string"/>
+		<xs:attribute name="docfex" type="xs:string"/>
+		<xs:attribute name="province" type="xs:string"/>
+		<xs:attribute name="country" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="feedSignal">
+		<xs:sequence>
+			<xs:element name="feedSignalPK" type="feedSignalPK"/>
+		</xs:sequence>
+		<xs:attribute name="callsBanr" type="xs:string" use="required"/>
+		<xs:attribute name="feedId" type="xs:string"/>
+		<xs:attribute name="feedChan" type="xs:float" use="required"/>
+		<xs:attribute name="linkType" type="xs:string"/>
+		<xs:attribute name="feedCall" type="xs:string"/>
+		<xs:attribute name="feedLat" type="xs:float" use="required"/>
+		<xs:attribute name="feedLong" type="xs:float" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="contour">
+		<xs:sequence>
+			<xs:element name="contourPK" type="contourPK"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="latEnd" type="xs:float" use="required"/>
+		<xs:attribute name="longEnd" type="xs:float" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="tsid">
+		<xs:sequence>
+			<xs:element name="tsidPK" type="tsidPK"/>
+		</xs:sequence>
+		<xs:attribute name="province" type="xs:string"/>
+		<xs:attribute name="city" type="xs:string"/>
+		<xs:attribute name="channel" type="xs:int" use="required"/>
+		<xs:attribute name="tsid" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="comment">
+		<xs:sequence>
+			<xs:element name="commentPK" type="commentPK"/>
+		</xs:sequence>
+		<xs:attribute name="callsBanr" type="xs:string"/>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="addr1" type="xs:string"/>
+		<xs:attribute name="addr2" type="xs:string"/>
+		<xs:attribute name="addr3" type="xs:string"/>
+		<xs:attribute name="addr4" type="xs:string"/>
+		<xs:attribute name="hqcomm" type="xs:float"/>
+		<xs:attribute name="rgcomm" type="xs:float"/>
+		<xs:attribute name="edetails" type="xs:float"/>
+		<xs:attribute name="fdetails" type="xs:float"/>
+	</xs:complexType>
+	<xs:complexType name="lookupDbCode">
+		<xs:sequence>
+			<xs:element name="lookupDbCodePK" type="lookupDbCodePK"/>
+		</xs:sequence>
+		<xs:attribute name="descriptionEnglish" type="xs:string"/>
+		<xs:attribute name="descriptionFrench" type="xs:string"/>
+	</xs:complexType>
 </xs:schema>
-

@@ -16,6 +16,7 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -28,13 +29,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -59,7 +60,7 @@ public class CanadaStation implements Serializable {
   protected CanadaStationPK canadaStationPK;
   @Basic(optional = false)
   @Column(name = "station_type", nullable = false, length = 4)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private String stationType;
   @Basic(optional = false)
   @Column(name = "channel", nullable = false)
@@ -67,7 +68,7 @@ public class CanadaStation implements Serializable {
   private int channel;
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private float erpvpk;
   @Basic(optional = false)
   @Column(name = "haat", nullable = false)
@@ -89,7 +90,7 @@ public class CanadaStation implements Serializable {
   @XmlAttribute
   private int allocZone;
   @Column(name = "ant_mode")
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private Character antMode;
   @Column(name = "auto_prog", length = 1)
   @XmlAttribute
@@ -189,8 +190,12 @@ public class CanadaStation implements Serializable {
   @XmlAttribute
   private Character offset;
   @Column(name = "ok_dump", length = 8)
+  @Temporal(javax.persistence.TemporalType.DATE)
   @XmlAttribute
-  private String okDump;
+  private Date okDump;
+  @Column(name = "overall_h", precision = 12)
+  @XmlAttribute
+  private float overallH;
   @Column(name = "par_rms_c", precision = 12)
   @XmlAttribute
   private float parRmsC;
@@ -231,11 +236,13 @@ public class CanadaStation implements Serializable {
   @XmlAttribute
   private String ssCode;
   @Column(name = "st_creat", length = 8)
+  @Temporal(javax.persistence.TemporalType.DATE)
   @XmlAttribute
-  private String stCreat;
+  private Date stCreat;
   @Column(name = "st_mod", length = 8)
+  @Temporal(javax.persistence.TemporalType.DATE)
   @XmlAttribute
-  private String stMod;
+  private Date stMod;
   @Column(name = "status1", length = 2)
   @XmlAttribute
   private String status1;
@@ -289,6 +296,7 @@ public class CanadaStation implements Serializable {
     this.canadaStationPK = new CanadaStationPK(banner, callSign);
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
   public CanadaStationPK getCanadaStationPK() {
     return canadaStationPK;
   }
@@ -625,12 +633,20 @@ public class CanadaStation implements Serializable {
     this.offset = offset;
   }
 
-  public String getOkDump() {
+  public Date getOkDump() {
     return okDump;
   }
 
-  public void setOkDump(String okDump) {
+  public void setOkDump(Date okDump) {
     this.okDump = okDump;
+  }
+
+  public float getOverallH() {
+    return overallH;
+  }
+
+  public void setOverallH(float overallH) {
+    this.overallH = overallH;
   }
 
   public float getParRmsC() {
@@ -737,19 +753,19 @@ public class CanadaStation implements Serializable {
     this.ssCode = ssCode;
   }
 
-  public String getStCreat() {
+  public Date getStCreat() {
     return stCreat;
   }
 
-  public void setStCreat(String stCreat) {
+  public void setStCreat(Date stCreat) {
     this.stCreat = stCreat;
   }
 
-  public String getStMod() {
+  public Date getStMod() {
     return stMod;
   }
 
-  public void setStMod(String stMod) {
+  public void setStMod(Date stMod) {
     this.stMod = stMod;
   }
 
@@ -860,6 +876,7 @@ public class CanadaStation implements Serializable {
   public void setComment(Comment comment) {
     this.comment = comment;
   }
+  //</editor-fold>
 
   @Override
   public int hashCode() {
