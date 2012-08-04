@@ -25,7 +25,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "feeds")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "FeedSignal.findAll", query = "SELECT f FROM FeedSignal f"),
   @NamedQuery(name = "FeedSignal.findByCallsBanr", query = "SELECT f FROM FeedSignal f WHERE f.callsBanr = :callsBanr"),
@@ -47,28 +54,37 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "FeedSignal.findByBanner", query = "SELECT f FROM FeedSignal f WHERE f.feedSignalPK.banner = :banner")})
 public class FeedSignal implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected FeedSignalPK feedSignalPK;
   @Column(name = "calls_banr", length = 32)
+  @XmlAttribute
   private String callsBanr;
   @Column(name = "feed_id", length = 1)
+  @XmlAttribute
   private String feedId;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "feed_chan", precision = 12)
+  @XmlAttribute
   private float feedChan;
   @Column(name = "link_type", length = 1)
+  @XmlAttribute
   private String linkType;
   @Column(name = "feed_call", length = 12)
+  @XmlAttribute
   private String feedCall;
   @Column(name = "feed_lat", precision = 12)
+  @XmlAttribute
   private float feedLat;
   @Column(name = "feed_long", precision = 12)
+  @XmlAttribute
   private float feedLong;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
   @OneToOne(optional = false)
+  @XmlAttribute
   private CanadaStation canadaStation;
 
   public FeedSignal() {

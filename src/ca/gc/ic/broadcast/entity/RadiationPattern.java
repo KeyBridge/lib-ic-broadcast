@@ -23,7 +23,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -32,6 +37,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "apatdat")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "RadiationPattern.findAll", query = "SELECT r FROM RadiationPattern r"),
   @NamedQuery(name = "RadiationPattern.findByPattKey", query = "SELECT r FROM RadiationPattern r WHERE r.radiationPatternPK.pattKey = :pattKey"),
@@ -39,11 +46,13 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "RadiationPattern.findByGain", query = "SELECT r FROM RadiationPattern r WHERE r.radiationPatternPK.gain = :gain")})
 public class RadiationPattern implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected RadiationPatternPK radiationPatternPK;
   @JoinColumn(name = "patt_key", referencedColumnName = "patt_key", nullable = false, insertable = false, updatable = false)
   @ManyToOne(optional = false)
+  @XmlAttribute
   private Antenna antenna;
 
   public RadiationPattern() {

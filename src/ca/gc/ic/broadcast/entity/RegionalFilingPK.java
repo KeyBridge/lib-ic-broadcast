@@ -19,6 +19,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
@@ -29,9 +30,11 @@ public class RegionalFilingPK implements Serializable {
 
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
+  @XmlAttribute
   private String callSign;
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
+  @XmlAttribute
   private String banner;
 
   public RegionalFilingPK() {

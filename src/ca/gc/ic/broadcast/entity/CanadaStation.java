@@ -28,7 +28,12 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -38,6 +43,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name = "ca_station")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "CanadaStation.findAll", query = "SELECT c FROM CanadaStation c"),
   @NamedQuery(name = "CanadaStation.findByStationType", query = "SELECT c FROM CanadaStation c WHERE c.stationType = :stationType"),
@@ -46,156 +53,227 @@ import javax.xml.bind.annotation.XmlTransient;
   @NamedQuery(name = "CanadaStation.findByChannel", query = "SELECT c FROM CanadaStation c WHERE c.channel = :channel")})
 public class CanadaStation implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected CanadaStationPK canadaStationPK;
   @Basic(optional = false)
   @Column(name = "station_type", nullable = false, length = 4)
+  @XmlAttribute
   private String stationType;
   @Basic(optional = false)
   @Column(name = "channel", nullable = false)
+  @XmlAttribute
   private int channel;
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
+  @XmlAttribute
   private float erpvpk;
   @Basic(optional = false)
   @Column(name = "haat", nullable = false)
+  @XmlAttribute
   private float haat;
   @Basic(optional = false)
   @Column(name = "hagl", nullable = false)
+  @XmlAttribute
   private float hagl;
   @Basic(optional = false)
   @Column(name = "latitude", nullable = false)
+  @XmlAttribute
   private float latitude;
   @Basic(optional = false)
   @Column(name = "longitude", nullable = false)
+  @XmlAttribute
   private float longitude;
   @Column(name = "alloc_zone")
+  @XmlAttribute
   private int allocZone;
   @Column(name = "ant_mode")
+  @XmlAttribute
   private Character antMode;
   @Column(name = "auto_prog", length = 1)
+  @XmlAttribute
   private String autoProg;
   @Column(name = "bc_mode")
+  @XmlAttribute
   private Character bcMode;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "beam_tilt", precision = 12)
+  @XmlAttribute
   private float beamTilt;
   @Column(name = "border", precision = 12)
+  @XmlAttribute
   private float border;
   @Column(name = "brdr_lat", length = 6)
+  @XmlAttribute
   private String brdrLat;
   @Column(name = "brdr_long", length = 7)
+  @XmlAttribute
   private String brdrLong;
   @Column(name = "can_land", precision = 12)
+  @XmlAttribute
   private float canLand;
   @Column(name = "cert_numb", length = 6)
+  @XmlAttribute
   private String certNumb;
   @Column(name = "city", length = 25)
+  @XmlAttribute
   private String city;
   @Column(name = "clazz", length = 2)
+  @XmlAttribute
   private String clazz;
   @Column(name = "close_cap")
+  @XmlAttribute
   private Character closeCap;
   @Column(name = "dec_number")
+  @XmlAttribute
   private int decNumber;
   @Column(name = "doc_file")
+  @XmlAttribute
   private int docFile;
   @Column(name = "erpaav", precision = 12)
+  @XmlAttribute
   private float erpaav;
   @Column(name = "erpapk", precision = 12)
+  @XmlAttribute
   private float erpapk;
   @Column(name = "erpata")
+  @XmlAttribute
   private int erpata;
   @Column(name = "erphav", precision = 12)
+  @XmlAttribute
   private float erphav;
   @Column(name = "erphpk", precision = 12)
+  @XmlAttribute
   private float erphpk;
   @Column(name = "erpvav", precision = 12)
+  @XmlAttribute
   private float erpvav;
   @Column(name = "erpvta", precision = 12)
+  @XmlAttribute
   private float erpvta;
   @Column(name = "euvalu", precision = 12)
+  @XmlAttribute
   private float euvalu;
   @Column(name = "fre_land", precision = 12)
+  @XmlAttribute
   private float freLand;
   @Column(name = "frequency", precision = 12)
+  @XmlAttribute
   private float frequency;
   @Column(name = "ground_lev", precision = 12)
+  @XmlAttribute
   private float groundLev;
   @Column(name = "ifrbn_d", precision = 12)
+  @XmlAttribute
   private float ifrbnD;
   @Column(name = "ifrbn_n", precision = 12)
+  @XmlAttribute
   private float ifrbnN;
   @Column(name = "latitude2", length = 6)
+  @XmlAttribute
   private String latitude2;
   @Column(name = "limit_code", length = 8)
+  @XmlAttribute
   private String limitCode;
   @Column(name = "longitude2", length = 7)
+  @XmlAttribute
   private String longitude2;
   @Column(name = "network", length = 4)
+  @XmlAttribute
   private String network;
   @Column(name = "off_prec")
+  @XmlAttribute
   private Character offPrec;
   @Column(name = "offset")
+  @XmlAttribute
   private Character offset;
   @Column(name = "ok_dump", length = 8)
+  @XmlAttribute
   private String okDump;
   @Column(name = "par_rms_c", precision = 12)
+  @XmlAttribute
   private float parRmsC;
   @Column(name = "par_rms_d", precision = 12)
+  @XmlAttribute
   private float parRmsD;
   @Column(name = "par_rms_n", precision = 12)
+  @XmlAttribute
   private float parRmsN;
   @Column(name = "powercrit", precision = 12)
+  @XmlAttribute
   private float powercrit;
   @Column(name = "powerday", precision = 12)
+  @XmlAttribute
   private float powerday;
   @Column(name = "powernight", precision = 12)
+  @XmlAttribute
   private float powernight;
   @Column(name = "province", length = 2)
+  @XmlAttribute
   private String province;
   @Column(name = "q_crit", precision = 12)
+  @XmlAttribute
   private float qCrit;
   @Column(name = "q_day", precision = 12)
+  @XmlAttribute
   private float qDay;
   @Column(name = "q_night", precision = 12)
+  @XmlAttribute
   private float qNight;
   @Column(name = "rad_center", precision = 12)
+  @XmlAttribute
   private float radCenter;
   @Column(name = "scmo")
+  @XmlAttribute
   private Character scmo;
   @Column(name = "ss_code", length = 5)
+  @XmlAttribute
   private String ssCode;
   @Column(name = "st_creat", length = 8)
+  @XmlAttribute
   private String stCreat;
   @Column(name = "st_mod", length = 8)
+  @XmlAttribute
   private String stMod;
   @Column(name = "status1", length = 2)
+  @XmlAttribute
   private String status1;
   @Column(name = "status2", length = 2)
+  @XmlAttribute
   private String status2;
   @Column(name = "unattended")
+  @XmlAttribute
   private Character unattended;
   @Column(name = "usa_land", precision = 12)
+  @XmlAttribute
   private float usaLand;
   @ManyToMany(mappedBy = "canadaStationList")
+  @XmlAttribute
   private List<Antenna> antennaList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
+  @XmlAttribute
   private RegionalFiling regionalFiling;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
+  @XmlAttribute
   private FeedSignal feedSignal;
   @OneToMany(mappedBy = "canadaStation")
+  @XmlAttribute
   private List<Contour> contourList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
+  @XmlAttribute
   private AmStationExtendedHours amStationExtendedHours;
   @OneToMany(mappedBy = "canadaStation")
+  @XmlAttribute
   private List<AmStationParameter> amStationParameterList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
+  @XmlAttribute
   private Tsid tsid;
   @OneToMany(mappedBy = "canadaStation")
+  @XmlAttribute
   private List<AmStationAugment> amStationAugmentList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
+  @XmlAttribute
   private Comment comment;
 
   public CanadaStation() {

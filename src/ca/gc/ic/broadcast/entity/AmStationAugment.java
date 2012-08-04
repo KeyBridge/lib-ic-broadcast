@@ -25,7 +25,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "augment")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "AmStationAugment.findAll", query = "SELECT a FROM AmStationAugment a"),
   @NamedQuery(name = "AmStationAugment.findByCallsBanr", query = "SELECT a FROM AmStationAugment a WHERE a.amStationAugmentPK.callsBanr = :callsBanr"),
@@ -44,19 +51,24 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "AmStationAugment.findBySpan", query = "SELECT a FROM AmStationAugment a WHERE a.span = :span")})
 public class AmStationAugment implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected AmStationAugmentPK amStationAugmentPK;
   @Column(name = "radiation")
+  @XmlAttribute
   private int radiation;
   @Column(name = "center_az")
+  @XmlAttribute
   private int centerAz;
   @Column(name = "span")
+  @XmlAttribute
   private int span;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToOne
+  @XmlAttribute
   private CanadaStation canadaStation;
 
   public AmStationAugment() {

@@ -29,7 +29,11 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -39,6 +43,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Table(name = "apatdesc")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "Antenna.findAll", query = "SELECT a FROM Antenna a"),
   @NamedQuery(name = "Antenna.findByPattKey", query = "SELECT a FROM Antenna a WHERE a.pattKey = :pattKey"),
@@ -50,31 +56,41 @@ import javax.xml.bind.annotation.XmlTransient;
   @NamedQuery(name = "Antenna.findByPattDate", query = "SELECT a FROM Antenna a WHERE a.pattDate = :pattDate")})
 public class Antenna implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @Id
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
+  @XmlAttribute
   private Integer pattKey;
   @Column(name = "hor_ver", length = 1)
+  @XmlAttribute
   private String horVer;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "patt_numb", precision = 12)
+  @XmlAttribute
   private float pattNumb;
   @Column(name = "patt_type", length = 12)
+  @XmlAttribute
   private String pattType;
   @Column(name = "punits", precision = 12)
+  @XmlAttribute
   private float punits;
   @Column(name = "numpoints", precision = 12)
+  @XmlAttribute
   private float numpoints;
   @Column(name = "patt_date", precision = 12)
+  @XmlAttribute
   private float pattDate;
   @JoinTable(name = "apatstat", joinColumns = {
     @JoinColumn(name = "patt_key", referencedColumnName = "patt_key")}, inverseJoinColumns = {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToMany
+  @XmlAttribute
   private List<CanadaStation> canadaStationList;
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "antenna")
+  @XmlAttribute
   private List<RadiationPattern> radiationPatternList;
 
   public Antenna() {

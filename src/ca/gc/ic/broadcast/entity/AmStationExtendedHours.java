@@ -25,7 +25,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "extend")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "AmStationExtendedHours.findAll", query = "SELECT a FROM AmStationExtendedHours a"),
   @NamedQuery(name = "AmStationExtendedHours.findByCallsBanr", query = "SELECT a FROM AmStationExtendedHours a WHERE a.callsBanr = :callsBanr"),
@@ -49,32 +56,43 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "AmStationExtendedHours.findByBanner", query = "SELECT a FROM AmStationExtendedHours a WHERE a.amStationExtendedHoursPK.banner = :banner")})
 public class AmStationExtendedHours implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected AmStationExtendedHoursPK amStationExtendedHoursPK;
   @Column(name = "calls_banr", length = 32)
+  @XmlAttribute
   private String callsBanr;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "number", precision = 12)
+  @XmlAttribute
   private float number;
   @Column(name = "ant_system", length = 1)
+  @XmlAttribute
   private String antSystem;
   @Column(name = "start1", length = 4)
+  @XmlAttribute
   private String start1;
   @Column(name = "end1", length = 4)
+  @XmlAttribute
   private String end1;
   @Column(name = "start2", precision = 12)
+  @XmlAttribute
   private float start2;
   @Column(name = "end2", precision = 12)
+  @XmlAttribute
   private float end2;
   @Column(name = "power", precision = 12)
+  @XmlAttribute
   private float power;
   @Column(name = "rms")
+  @XmlAttribute
   private int rms;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
   @OneToOne(optional = false)
+  @XmlAttribute
   private CanadaStation canadaStation;
 
   public AmStationExtendedHours() {

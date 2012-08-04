@@ -25,7 +25,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "region")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "RegionalFiling.findAll", query = "SELECT r FROM RegionalFiling r"),
   @NamedQuery(name = "RegionalFiling.findByCallsBanr", query = "SELECT r FROM RegionalFiling r WHERE r.callsBanr = :callsBanr"),
@@ -55,44 +62,61 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "RegionalFiling.findByBanner", query = "SELECT r FROM RegionalFiling r WHERE r.regionalFilingPK.banner = :banner")})
 public class RegionalFiling implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected RegionalFilingPK regionalFilingPK;
   @Column(name = "calls_banr", length = 32)
+  @XmlAttribute
   private String callsBanr;
   @Column(name = "region", length = 1)
+  @XmlAttribute
   private String region;
   @Column(name = "district", length = 2)
+  @XmlAttribute
   private String district;
   @Column(name = "inspec_rep", length = 1)
+  @XmlAttribute
   private String inspecRep;
   @Column(name = "painting", length = 4)
+  @XmlAttribute
   private String painting;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "spr_dat", precision = 12)
+  @XmlAttribute
   private float sprDat;
   @Column(name = "rsp_dat", precision = 12)
+  @XmlAttribute
   private float rspDat;
   @Column(name = "stdett", precision = 12)
+  @XmlAttribute
   private float stdett;
   @Column(name = "air_clear", precision = 12)
+  @XmlAttribute
   private float airClear;
   @Column(name = "inspec_dat", precision = 12)
+  @XmlAttribute
   private float inspecDat;
   @Column(name = "rcf_dat", precision = 12)
+  @XmlAttribute
   private float rcfDat;
   @Column(name = "stat_type", length = 2)
+  @XmlAttribute
   private String statType;
   @Column(name = "docfex", length = 4)
+  @XmlAttribute
   private String docfex;
   @Column(name = "province", length = 2)
+  @XmlAttribute
   private String province;
   @Column(name = "country", length = 2)
+  @XmlAttribute
   private String country;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
   @OneToOne(optional = false)
+  @XmlAttribute
   private CanadaStation canadaStation;
 
   public RegionalFiling() {

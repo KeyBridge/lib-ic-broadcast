@@ -25,7 +25,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "params")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "AmStationParameter.findAll", query = "SELECT a FROM AmStationParameter a"),
   @NamedQuery(name = "AmStationParameter.findByCallsBanr", query = "SELECT a FROM AmStationParameter a WHERE a.amStationParameterPK.callsBanr = :callsBanr"),
@@ -51,34 +58,46 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "AmStationParameter.findByD", query = "SELECT a FROM AmStationParameter a WHERE a.d = :d")})
 public class AmStationParameter implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected AmStationParameterPK amStationParameterPK;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "fieldratio", precision = 12)
+  @XmlAttribute
   private float fieldratio;
   @Column(name = "spacing", precision = 12)
+  @XmlAttribute
   private float spacing;
   @Column(name = "orienta", precision = 12)
+  @XmlAttribute
   private float orienta;
   @Column(name = "phasing", precision = 12)
+  @XmlAttribute
   private float phasing;
   @Column(name = "height", precision = 12)
+  @XmlAttribute
   private float height;
   @Column(name = "type_ant")
+  @XmlAttribute
   private int typeAnt;
   @Column(name = "a", precision = 12)
+  @XmlAttribute
   private float a;
   @Column(name = "b", precision = 12)
+  @XmlAttribute
   private float b;
   @Column(name = "c", precision = 12)
+  @XmlAttribute
   private float c;
   @Column(name = "d", precision = 12)
+  @XmlAttribute
   private float d;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToOne
+  @XmlAttribute
   private CanadaStation canadaStation;
 
   public AmStationParameter() {

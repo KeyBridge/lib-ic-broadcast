@@ -25,7 +25,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "comments")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "Comment.findAll", query = "SELECT c FROM Comment c"),
   @NamedQuery(name = "Comment.findByCallsBanr", query = "SELECT c FROM Comment c WHERE c.callsBanr = :callsBanr"),
@@ -50,34 +57,46 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "Comment.findByBanner", query = "SELECT c FROM Comment c WHERE c.commentPK.banner = :banner")})
 public class Comment implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected CommentPK commentPK;
   @Column(name = "calls_banr", length = 32)
+  @XmlAttribute
   private String callsBanr;
   @Column(name = "name", length = 40)
+  @XmlAttribute
   private String name;
   @Column(name = "addr1", length = 40)
+  @XmlAttribute
   private String addr1;
   @Column(name = "addr2", length = 40)
+  @XmlAttribute
   private String addr2;
   @Column(name = "addr3", length = 40)
+  @XmlAttribute
   private String addr3;
   @Column(name = "addr4", length = 40)
+  @XmlAttribute
   private String addr4;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "hqcomm", precision = 12)
+  @XmlAttribute
   private float hqcomm;
   @Column(name = "rgcomm", precision = 12)
+  @XmlAttribute
   private float rgcomm;
   @Column(name = "edetails", precision = 12)
+  @XmlAttribute
   private float edetails;
   @Column(name = "fdetails", precision = 12)
+  @XmlAttribute
   private float fdetails;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
   @OneToOne(optional = false)
+  @XmlAttribute
   private CanadaStation canadaStation;
 
   public Comment() {

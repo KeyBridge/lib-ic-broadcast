@@ -19,6 +19,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
@@ -29,9 +30,11 @@ public class LookupDbCodePK implements Serializable {
 
   @Basic(optional = false)
   @Column(name = "fieldname", nullable = false, length = 32)
+  @XmlAttribute
   private String fieldname;
   @Basic(optional = false)
   @Column(name = "code", nullable = false, length = 8)
+  @XmlAttribute
   private String code;
 
   public LookupDbCodePK() {

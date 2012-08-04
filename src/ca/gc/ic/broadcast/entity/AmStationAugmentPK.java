@@ -19,6 +19,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
@@ -29,12 +30,15 @@ public class AmStationAugmentPK implements Serializable {
 
   @Basic(optional = false)
   @Column(name = "calls_banr", nullable = false, length = 32)
+  @XmlAttribute
   private String callsBanr;
   @Basic(optional = false)
   @Column(name = "dnc_code", nullable = false, length = 1)
+  @XmlAttribute
   private String dncCode;
   @Basic(optional = false)
   @Column(name = "number", nullable = false)
+  @XmlAttribute
   private float number;
 
   public AmStationAugmentPK() {

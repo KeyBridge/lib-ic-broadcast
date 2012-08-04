@@ -25,7 +25,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "contours")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "Contour.findAll", query = "SELECT c FROM Contour c"),
   @NamedQuery(name = "Contour.findByCallsBanr", query = "SELECT c FROM Contour c WHERE c.contourPK.callsBanr = :callsBanr"),
@@ -44,20 +51,25 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "Contour.findByLongEnd", query = "SELECT c FROM Contour c WHERE c.longEnd = :longEnd")})
 public class Contour implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected ContourPK contourPK;
   @Column(name = "name", length = 4)
+  @XmlAttribute
   private String name;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "lat_end", precision = 12)
+  @XmlAttribute
   private float latEnd;
   @Column(name = "long_end", precision = 12)
+  @XmlAttribute
   private float longEnd;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToOne
+  @XmlAttribute
   private CanadaStation canadaStation;
 
   public Contour() {

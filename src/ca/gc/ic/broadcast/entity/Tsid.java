@@ -25,7 +25,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "tsid")
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "Tsid.findAll", query = "SELECT t FROM Tsid t"),
   @NamedQuery(name = "Tsid.findByProvince", query = "SELECT t FROM Tsid t WHERE t.province = :province"),
@@ -44,21 +51,27 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "Tsid.findByTsid", query = "SELECT t FROM Tsid t WHERE t.tsid = :tsid")})
 public class Tsid implements Serializable {
 
+  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected TsidPK tsidPK;
   @Column(name = "province", length = 2)
+  @XmlAttribute
   private String province;
   @Column(name = "city", length = 32)
+  @XmlAttribute
   private String city;
   @Column(name = "channel")
+  @XmlAttribute
   private int channel;
   @Column(name = "tsid", length = 4)
+  @XmlAttribute
   private String tsid;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
   @OneToOne(optional = false)
+  @XmlAttribute
   private CanadaStation canadaStation;
 
   public Tsid() {
