@@ -70,10 +70,10 @@ public class TvStation implements Serializable {
   @Column(length = 3)
   @XmlAttribute
   private String clazz;
-  @Column(length = 6)
+  @Column(name = "latitude", length = 6)
   @XmlAttribute
   private String latitudeDMS;
-  @Column(length = 7)
+  @Column(name = "longitude", length = 7)
   @XmlAttribute
   private String longitudeDMS;
   @Column(name = "limit_code", length = 8)
@@ -174,25 +174,16 @@ public class TvStation implements Serializable {
   private Float radCenter;
   @XmlAttribute
   private Integer channel;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")
-  })
-  @OneToOne
-  private CA_Region caRegion;
-  @JoinColumn(name = "province", referencedColumnName = "province")
-  @ManyToOne
-  private CA_Province province;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),    @JoinColumn(name = "banner", referencedColumnName = "banner")  })  @OneToOne  private CA_Region caRegion;
+//  @JoinColumn(name = "province", referencedColumnName = "province")  @ManyToOne  private CA_Province province;
   @JoinTable(name = "apatstat", joinColumns = {
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")}, inverseJoinColumns = {
-    @JoinColumn(name = "patt_key", referencedColumnName = "patt_key")})
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false),
+    @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false)}, inverseJoinColumns = {
+    @JoinColumn(name = "patt_key", referencedColumnName = "patt_key", nullable = false)})
   @ManyToMany
   private List<Antenna> antennaList;
-  @OneToMany(mappedBy = "tmStation")
-  private List<ServiceContour> serviceContourList;
-  @OneToMany(mappedBy = "tvStation")
-  private List<Comment> commentList;
+//  @OneToMany(mappedBy = "tmStation")  private List<ServiceContour> serviceContourList;
+//  @OneToMany(mappedBy = "tvStation")  private List<Comment> commentList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "tvStation")
   private Tsid tsid;
   //
@@ -529,44 +520,12 @@ public class TvStation implements Serializable {
     this.channel = channel;
   }
 
-  public CA_Region getCaRegion() {
-    return caRegion;
-  }
-
-  public void setCaRegion(CA_Region caRegion) {
-    this.caRegion = caRegion;
-  }
-
-  public CA_Province getProvince() {
-    return province;
-  }
-
-  public void setProvince(CA_Province province) {
-    this.province = province;
-  }
-
   public List<Antenna> getAntennaList() {
     return antennaList;
   }
 
   public void setAntennaList(List<Antenna> antennaList) {
     this.antennaList = antennaList;
-  }
-
-  public List<ServiceContour> getServiceContourList() {
-    return serviceContourList;
-  }
-
-  public void setServiceContourList(List<ServiceContour> serviceContourList) {
-    this.serviceContourList = serviceContourList;
-  }
-
-  public List<Comment> getCommentList() {
-    return commentList;
-  }
-
-  public void setCommentList(List<Comment> commentList) {
-    this.commentList = commentList;
   }
 
   public Tsid getTsid() {

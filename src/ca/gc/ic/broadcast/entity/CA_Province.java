@@ -82,14 +82,10 @@ public class CA_Province implements Serializable {
   @Column(length = 25)
   @XmlAttribute
   private String frndesc;
-  @OneToMany(mappedBy = "province")
-  private List<SDars> sDarsList;
-  @OneToMany(mappedBy = "province")
-  private List<TvStation> tvStationList;
-  @OneToMany(mappedBy = "province")
-  private List<FmStation> fmStationList;
-  @OneToMany(mappedBy = "province")
-  private List<AmStation> amStationList;
+//  @OneToMany(mappedBy = "province")  private List<SDars> sDarsList;
+//  @OneToMany(mappedBy = "province")  private List<TvStation> tvStationList;
+//  @OneToMany(mappedBy = "province")  private List<FmStation> fmStationList;
+//  @OneToMany(mappedBy = "province")  private List<AmStation> amStationList;
 
   public CA_Province() {
   }
@@ -172,38 +168,6 @@ public class CA_Province implements Serializable {
 
   public void setFrndesc(String frndesc) {
     this.frndesc = frndesc;
-  }
-
-  public List<SDars> getSDarsList() {
-    return sDarsList;
-  }
-
-  public void setSDarsList(List<SDars> sDarsList) {
-    this.sDarsList = sDarsList;
-  }
-
-  public List<TvStation> getTvStationList() {
-    return tvStationList;
-  }
-
-  public void setTvStationList(List<TvStation> tvStationList) {
-    this.tvStationList = tvStationList;
-  }
-
-  public List<FmStation> getFmStationList() {
-    return fmStationList;
-  }
-
-  public void setFmStationList(List<FmStation> fmStationList) {
-    this.fmStationList = fmStationList;
-  }
-
-  public List<AmStation> getAmStationList() {
-    return amStationList;
-  }
-
-  public void setAmStationList(List<AmStation> amStationList) {
-    this.amStationList = amStationList;
   }
 
   @Override

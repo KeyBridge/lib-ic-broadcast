@@ -89,21 +89,9 @@ public class Comment implements Serializable {
   @Column(precision = 12)
   @XmlAttribute
   private Float fdetails;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")})
-  @ManyToOne
-  private AmStation amStation;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")})
-  @ManyToOne
-  private AmStation fmStation;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")})
-  @ManyToOne
-  private AmStation tvStation;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign",nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner",nullable = false)})  @ManyToOne  private AmStation amStation;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign",nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner",nullable = false)})  @ManyToOne  private AmStation fmStation;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign",nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner",nullable = false)})  @ManyToOne  private AmStation tvStation;
 
   public Comment() {
   }
@@ -193,31 +181,7 @@ public class Comment implements Serializable {
     this.fdetails = fdetails;
   }
 
-  public AmStation getAmStation() {
-    return amStation;
-  }
-
-  public void setAmStation(AmStation amStation) {
-    this.amStation = amStation;
-  }
-
-  public AmStation getFmStation() {
-    return fmStation;
-  }
-
-  public void setFmStation(AmStation fmStation) {
-    this.fmStation = fmStation;
-  }
-
-  public AmStation getTvStation() {
-    return tvStation;
-  }
-
-  public void setTvStation(AmStation tvStation) {
-    this.tvStation = tvStation;
-  }
   //</editor-fold>
-
   @Override
   public int hashCode() {
     int hash = 0;

@@ -63,21 +63,9 @@ public class ServiceContour implements Serializable {
   @Column(name = "long_end", precision = 12)
   @XmlAttribute
   private Float longEnd;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")})
-  @ManyToOne
-  private AmStation amStation;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")})
-  @ManyToOne
-  private FmStation fmStation;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")})
-  @ManyToOne
-  private TvStation tvStation;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false)})  @ManyToOne  private AmStation amStation;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false)})  @ManyToOne  private FmStation fmStation;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false),    @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false)})  @ManyToOne  private TvStation tvStation;
 
   public ServiceContour() {
   }
@@ -120,30 +108,6 @@ public class ServiceContour implements Serializable {
 
   public void setLongEnd(Float longEnd) {
     this.longEnd = longEnd;
-  }
-
-  public AmStation getAmStation() {
-    return amStation;
-  }
-
-  public void setAmStation(AmStation amStation) {
-    this.amStation = amStation;
-  }
-
-  public FmStation getFmStation() {
-    return fmStation;
-  }
-
-  public void setFmStation(FmStation fmStation) {
-    this.fmStation = fmStation;
-  }
-
-  public TvStation getTvStation() {
-    return tvStation;
-  }
-
-  public void setTvStation(TvStation tvStation) {
-    this.tvStation = tvStation;
   }
 
   @Override

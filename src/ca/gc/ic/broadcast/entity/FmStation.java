@@ -23,14 +23,11 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.PostLoad;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -161,25 +158,16 @@ public class FmStation implements Serializable {
   private Float radCenter;
   @XmlAttribute
   private Integer channel;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")
-  })
-  @OneToOne
-  private CA_Region caRegion;
-  @JoinColumn(name = "province", referencedColumnName = "province")
-  @ManyToOne
-  private CA_Province province;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),    @JoinColumn(name = "banner", referencedColumnName = "banner")  })  @OneToOne  private CA_Region caRegion;
+//  @JoinColumn(name = "province", referencedColumnName = "province")  @ManyToOne  private CA_Province province;
   @JoinTable(name = "apatstat", joinColumns = {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")}, inverseJoinColumns = {
     @JoinColumn(name = "patt_key", referencedColumnName = "patt_key")})
   @ManyToMany
   private List<Antenna> antennaList;
-  @OneToMany(mappedBy = "tvStation")
-  private List<ServiceContour> serviceContourList;
-  @OneToMany(mappedBy = "amStation")
-  private List<Comment> commentList;
+//  @OneToMany(mappedBy = "tvStation")  private List<ServiceContour> serviceContourList;
+//  @OneToMany(mappedBy = "amStation")  private List<Comment> commentList;
   //
   // Decimal latitude values set by postLoad
   //
@@ -482,44 +470,12 @@ public class FmStation implements Serializable {
     this.channel = channel;
   }
 
-  public CA_Region getCaRegion() {
-    return caRegion;
-  }
-
-  public void setCaRegion(CA_Region caRegion) {
-    this.caRegion = caRegion;
-  }
-
-  public CA_Province getProvince() {
-    return province;
-  }
-
-  public void setProvince(CA_Province province) {
-    this.province = province;
-  }
-
   public List<Antenna> getAntennaList() {
     return antennaList;
   }
 
   public void setAntennaList(List<Antenna> antennaList) {
     this.antennaList = antennaList;
-  }
-
-  public List<ServiceContour> getServiceContourList() {
-    return serviceContourList;
-  }
-
-  public void setServiceContourList(List<ServiceContour> serviceContourList) {
-    this.serviceContourList = serviceContourList;
-  }
-
-  public List<Comment> getCommentList() {
-    return commentList;
-  }
-
-  public void setCommentList(List<Comment> commentList) {
-    this.commentList = commentList;
   }
 
   public double getLatitude() {

@@ -16,6 +16,8 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,10 +26,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.PostLoad;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -40,45 +44,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "SDars.findAll", query = "SELECT s FROM SDars s"),
-  @NamedQuery(name = "SDars.findByCity", query = "SELECT s FROM SDars s WHERE s.city = :city"),
   @NamedQuery(name = "SDars.findByCallSign", query = "SELECT s FROM SDars s WHERE s.callSign = :callSign"),
-  @NamedQuery(name = "SDars.findByFrequency", query = "SELECT s FROM SDars s WHERE s.frequency = :frequency"),
-  @NamedQuery(name = "SDars.findByClazz", query = "SELECT s FROM SDars s WHERE s.clazz = :clazz"),
-  @NamedQuery(name = "SDars.findByLatitude", query = "SELECT s FROM SDars s WHERE s.latitude = :latitude"),
-  @NamedQuery(name = "SDars.findByLongitude", query = "SELECT s FROM SDars s WHERE s.longitude = :longitude"),
-  @NamedQuery(name = "SDars.findByBanner", query = "SELECT s FROM SDars s WHERE s.banner = :banner"),
-  @NamedQuery(name = "SDars.findByLimitCode", query = "SELECT s FROM SDars s WHERE s.limitCode = :limitCode"),
   @NamedQuery(name = "SDars.findByNetwork", query = "SELECT s FROM SDars s WHERE s.network = :network"),
-  @NamedQuery(name = "SDars.findByAntMode", query = "SELECT s FROM SDars s WHERE s.antMode = :antMode"),
-  @NamedQuery(name = "SDars.findByBcMode", query = "SELECT s FROM SDars s WHERE s.bcMode = :bcMode"),
-  @NamedQuery(name = "SDars.findByOffset", query = "SELECT s FROM SDars s WHERE s.offset = :offset"),
-  @NamedQuery(name = "SDars.findByOffPrec", query = "SELECT s FROM SDars s WHERE s.offPrec = :offPrec"),
-  @NamedQuery(name = "SDars.findByBrdrLat", query = "SELECT s FROM SDars s WHERE s.brdrLat = :brdrLat"),
-  @NamedQuery(name = "SDars.findByBrdrLong", query = "SELECT s FROM SDars s WHERE s.brdrLong = :brdrLong"),
-  @NamedQuery(name = "SDars.findByBorder", query = "SELECT s FROM SDars s WHERE s.border = :border"),
-  @NamedQuery(name = "SDars.findByCanLand", query = "SELECT s FROM SDars s WHERE s.canLand = :canLand"),
-  @NamedQuery(name = "SDars.findByUsaLand", query = "SELECT s FROM SDars s WHERE s.usaLand = :usaLand"),
-  @NamedQuery(name = "SDars.findByFreLand", query = "SELECT s FROM SDars s WHERE s.freLand = :freLand"),
-  @NamedQuery(name = "SDars.findByDateStCreat", query = "SELECT s FROM SDars s WHERE s.dateStCreat = :dateStCreat"),
-  @NamedQuery(name = "SDars.findByDateStMod", query = "SELECT s FROM SDars s WHERE s.dateStMod = :dateStMod"),
-  @NamedQuery(name = "SDars.findByDateOkDump", query = "SELECT s FROM SDars s WHERE s.dateOkDump = :dateOkDump"),
-  @NamedQuery(name = "SDars.findByDocFile", query = "SELECT s FROM SDars s WHERE s.docFile = :docFile"),
-  @NamedQuery(name = "SDars.findByDecNumber", query = "SELECT s FROM SDars s WHERE s.decNumber = :decNumber"),
-  @NamedQuery(name = "SDars.findByUnattended", query = "SELECT s FROM SDars s WHERE s.unattended = :unattended"),
-  @NamedQuery(name = "SDars.findByCertNumb", query = "SELECT s FROM SDars s WHERE s.certNumb = :certNumb"),
-  @NamedQuery(name = "SDars.findByCloseCap", query = "SELECT s FROM SDars s WHERE s.closeCap = :closeCap"),
-  @NamedQuery(name = "SDars.findByAllocZone", query = "SELECT s FROM SDars s WHERE s.allocZone = :allocZone"),
-  @NamedQuery(name = "SDars.findByBeamTilt", query = "SELECT s FROM SDars s WHERE s.beamTilt = :beamTilt"),
-  @NamedQuery(name = "SDars.findByEhaatt", query = "SELECT s FROM SDars s WHERE s.ehaatt = :ehaatt"),
-  @NamedQuery(name = "SDars.findByErpvav", query = "SELECT s FROM SDars s WHERE s.erpvav = :erpvav"),
-  @NamedQuery(name = "SDars.findByErpvpk", query = "SELECT s FROM SDars s WHERE s.erpvpk = :erpvpk"),
-  @NamedQuery(name = "SDars.findByErpaav", query = "SELECT s FROM SDars s WHERE s.erpaav = :erpaav"),
-  @NamedQuery(name = "SDars.findByErpapk", query = "SELECT s FROM SDars s WHERE s.erpapk = :erpapk"),
-  @NamedQuery(name = "SDars.findByErpvta", query = "SELECT s FROM SDars s WHERE s.erpvta = :erpvta"),
-  @NamedQuery(name = "SDars.findByErpata", query = "SELECT s FROM SDars s WHERE s.erpata = :erpata"),
-  @NamedQuery(name = "SDars.findByGroundLev", query = "SELECT s FROM SDars s WHERE s.groundLev = :groundLev"),
-  @NamedQuery(name = "SDars.findByOverallH", query = "SELECT s FROM SDars s WHERE s.overallH = :overallH"),
-  @NamedQuery(name = "SDars.findByRadCenter", query = "SELECT s FROM SDars s WHERE s.radCenter = :radCenter"),
   @NamedQuery(name = "SDars.findByChannel", query = "SELECT s FROM SDars s WHERE s.channel = :channel")})
 public class SDars implements Serializable {
 
@@ -100,10 +67,10 @@ public class SDars implements Serializable {
   private String clazz;
   @Column(length = 6)
   @XmlAttribute
-  private String latitude;
+  private String latitudeDMS;
   @Column(length = 7)
   @XmlAttribute
-  private String longitude;
+  private String longitudeDMS;
   @Column(length = 2)
   @XmlAttribute
   private String banner;
@@ -198,9 +165,16 @@ public class SDars implements Serializable {
   private Float radCenter;
   @XmlAttribute
   private Integer channel;
-  @JoinColumn(name = "province", referencedColumnName = "province")
-  @ManyToOne
-  private CA_Province province;
+//  @JoinColumn(name = "province", referencedColumnName = "province")  @ManyToOne  private CA_Province province;
+  //
+  // Decimal latitude values set by postLoad
+  //
+  @Transient
+  @XmlAttribute
+  private double latitude;
+  @Transient
+  @XmlAttribute
+  private double longitude;
 
   public SDars() {
   }
@@ -209,6 +183,7 @@ public class SDars implements Serializable {
     this.callSign = callSign;
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
   public String getCity() {
     return city;
   }
@@ -241,20 +216,20 @@ public class SDars implements Serializable {
     this.clazz = clazz;
   }
 
-  public String getLatitude() {
-    return latitude;
+  public String getLatitudeDMS() {
+    return latitudeDMS;
   }
 
-  public void setLatitude(String latitude) {
-    this.latitude = latitude;
+  public void setLatitudeDMS(String latitudeDMS) {
+    this.latitudeDMS = latitudeDMS;
   }
 
-  public String getLongitude() {
-    return longitude;
+  public String getLongitudeDMS() {
+    return longitudeDMS;
   }
 
-  public void setLongitude(String longitude) {
-    this.longitude = longitude;
+  public void setLongitudeDMS(String longitudeDMS) {
+    this.longitudeDMS = longitudeDMS;
   }
 
   public String getBanner() {
@@ -529,12 +504,70 @@ public class SDars implements Serializable {
     this.channel = channel;
   }
 
-  public CA_Province getProvince() {
-    return province;
+  public double getLatitude() {
+    return latitude;
   }
 
-  public void setProvince(CA_Province province) {
-    this.province = province;
+  public void setLatitude(double latitude) {
+    this.latitude = latitude;
+  }
+
+  public double getLongitude() {
+    return longitude;
+  }
+
+  public void setLongitude(double longitude) {
+    this.longitude = longitude;
+  }
+  //</editor-fold>
+
+  @PostLoad
+  public void postLoad() {
+    /**
+     * Set the Latitude
+     */
+    String latitudePattern = "(\\d\\d)(\\d\\d)(\\d\\d)";
+
+    Pattern p = Pattern.compile(latitudePattern);
+    Matcher m = p.matcher(latitudeDMS);
+    if (m.find()) {
+      latitude = DMStoDEC(Integer.valueOf(m.group(1)),
+                          Integer.valueOf(m.group(2)),
+                          Integer.valueOf(m.group(3)),
+                          "N");
+    }
+    /**
+     * Set the Longitude
+     */
+    String longitudePattern;
+    if (longitudeDMS != null && longitudeDMS.length() == 7) {
+      longitudePattern = "(\\d\\d\\d)(\\d\\d)(\\d\\d)";
+    } else {
+      longitudePattern = "(\\d\\d)(\\d\\d)(\\d\\d)";
+    }
+    p = Pattern.compile(longitudePattern);
+    m = p.matcher(longitudeDMS);
+    if (m.find()) {
+      longitude = DMStoDEC(Integer.valueOf(m.group(1)),
+                           Integer.valueOf(m.group(2)),
+                           Integer.valueOf(m.group(3)),
+                           "W");
+    }
+  }
+
+  /**
+   * convert DMS to decimal
+   * <p/>
+   * @param deg param min param direction
+   * @return
+   */
+  private double DMStoDEC(int deg, int min, double sec, String direction) {
+    double val = deg + ((double) min + (sec / 60)) / 60;
+    double dir = 1;
+    if (direction.toUpperCase().contains("S") || direction.toUpperCase().contains("W")) {
+      dir = -1;
+    }
+    return dir * val;
   }
 
   @Override

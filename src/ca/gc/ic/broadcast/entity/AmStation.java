@@ -204,23 +204,15 @@ public class AmStation implements Serializable {
   private Float qCrit;
   @XmlAttribute
   private Integer channel;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")
-  })
-  @OneToOne
-  private CA_Region caRegion;
-  @JoinColumn(name = "province", referencedColumnName = "province")
-  @ManyToOne
-  private CA_Province caProvince;
+//  @JoinColumns({    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),    @JoinColumn(name = "banner", referencedColumnName = "banner")  })  @OneToOne  private CA_Region caRegion;
+//  @JoinColumn(name = "province", referencedColumnName = "province")  @ManyToOne  private CA_Province caProvince;
   @JoinTable(name = "apatstat", joinColumns = {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")}, inverseJoinColumns = {
     @JoinColumn(name = "patt_key", referencedColumnName = "patt_key")})
   @ManyToMany
   private List<Antenna> antennaList;
-  @OneToMany(mappedBy = "amStation")
-  private List<ServiceContour> serviceContourList;
+//  @OneToMany(mappedBy = "amStation")  private List<ServiceContour> serviceContourList;
   @OneToMany(mappedBy = "amStation")
   private List<SignalFeed> signalFeedList;
   @OneToMany(mappedBy = "amStation")
@@ -229,8 +221,7 @@ public class AmStation implements Serializable {
   private List<AmStationTower> amStationTowerList;
   @OneToMany(mappedBy = "amStation")
   private List<AmStationAugment> amStationAugmentList;
-  @OneToMany(mappedBy = "amStation")
-  private List<Comment> commentList;
+//  @OneToMany(mappedBy = "amStation")  private List<Comment> commentList;
   //
   // Decimal latitude values set by postLoad
   //
@@ -645,36 +636,12 @@ public class AmStation implements Serializable {
     this.channel = channel;
   }
 
-  public CA_Region getCaRegion() {
-    return caRegion;
-  }
-
-  public void setCaRegion(CA_Region caRegion) {
-    this.caRegion = caRegion;
-  }
-
-  public CA_Province getCaProvince() {
-    return caProvince;
-  }
-
-  public void setCaProvince(CA_Province caProvince) {
-    this.caProvince = caProvince;
-  }
-
   public List<Antenna> getAntennaList() {
     return antennaList;
   }
 
   public void setAntennaList(List<Antenna> antennaList) {
     this.antennaList = antennaList;
-  }
-
-  public List<ServiceContour> getServiceContourList() {
-    return serviceContourList;
-  }
-
-  public void setServiceContourList(List<ServiceContour> serviceContourList) {
-    this.serviceContourList = serviceContourList;
   }
 
   public List<SignalFeed> getSignalFeedList() {
@@ -707,14 +674,6 @@ public class AmStation implements Serializable {
 
   public void setAmStationAugmentList(List<AmStationAugment> amStationAugmentList) {
     this.amStationAugmentList = amStationAugmentList;
-  }
-
-  public List<Comment> getCommentList() {
-    return commentList;
-  }
-
-  public void setCommentList(List<Comment> commentList) {
-    this.commentList = commentList;
   }
 
   public double getLatitude() {
