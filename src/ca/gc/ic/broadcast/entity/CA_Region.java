@@ -25,11 +25,13 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -64,7 +66,7 @@ public class CA_Region implements Serializable {
   @Id
   @Basic(optional = false)
   @Column(name = "calls_banr", nullable = false, length = 32)
-  @XmlAttribute
+  @XmlTransient
   private String callsBanr;
   @Column(length = 1)
   @XmlAttribute
@@ -78,7 +80,6 @@ public class CA_Region implements Serializable {
   @Column(length = 4)
   @XmlAttribute
   private String painting;
-  // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "spr_dat", precision = 12)
   @XmlAttribute
   private Float sprDat;
@@ -109,11 +110,7 @@ public class CA_Region implements Serializable {
   @Column(length = 2)
   @XmlAttribute
   private String country;
-  @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")})
-  @ManyToOne
-  private AmStation amStation;
+//  @OneToOne(mappedBy = "caRegion")  @XmlTransient  private AmStation amStation;
 
   public CA_Region() {
   }
@@ -240,14 +237,6 @@ public class CA_Region implements Serializable {
 
   public void setCountry(String country) {
     this.country = country;
-  }
-
-  public AmStation getAmStation() {
-    return amStation;
-  }
-
-  public void setAmStation(AmStation amStation) {
-    this.amStation = amStation;
   }
 
   @Override

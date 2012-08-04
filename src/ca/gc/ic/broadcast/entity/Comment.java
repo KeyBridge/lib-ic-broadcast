@@ -26,10 +26,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -94,6 +94,16 @@ public class Comment implements Serializable {
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToOne
   private AmStation amStation;
+  @JoinColumns({
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
+    @JoinColumn(name = "banner", referencedColumnName = "banner")})
+  @ManyToOne
+  private AmStation fmStation;
+  @JoinColumns({
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
+    @JoinColumn(name = "banner", referencedColumnName = "banner")})
+  @ManyToOne
+  private AmStation tvStation;
 
   public Comment() {
   }
@@ -102,6 +112,7 @@ public class Comment implements Serializable {
     this.callsBanr = callsBanr;
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
   public String getCallsBanr() {
     return callsBanr;
   }
@@ -189,6 +200,23 @@ public class Comment implements Serializable {
   public void setAmStation(AmStation amStation) {
     this.amStation = amStation;
   }
+
+  public AmStation getFmStation() {
+    return fmStation;
+  }
+
+  public void setFmStation(AmStation fmStation) {
+    this.fmStation = fmStation;
+  }
+
+  public AmStation getTvStation() {
+    return tvStation;
+  }
+
+  public void setTvStation(AmStation tvStation) {
+    this.tvStation = tvStation;
+  }
+  //</editor-fold>
 
   @Override
   public int hashCode() {

@@ -19,6 +19,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
@@ -29,12 +30,15 @@ public class RadiationPatternPK implements Serializable {
 
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
+  @XmlAttribute
   private int pattKey;
   @Basic(optional = false)
   @Column(nullable = false)
+  @XmlAttribute
   private float angle;
   @Basic(optional = false)
   @Column(nullable = false)
+  @XmlAttribute
   private float gain;
 
   public RadiationPatternPK() {

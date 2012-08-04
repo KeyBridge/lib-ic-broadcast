@@ -22,17 +22,15 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -63,7 +61,6 @@ public class Antenna implements Serializable {
   @Column(name = "hor_ver", length = 1)
   @XmlAttribute
   private String horVer;
-  // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "patt_numb", precision = 12)
   @XmlAttribute
   private Float pattNumb;
@@ -79,8 +76,7 @@ public class Antenna implements Serializable {
   @Column(name = "patt_date", precision = 12)
   @XmlAttribute
   private Float pattDate;
-  @ManyToMany(mappedBy = "antennaList")
-  private List<AmStation> amStationList;
+//  @ManyToMany(mappedBy = "antennaList")  private List<AmStation> amStationList;
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "antenna")
   private List<RadiationPattern> radiationPatternList;
 
@@ -91,6 +87,7 @@ public class Antenna implements Serializable {
     this.pattKey = pattKey;
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
   public Integer getPattKey() {
     return pattKey;
   }
@@ -147,16 +144,6 @@ public class Antenna implements Serializable {
     this.pattDate = pattDate;
   }
 
-
-  public List<AmStation> getAmStationList() {
-    return amStationList;
-  }
-
-  public void setAmStationList(List<AmStation> amStationList) {
-    this.amStationList = amStationList;
-  }
-
-
   public List<RadiationPattern> getRadiationPatternList() {
     return radiationPatternList;
   }
@@ -164,6 +151,7 @@ public class Antenna implements Serializable {
   public void setRadiationPatternList(List<RadiationPattern> radiationPatternList) {
     this.radiationPatternList = radiationPatternList;
   }
+  //</editor-fold>
 
   @Override
   public int hashCode() {

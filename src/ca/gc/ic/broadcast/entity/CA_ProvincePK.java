@@ -19,6 +19,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  *
@@ -29,9 +30,11 @@ public class CA_ProvincePK implements Serializable {
 
   @Basic(optional = false)
   @Column(nullable = false, length = 2)
+  @XmlAttribute
   private String province;
   @Basic(optional = false)
   @Column(nullable = false, length = 2)
+  @XmlAttribute
   private String country;
 
   public CA_ProvincePK() {

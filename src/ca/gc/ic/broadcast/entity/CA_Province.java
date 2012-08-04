@@ -174,7 +174,6 @@ public class CA_Province implements Serializable {
     this.frndesc = frndesc;
   }
 
-
   public List<SDars> getSDarsList() {
     return sDarsList;
   }
@@ -182,7 +181,6 @@ public class CA_Province implements Serializable {
   public void setSDarsList(List<SDars> sDarsList) {
     this.sDarsList = sDarsList;
   }
-
 
   public List<TvStation> getTvStationList() {
     return tvStationList;
@@ -192,7 +190,6 @@ public class CA_Province implements Serializable {
     this.tvStationList = tvStationList;
   }
 
-
   public List<FmStation> getFmStationList() {
     return fmStationList;
   }
@@ -200,7 +197,6 @@ public class CA_Province implements Serializable {
   public void setFmStationList(List<FmStation> fmStationList) {
     this.fmStationList = fmStationList;
   }
-
 
   public List<AmStation> getAmStationList() {
     return amStationList;

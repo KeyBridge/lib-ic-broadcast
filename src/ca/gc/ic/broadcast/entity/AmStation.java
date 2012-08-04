@@ -17,24 +17,28 @@ package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PostLoad;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -200,14 +204,21 @@ public class AmStation implements Serializable {
   private Float qCrit;
   @XmlAttribute
   private Integer channel;
+  @JoinColumns({
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
+    @JoinColumn(name = "banner", referencedColumnName = "banner")
+  })
+  @OneToOne
+  private CA_Region caRegion;
+  @JoinColumn(name = "province", referencedColumnName = "province")
+  @ManyToOne
+  private CA_Province caProvince;
   @JoinTable(name = "apatstat", joinColumns = {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")}, inverseJoinColumns = {
     @JoinColumn(name = "patt_key", referencedColumnName = "patt_key")})
   @ManyToMany
   private List<Antenna> antennaList;
-  @OneToMany(mappedBy = "amStation")
-  private List<CA_Region> cARegionList;
   @OneToMany(mappedBy = "amStation")
   private List<ServiceContour> serviceContourList;
   @OneToMany(mappedBy = "amStation")
@@ -218,17 +229,16 @@ public class AmStation implements Serializable {
   private List<AmStationTower> amStationTowerList;
   @OneToMany(mappedBy = "amStation")
   private List<AmStationAugment> amStationAugmentList;
-  @JoinColumn(name = "province", referencedColumnName = "province")
-  @ManyToOne
-  private CA_Province province;
   @OneToMany(mappedBy = "amStation")
   private List<Comment> commentList;
   //
   // Decimal latitude values set by postLoad
   //
   @Transient
+  @XmlAttribute
   private double latitude;
   @Transient
+  @XmlAttribute
   private double longitude;
 
   public AmStation() {
@@ -275,6 +285,22 @@ public class AmStation implements Serializable {
     this.clazz = clazz;
   }
 
+  public String getLatitudeDMS() {
+    return latitudeDMS;
+  }
+
+  public void setLatitudeDMS(String latitudeDMS) {
+    this.latitudeDMS = latitudeDMS;
+  }
+
+  public String getLongitudeDMS() {
+    return longitudeDMS;
+  }
+
+  public void setLongitudeDMS(String longitudeDMS) {
+    this.longitudeDMS = longitudeDMS;
+  }
+
   public String getStatus1() {
     return status1;
   }
@@ -289,6 +315,22 @@ public class AmStation implements Serializable {
 
   public void setStatus2(String status2) {
     this.status2 = status2;
+  }
+
+  public String getLatitudeDMS2() {
+    return latitudeDMS2;
+  }
+
+  public void setLatitudeDMS2(String latitudeDMS2) {
+    this.latitudeDMS2 = latitudeDMS2;
+  }
+
+  public String getLongitudeDMS2() {
+    return longitudeDMS2;
+  }
+
+  public void setLongitudeDMS2(String longitudeDMS2) {
+    this.longitudeDMS2 = longitudeDMS2;
   }
 
   public Float getBrdrLat() {
@@ -539,11 +581,11 @@ public class AmStation implements Serializable {
     this.parRmsD = parRmsD;
   }
 
-  public Float getQDay() {
+  public Float getqDay() {
     return qDay;
   }
 
-  public void setQDay(Float qDay) {
+  public void setqDay(Float qDay) {
     this.qDay = qDay;
   }
 
@@ -563,11 +605,11 @@ public class AmStation implements Serializable {
     this.parRmsN = parRmsN;
   }
 
-  public Float getQNight() {
+  public Float getqNight() {
     return qNight;
   }
 
-  public void setQNight(Float qNight) {
+  public void setqNight(Float qNight) {
     this.qNight = qNight;
   }
 
@@ -587,11 +629,11 @@ public class AmStation implements Serializable {
     this.parRmsC = parRmsC;
   }
 
-  public Float getQCrit() {
+  public Float getqCrit() {
     return qCrit;
   }
 
-  public void setQCrit(Float qCrit) {
+  public void setqCrit(Float qCrit) {
     this.qCrit = qCrit;
   }
 
@@ -603,52 +645,20 @@ public class AmStation implements Serializable {
     this.channel = channel;
   }
 
-  public String getLatitudeDMS() {
-    return latitudeDMS;
+  public CA_Region getCaRegion() {
+    return caRegion;
   }
 
-  public void setLatitudeDMS(String latitudeDMS) {
-    this.latitudeDMS = latitudeDMS;
+  public void setCaRegion(CA_Region caRegion) {
+    this.caRegion = caRegion;
   }
 
-  public String getLongitudeDMS() {
-    return longitudeDMS;
+  public CA_Province getCaProvince() {
+    return caProvince;
   }
 
-  public void setLongitudeDMS(String longitudeDMS) {
-    this.longitudeDMS = longitudeDMS;
-  }
-
-  public String getLatitudeDMS2() {
-    return latitudeDMS2;
-  }
-
-  public void setLatitudeDMS2(String latitudeDMS2) {
-    this.latitudeDMS2 = latitudeDMS2;
-  }
-
-  public String getLongitudeDMS2() {
-    return longitudeDMS2;
-  }
-
-  public void setLongitudeDMS2(String longitudeDMS2) {
-    this.longitudeDMS2 = longitudeDMS2;
-  }
-
-  public double getLatitude() {
-    return latitude;
-  }
-
-  public void setLatitude(double latitude) {
-    this.latitude = latitude;
-  }
-
-  public double getLongitude() {
-    return longitude;
-  }
-
-  public void setLongitude(double longitude) {
-    this.longitude = longitude;
+  public void setCaProvince(CA_Province caProvince) {
+    this.caProvince = caProvince;
   }
 
   public List<Antenna> getAntennaList() {
@@ -657,14 +667,6 @@ public class AmStation implements Serializable {
 
   public void setAntennaList(List<Antenna> antennaList) {
     this.antennaList = antennaList;
-  }
-
-  public List<CA_Region> getCARegionList() {
-    return cARegionList;
-  }
-
-  public void setCARegionList(List<CA_Region> cARegionList) {
-    this.cARegionList = cARegionList;
   }
 
   public List<ServiceContour> getServiceContourList() {
@@ -707,14 +709,6 @@ public class AmStation implements Serializable {
     this.amStationAugmentList = amStationAugmentList;
   }
 
-  public CA_Province getProvince() {
-    return province;
-  }
-
-  public void setProvince(CA_Province province) {
-    this.province = province;
-  }
-
   public List<Comment> getCommentList() {
     return commentList;
   }
@@ -722,7 +716,72 @@ public class AmStation implements Serializable {
   public void setCommentList(List<Comment> commentList) {
     this.commentList = commentList;
   }
+
+  public double getLatitude() {
+    return latitude;
+  }
+
+  public void setLatitude(double latitude) {
+    this.latitude = latitude;
+  }
+
+  public double getLongitude() {
+    return longitude;
+  }
+
+  public void setLongitude(double longitude) {
+    this.longitude = longitude;
+  }
   //</editor-fold>
+
+  @PostLoad
+  public void postLoad() {
+    /**
+     * Set the Latitude
+     */
+    String latitudePattern = "(\\d\\d)(\\d\\d)(\\d\\d)";
+
+    Pattern p = Pattern.compile(latitudePattern);
+    Matcher m = p.matcher(latitudeDMS);
+    if (m.find()) {
+      latitude = DMStoDEC(Integer.valueOf(m.group(1)),
+                          Integer.valueOf(m.group(2)),
+                          Integer.valueOf(m.group(3)),
+                          "N");
+    }
+    /**
+     * Set the Longitude
+     */
+    String longitudePattern;
+    if (longitudeDMS != null && longitudeDMS.length() == 7) {
+      longitudePattern = "(\\d\\d\\d)(\\d\\d)(\\d\\d)";
+    } else {
+      longitudePattern = "(\\d\\d)(\\d\\d)(\\d\\d)";
+    }
+    p = Pattern.compile(longitudePattern);
+    m = p.matcher(longitudeDMS);
+    if (m.find()) {
+      longitude = DMStoDEC(Integer.valueOf(m.group(1)),
+                           Integer.valueOf(m.group(2)),
+                           Integer.valueOf(m.group(3)),
+                           "W");
+    }
+  }
+
+  /**
+   * convert DMS to decimal
+   * <p/>
+   * @param deg param min param direction
+   * @return
+   */
+  private double DMStoDEC(int deg, int min, double sec, String direction) {
+    double val = deg + ((double) min + (sec / 60)) / 60;
+    double dir = 1;
+    if (direction.toUpperCase().contains("S") || direction.toUpperCase().contains("W")) {
+      dir = -1;
+    }
+    return dir * val;
+  }
 
   @Override
   public int hashCode() {

@@ -16,20 +16,29 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PostLoad;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -43,45 +52,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "TvStation.findAll", query = "SELECT t FROM TvStation t"),
-  @NamedQuery(name = "TvStation.findByCity", query = "SELECT t FROM TvStation t WHERE t.city = :city"),
   @NamedQuery(name = "TvStation.findByCallSign", query = "SELECT t FROM TvStation t WHERE t.tvStationPK.callSign = :callSign"),
-  @NamedQuery(name = "TvStation.findByFrequency", query = "SELECT t FROM TvStation t WHERE t.frequency = :frequency"),
-  @NamedQuery(name = "TvStation.findByClazz", query = "SELECT t FROM TvStation t WHERE t.clazz = :clazz"),
-  @NamedQuery(name = "TvStation.findByLatitude", query = "SELECT t FROM TvStation t WHERE t.latitude = :latitude"),
-  @NamedQuery(name = "TvStation.findByLongitude", query = "SELECT t FROM TvStation t WHERE t.longitude = :longitude"),
-  @NamedQuery(name = "TvStation.findByBanner", query = "SELECT t FROM TvStation t WHERE t.tvStationPK.banner = :banner"),
-  @NamedQuery(name = "TvStation.findByLimitCode", query = "SELECT t FROM TvStation t WHERE t.limitCode = :limitCode"),
   @NamedQuery(name = "TvStation.findByNetwork", query = "SELECT t FROM TvStation t WHERE t.network = :network"),
-  @NamedQuery(name = "TvStation.findByAntMode", query = "SELECT t FROM TvStation t WHERE t.antMode = :antMode"),
-  @NamedQuery(name = "TvStation.findByBcMode", query = "SELECT t FROM TvStation t WHERE t.bcMode = :bcMode"),
-  @NamedQuery(name = "TvStation.findByOffset", query = "SELECT t FROM TvStation t WHERE t.offset = :offset"),
-  @NamedQuery(name = "TvStation.findByOffPrec", query = "SELECT t FROM TvStation t WHERE t.offPrec = :offPrec"),
-  @NamedQuery(name = "TvStation.findByBrdrLat", query = "SELECT t FROM TvStation t WHERE t.brdrLat = :brdrLat"),
-  @NamedQuery(name = "TvStation.findByBrdrLong", query = "SELECT t FROM TvStation t WHERE t.brdrLong = :brdrLong"),
-  @NamedQuery(name = "TvStation.findByBorder", query = "SELECT t FROM TvStation t WHERE t.border = :border"),
-  @NamedQuery(name = "TvStation.findByCanLand", query = "SELECT t FROM TvStation t WHERE t.canLand = :canLand"),
-  @NamedQuery(name = "TvStation.findByUsaLand", query = "SELECT t FROM TvStation t WHERE t.usaLand = :usaLand"),
-  @NamedQuery(name = "TvStation.findByFreLand", query = "SELECT t FROM TvStation t WHERE t.freLand = :freLand"),
-  @NamedQuery(name = "TvStation.findByStCreat", query = "SELECT t FROM TvStation t WHERE t.stCreat = :stCreat"),
-  @NamedQuery(name = "TvStation.findByStMod", query = "SELECT t FROM TvStation t WHERE t.stMod = :stMod"),
-  @NamedQuery(name = "TvStation.findByOkDump", query = "SELECT t FROM TvStation t WHERE t.okDump = :okDump"),
-  @NamedQuery(name = "TvStation.findByDocFile", query = "SELECT t FROM TvStation t WHERE t.docFile = :docFile"),
-  @NamedQuery(name = "TvStation.findByDecNumber", query = "SELECT t FROM TvStation t WHERE t.decNumber = :decNumber"),
-  @NamedQuery(name = "TvStation.findByUnattended", query = "SELECT t FROM TvStation t WHERE t.unattended = :unattended"),
-  @NamedQuery(name = "TvStation.findByCertNumb", query = "SELECT t FROM TvStation t WHERE t.certNumb = :certNumb"),
-  @NamedQuery(name = "TvStation.findByCloseCap", query = "SELECT t FROM TvStation t WHERE t.closeCap = :closeCap"),
-  @NamedQuery(name = "TvStation.findByAllocZone", query = "SELECT t FROM TvStation t WHERE t.allocZone = :allocZone"),
-  @NamedQuery(name = "TvStation.findByBeamTilt", query = "SELECT t FROM TvStation t WHERE t.beamTilt = :beamTilt"),
-  @NamedQuery(name = "TvStation.findByEhaatt", query = "SELECT t FROM TvStation t WHERE t.ehaatt = :ehaatt"),
-  @NamedQuery(name = "TvStation.findByErpvav", query = "SELECT t FROM TvStation t WHERE t.erpvav = :erpvav"),
-  @NamedQuery(name = "TvStation.findByErpvpk", query = "SELECT t FROM TvStation t WHERE t.erpvpk = :erpvpk"),
-  @NamedQuery(name = "TvStation.findByErpaav", query = "SELECT t FROM TvStation t WHERE t.erpaav = :erpaav"),
-  @NamedQuery(name = "TvStation.findByErpapk", query = "SELECT t FROM TvStation t WHERE t.erpapk = :erpapk"),
-  @NamedQuery(name = "TvStation.findByErpvta", query = "SELECT t FROM TvStation t WHERE t.erpvta = :erpvta"),
-  @NamedQuery(name = "TvStation.findByErpata", query = "SELECT t FROM TvStation t WHERE t.erpata = :erpata"),
-  @NamedQuery(name = "TvStation.findByGroundLev", query = "SELECT t FROM TvStation t WHERE t.groundLev = :groundLev"),
-  @NamedQuery(name = "TvStation.findByOverallH", query = "SELECT t FROM TvStation t WHERE t.overallH = :overallH"),
-  @NamedQuery(name = "TvStation.findByRadCenter", query = "SELECT t FROM TvStation t WHERE t.radCenter = :radCenter"),
   @NamedQuery(name = "TvStation.findByChannel", query = "SELECT t FROM TvStation t WHERE t.channel = :channel")})
 public class TvStation implements Serializable {
 
@@ -100,10 +72,10 @@ public class TvStation implements Serializable {
   private String clazz;
   @Column(length = 6)
   @XmlAttribute
-  private String latitude;
+  private String latitudeDMS;
   @Column(length = 7)
   @XmlAttribute
-  private String longitude;
+  private String longitudeDMS;
   @Column(name = "limit_code", length = 8)
   @XmlAttribute
   private String limitCode;
@@ -202,11 +174,36 @@ public class TvStation implements Serializable {
   private Float radCenter;
   @XmlAttribute
   private Integer channel;
+  @JoinColumns({
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
+    @JoinColumn(name = "banner", referencedColumnName = "banner")
+  })
+  @OneToOne
+  private CA_Region caRegion;
   @JoinColumn(name = "province", referencedColumnName = "province")
   @ManyToOne
   private CA_Province province;
+  @JoinTable(name = "apatstat", joinColumns = {
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
+    @JoinColumn(name = "banner", referencedColumnName = "banner")}, inverseJoinColumns = {
+    @JoinColumn(name = "patt_key", referencedColumnName = "patt_key")})
+  @ManyToMany
+  private List<Antenna> antennaList;
+  @OneToMany(mappedBy = "tmStation")
+  private List<ServiceContour> serviceContourList;
+  @OneToMany(mappedBy = "tvStation")
+  private List<Comment> commentList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "tvStation")
   private Tsid tsid;
+  //
+  // Decimal latitude values set by postLoad
+  //
+  @Transient
+  @XmlAttribute
+  private double latitude;
+  @Transient
+  @XmlAttribute
+  private double longitude;
 
   public TvStation() {
   }
@@ -219,6 +216,7 @@ public class TvStation implements Serializable {
     this.tvStationPK = new TvStationPK(callSign, banner);
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
   public TvStationPK getTvStationPK() {
     return tvStationPK;
   }
@@ -251,20 +249,20 @@ public class TvStation implements Serializable {
     this.clazz = clazz;
   }
 
-  public String getLatitude() {
-    return latitude;
+  public String getLatitudeDMS() {
+    return latitudeDMS;
   }
 
-  public void setLatitude(String latitude) {
-    this.latitude = latitude;
+  public void setLatitudeDMS(String latitudeDMS) {
+    this.latitudeDMS = latitudeDMS;
   }
 
-  public String getLongitude() {
-    return longitude;
+  public String getLongitudeDMS() {
+    return longitudeDMS;
   }
 
-  public void setLongitude(String longitude) {
-    this.longitude = longitude;
+  public void setLongitudeDMS(String longitudeDMS) {
+    this.longitudeDMS = longitudeDMS;
   }
 
   public String getLimitCode() {
@@ -531,6 +529,14 @@ public class TvStation implements Serializable {
     this.channel = channel;
   }
 
+  public CA_Region getCaRegion() {
+    return caRegion;
+  }
+
+  public void setCaRegion(CA_Region caRegion) {
+    this.caRegion = caRegion;
+  }
+
   public CA_Province getProvince() {
     return province;
   }
@@ -539,12 +545,102 @@ public class TvStation implements Serializable {
     this.province = province;
   }
 
+  public List<Antenna> getAntennaList() {
+    return antennaList;
+  }
+
+  public void setAntennaList(List<Antenna> antennaList) {
+    this.antennaList = antennaList;
+  }
+
+  public List<ServiceContour> getServiceContourList() {
+    return serviceContourList;
+  }
+
+  public void setServiceContourList(List<ServiceContour> serviceContourList) {
+    this.serviceContourList = serviceContourList;
+  }
+
+  public List<Comment> getCommentList() {
+    return commentList;
+  }
+
+  public void setCommentList(List<Comment> commentList) {
+    this.commentList = commentList;
+  }
+
   public Tsid getTsid() {
     return tsid;
   }
 
   public void setTsid(Tsid tsid) {
     this.tsid = tsid;
+  }
+
+  public double getLatitude() {
+    return latitude;
+  }
+
+  public void setLatitude(double latitude) {
+    this.latitude = latitude;
+  }
+
+  public double getLongitude() {
+    return longitude;
+  }
+
+  public void setLongitude(double longitude) {
+    this.longitude = longitude;
+  }
+  //</editor-fold>
+
+  @PostLoad
+  public void postLoad() {
+    /**
+     * Set the Latitude
+     */
+    String latitudePattern = "(\\d\\d)(\\d\\d)(\\d\\d)";
+
+    Pattern p = Pattern.compile(latitudePattern);
+    Matcher m = p.matcher(latitudeDMS);
+    if (m.find()) {
+      latitude = DMStoDEC(Integer.valueOf(m.group(1)),
+                          Integer.valueOf(m.group(2)),
+                          Integer.valueOf(m.group(3)),
+                          "N");
+    }
+    /**
+     * Set the Longitude
+     */
+    String longitudePattern;
+    if (longitudeDMS != null && longitudeDMS.length() == 7) {
+      longitudePattern = "(\\d\\d\\d)(\\d\\d)(\\d\\d)";
+    } else {
+      longitudePattern = "(\\d\\d)(\\d\\d)(\\d\\d)";
+    }
+    p = Pattern.compile(longitudePattern);
+    m = p.matcher(longitudeDMS);
+    if (m.find()) {
+      longitude = DMStoDEC(Integer.valueOf(m.group(1)),
+                           Integer.valueOf(m.group(2)),
+                           Integer.valueOf(m.group(3)),
+                           "W");
+    }
+  }
+
+  /**
+   * convert DMS to decimal
+   * <p/>
+   * @param deg param min param direction
+   * @return
+   */
+  private double DMStoDEC(int deg, int min, double sec, String direction) {
+    double val = deg + ((double) min + (sec / 60)) / 60;
+    double dir = 1;
+    if (direction.toUpperCase().contains("S") || direction.toUpperCase().contains("W")) {
+      dir = -1;
+    }
+    return dir * val;
   }
 
   @Override

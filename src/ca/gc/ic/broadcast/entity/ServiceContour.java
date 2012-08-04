@@ -25,10 +25,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -68,6 +68,16 @@ public class ServiceContour implements Serializable {
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToOne
   private AmStation amStation;
+  @JoinColumns({
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
+    @JoinColumn(name = "banner", referencedColumnName = "banner")})
+  @ManyToOne
+  private FmStation fmStation;
+  @JoinColumns({
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
+    @JoinColumn(name = "banner", referencedColumnName = "banner")})
+  @ManyToOne
+  private TvStation tvStation;
 
   public ServiceContour() {
   }
@@ -118,6 +128,22 @@ public class ServiceContour implements Serializable {
 
   public void setAmStation(AmStation amStation) {
     this.amStation = amStation;
+  }
+
+  public FmStation getFmStation() {
+    return fmStation;
+  }
+
+  public void setFmStation(FmStation fmStation) {
+    this.fmStation = fmStation;
+  }
+
+  public TvStation getTvStation() {
+    return tvStation;
+  }
+
+  public void setTvStation(TvStation tvStation) {
+    this.tvStation = tvStation;
   }
 
   @Override
