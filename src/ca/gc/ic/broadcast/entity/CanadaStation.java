@@ -43,67 +43,9 @@ import javax.xml.bind.annotation.XmlTransient;
   @NamedQuery(name = "CanadaStation.findByStationType", query = "SELECT c FROM CanadaStation c WHERE c.stationType = :stationType"),
   @NamedQuery(name = "CanadaStation.findByBanner", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.banner = :banner"),
   @NamedQuery(name = "CanadaStation.findByCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign = :callSign"),
-  @NamedQuery(name = "CanadaStation.findByChannel", query = "SELECT c FROM CanadaStation c WHERE c.channel = :channel"),
-  @NamedQuery(name = "CanadaStation.findByErpvpk", query = "SELECT c FROM CanadaStation c WHERE c.erpvpk = :erpvpk"),
-  @NamedQuery(name = "CanadaStation.findByHaat", query = "SELECT c FROM CanadaStation c WHERE c.haat = :haat"),
-  @NamedQuery(name = "CanadaStation.findByHagl", query = "SELECT c FROM CanadaStation c WHERE c.hagl = :hagl"),
-  @NamedQuery(name = "CanadaStation.findByLatitude", query = "SELECT c FROM CanadaStation c WHERE c.latitude = :latitude"),
-  @NamedQuery(name = "CanadaStation.findByLongitude", query = "SELECT c FROM CanadaStation c WHERE c.longitude = :longitude"),
-  @NamedQuery(name = "CanadaStation.findByAllocZone", query = "SELECT c FROM CanadaStation c WHERE c.allocZone = :allocZone"),
-  @NamedQuery(name = "CanadaStation.findByAntMode", query = "SELECT c FROM CanadaStation c WHERE c.antMode = :antMode"),
-  @NamedQuery(name = "CanadaStation.findByAutoProg", query = "SELECT c FROM CanadaStation c WHERE c.autoProg = :autoProg"),
-  @NamedQuery(name = "CanadaStation.findByBcMode", query = "SELECT c FROM CanadaStation c WHERE c.bcMode = :bcMode"),
-  @NamedQuery(name = "CanadaStation.findByBeamTilt", query = "SELECT c FROM CanadaStation c WHERE c.beamTilt = :beamTilt"),
-  @NamedQuery(name = "CanadaStation.findByBorder", query = "SELECT c FROM CanadaStation c WHERE c.border = :border"),
-  @NamedQuery(name = "CanadaStation.findByBrdrLat", query = "SELECT c FROM CanadaStation c WHERE c.brdrLat = :brdrLat"),
-  @NamedQuery(name = "CanadaStation.findByBrdrLong", query = "SELECT c FROM CanadaStation c WHERE c.brdrLong = :brdrLong"),
-  @NamedQuery(name = "CanadaStation.findByCanLand", query = "SELECT c FROM CanadaStation c WHERE c.canLand = :canLand"),
-  @NamedQuery(name = "CanadaStation.findByCertNumb", query = "SELECT c FROM CanadaStation c WHERE c.certNumb = :certNumb"),
-  @NamedQuery(name = "CanadaStation.findByCity", query = "SELECT c FROM CanadaStation c WHERE c.city = :city"),
-  @NamedQuery(name = "CanadaStation.findByClazz", query = "SELECT c FROM CanadaStation c WHERE c.clazz = :clazz"),
-  @NamedQuery(name = "CanadaStation.findByCloseCap", query = "SELECT c FROM CanadaStation c WHERE c.closeCap = :closeCap"),
-  @NamedQuery(name = "CanadaStation.findByDecNumber", query = "SELECT c FROM CanadaStation c WHERE c.decNumber = :decNumber"),
-  @NamedQuery(name = "CanadaStation.findByDocFile", query = "SELECT c FROM CanadaStation c WHERE c.docFile = :docFile"),
-  @NamedQuery(name = "CanadaStation.findByErpaav", query = "SELECT c FROM CanadaStation c WHERE c.erpaav = :erpaav"),
-  @NamedQuery(name = "CanadaStation.findByErpapk", query = "SELECT c FROM CanadaStation c WHERE c.erpapk = :erpapk"),
-  @NamedQuery(name = "CanadaStation.findByErpata", query = "SELECT c FROM CanadaStation c WHERE c.erpata = :erpata"),
-  @NamedQuery(name = "CanadaStation.findByErphav", query = "SELECT c FROM CanadaStation c WHERE c.erphav = :erphav"),
-  @NamedQuery(name = "CanadaStation.findByErphpk", query = "SELECT c FROM CanadaStation c WHERE c.erphpk = :erphpk"),
-  @NamedQuery(name = "CanadaStation.findByErpvav", query = "SELECT c FROM CanadaStation c WHERE c.erpvav = :erpvav"),
-  @NamedQuery(name = "CanadaStation.findByErpvta", query = "SELECT c FROM CanadaStation c WHERE c.erpvta = :erpvta"),
-  @NamedQuery(name = "CanadaStation.findByEuvalu", query = "SELECT c FROM CanadaStation c WHERE c.euvalu = :euvalu"),
-  @NamedQuery(name = "CanadaStation.findByFreLand", query = "SELECT c FROM CanadaStation c WHERE c.freLand = :freLand"),
-  @NamedQuery(name = "CanadaStation.findByFrequency", query = "SELECT c FROM CanadaStation c WHERE c.frequency = :frequency"),
-  @NamedQuery(name = "CanadaStation.findByGroundLev", query = "SELECT c FROM CanadaStation c WHERE c.groundLev = :groundLev"),
-  @NamedQuery(name = "CanadaStation.findByIfrbnD", query = "SELECT c FROM CanadaStation c WHERE c.ifrbnD = :ifrbnD"),
-  @NamedQuery(name = "CanadaStation.findByIfrbnN", query = "SELECT c FROM CanadaStation c WHERE c.ifrbnN = :ifrbnN"),
-  @NamedQuery(name = "CanadaStation.findByLatitude2", query = "SELECT c FROM CanadaStation c WHERE c.latitude2 = :latitude2"),
-  @NamedQuery(name = "CanadaStation.findByLimitCode", query = "SELECT c FROM CanadaStation c WHERE c.limitCode = :limitCode"),
-  @NamedQuery(name = "CanadaStation.findByLongitude2", query = "SELECT c FROM CanadaStation c WHERE c.longitude2 = :longitude2"),
-  @NamedQuery(name = "CanadaStation.findByNetwork", query = "SELECT c FROM CanadaStation c WHERE c.network = :network"),
-  @NamedQuery(name = "CanadaStation.findByOffPrec", query = "SELECT c FROM CanadaStation c WHERE c.offPrec = :offPrec"),
-  @NamedQuery(name = "CanadaStation.findByOffset", query = "SELECT c FROM CanadaStation c WHERE c.offset = :offset"),
-  @NamedQuery(name = "CanadaStation.findByOkDump", query = "SELECT c FROM CanadaStation c WHERE c.okDump = :okDump"),
-  @NamedQuery(name = "CanadaStation.findByParRmsC", query = "SELECT c FROM CanadaStation c WHERE c.parRmsC = :parRmsC"),
-  @NamedQuery(name = "CanadaStation.findByParRmsD", query = "SELECT c FROM CanadaStation c WHERE c.parRmsD = :parRmsD"),
-  @NamedQuery(name = "CanadaStation.findByParRmsN", query = "SELECT c FROM CanadaStation c WHERE c.parRmsN = :parRmsN"),
-  @NamedQuery(name = "CanadaStation.findByPowercrit", query = "SELECT c FROM CanadaStation c WHERE c.powercrit = :powercrit"),
-  @NamedQuery(name = "CanadaStation.findByPowerday", query = "SELECT c FROM CanadaStation c WHERE c.powerday = :powerday"),
-  @NamedQuery(name = "CanadaStation.findByPowernight", query = "SELECT c FROM CanadaStation c WHERE c.powernight = :powernight"),
-  @NamedQuery(name = "CanadaStation.findByProvince", query = "SELECT c FROM CanadaStation c WHERE c.province = :province"),
-  @NamedQuery(name = "CanadaStation.findByQCrit", query = "SELECT c FROM CanadaStation c WHERE c.qCrit = :qCrit"),
-  @NamedQuery(name = "CanadaStation.findByQDay", query = "SELECT c FROM CanadaStation c WHERE c.qDay = :qDay"),
-  @NamedQuery(name = "CanadaStation.findByQNight", query = "SELECT c FROM CanadaStation c WHERE c.qNight = :qNight"),
-  @NamedQuery(name = "CanadaStation.findByRadCenter", query = "SELECT c FROM CanadaStation c WHERE c.radCenter = :radCenter"),
-  @NamedQuery(name = "CanadaStation.findByScmo", query = "SELECT c FROM CanadaStation c WHERE c.scmo = :scmo"),
-  @NamedQuery(name = "CanadaStation.findBySsCode", query = "SELECT c FROM CanadaStation c WHERE c.ssCode = :ssCode"),
-  @NamedQuery(name = "CanadaStation.findByStCreat", query = "SELECT c FROM CanadaStation c WHERE c.stCreat = :stCreat"),
-  @NamedQuery(name = "CanadaStation.findByStMod", query = "SELECT c FROM CanadaStation c WHERE c.stMod = :stMod"),
-  @NamedQuery(name = "CanadaStation.findByStatus1", query = "SELECT c FROM CanadaStation c WHERE c.status1 = :status1"),
-  @NamedQuery(name = "CanadaStation.findByStatus2", query = "SELECT c FROM CanadaStation c WHERE c.status2 = :status2"),
-  @NamedQuery(name = "CanadaStation.findByUnattended", query = "SELECT c FROM CanadaStation c WHERE c.unattended = :unattended"),
-  @NamedQuery(name = "CanadaStation.findByUsaLand", query = "SELECT c FROM CanadaStation c WHERE c.usaLand = :usaLand")})
+  @NamedQuery(name = "CanadaStation.findByChannel", query = "SELECT c FROM CanadaStation c WHERE c.channel = :channel")})
 public class CanadaStation implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected CanadaStationPK canadaStationPK;
@@ -129,7 +71,7 @@ public class CanadaStation implements Serializable {
   @Column(name = "longitude", nullable = false)
   private float longitude;
   @Column(name = "alloc_zone")
-  private Integer allocZone;
+  private int allocZone;
   @Column(name = "ant_mode")
   private Character antMode;
   @Column(name = "auto_prog", length = 1)
@@ -138,15 +80,15 @@ public class CanadaStation implements Serializable {
   private Character bcMode;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "beam_tilt", precision = 12)
-  private Float beamTilt;
+  private float beamTilt;
   @Column(name = "border", precision = 12)
-  private Float border;
+  private float border;
   @Column(name = "brdr_lat", length = 6)
   private String brdrLat;
   @Column(name = "brdr_long", length = 7)
   private String brdrLong;
   @Column(name = "can_land", precision = 12)
-  private Float canLand;
+  private float canLand;
   @Column(name = "cert_numb", length = 6)
   private String certNumb;
   @Column(name = "city", length = 25)
@@ -156,35 +98,35 @@ public class CanadaStation implements Serializable {
   @Column(name = "close_cap")
   private Character closeCap;
   @Column(name = "dec_number")
-  private Integer decNumber;
+  private int decNumber;
   @Column(name = "doc_file")
-  private Integer docFile;
+  private int docFile;
   @Column(name = "erpaav", precision = 12)
-  private Float erpaav;
+  private float erpaav;
   @Column(name = "erpapk", precision = 12)
-  private Float erpapk;
+  private float erpapk;
   @Column(name = "erpata")
-  private Integer erpata;
+  private int erpata;
   @Column(name = "erphav", precision = 12)
-  private Float erphav;
+  private float erphav;
   @Column(name = "erphpk", precision = 12)
-  private Float erphpk;
+  private float erphpk;
   @Column(name = "erpvav", precision = 12)
-  private Float erpvav;
+  private float erpvav;
   @Column(name = "erpvta", precision = 12)
-  private Float erpvta;
+  private float erpvta;
   @Column(name = "euvalu", precision = 12)
-  private Float euvalu;
+  private float euvalu;
   @Column(name = "fre_land", precision = 12)
-  private Float freLand;
+  private float freLand;
   @Column(name = "frequency", precision = 12)
-  private Float frequency;
+  private float frequency;
   @Column(name = "ground_lev", precision = 12)
-  private Float groundLev;
+  private float groundLev;
   @Column(name = "ifrbn_d", precision = 12)
-  private Float ifrbnD;
+  private float ifrbnD;
   @Column(name = "ifrbn_n", precision = 12)
-  private Float ifrbnN;
+  private float ifrbnN;
   @Column(name = "latitude2", length = 6)
   private String latitude2;
   @Column(name = "limit_code", length = 8)
@@ -200,27 +142,27 @@ public class CanadaStation implements Serializable {
   @Column(name = "ok_dump", length = 8)
   private String okDump;
   @Column(name = "par_rms_c", precision = 12)
-  private Float parRmsC;
+  private float parRmsC;
   @Column(name = "par_rms_d", precision = 12)
-  private Float parRmsD;
+  private float parRmsD;
   @Column(name = "par_rms_n", precision = 12)
-  private Float parRmsN;
+  private float parRmsN;
   @Column(name = "powercrit", precision = 12)
-  private Float powercrit;
+  private float powercrit;
   @Column(name = "powerday", precision = 12)
-  private Float powerday;
+  private float powerday;
   @Column(name = "powernight", precision = 12)
-  private Float powernight;
+  private float powernight;
   @Column(name = "province", length = 2)
   private String province;
   @Column(name = "q_crit", precision = 12)
-  private Float qCrit;
+  private float qCrit;
   @Column(name = "q_day", precision = 12)
-  private Float qDay;
+  private float qDay;
   @Column(name = "q_night", precision = 12)
-  private Float qNight;
+  private float qNight;
   @Column(name = "rad_center", precision = 12)
-  private Float radCenter;
+  private float radCenter;
   @Column(name = "scmo")
   private Character scmo;
   @Column(name = "ss_code", length = 5)
@@ -236,7 +178,7 @@ public class CanadaStation implements Serializable {
   @Column(name = "unattended")
   private Character unattended;
   @Column(name = "usa_land", precision = 12)
-  private Float usaLand;
+  private float usaLand;
   @ManyToMany(mappedBy = "canadaStationList")
   private List<Antenna> antennaList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
@@ -342,11 +284,11 @@ public class CanadaStation implements Serializable {
     this.longitude = longitude;
   }
 
-  public Integer getAllocZone() {
+  public int getAllocZone() {
     return allocZone;
   }
 
-  public void setAllocZone(Integer allocZone) {
+  public void setAllocZone(int allocZone) {
     this.allocZone = allocZone;
   }
 
@@ -374,19 +316,19 @@ public class CanadaStation implements Serializable {
     this.bcMode = bcMode;
   }
 
-  public Float getBeamTilt() {
+  public float getBeamTilt() {
     return beamTilt;
   }
 
-  public void setBeamTilt(Float beamTilt) {
+  public void setBeamTilt(float beamTilt) {
     this.beamTilt = beamTilt;
   }
 
-  public Float getBorder() {
+  public float getBorder() {
     return border;
   }
 
-  public void setBorder(Float border) {
+  public void setBorder(float border) {
     this.border = border;
   }
 
@@ -406,11 +348,11 @@ public class CanadaStation implements Serializable {
     this.brdrLong = brdrLong;
   }
 
-  public Float getCanLand() {
+  public float getCanLand() {
     return canLand;
   }
 
-  public void setCanLand(Float canLand) {
+  public void setCanLand(float canLand) {
     this.canLand = canLand;
   }
 
@@ -446,123 +388,123 @@ public class CanadaStation implements Serializable {
     this.closeCap = closeCap;
   }
 
-  public Integer getDecNumber() {
+  public int getDecNumber() {
     return decNumber;
   }
 
-  public void setDecNumber(Integer decNumber) {
+  public void setDecNumber(int decNumber) {
     this.decNumber = decNumber;
   }
 
-  public Integer getDocFile() {
+  public int getDocFile() {
     return docFile;
   }
 
-  public void setDocFile(Integer docFile) {
+  public void setDocFile(int docFile) {
     this.docFile = docFile;
   }
 
-  public Float getErpaav() {
+  public float getErpaav() {
     return erpaav;
   }
 
-  public void setErpaav(Float erpaav) {
+  public void setErpaav(float erpaav) {
     this.erpaav = erpaav;
   }
 
-  public Float getErpapk() {
+  public float getErpapk() {
     return erpapk;
   }
 
-  public void setErpapk(Float erpapk) {
+  public void setErpapk(float erpapk) {
     this.erpapk = erpapk;
   }
 
-  public Integer getErpata() {
+  public int getErpata() {
     return erpata;
   }
 
-  public void setErpata(Integer erpata) {
+  public void setErpata(int erpata) {
     this.erpata = erpata;
   }
 
-  public Float getErphav() {
+  public float getErphav() {
     return erphav;
   }
 
-  public void setErphav(Float erphav) {
+  public void setErphav(float erphav) {
     this.erphav = erphav;
   }
 
-  public Float getErphpk() {
+  public float getErphpk() {
     return erphpk;
   }
 
-  public void setErphpk(Float erphpk) {
+  public void setErphpk(float erphpk) {
     this.erphpk = erphpk;
   }
 
-  public Float getErpvav() {
+  public float getErpvav() {
     return erpvav;
   }
 
-  public void setErpvav(Float erpvav) {
+  public void setErpvav(float erpvav) {
     this.erpvav = erpvav;
   }
 
-  public Float getErpvta() {
+  public float getErpvta() {
     return erpvta;
   }
 
-  public void setErpvta(Float erpvta) {
+  public void setErpvta(float erpvta) {
     this.erpvta = erpvta;
   }
 
-  public Float getEuvalu() {
+  public float getEuvalu() {
     return euvalu;
   }
 
-  public void setEuvalu(Float euvalu) {
+  public void setEuvalu(float euvalu) {
     this.euvalu = euvalu;
   }
 
-  public Float getFreLand() {
+  public float getFreLand() {
     return freLand;
   }
 
-  public void setFreLand(Float freLand) {
+  public void setFreLand(float freLand) {
     this.freLand = freLand;
   }
 
-  public Float getFrequency() {
+  public float getFrequency() {
     return frequency;
   }
 
-  public void setFrequency(Float frequency) {
+  public void setFrequency(float frequency) {
     this.frequency = frequency;
   }
 
-  public Float getGroundLev() {
+  public float getGroundLev() {
     return groundLev;
   }
 
-  public void setGroundLev(Float groundLev) {
+  public void setGroundLev(float groundLev) {
     this.groundLev = groundLev;
   }
 
-  public Float getIfrbnD() {
+  public float getIfrbnD() {
     return ifrbnD;
   }
 
-  public void setIfrbnD(Float ifrbnD) {
+  public void setIfrbnD(float ifrbnD) {
     this.ifrbnD = ifrbnD;
   }
 
-  public Float getIfrbnN() {
+  public float getIfrbnN() {
     return ifrbnN;
   }
 
-  public void setIfrbnN(Float ifrbnN) {
+  public void setIfrbnN(float ifrbnN) {
     this.ifrbnN = ifrbnN;
   }
 
@@ -622,51 +564,51 @@ public class CanadaStation implements Serializable {
     this.okDump = okDump;
   }
 
-  public Float getParRmsC() {
+  public float getParRmsC() {
     return parRmsC;
   }
 
-  public void setParRmsC(Float parRmsC) {
+  public void setParRmsC(float parRmsC) {
     this.parRmsC = parRmsC;
   }
 
-  public Float getParRmsD() {
+  public float getParRmsD() {
     return parRmsD;
   }
 
-  public void setParRmsD(Float parRmsD) {
+  public void setParRmsD(float parRmsD) {
     this.parRmsD = parRmsD;
   }
 
-  public Float getParRmsN() {
+  public float getParRmsN() {
     return parRmsN;
   }
 
-  public void setParRmsN(Float parRmsN) {
+  public void setParRmsN(float parRmsN) {
     this.parRmsN = parRmsN;
   }
 
-  public Float getPowercrit() {
+  public float getPowercrit() {
     return powercrit;
   }
 
-  public void setPowercrit(Float powercrit) {
+  public void setPowercrit(float powercrit) {
     this.powercrit = powercrit;
   }
 
-  public Float getPowerday() {
+  public float getPowerday() {
     return powerday;
   }
 
-  public void setPowerday(Float powerday) {
+  public void setPowerday(float powerday) {
     this.powerday = powerday;
   }
 
-  public Float getPowernight() {
+  public float getPowernight() {
     return powernight;
   }
 
-  public void setPowernight(Float powernight) {
+  public void setPowernight(float powernight) {
     this.powernight = powernight;
   }
 
@@ -678,35 +620,35 @@ public class CanadaStation implements Serializable {
     this.province = province;
   }
 
-  public Float getQCrit() {
+  public float getQCrit() {
     return qCrit;
   }
 
-  public void setQCrit(Float qCrit) {
+  public void setQCrit(float qCrit) {
     this.qCrit = qCrit;
   }
 
-  public Float getQDay() {
+  public float getQDay() {
     return qDay;
   }
 
-  public void setQDay(Float qDay) {
+  public void setQDay(float qDay) {
     this.qDay = qDay;
   }
 
-  public Float getQNight() {
+  public float getQNight() {
     return qNight;
   }
 
-  public void setQNight(Float qNight) {
+  public void setQNight(float qNight) {
     this.qNight = qNight;
   }
 
-  public Float getRadCenter() {
+  public float getRadCenter() {
     return radCenter;
   }
 
-  public void setRadCenter(Float radCenter) {
+  public void setRadCenter(float radCenter) {
     this.radCenter = radCenter;
   }
 
@@ -766,11 +708,11 @@ public class CanadaStation implements Serializable {
     this.unattended = unattended;
   }
 
-  public Float getUsaLand() {
+  public float getUsaLand() {
     return usaLand;
   }
 
-  public void setUsaLand(Float usaLand) {
+  public void setUsaLand(float usaLand) {
     this.usaLand = usaLand;
   }
 
@@ -874,5 +816,4 @@ public class CanadaStation implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.CanadaStation[ canadaStationPK=" + canadaStationPK + " ]";
   }
-
 }

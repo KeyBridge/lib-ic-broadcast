@@ -50,30 +50,31 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "AmStationParameter.findByC", query = "SELECT a FROM AmStationParameter a WHERE a.c = :c"),
   @NamedQuery(name = "AmStationParameter.findByD", query = "SELECT a FROM AmStationParameter a WHERE a.d = :d")})
 public class AmStationParameter implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected AmStationParameterPK amStationParameterPK;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "fieldratio", precision = 12)
-  private Float fieldratio;
+  private float fieldratio;
   @Column(name = "spacing", precision = 12)
-  private Float spacing;
+  private float spacing;
   @Column(name = "orienta", precision = 12)
-  private Float orienta;
+  private float orienta;
   @Column(name = "phasing", precision = 12)
-  private Float phasing;
+  private float phasing;
   @Column(name = "height", precision = 12)
-  private Float height;
+  private float height;
   @Column(name = "type_ant")
-  private Integer typeAnt;
+  private int typeAnt;
   @Column(name = "a", precision = 12)
-  private Float a;
+  private float a;
   @Column(name = "b", precision = 12)
-  private Float b;
+  private float b;
   @Column(name = "c", precision = 12)
-  private Float c;
+  private float c;
   @Column(name = "d", precision = 12)
-  private Float d;
+  private float d;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
@@ -99,83 +100,83 @@ public class AmStationParameter implements Serializable {
     this.amStationParameterPK = amStationParameterPK;
   }
 
-  public Float getFieldratio() {
+  public float getFieldratio() {
     return fieldratio;
   }
 
-  public void setFieldratio(Float fieldratio) {
+  public void setFieldratio(float fieldratio) {
     this.fieldratio = fieldratio;
   }
 
-  public Float getSpacing() {
+  public float getSpacing() {
     return spacing;
   }
 
-  public void setSpacing(Float spacing) {
+  public void setSpacing(float spacing) {
     this.spacing = spacing;
   }
 
-  public Float getOrienta() {
+  public float getOrienta() {
     return orienta;
   }
 
-  public void setOrienta(Float orienta) {
+  public void setOrienta(float orienta) {
     this.orienta = orienta;
   }
 
-  public Float getPhasing() {
+  public float getPhasing() {
     return phasing;
   }
 
-  public void setPhasing(Float phasing) {
+  public void setPhasing(float phasing) {
     this.phasing = phasing;
   }
 
-  public Float getHeight() {
+  public float getHeight() {
     return height;
   }
 
-  public void setHeight(Float height) {
+  public void setHeight(float height) {
     this.height = height;
   }
 
-  public Integer getTypeAnt() {
+  public int getTypeAnt() {
     return typeAnt;
   }
 
-  public void setTypeAnt(Integer typeAnt) {
+  public void setTypeAnt(int typeAnt) {
     this.typeAnt = typeAnt;
   }
 
-  public Float getA() {
+  public float getA() {
     return a;
   }
 
-  public void setA(Float a) {
+  public void setA(float a) {
     this.a = a;
   }
 
-  public Float getB() {
+  public float getB() {
     return b;
   }
 
-  public void setB(Float b) {
+  public void setB(float b) {
     this.b = b;
   }
 
-  public Float getC() {
+  public float getC() {
     return c;
   }
 
-  public void setC(Float c) {
+  public void setC(float c) {
     this.c = c;
   }
 
-  public Float getD() {
+  public float getD() {
     return d;
   }
 
-  public void setD(Float d) {
+  public void setD(float d) {
     this.d = d;
   }
 
@@ -211,5 +212,4 @@ public class AmStationParameter implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.AmStationParameter[ amStationParameterPK=" + amStationParameterPK + " ]";
   }
-
 }

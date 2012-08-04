@@ -26,6 +26,7 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class CanadaStationPK implements Serializable {
+
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
   private String banner;
@@ -85,5 +86,4 @@ public class CanadaStationPK implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.CanadaStationPK[ banner=" + banner + ", callSign=" + callSign + " ]";
   }
-
 }

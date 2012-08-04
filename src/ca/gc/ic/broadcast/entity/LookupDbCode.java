@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "LookupDbCode.findByDescriptionEnglish", query = "SELECT l FROM LookupDbCode l WHERE l.descriptionEnglish = :descriptionEnglish"),
   @NamedQuery(name = "LookupDbCode.findByDescriptionFrench", query = "SELECT l FROM LookupDbCode l WHERE l.descriptionFrench = :descriptionFrench")})
 public class LookupDbCode implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected LookupDbCodePK lookupDbCodePK;
@@ -105,5 +106,4 @@ public class LookupDbCode implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.LookupDbCode[ lookupDbCodePK=" + lookupDbCodePK + " ]";
   }
-
 }

@@ -43,6 +43,7 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "Tsid.findByChannel", query = "SELECT t FROM Tsid t WHERE t.channel = :channel"),
   @NamedQuery(name = "Tsid.findByTsid", query = "SELECT t FROM Tsid t WHERE t.tsid = :tsid")})
 public class Tsid implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected TsidPK tsidPK;
@@ -51,7 +52,7 @@ public class Tsid implements Serializable {
   @Column(name = "city", length = 32)
   private String city;
   @Column(name = "channel")
-  private Integer channel;
+  private int channel;
   @Column(name = "tsid", length = 4)
   private String tsid;
   @JoinColumns({
@@ -95,11 +96,11 @@ public class Tsid implements Serializable {
     this.city = city;
   }
 
-  public Integer getChannel() {
+  public int getChannel() {
     return channel;
   }
 
-  public void setChannel(Integer channel) {
+  public void setChannel(int channel) {
     this.channel = channel;
   }
 
@@ -143,5 +144,4 @@ public class Tsid implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.Tsid[ tsidPK=" + tsidPK + " ]";
   }
-
 }

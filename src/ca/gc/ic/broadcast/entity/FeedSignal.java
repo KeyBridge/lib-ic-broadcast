@@ -46,6 +46,7 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "FeedSignal.findByCallSign", query = "SELECT f FROM FeedSignal f WHERE f.feedSignalPK.callSign = :callSign"),
   @NamedQuery(name = "FeedSignal.findByBanner", query = "SELECT f FROM FeedSignal f WHERE f.feedSignalPK.banner = :banner")})
 public class FeedSignal implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected FeedSignalPK feedSignalPK;
@@ -55,15 +56,15 @@ public class FeedSignal implements Serializable {
   private String feedId;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "feed_chan", precision = 12)
-  private Float feedChan;
+  private float feedChan;
   @Column(name = "link_type", length = 1)
   private String linkType;
   @Column(name = "feed_call", length = 12)
   private String feedCall;
   @Column(name = "feed_lat", precision = 12)
-  private Float feedLat;
+  private float feedLat;
   @Column(name = "feed_long", precision = 12)
-  private Float feedLong;
+  private float feedLong;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
@@ -105,11 +106,11 @@ public class FeedSignal implements Serializable {
     this.feedId = feedId;
   }
 
-  public Float getFeedChan() {
+  public float getFeedChan() {
     return feedChan;
   }
 
-  public void setFeedChan(Float feedChan) {
+  public void setFeedChan(float feedChan) {
     this.feedChan = feedChan;
   }
 
@@ -129,19 +130,19 @@ public class FeedSignal implements Serializable {
     this.feedCall = feedCall;
   }
 
-  public Float getFeedLat() {
+  public float getFeedLat() {
     return feedLat;
   }
 
-  public void setFeedLat(Float feedLat) {
+  public void setFeedLat(float feedLat) {
     this.feedLat = feedLat;
   }
 
-  public Float getFeedLong() {
+  public float getFeedLong() {
     return feedLong;
   }
 
-  public void setFeedLong(Float feedLong) {
+  public void setFeedLong(float feedLong) {
     this.feedLong = feedLong;
   }
 
@@ -177,5 +178,4 @@ public class FeedSignal implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.FeedSignal[ feedSignalPK=" + feedSignalPK + " ]";
   }
-
 }

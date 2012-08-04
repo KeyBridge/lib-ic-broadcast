@@ -49,6 +49,7 @@ import javax.xml.bind.annotation.XmlTransient;
   @NamedQuery(name = "Antenna.findByNumpoints", query = "SELECT a FROM Antenna a WHERE a.numpoints = :numpoints"),
   @NamedQuery(name = "Antenna.findByPattDate", query = "SELECT a FROM Antenna a WHERE a.pattDate = :pattDate")})
 public class Antenna implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @Id
   @Basic(optional = false)
@@ -58,15 +59,15 @@ public class Antenna implements Serializable {
   private String horVer;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "patt_numb", precision = 12)
-  private Float pattNumb;
+  private float pattNumb;
   @Column(name = "patt_type", length = 12)
   private String pattType;
   @Column(name = "punits", precision = 12)
-  private Float punits;
+  private float punits;
   @Column(name = "numpoints", precision = 12)
-  private Float numpoints;
+  private float numpoints;
   @Column(name = "patt_date", precision = 12)
-  private Float pattDate;
+  private float pattDate;
   @JoinTable(name = "apatstat", joinColumns = {
     @JoinColumn(name = "patt_key", referencedColumnName = "patt_key")}, inverseJoinColumns = {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
@@ -79,7 +80,7 @@ public class Antenna implements Serializable {
   public Antenna() {
   }
 
-  public Antenna(Integer pattKey) {
+  public Antenna(int pattKey) {
     this.pattKey = pattKey;
   }
 
@@ -99,11 +100,11 @@ public class Antenna implements Serializable {
     this.horVer = horVer;
   }
 
-  public Float getPattNumb() {
+  public float getPattNumb() {
     return pattNumb;
   }
 
-  public void setPattNumb(Float pattNumb) {
+  public void setPattNumb(float pattNumb) {
     this.pattNumb = pattNumb;
   }
 
@@ -115,27 +116,27 @@ public class Antenna implements Serializable {
     this.pattType = pattType;
   }
 
-  public Float getPunits() {
+  public float getPunits() {
     return punits;
   }
 
-  public void setPunits(Float punits) {
+  public void setPunits(float punits) {
     this.punits = punits;
   }
 
-  public Float getNumpoints() {
+  public float getNumpoints() {
     return numpoints;
   }
 
-  public void setNumpoints(Float numpoints) {
+  public void setNumpoints(float numpoints) {
     this.numpoints = numpoints;
   }
 
-  public Float getPattDate() {
+  public float getPattDate() {
     return pattDate;
   }
 
-  public void setPattDate(Float pattDate) {
+  public void setPattDate(float pattDate) {
     this.pattDate = pattDate;
   }
 
@@ -181,5 +182,4 @@ public class Antenna implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.Antenna[ pattKey=" + pattKey + " ]";
   }
-
 }

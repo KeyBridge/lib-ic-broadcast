@@ -26,6 +26,7 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class RegionalFilingPK implements Serializable {
+
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
   private String callSign;
@@ -85,5 +86,4 @@ public class RegionalFilingPK implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.RegionalFilingPK[ callSign=" + callSign + ", banner=" + banner + " ]";
   }
-
 }

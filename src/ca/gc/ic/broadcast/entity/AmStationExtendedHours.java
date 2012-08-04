@@ -48,6 +48,7 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "AmStationExtendedHours.findByCallSign", query = "SELECT a FROM AmStationExtendedHours a WHERE a.amStationExtendedHoursPK.callSign = :callSign"),
   @NamedQuery(name = "AmStationExtendedHours.findByBanner", query = "SELECT a FROM AmStationExtendedHours a WHERE a.amStationExtendedHoursPK.banner = :banner")})
 public class AmStationExtendedHours implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected AmStationExtendedHoursPK amStationExtendedHoursPK;
@@ -55,7 +56,7 @@ public class AmStationExtendedHours implements Serializable {
   private String callsBanr;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "number", precision = 12)
-  private Float number;
+  private float number;
   @Column(name = "ant_system", length = 1)
   private String antSystem;
   @Column(name = "start1", length = 4)
@@ -63,13 +64,13 @@ public class AmStationExtendedHours implements Serializable {
   @Column(name = "end1", length = 4)
   private String end1;
   @Column(name = "start2", precision = 12)
-  private Float start2;
+  private float start2;
   @Column(name = "end2", precision = 12)
-  private Float end2;
+  private float end2;
   @Column(name = "power", precision = 12)
-  private Float power;
+  private float power;
   @Column(name = "rms")
-  private Integer rms;
+  private int rms;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
@@ -103,11 +104,11 @@ public class AmStationExtendedHours implements Serializable {
     this.callsBanr = callsBanr;
   }
 
-  public Float getNumber() {
+  public float getNumber() {
     return number;
   }
 
-  public void setNumber(Float number) {
+  public void setNumber(float number) {
     this.number = number;
   }
 
@@ -135,35 +136,35 @@ public class AmStationExtendedHours implements Serializable {
     this.end1 = end1;
   }
 
-  public Float getStart2() {
+  public float getStart2() {
     return start2;
   }
 
-  public void setStart2(Float start2) {
+  public void setStart2(float start2) {
     this.start2 = start2;
   }
 
-  public Float getEnd2() {
+  public float getEnd2() {
     return end2;
   }
 
-  public void setEnd2(Float end2) {
+  public void setEnd2(float end2) {
     this.end2 = end2;
   }
 
-  public Float getPower() {
+  public float getPower() {
     return power;
   }
 
-  public void setPower(Float power) {
+  public void setPower(float power) {
     this.power = power;
   }
 
-  public Integer getRms() {
+  public int getRms() {
     return rms;
   }
 
-  public void setRms(Integer rms) {
+  public void setRms(int rms) {
     this.rms = rms;
   }
 
@@ -199,5 +200,4 @@ public class AmStationExtendedHours implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.AmStationExtendedHours[ amStationExtendedHoursPK=" + amStationExtendedHoursPK + " ]";
   }
-
 }

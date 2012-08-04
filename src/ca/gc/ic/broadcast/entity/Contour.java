@@ -43,6 +43,7 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "Contour.findByLatEnd", query = "SELECT c FROM Contour c WHERE c.latEnd = :latEnd"),
   @NamedQuery(name = "Contour.findByLongEnd", query = "SELECT c FROM Contour c WHERE c.longEnd = :longEnd")})
 public class Contour implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected ContourPK contourPK;
@@ -50,9 +51,9 @@ public class Contour implements Serializable {
   private String name;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "lat_end", precision = 12)
-  private Float latEnd;
+  private float latEnd;
   @Column(name = "long_end", precision = 12)
-  private Float longEnd;
+  private float longEnd;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
@@ -86,19 +87,19 @@ public class Contour implements Serializable {
     this.name = name;
   }
 
-  public Float getLatEnd() {
+  public float getLatEnd() {
     return latEnd;
   }
 
-  public void setLatEnd(Float latEnd) {
+  public void setLatEnd(float latEnd) {
     this.latEnd = latEnd;
   }
 
-  public Float getLongEnd() {
+  public float getLongEnd() {
     return longEnd;
   }
 
-  public void setLongEnd(Float longEnd) {
+  public void setLongEnd(float longEnd) {
     this.longEnd = longEnd;
   }
 
@@ -134,5 +135,4 @@ public class Contour implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.Contour[ contourPK=" + contourPK + " ]";
   }
-
 }

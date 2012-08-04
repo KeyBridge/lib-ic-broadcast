@@ -43,15 +43,16 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "AmStationAugment.findByCenterAz", query = "SELECT a FROM AmStationAugment a WHERE a.centerAz = :centerAz"),
   @NamedQuery(name = "AmStationAugment.findBySpan", query = "SELECT a FROM AmStationAugment a WHERE a.span = :span")})
 public class AmStationAugment implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected AmStationAugmentPK amStationAugmentPK;
   @Column(name = "radiation")
-  private Integer radiation;
+  private int radiation;
   @Column(name = "center_az")
-  private Integer centerAz;
+  private int centerAz;
   @Column(name = "span")
-  private Integer span;
+  private int span;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
@@ -77,27 +78,27 @@ public class AmStationAugment implements Serializable {
     this.amStationAugmentPK = amStationAugmentPK;
   }
 
-  public Integer getRadiation() {
+  public int getRadiation() {
     return radiation;
   }
 
-  public void setRadiation(Integer radiation) {
+  public void setRadiation(int radiation) {
     this.radiation = radiation;
   }
 
-  public Integer getCenterAz() {
+  public int getCenterAz() {
     return centerAz;
   }
 
-  public void setCenterAz(Integer centerAz) {
+  public void setCenterAz(int centerAz) {
     this.centerAz = centerAz;
   }
 
-  public Integer getSpan() {
+  public int getSpan() {
     return span;
   }
 
-  public void setSpan(Integer span) {
+  public void setSpan(int span) {
     this.span = span;
   }
 
@@ -133,5 +134,4 @@ public class AmStationAugment implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.AmStationAugment[ amStationAugmentPK=" + amStationAugmentPK + " ]";
   }
-
 }

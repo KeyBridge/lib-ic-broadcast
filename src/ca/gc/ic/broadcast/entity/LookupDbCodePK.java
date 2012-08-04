@@ -26,6 +26,7 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class LookupDbCodePK implements Serializable {
+
   @Basic(optional = false)
   @Column(name = "fieldname", nullable = false, length = 32)
   private String fieldname;
@@ -85,5 +86,4 @@ public class LookupDbCodePK implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.LookupDbCodePK[ fieldname=" + fieldname + ", code=" + code + " ]";
   }
-
 }

@@ -26,9 +26,10 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class RadiationPatternPK implements Serializable {
+
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
-  private int pattKey;
+  private Integer pattKey;
   @Basic(optional = false)
   @Column(name = "angle", nullable = false)
   private float angle;
@@ -45,11 +46,11 @@ public class RadiationPatternPK implements Serializable {
     this.gain = gain;
   }
 
-  public int getPattKey() {
+  public Integer getPattKey() {
     return pattKey;
   }
 
-  public void setPattKey(int pattKey) {
+  public void setPattKey(Integer pattKey) {
     this.pattKey = pattKey;
   }
 
@@ -101,5 +102,4 @@ public class RadiationPatternPK implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.RadiationPatternPK[ pattKey=" + pattKey + ", angle=" + angle + ", gain=" + gain + " ]";
   }
-
 }

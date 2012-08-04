@@ -54,6 +54,7 @@ import javax.xml.bind.annotation.XmlRootElement;
   @NamedQuery(name = "RegionalFiling.findByCallSign", query = "SELECT r FROM RegionalFiling r WHERE r.regionalFilingPK.callSign = :callSign"),
   @NamedQuery(name = "RegionalFiling.findByBanner", query = "SELECT r FROM RegionalFiling r WHERE r.regionalFilingPK.banner = :banner")})
 public class RegionalFiling implements Serializable {
+
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected RegionalFilingPK regionalFilingPK;
@@ -69,17 +70,17 @@ public class RegionalFiling implements Serializable {
   private String painting;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "spr_dat", precision = 12)
-  private Float sprDat;
+  private float sprDat;
   @Column(name = "rsp_dat", precision = 12)
-  private Float rspDat;
+  private float rspDat;
   @Column(name = "stdett", precision = 12)
-  private Float stdett;
+  private float stdett;
   @Column(name = "air_clear", precision = 12)
-  private Float airClear;
+  private float airClear;
   @Column(name = "inspec_dat", precision = 12)
-  private Float inspecDat;
+  private float inspecDat;
   @Column(name = "rcf_dat", precision = 12)
-  private Float rcfDat;
+  private float rcfDat;
   @Column(name = "stat_type", length = 2)
   private String statType;
   @Column(name = "docfex", length = 4)
@@ -153,51 +154,51 @@ public class RegionalFiling implements Serializable {
     this.painting = painting;
   }
 
-  public Float getSprDat() {
+  public float getSprDat() {
     return sprDat;
   }
 
-  public void setSprDat(Float sprDat) {
+  public void setSprDat(float sprDat) {
     this.sprDat = sprDat;
   }
 
-  public Float getRspDat() {
+  public float getRspDat() {
     return rspDat;
   }
 
-  public void setRspDat(Float rspDat) {
+  public void setRspDat(float rspDat) {
     this.rspDat = rspDat;
   }
 
-  public Float getStdett() {
+  public float getStdett() {
     return stdett;
   }
 
-  public void setStdett(Float stdett) {
+  public void setStdett(float stdett) {
     this.stdett = stdett;
   }
 
-  public Float getAirClear() {
+  public float getAirClear() {
     return airClear;
   }
 
-  public void setAirClear(Float airClear) {
+  public void setAirClear(float airClear) {
     this.airClear = airClear;
   }
 
-  public Float getInspecDat() {
+  public float getInspecDat() {
     return inspecDat;
   }
 
-  public void setInspecDat(Float inspecDat) {
+  public void setInspecDat(float inspecDat) {
     this.inspecDat = inspecDat;
   }
 
-  public Float getRcfDat() {
+  public float getRcfDat() {
     return rcfDat;
   }
 
-  public void setRcfDat(Float rcfDat) {
+  public void setRcfDat(float rcfDat) {
     this.rcfDat = rcfDat;
   }
 
@@ -265,5 +266,4 @@ public class RegionalFiling implements Serializable {
   public String toString() {
     return "ca.gc.ic.broadcast.entity.RegionalFiling[ regionalFilingPK=" + regionalFilingPK + " ]";
   }
-
 }
