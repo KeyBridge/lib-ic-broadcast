@@ -90,6 +90,6 @@ public class CommentPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.CommentPK[ callSign=" + callSign + ", banner=" + banner + " ]";
+    return "CommentPK callSign [" + callSign + "] banner [" + banner + "]";
   }
 }

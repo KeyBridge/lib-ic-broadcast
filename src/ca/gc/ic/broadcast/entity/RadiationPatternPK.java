@@ -107,6 +107,6 @@ public class RadiationPatternPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.RadiationPatternPK[ pattKey=" + pattKey + ", angle=" + angle + ", gain=" + gain + " ]";
+    return "RadiationPatternPK pattKey [" + pattKey + "] angle [" + angle + "] gain [" + gain + " ]";
   }
 }

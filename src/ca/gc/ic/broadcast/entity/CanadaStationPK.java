@@ -90,6 +90,6 @@ public class CanadaStationPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.CanadaStationPK[ banner=" + banner + ", callSign=" + callSign + " ]";
+    return "CanadaStationPK banner [" + banner + "] callSign [" + callSign + "]";
   }
 }

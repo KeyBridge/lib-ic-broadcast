@@ -29,8 +29,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -82,16 +82,16 @@ public class Comment implements Serializable {
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "hqcomm", precision = 12)
   @XmlAttribute
-  private float hqcomm;
+  private int hqcomm;
   @Column(name = "rgcomm", precision = 12)
   @XmlAttribute
-  private float rgcomm;
+  private int rgcomm;
   @Column(name = "edetails", precision = 12)
   @XmlAttribute
-  private float edetails;
+  private int edetails;
   @Column(name = "fdetails", precision = 12)
   @XmlAttribute
-  private float fdetails;
+  private int fdetails;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
@@ -166,35 +166,35 @@ public class Comment implements Serializable {
     this.addr4 = addr4;
   }
 
-  public float getHqcomm() {
+  public int getHqcomm() {
     return hqcomm;
   }
 
-  public void setHqcomm(float hqcomm) {
+  public void setHqcomm(int hqcomm) {
     this.hqcomm = hqcomm;
   }
 
-  public float getRgcomm() {
+  public int getRgcomm() {
     return rgcomm;
   }
 
-  public void setRgcomm(float rgcomm) {
+  public void setRgcomm(int rgcomm) {
     this.rgcomm = rgcomm;
   }
 
-  public float getEdetails() {
+  public int getEdetails() {
     return edetails;
   }
 
-  public void setEdetails(float edetails) {
+  public void setEdetails(int edetails) {
     this.edetails = edetails;
   }
 
-  public float getFdetails() {
+  public int getFdetails() {
     return fdetails;
   }
 
-  public void setFdetails(float fdetails) {
+  public void setFdetails(int fdetails) {
     this.fdetails = fdetails;
   }
 
@@ -228,6 +228,18 @@ public class Comment implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.Comment[ commentPK=" + commentPK + " ]";
+    return "Comment"
+      //      + " commentPK [" + commentPK
+      //      + "] callsBanr [" + callsBanr
+      + "] name [" + name
+      + "] addr1 [" + addr1
+      + "] addr2 [" + addr2
+      + "] addr3 [" + addr3
+      + "] addr4 [" + addr4
+      + "] hqcomm [" + hqcomm
+      + "] rgcomm [" + rgcomm
+      + "] edetails [" + edetails
+      + "] fdetails [" + fdetails
+      + ']';
   }
 }

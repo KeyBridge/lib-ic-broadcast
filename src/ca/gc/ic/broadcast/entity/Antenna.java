@@ -33,8 +33,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -83,9 +83,9 @@ public class Antenna implements Serializable {
   @XmlAttribute
   private float pattDate;
   @JoinTable(name = "apatstat", joinColumns = {
-    @JoinColumn(name = "patt_key", referencedColumnName = "patt_key")}, inverseJoinColumns = {
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
-    @JoinColumn(name = "banner", referencedColumnName = "banner")})
+    @JoinColumn(name = "patt_key", referencedColumnName = "patt_key", nullable = false)}, inverseJoinColumns = {
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false),
+    @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false)})
   @ManyToMany
   @XmlTransient
   private List<CanadaStation> canadaStationList;
@@ -195,6 +195,16 @@ public class Antenna implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.Antenna[ pattKey=" + pattKey + " ]";
+    return "Antenna"
+      + " pattKey [" + pattKey
+      + "] horVer [" + horVer
+      + "] pattNumb [" + pattNumb
+      + "] pattType [" + pattType
+      + "] punits [" + punits
+      + "] numpoints [" + numpoints
+      + "] pattDate [" + pattDate
+      + "] canadaStationList [" + canadaStationList
+      + "]\n radiationPatternList [" + radiationPatternList
+      + ']';
   }
 }

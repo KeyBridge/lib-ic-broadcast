@@ -103,6 +103,6 @@ public class RadiationPattern implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.RadiationPattern[ radiationPatternPK=" + radiationPatternPK + " ]";
+    return radiationPatternPK.toString();
   }
 }

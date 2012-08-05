@@ -16,6 +16,7 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -803,6 +804,9 @@ public class CanadaStation implements Serializable {
 
   @XmlTransient
   public List<Antenna> getAntennaList() {
+    if (antennaList == null) {
+      antennaList = new ArrayList<Antenna>();
+    }
     return antennaList;
   }
 
@@ -900,6 +904,77 @@ public class CanadaStation implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.CanadaStation[ canadaStationPK=" + canadaStationPK + " ]";
+    return "CanadaStation"
+      + " canadaStationPK [" + canadaStationPK
+      + "]\n stationType [" + stationType
+      + "] channel [" + channel
+      + "] erpvpk [" + erpvpk
+      + "] haat [" + haat
+      + "] hagl [" + hagl
+      + "] latitude [" + latitude
+      + "] longitude [" + longitude
+      + "] allocZone [" + allocZone
+      + "] antMode [" + antMode
+      + "] autoProg [" + autoProg
+      + "] bcMode [" + bcMode
+      + "] beamTilt [" + beamTilt
+      + "] border [" + border
+      + "] brdrLat [" + brdrLat
+      + "] brdrLong [" + brdrLong
+      + "] canLand [" + canLand
+      + "] certNumb [" + certNumb
+      + "] city [" + city
+      + "] clazz [" + clazz
+      + "] closeCap [" + closeCap
+      + "] decNumber [" + decNumber
+      + "] docFile [" + docFile
+      + "] erpaav [" + erpaav
+      + "] erpapk [" + erpapk
+      + "] erpata [" + erpata
+      + "] erphav [" + erphav
+      + "] erphpk [" + erphpk
+      + "] erpvav [" + erpvav
+      + "] erpvta [" + erpvta
+      + "] euvalu [" + euvalu
+      + "] freLand [" + freLand
+      + "] frequency [" + frequency
+      + "] groundLev [" + groundLev
+      + "] ifrbnD [" + ifrbnD
+      + "] ifrbnN [" + ifrbnN
+      + "] latitude2 [" + latitude2
+      + "] limitCode [" + limitCode
+      + "] longitude2 [" + longitude2
+      + "] network [" + network
+      + "] offPrec [" + offPrec
+      + "] offset [" + offset
+      + "] okDump [" + okDump
+      + "] overallH [" + overallH
+      + "] parRmsC [" + parRmsC
+      + "] parRmsD [" + parRmsD
+      + "] parRmsN [" + parRmsN
+      + "] powercrit [" + powercrit
+      + "] powerday [" + powerday
+      + "] powernight [" + powernight
+      + "] province [" + province
+      + "] qCrit [" + qCrit
+      + "] qDay [" + qDay
+      + "] qNight [" + qNight
+      + "] radCenter [" + radCenter
+      + "] scmo [" + scmo
+      + "] ssCode [" + ssCode
+      + "] stCreat [" + stCreat
+      + "] stMod [" + stMod
+      + "] status1 [" + status1
+      + "] status2 [" + status2
+      + "] unattended [" + unattended
+      + "] usaLand [" + usaLand
+      + "]\n comment [" + comment
+      + "]\n regionalFiling [" + regionalFiling
+      + "]\n feedSignal [" + feedSignal
+      + "]\n amStationExtendedHours [" + amStationExtendedHours
+      + "]\n tsid [" + tsid
+      + "]\n comment [" + comment
+      + "]\n antennaList [" + antennaList
+      + ']';
   }
 }
