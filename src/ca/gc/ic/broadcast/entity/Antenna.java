@@ -196,15 +196,15 @@ public class Antenna implements Serializable {
   @Override
   public String toString() {
     return "Antenna"
-      + " pattKey [" + pattKey
-      + "] horVer [" + horVer
-      + "] pattNumb [" + pattNumb
-      + "] pattType [" + pattType
-      + "] punits [" + punits
-      + "] numpoints [" + numpoints
-      + "] pattDate [" + pattDate
-      + "] canadaStationList [" + canadaStationList
-      + "]\n radiationPatternList [" + radiationPatternList
-      + ']';
+            + " pattKey [" + pattKey
+            + "] horVer [" + horVer
+            + "] pattNumb [" + pattNumb
+            + "] pattType [" + pattType
+            + "] punits [" + punits
+            + "] numpoints [" + numpoints
+            + "] pattDate [" + pattDate
+            + "] canadaStationList [" + canadaStationList
+            + "]\n radiationPatternList [" + radiationPatternList
+            + ']';
   }
 }

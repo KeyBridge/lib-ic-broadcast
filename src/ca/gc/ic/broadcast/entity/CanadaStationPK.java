@@ -15,10 +15,9 @@
  */
 package ca.gc.ic.broadcast.entity;
 
+import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -34,7 +33,8 @@ public class CanadaStationPK implements Serializable {
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
   @XmlAttribute
-  private String banner;
+  @Enumerated(EnumType.STRING)
+  private Enum_Banner banner;
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
   @XmlAttribute
@@ -43,16 +43,16 @@ public class CanadaStationPK implements Serializable {
   public CanadaStationPK() {
   }
 
-  public CanadaStationPK(String banner, String callSign) {
+  public CanadaStationPK(Enum_Banner banner, String callSign) {
     this.banner = banner;
     this.callSign = callSign;
   }
 
-  public String getBanner() {
+  public Enum_Banner getBanner() {
     return banner;
   }
 
-  public void setBanner(String banner) {
+  public void setBanner(Enum_Banner banner) {
     this.banner = banner;
   }
 

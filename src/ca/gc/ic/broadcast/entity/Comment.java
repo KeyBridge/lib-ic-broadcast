@@ -15,22 +15,10 @@
  */
 package ca.gc.ic.broadcast.entity;
 
+import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.XmlType;
+import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 
 /**
  *
@@ -106,7 +94,7 @@ public class Comment implements Serializable {
     this.commentPK = commentPK;
   }
 
-  public Comment(String callSign, String banner) {
+  public Comment(String callSign, Enum_Banner banner) {
     this.commentPK = new CommentPK(callSign, banner);
   }
 
@@ -229,17 +217,17 @@ public class Comment implements Serializable {
   @Override
   public String toString() {
     return "Comment"
-      //      + " commentPK [" + commentPK
-      //      + "] callsBanr [" + callsBanr
-      + "] name [" + name
-      + "] addr1 [" + addr1
-      + "] addr2 [" + addr2
-      + "] addr3 [" + addr3
-      + "] addr4 [" + addr4
-      + "] hqcomm [" + hqcomm
-      + "] rgcomm [" + rgcomm
-      + "] edetails [" + edetails
-      + "] fdetails [" + fdetails
-      + ']';
+            //      + " commentPK [" + commentPK
+            //      + "] callsBanr [" + callsBanr
+            + "] name [" + name
+            + "] addr1 [" + addr1
+            + "] addr2 [" + addr2
+            + "] addr3 [" + addr3
+            + "] addr4 [" + addr4
+            + "] hqcomm [" + hqcomm
+            + "] rgcomm [" + rgcomm
+            + "] edetails [" + edetails
+            + "] fdetails [" + fdetails
+            + ']';
   }
 }

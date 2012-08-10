@@ -15,22 +15,10 @@
  */
 package ca.gc.ic.broadcast.entity;
 
+import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlTransient;
+import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 
 /**
  *
@@ -102,7 +90,7 @@ public class AmStationExtendedHours implements Serializable {
     this.amStationExtendedHoursPK = amStationExtendedHoursPK;
   }
 
-  public AmStationExtendedHours(String callSign, String banner) {
+  public AmStationExtendedHours(String callSign, Enum_Banner banner) {
     this.amStationExtendedHoursPK = new AmStationExtendedHoursPK(callSign, banner);
   }
 
