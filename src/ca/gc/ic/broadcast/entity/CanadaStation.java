@@ -16,6 +16,7 @@
 package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_StationClass;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -40,9 +41,8 @@ import javax.xml.bind.annotation.*;
   @NamedQuery(name = "CanadaStation.findByBanner", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.banner = :banner"),
   @NamedQuery(name = "CanadaStation.findByCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign = :callSign"),
   @NamedQuery(name = "CanadaStation.findByChannel", query = "SELECT c FROM CanadaStation c WHERE c.channel = :channel")})
-public class CanadaStation implements Serializable {
+public abstract class CanadaStation implements Serializable {
 
-  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected CanadaStationPK canadaStationPK;
@@ -89,7 +89,8 @@ public class CanadaStation implements Serializable {
   private String city;
   @Column(name = "clazz", length = 2)
   @XmlAttribute
-  private String clazz;
+  @Enumerated(EnumType.STRING)
+  private Enum_StationClass stationClass;
   @Column(name = "dec_number")
   @XmlAttribute
   private int decNumber;
@@ -153,6 +154,263 @@ public class CanadaStation implements Serializable {
     this.canadaStationPK = new CanadaStationPK(banner, callSign);
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
+  public CanadaStationPK getCanadaStationPK() {
+    return canadaStationPK;
+  }
+
+  public void setCanadaStationPK(CanadaStationPK canadaStationPK) {
+    this.canadaStationPK = canadaStationPK;
+  }
+
+  public String getStationType() {
+    return stationType;
+  }
+
+  public void setStationType(String stationType) {
+    this.stationType = stationType;
+  }
+
+  public int getChannel() {
+    return channel;
+  }
+
+  public void setChannel(int channel) {
+    this.channel = channel;
+  }
+
+  public float getHagl() {
+    return hagl;
+  }
+
+  public void setHagl(float hagl) {
+    this.hagl = hagl;
+  }
+
+  public float getLatitude() {
+    return latitude;
+  }
+
+  public void setLatitude(float latitude) {
+    this.latitude = latitude;
+  }
+
+  public float getLongitude() {
+    return longitude;
+  }
+
+  public void setLongitude(float longitude) {
+    this.longitude = longitude;
+  }
+
+  public Character getBcMode() {
+    return bcMode;
+  }
+
+  public void setBcMode(Character bcMode) {
+    this.bcMode = bcMode;
+  }
+
+  public float getBorder() {
+    return border;
+  }
+
+  public void setBorder(float border) {
+    this.border = border;
+  }
+
+  public String getBrdrLat() {
+    return brdrLat;
+  }
+
+  public void setBrdrLat(String brdrLat) {
+    this.brdrLat = brdrLat;
+  }
+
+  public String getBrdrLong() {
+    return brdrLong;
+  }
+
+  public void setBrdrLong(String brdrLong) {
+    this.brdrLong = brdrLong;
+  }
+
+  public float getCanLand() {
+    return canLand;
+  }
+
+  public void setCanLand(float canLand) {
+    this.canLand = canLand;
+  }
+
+  public String getCertNumb() {
+    return certNumb;
+  }
+
+  public void setCertNumb(String certNumb) {
+    this.certNumb = certNumb;
+  }
+
+  public String getCity() {
+    return city;
+  }
+
+  public void setCity(String city) {
+    this.city = city;
+  }
+
+  public Enum_StationClass getStationClass() {
+    return stationClass;
+  }
+
+  public void setStationClass(Enum_StationClass stationClass) {
+    this.stationClass = stationClass;
+  }
+
+  public int getDecNumber() {
+    return decNumber;
+  }
+
+  public void setDecNumber(int decNumber) {
+    this.decNumber = decNumber;
+  }
+
+  public int getDocFile() {
+    return docFile;
+  }
+
+  public void setDocFile(int docFile) {
+    this.docFile = docFile;
+  }
+
+  public float getFreLand() {
+    return freLand;
+  }
+
+  public void setFreLand(float freLand) {
+    this.freLand = freLand;
+  }
+
+  public float getFrequency() {
+    return frequency;
+  }
+
+  public void setFrequency(float frequency) {
+    this.frequency = frequency;
+  }
+
+  public String getNetwork() {
+    return network;
+  }
+
+  public void setNetwork(String network) {
+    this.network = network;
+  }
+
+  public Date getOkDump() {
+    return okDump;
+  }
+
+  public void setOkDump(Date okDump) {
+    this.okDump = okDump;
+  }
+
+  public String getProvince() {
+    return province;
+  }
+
+  public void setProvince(String province) {
+    this.province = province;
+  }
+
+  public String getSsCode() {
+    return ssCode;
+  }
+
+  public void setSsCode(String ssCode) {
+    this.ssCode = ssCode;
+  }
+
+  public Date getStCreat() {
+    return stCreat;
+  }
+
+  public void setStCreat(Date stCreat) {
+    this.stCreat = stCreat;
+  }
+
+  public Date getStMod() {
+    return stMod;
+  }
+
+  public void setStMod(Date stMod) {
+    this.stMod = stMod;
+  }
+
+  public Character getUnattended() {
+    return unattended;
+  }
+
+  public void setUnattended(Character unattended) {
+    this.unattended = unattended;
+  }
+
+  public float getUsaLand() {
+    return usaLand;
+  }
+
+  public void setUsaLand(float usaLand) {
+    this.usaLand = usaLand;
+  }
+
+  public List<Antenna> getAntennaList() {
+    return antennaList;
+  }
+
+  public void setAntennaList(List<Antenna> antennaList) {
+    this.antennaList = antennaList;
+  }
+
+  public RegionalFiling getRegionalFiling() {
+    return regionalFiling;
+  }
+
+  public void setRegionalFiling(RegionalFiling regionalFiling) {
+    this.regionalFiling = regionalFiling;
+  }
+
+  public FeedSignal getFeedSignal() {
+    return feedSignal;
+  }
+
+  public void setFeedSignal(FeedSignal feedSignal) {
+    this.feedSignal = feedSignal;
+  }
+
+  public List<Contour> getContourList() {
+    return contourList;
+  }
+
+  public void setContourList(List<Contour> contourList) {
+    this.contourList = contourList;
+  }
+
+  public Tsid getTsid() {
+    return tsid;
+  }
+
+  public void setTsid(Tsid tsid) {
+    this.tsid = tsid;
+  }
+
+  public Comment getComment() {
+    return comment;
+  }
+
+  public void setComment(Comment comment) {
+    this.comment = comment;
+  }//</editor-fold>
+
   @Override
   public int hashCode() {
     int hash = 0;
@@ -189,7 +447,7 @@ public class CanadaStation implements Serializable {
             + "] canLand [" + canLand
             + "] certNumb [" + certNumb
             + "] city [" + city
-            + "] clazz [" + clazz
+            + "] stationClass [" + stationClass
             + "] decNumber [" + decNumber
             + "] docFile [" + docFile
             + "] freLand [" + freLand

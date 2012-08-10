@@ -16,7 +16,11 @@
 package ca.gc.ic.broadcast.entity.enumerated;
 
 /**
- *
+ * Enumerated list of banner codes. This is a consolidated list of all banner
+ * codes including AM, FM, TV and SDAR stations taken from the 'lookup' table
+ * and cross-referenced with the respective station tables to ensure 100%
+ * coverage.
+ * <p/>
  * @author jesse
  */
 public enum Enum_Banner {
@@ -24,23 +28,31 @@ public enum Enum_Banner {
   /**
    * Allotment
    */
+  A("Allotment"),
+  /**
+   * Allotment
+   */
   AL("Allotment"),
   /**
-   * Approved
+   * Approved By Crtc
    */
-  AP("Approved"),
+  AP("Approved By CRTC"),
   /**
-   * Authorized
+   * Authorized By Industry Canada
    */
-  AU("Authorized"),
+  AU("Authorized By Industry Canada"),
   /**
-   * Construction Permit
+   * Second Allotment
    */
-  CP("Construction Permit"),
+  C("Second Allotment"),
   /**
-   * Denied
+   * Conditionally Approved
    */
-  DE("Denied"),
+  CN("Conditionally Approved"),
+  /**
+   * Contruction Permit
+   */
+  CP("Contruction Permit"),
   /**
    * Incomplete
    */
@@ -50,29 +62,45 @@ public enum Enum_Banner {
    */
   IL("Illegal"),
   /**
+   * Operating
+   */
+  O("Operating"),
+  /**
    * Operational
    */
   OP("Operational"),
+  /**
+   * Proposal
+   */
+  P("Proposal"),
   /**
    * Proposed Channel
    */
   PC("Proposed Channel"),
   /**
-   * Referred to CRTC
+   * Preliminary
    */
-  RE("Referred to CRTC"),
+  PR("Preliminary"),
+  /**
+   * Referred To Crtc
+   */
+  RE("Referred To CRTC"),
+  /**
+   * Short Duration
+   */
+  SD("Short Duration"),
   /**
    * Tentative Deletion
    */
   TD("Tentative Deletion"),
   /**
-   * Temp. Operation
+   * Temporary Operation
    */
-  TO("Temp. Operation"),
+  TO("Temporary Operation"),
   /**
-   * Approved by CRTC
+   * Temporary Proposal
    */
-  UA("Approved by CRTC"),
+  TP("Temporary Proposal"),
   /**
    * Under Consideration
    */
@@ -80,7 +108,15 @@ public enum Enum_Banner {
   /**
    * Unacceptable
    */
-  UN("Unacceptable");
+  UN("Unacceptable"),
+  /**
+   * Cancelled
+   */
+  X("Cancelled"),
+  /**
+   * Cancelled
+   */
+  XX("Cancelled");
   private String description;
 
   private Enum_Banner(String description) {
