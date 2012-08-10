@@ -18,6 +18,7 @@ package ca.gc.ic.broadcast.entity;
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import ca.gc.ic.broadcast.entity.enumerated.Enum_StationClass;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -156,6 +157,9 @@ public abstract class CanadaStation implements Serializable {
 
   //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
   public CanadaStationPK getCanadaStationPK() {
+    if (canadaStationPK == null) {
+      canadaStationPK = new CanadaStationPK();
+    }
     return canadaStationPK;
   }
 
@@ -364,6 +368,9 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public List<Antenna> getAntennaList() {
+    if (antennaList == null) {
+      antennaList = new ArrayList<Antenna>();
+    }
     return antennaList;
   }
 
@@ -372,6 +379,9 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public RegionalFiling getRegionalFiling() {
+    if (regionalFiling == null) {
+      regionalFiling = new RegionalFiling();
+    }
     return regionalFiling;
   }
 
@@ -380,6 +390,9 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public FeedSignal getFeedSignal() {
+    if (feedSignal == null) {
+      feedSignal = new FeedSignal();
+    }
     return feedSignal;
   }
 
@@ -388,6 +401,9 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public List<Contour> getContourList() {
+    if (contourList == null) {
+      contourList = new ArrayList<Contour>();
+    }
     return contourList;
   }
 
@@ -396,6 +412,9 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public Tsid getTsid() {
+    if (tsid == null) {
+      tsid = new Tsid();
+    }
     return tsid;
   }
 
@@ -404,6 +423,9 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public Comment getComment() {
+    if (comment == null) {
+      comment = new Comment();
+    }
     return comment;
   }
 

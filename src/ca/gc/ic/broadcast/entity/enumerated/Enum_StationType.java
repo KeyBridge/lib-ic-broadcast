@@ -19,88 +19,62 @@ package ca.gc.ic.broadcast.entity.enumerated;
  *
  * @author jesse
  */
-public enum Enum_StationClass {
+public enum Enum_StationType {
 
   /**
-   * Class A
+   * AM Radio
    */
-  A("Class A"),
+  AM("am_station", "AM Radio;"),
   /**
-   * Class A1
+   * FM Radio
    */
-  A1("Class A1"),
+  FM("fm_station", "FM Radio"),
   /**
-   * Class B
+   * Broadcast Television
    */
-  B("Class B"),
+  TV("tv_station", "Broadcast Television"),
   /**
-   * Class B1
+   * Satellite Digital Audio Radio
    */
-  B1("Class B1"),
-  /**
-   * Class C
-   */
-  C("Class C"),
-  /**
-   * Class C1
-   */
-  C1("Class C1"),
-  /**
-   * Class C2
-   */
-  C2("Class C2"),
-  /**
-   * Carrier Current
-   */
-  CC("Carrier Current"),
-  /**
-   * American Ten Watter
-   */
-  D("American Ten Watt Station"),
-  /**
-   * Micro-Wave Fixed
-   */
-  F("Micro-Wave Fixed"),
-  /**
-   * Low Power
-   */
-  LP("Low Power"),
-  /**
-   * UHF Regular (U.S. Analog)
-   */
-  N("UHF Regular (U.S. Analog)"),
-  /**
-   * Regular VHF & MCTV
-   */
-  R("Regular VHF & MCTV"),
-  /**
-   * High-Power TV
-   */
-  S("High-Power TV"),
-  /**
-   * S-Dars
-   */
-  SA("Sattelite Digital Audio Radio"),
-  /**
-   * Very Low Power
-   */
-  VL("Very Low Power"),
-  /**
-   * Very Low Power TV Analog
-   */
-  VLP("Very Low Power TV Analog"),
-  /**
-   * DTV Upper VHF
-   */
-  VU("DTV Upper VHF");
+  SDAR("sdar_station", "Satellite Digital Audio Radio");
   private String description;
+  private String stationType;
 
-  private Enum_StationClass(String description) {
+  private Enum_StationType(String stationType, String description) {
+    this.stationType = stationType;
     this.description = description;
   }
 
   public String getDescription() {
     return description;
+  }
+
+  public String getStationType() {
+    return stationType;
+  }
+
+  /**
+   * Return a dot-delimited name. e.g. 'ca.gc.ic.stationType.TV'
+   * <p/>
+   * @return
+   */
+  public String getStationTypeName() {
+    return "ca.gc.ic.stationType." + name();
+  }
+
+  /**
+   * Find an enumBanner object by its 2-character name code.
+   * <p/>
+   * @param stationType the station type class discriminator
+   * @return
+   */
+  public static Enum_StationType findByStationType(String stationType) {
+    for (Enum_StationType enum_Banner : Enum_StationType.values()) {
+      if (enum_Banner.getStationType().equalsIgnoreCase(stationType)) {
+        return enum_Banner;
+      }
+    }
+    return null;
   }
 
   /**
@@ -109,8 +83,8 @@ public enum Enum_StationClass {
    * @param dbCode the 2-character code
    * @return
    */
-  public static Enum_StationClass findByDbCode(String dbCode) {
-    for (Enum_StationClass enum_Banner : Enum_StationClass.values()) {
+  public static Enum_StationType findByDbCode(String dbCode) {
+    for (Enum_StationType enum_Banner : Enum_StationType.values()) {
       if (enum_Banner.name().equalsIgnoreCase(dbCode)) {
         return enum_Banner;
       }

@@ -36,6 +36,8 @@ public class CanadaStationAm extends CanadaStation {
   @Column(name = "euvalu", precision = 12)
   @XmlAttribute
   private float euvalu;
+  @Column(name = "ifrbn_d", precision = 12)
+  @XmlAttribute
   private float ifrbnD;
   @Column(name = "ifrbn_n", precision = 12)
   @XmlAttribute

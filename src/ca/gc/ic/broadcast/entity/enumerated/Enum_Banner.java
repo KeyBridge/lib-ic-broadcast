@@ -28,103 +28,113 @@ public enum Enum_Banner {
   /**
    * Allotment
    */
-  A("Allotment"),
+  A("Allotment", false),
   /**
    * Allotment
    */
-  AL("Allotment"),
+  AL("Allotment", false),
   /**
    * Approved By Crtc
    */
-  AP("Approved By CRTC"),
+  AP("Approved By CRTC", true),
   /**
    * Authorized By Industry Canada
    */
-  AU("Authorized By Industry Canada"),
+  AU("Authorized By Industry Canada", true),
   /**
    * Second Allotment
    */
-  C("Second Allotment"),
+  C("Second Allotment", false),
   /**
    * Conditionally Approved
    */
-  CN("Conditionally Approved"),
+  CN("Conditionally Approved", false),
   /**
    * Contruction Permit
    */
-  CP("Contruction Permit"),
+  CP("Contruction Permit", false),
   /**
    * Incomplete
    */
-  IC("Incomplete"),
+  IC("Incomplete", false),
   /**
    * Illegal
    */
-  IL("Illegal"),
+  IL("Illegal", false),
   /**
    * Operating
    */
-  O("Operating"),
+  O("Operating", true),
   /**
    * Operational
    */
-  OP("Operational"),
+  OP("Operational", true),
   /**
    * Proposal
    */
-  P("Proposal"),
+  P("Proposal", false),
   /**
    * Proposed Channel
    */
-  PC("Proposed Channel"),
+  PC("Proposed Channel", false),
   /**
    * Preliminary
    */
-  PR("Preliminary"),
+  PR("Preliminary", false),
   /**
    * Referred To Crtc
    */
-  RE("Referred To CRTC"),
+  RE("Referred To CRTC", false),
   /**
    * Short Duration
    */
-  SD("Short Duration"),
+  SD("Short Duration", false),
   /**
    * Tentative Deletion
    */
-  TD("Tentative Deletion"),
+  TD("Tentative Deletion", false),
   /**
    * Temporary Operation
    */
-  TO("Temporary Operation"),
+  TO("Temporary Operation", true),
   /**
    * Temporary Proposal
    */
-  TP("Temporary Proposal"),
+  TP("Temporary Proposal", false),
   /**
    * Under Consideration
    */
-  UC("Under Consideration"),
+  UC("Under Consideration", false),
   /**
    * Unacceptable
    */
-  UN("Unacceptable"),
+  UN("Unacceptable", false),
   /**
    * Cancelled
    */
-  X("Cancelled"),
+  X("Cancelled", false),
   /**
    * Cancelled
    */
-  XX("Cancelled");
+  XX("Cancelled", false);
   private String description;
+  /**
+   * Indicates whether the station is on or off air. TRUE means the station is
+   * transmitting and should be protected.
+   */
+  private boolean transmitting;
 
-  private Enum_Banner(String description) {
+  private Enum_Banner(String description, boolean transmitting) {
     this.description = description;
+    this.transmitting = transmitting;
   }
 
   public String getDescription() {
     return description;
+  }
+
+  public boolean isTransmitting() {
+    return transmitting;
   }
 
   /**
