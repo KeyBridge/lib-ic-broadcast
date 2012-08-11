@@ -39,10 +39,6 @@ public class CanadaStationTv extends CanadaStation {
   @Column(name = "erpvpk", nullable = false)
   @XmlAttribute(required = true)
   private float erpvpk;
-  @Basic(optional = false)
-  @Column(name = "haat", nullable = false)
-  @XmlAttribute
-  private float haat;
   @Column(name = "alloc_zone")
   @XmlAttribute
   private int allocZone;
@@ -55,6 +51,10 @@ public class CanadaStationTv extends CanadaStation {
   @Column(name = "close_cap")
   @XmlAttribute
   private Character closeCap;
+  @Basic(optional = false)
+  @Column(name = "ehaat", nullable = false)
+  @XmlAttribute
+  private float ehaat;
   @Column(name = "erpaav", precision = 12)
   @XmlAttribute
   private float erpaav;
@@ -109,14 +109,6 @@ public class CanadaStationTv extends CanadaStation {
     this.erpvpk = erpvpk;
   }
 
-  public float getHaat() {
-    return haat;
-  }
-
-  public void setHaat(float haat) {
-    this.haat = haat;
-  }
-
   public int getAllocZone() {
     return allocZone;
   }
@@ -147,6 +139,14 @@ public class CanadaStationTv extends CanadaStation {
 
   public void setCloseCap(Character closeCap) {
     this.closeCap = closeCap;
+  }
+
+  public float getEhaat() {
+    return ehaat;
+  }
+
+  public void setEhaat(float ehaat) {
+    this.ehaat = ehaat;
   }
 
   public float getErpaav() {
@@ -261,7 +261,6 @@ public class CanadaStationTv extends CanadaStation {
     return "CanadaStationTv"
             + super.toString()
             + "\n] erpvpk [" + erpvpk
-            + "] haat [" + haat
             + "] allocZone [" + allocZone
             + "] antMode [" + antMode
             + "] beamTilt [" + beamTilt

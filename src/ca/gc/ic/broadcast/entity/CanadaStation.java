@@ -17,6 +17,7 @@ package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import ca.gc.ic.broadcast.entity.enumerated.Enum_StationClass;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_StationType;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -55,10 +56,6 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "channel", nullable = false)
   @XmlAttribute
   private int channel;
-  @Basic(optional = false)
-  @Column(name = "hagl", nullable = false)
-  @XmlAttribute
-  private float hagl;
   @Basic(optional = false)
   @Column(name = "latitude", nullable = false)
   @XmlAttribute
@@ -131,6 +128,10 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "usa_land", precision = 12)
   @XmlAttribute
   private float usaLand;
+  /**
+   * List of Antenna objects. In the Canada database each antenna record
+   * describes a different polarization for the same physical antenna.
+   */
   @ManyToMany(mappedBy = "canadaStationList")
   private List<Antenna> antennaList;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
@@ -167,8 +168,8 @@ public abstract class CanadaStation implements Serializable {
     this.canadaStationPK = canadaStationPK;
   }
 
-  public String getStationType() {
-    return stationType;
+  public Enum_StationType getStationType() {
+    return Enum_StationType.findByStationType(stationType);
   }
 
   public void setStationType(String stationType) {
@@ -181,14 +182,6 @@ public abstract class CanadaStation implements Serializable {
 
   public void setChannel(int channel) {
     this.channel = channel;
-  }
-
-  public float getHagl() {
-    return hagl;
-  }
-
-  public void setHagl(float hagl) {
-    this.hagl = hagl;
   }
 
   public float getLatitude() {
@@ -459,7 +452,6 @@ public abstract class CanadaStation implements Serializable {
             + " canadaStationPK [" + canadaStationPK
             + "]\n stationType [" + stationType
             + "] channel [" + channel
-            + "] hagl [" + hagl
             + "] latitude [" + latitude
             + "] longitude [" + longitude
             + "] bcMode [" + bcMode

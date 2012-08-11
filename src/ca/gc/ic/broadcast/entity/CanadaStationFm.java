@@ -39,24 +39,19 @@ public class CanadaStationFm extends CanadaStation {
   @Column(name = "erpvpk", nullable = false)
   @XmlAttribute(required = true)
   private float erpvpk;
-  @Basic(optional = false)
-  @Column(name = "haat", nullable = false)
-  @XmlAttribute
-  private float haat;
-
-
   @Column(name = "ant_mode")
   @XmlAttribute(required = true)
   private Character antMode;
   @Column(name = "auto_prog", length = 1)
   @XmlAttribute
   private String autoProg;
-
   @Column(name = "beam_tilt", precision = 12)
   @XmlAttribute
   private float beamTilt;
-
-
+  @Basic(optional = false)
+  @Column(name = "ehaat", nullable = false)
+  @XmlAttribute
+  private float ehaat;
   @Column(name = "erphav", precision = 12)
   @XmlAttribute
   private float erphav;
@@ -99,14 +94,6 @@ public class CanadaStationFm extends CanadaStation {
     this.erpvpk = erpvpk;
   }
 
-  public float getHaat() {
-    return haat;
-  }
-
-  public void setHaat(float haat) {
-    this.haat = haat;
-  }
-
   public Character getAntMode() {
     return antMode;
   }
@@ -129,6 +116,14 @@ public class CanadaStationFm extends CanadaStation {
 
   public void setBeamTilt(float beamTilt) {
     this.beamTilt = beamTilt;
+  }
+
+  public float getEhaat() {
+    return ehaat;
+  }
+
+  public void setEhaat(float ehaat) {
+    this.ehaat = ehaat;
   }
 
   public float getErphav() {
@@ -213,7 +208,6 @@ public class CanadaStationFm extends CanadaStation {
             + "] autoProg [" + autoProg
             + "] scmo [" + scmo
             + "] erpvpk [" + erpvpk
-            + "] haat [" + haat
             + "] antMode [" + antMode
             + "] beamTilt [" + beamTilt
             + "] erphav [" + erphav

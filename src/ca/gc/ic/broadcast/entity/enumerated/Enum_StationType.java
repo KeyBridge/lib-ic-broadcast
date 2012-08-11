@@ -30,13 +30,13 @@ public enum Enum_StationType {
    */
   FM("fm_station", "FM Radio"),
   /**
-   * Broadcast Television
-   */
-  TV("tv_station", "Broadcast Television"),
-  /**
    * Satellite Digital Audio Radio
    */
-  SDAR("sdar_station", "Satellite Digital Audio Radio");
+  SDAR("sdar_station", "Satellite Digital Audio Radio"),
+  /**
+   * Broadcast Television
+   */
+  TV("tv_station", "Broadcast Television");
   private String description;
   private String stationType;
 

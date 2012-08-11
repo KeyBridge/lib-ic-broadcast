@@ -16,6 +16,10 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -28,7 +32,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.PostLoad;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -79,9 +85,12 @@ public class Antenna implements Serializable {
   @Column(name = "numpoints", precision = 12)
   @XmlAttribute
   private float numpoints;
+  /**
+   * Date encoded as yyyyMMdd
+   */
   @Column(name = "patt_date", precision = 12)
-  @XmlAttribute
-  private float pattDate;
+  @XmlTransient
+  private String pattDate;
   @JoinTable(name = "apatstat", joinColumns = {
     @JoinColumn(name = "patt_key", referencedColumnName = "patt_key", nullable = false)}, inverseJoinColumns = {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false),
@@ -91,6 +100,13 @@ public class Antenna implements Serializable {
   private List<CanadaStation> canadaStationList;
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "antenna")
   private List<RadiationPattern> radiationPatternList;
+  /**
+   * The date this pattern data was imported into the Canada database. This
+   * field is post-loaded from the pattDate value.
+   */
+  @Transient
+  @XmlAttribute(name = "patDate")
+  private Date datePatternData;
 
   public Antenna() {
   }
@@ -99,6 +115,7 @@ public class Antenna implements Serializable {
     this.pattKey = pattKey;
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
   public Integer getPattKey() {
     return pattKey;
   }
@@ -147,15 +164,14 @@ public class Antenna implements Serializable {
     this.numpoints = numpoints;
   }
 
-  public float getPattDate() {
+  public String getPattDate() {
     return pattDate;
   }
 
-  public void setPattDate(float pattDate) {
+  public void setPattDate(String pattDate) {
     this.pattDate = pattDate;
   }
 
-  @XmlTransient
   public List<CanadaStation> getCanadaStationList() {
     return canadaStationList;
   }
@@ -164,13 +180,36 @@ public class Antenna implements Serializable {
     this.canadaStationList = canadaStationList;
   }
 
-  @XmlTransient
   public List<RadiationPattern> getRadiationPatternList() {
+    if (radiationPatternList == null) {
+      radiationPatternList = new ArrayList<RadiationPattern>();
+    }
     return radiationPatternList;
   }
 
   public void setRadiationPatternList(List<RadiationPattern> radiationPatternList) {
     this.radiationPatternList = radiationPatternList;
+  }
+
+  public Date getDatePatternData() {
+    return datePatternData;
+  }
+
+  public void setDatePatternData(Date datePatternData) {
+    this.datePatternData = datePatternData;
+  }//</editor-fold>
+
+  /**
+   * Process and convert the antenna values after loading from the database.
+   */
+  @PostLoad
+  public void postLoad() {
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+    try {
+      datePatternData = sdf.parse(pattDate);
+    } catch (ParseException ex) {
+//      Logger.getLogger(Antenna.class.getName()).log(Level.SEVERE, null, ex);
+    }
   }
 
   @Override

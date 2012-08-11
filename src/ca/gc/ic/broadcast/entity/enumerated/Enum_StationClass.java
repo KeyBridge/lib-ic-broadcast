@@ -56,7 +56,7 @@ public enum Enum_StationClass {
   /**
    * American Ten Watter
    */
-  D("American Ten Watt Station"),
+  D("Low Power TV"),
   /**
    * Micro-Wave Fixed
    */
