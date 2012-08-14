@@ -19,9 +19,7 @@ import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import ca.gc.ic.broadcast.entity.enumerated.Enum_StationClass;
 import ca.gc.ic.broadcast.entity.enumerated.Enum_StationType;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
@@ -30,25 +28,17 @@ import javax.xml.bind.annotation.*;
  * @author jesse
  */
 @Entity
-@Inheritance
-@DiscriminatorColumn(name = "station_type")
-@Table(name = "ca_station", uniqueConstraints = {
+@Table(name = "ca_station_staging", uniqueConstraints = {
   @UniqueConstraint(columnNames = {"call_sign", "banner"})
 })
 @XmlRootElement
-@XmlSeeAlso({CanadaStationAm.class, CanadaStationFm.class, CanadaStationSdar.class, CanadaStationTv.class})
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
-  @NamedQuery(name = "CanadaStation.findAll", query = "SELECT c FROM CanadaStation c"),
-  @NamedQuery(name = "CanadaStation.findByStationType", query = "SELECT c FROM CanadaStation c WHERE c.stationType = :stationType"),
-  //
-  @NamedQuery(name = "CanadaStation.countByStationType", query = "SELECT COUNT(c) FROM CanadaStation c WHERE c.stationType = :stationType"),
-  //
-  @NamedQuery(name = "CanadaStation.findByBanner", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.banner = :banner"),
-  @NamedQuery(name = "CanadaStation.findByCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign = :callSign"),
-  @NamedQuery(name = "CanadaStation.findByChannel", query = "SELECT c FROM CanadaStation c WHERE c.channel = :channel")})
-public abstract class CanadaStation implements Serializable {
+  @NamedQuery(name = "CanadaStationStaging.findAll", query = "SELECT c FROM CanadaStationStaging c"),
+  @NamedQuery(name = "CanadaStationStaging.findByStationType", query = "SELECT c FROM CanadaStationStaging c WHERE c.stationType = :stationType"),
+  @NamedQuery(name = "CanadaStationStaging.countByStationType", query = "SELECT COUNT(c) FROM CanadaStationStaging c WHERE c.stationType = :stationType")})
+public class CanadaStationStaging implements Serializable {
 
   private static final long serialVersionUID = 1L;
   @EmbeddedId
@@ -133,31 +123,15 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "usa_land", precision = 12)
   @XmlAttribute
   private float usaLand;
-  /**
-   * List of Antenna objects. In the Canada database each antenna record
-   * describes a different polarization for the same physical antenna.
-   */
-  @ManyToMany(mappedBy = "canadaStationList")
-  private List<Antenna> antennaList;
-  @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  private RegionalFiling regionalFiling;
-  @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  private FeedSignal feedSignal;
-  @OneToMany(mappedBy = "canadaStation")
-  private List<Contour> contourList;
-  @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  private Tsid tsid;
-  @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
-  private Comment comment;
 
-  public CanadaStation() {
+  public CanadaStationStaging() {
   }
 
-  public CanadaStation(CanadaStationPK canadaStationPK) {
+  public CanadaStationStaging(CanadaStationPK canadaStationPK) {
     this.canadaStationPK = canadaStationPK;
   }
 
-  public CanadaStation(Enum_Banner banner, String callSign) {
+  public CanadaStationStaging(Enum_Banner banner, String callSign) {
     this.canadaStationPK = new CanadaStationPK(banner, callSign);
   }
 
@@ -363,72 +337,6 @@ public abstract class CanadaStation implements Serializable {
 
   public void setUsaLand(float usaLand) {
     this.usaLand = usaLand;
-  }
-
-  public List<Antenna> getAntennaList() {
-    if (antennaList == null) {
-      antennaList = new ArrayList<Antenna>();
-    }
-    return antennaList;
-  }
-
-  public void setAntennaList(List<Antenna> antennaList) {
-    this.antennaList = antennaList;
-  }
-
-  public RegionalFiling getRegionalFiling() {
-    if (regionalFiling == null) {
-      regionalFiling = new RegionalFiling();
-    }
-    return regionalFiling;
-  }
-
-  public void setRegionalFiling(RegionalFiling regionalFiling) {
-    this.regionalFiling = regionalFiling;
-  }
-
-  public FeedSignal getFeedSignal() {
-    if (feedSignal == null) {
-      feedSignal = new FeedSignal();
-    }
-    return feedSignal;
-  }
-
-  public void setFeedSignal(FeedSignal feedSignal) {
-    this.feedSignal = feedSignal;
-  }
-
-  public List<Contour> getContourList() {
-    if (contourList == null) {
-      contourList = new ArrayList<Contour>();
-    }
-    return contourList;
-  }
-
-  public void setContourList(List<Contour> contourList) {
-    this.contourList = contourList;
-  }
-
-  public Tsid getTsid() {
-    if (tsid == null) {
-      tsid = new Tsid();
-    }
-    return tsid;
-  }
-
-  public void setTsid(Tsid tsid) {
-    this.tsid = tsid;
-  }
-
-  public Comment getComment() {
-    if (comment == null) {
-      comment = new Comment();
-    }
-    return comment;
-  }
-
-  public void setComment(Comment comment) {
-    this.comment = comment;
   }//</editor-fold>
 
   @Override
@@ -441,10 +349,10 @@ public abstract class CanadaStation implements Serializable {
   @Override
   public boolean equals(Object object) {
 
-    if (!(object instanceof CanadaStation)) {
+    if (!(object instanceof CanadaStationStaging)) {
       return false;
     }
-    CanadaStation other = (CanadaStation) object;
+    CanadaStationStaging other = (CanadaStationStaging) object;
     if ((this.canadaStationPK == null && other.canadaStationPK != null) || (this.canadaStationPK != null && !this.canadaStationPK.equals(other.canadaStationPK))) {
       return false;
     }
@@ -453,7 +361,7 @@ public abstract class CanadaStation implements Serializable {
 
   @Override
   public String toString() {
-    return "CanadaStation"
+    return "CanadaStationStaging"
             + " canadaStationPK [" + canadaStationPK
             + "]\n stationType [" + stationType
             + "] channel [" + channel
@@ -479,12 +387,6 @@ public abstract class CanadaStation implements Serializable {
             + "] stMod [" + stMod
             + "] unattended [" + unattended
             + "] usaLand [" + usaLand
-            + "]\n comment [" + comment
-            + "]\n regionalFiling [" + regionalFiling
-            + "]\n feedSignal [" + feedSignal
-            + "]\n tsid [" + tsid
-            + "]\n comment [" + comment
-            + "]\n antennaList [" + antennaList
             + ']';
   }
 }

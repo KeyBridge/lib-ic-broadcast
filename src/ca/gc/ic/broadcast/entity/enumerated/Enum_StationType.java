@@ -37,18 +37,28 @@ public enum Enum_StationType {
    * Broadcast Television
    */
   TV("tv_station", "Broadcast Television");
-  private String description;
   private String stationType;
+  private String description;
 
   private Enum_StationType(String stationType, String description) {
     this.stationType = stationType;
     this.description = description;
   }
 
+  /**
+   * Get a human readable description. e.g. 'Satellite Digital Audio Radio'
+   * <p/>
+   * @return
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * Get the database station type differentiating value. e.g. 'tv_station'
+   * <p/>
+   * @return
+   */
   public String getStationType() {
     return stationType;
   }
@@ -84,6 +94,14 @@ public enum Enum_StationType {
    * @return
    */
   public static Enum_StationType findByDbCode(String dbCode) {
+    /**
+     * Trim the '_CA' suffix if present. This suffix is present in the dbCode
+     * field for Canada codes entered into the WSIF enumerated list of wireless
+     * services.
+     */
+    if (dbCode != null && dbCode.endsWith("_CA")) {
+      dbCode = dbCode.replace("_CA", "");
+    }
     for (Enum_StationType enum_Banner : Enum_StationType.values()) {
       if (enum_Banner.name().equalsIgnoreCase(dbCode)) {
         return enum_Banner;
