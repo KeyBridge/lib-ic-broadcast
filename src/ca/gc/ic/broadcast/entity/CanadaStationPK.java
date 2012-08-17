@@ -17,6 +17,10 @@ package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -46,6 +50,28 @@ public class CanadaStationPK implements Serializable {
   public CanadaStationPK(Enum_Banner banner, String callSign) {
     this.banner = banner;
     this.callSign = callSign;
+  }
+
+  /**
+   * Constructor taking the serialized (toString) output from another
+   * CanadaStationPK. This enables the convenient serialization and
+   * unmarshalling of CanadaStationPK objects.
+   * <p/>
+   * @param canadaStationPkString the toString output of a CanadaStationPK
+   * @throws Exception if the input string does not match the required regex
+   *                   pattern and no parameters can be found
+   */
+  public CanadaStationPK(String canadaStationPkString) throws Exception {
+    String toString = "banner \\[(\\w+)\\] callSign \\[(\\w+)\\]";
+    Pattern p = Pattern.compile(toString);
+    Matcher m = p.matcher(canadaStationPkString);
+    if (m.find()) {
+      System.out.println("find ");
+      this.banner = Enum_Banner.findByDbCode(m.group(1));
+      this.callSign = m.group(2);
+    } else {
+      throw new Exception("CanadaStationPK could not find a banner and callsign in the input string \"" + canadaStationPkString + "\". Please verify it matches the required pattern.");
+    }
   }
 
   public Enum_Banner getBanner() {

@@ -72,6 +72,11 @@ public enum Enum_StationType {
     return "ca.gc.ic.stationType." + name();
   }
 
+  @Override
+  public String toString() {
+    return description;
+  }
+
   /**
    * Find an enumBanner object by its 2-character name code.
    * <p/>
