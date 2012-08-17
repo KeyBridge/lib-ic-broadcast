@@ -61,16 +61,13 @@ public class CanadaStationPK implements Serializable {
    * @throws Exception if the input string does not match the required regex
    *                   pattern and no parameters can be found
    */
-  public CanadaStationPK(String canadaStationPkString) throws Exception {
-    String toString = "banner \\[(\\w+)\\] callSign \\[(\\w+)\\]";
+  public CanadaStationPK(String canadaStationPkString) {
+    String toString = "banner \\[(\\w+)\\] callSign \\[(\\S+)\\]";
     Pattern p = Pattern.compile(toString);
     Matcher m = p.matcher(canadaStationPkString);
     if (m.find()) {
-      System.out.println("find ");
       this.banner = Enum_Banner.findByDbCode(m.group(1));
       this.callSign = m.group(2);
-    } else {
-      throw new Exception("CanadaStationPK could not find a banner and callsign in the input string \"" + canadaStationPkString + "\". Please verify it matches the required pattern.");
     }
   }
 

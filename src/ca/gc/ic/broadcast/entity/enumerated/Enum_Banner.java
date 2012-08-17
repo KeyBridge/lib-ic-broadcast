@@ -108,15 +108,15 @@ public enum Enum_Banner {
   /**
    * Unacceptable
    */
-  UN("Unacceptable", false),
+  UN("Unacceptable Application", false),
   /**
    * Cancelled
    */
-  X("Cancelled", false),
+  X("Cancelled Permit", false),
   /**
    * Cancelled
    */
-  XX("Cancelled", false);
+  XX("Cancelled Application", false);
   private String description;
   /**
    * Indicates whether the station is on or off air. TRUE means the station is

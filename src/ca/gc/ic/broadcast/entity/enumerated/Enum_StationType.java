@@ -24,7 +24,7 @@ public enum Enum_StationType {
   /**
    * AM Radio
    */
-  AM("am_station", "AM Radio;"),
+  AM("am_station", "AM Radio"),
   /**
    * FM Radio
    */

@@ -16,7 +16,8 @@ echo "+------------------------------------------------------------------------+
 
 
 schemagen -cp $CLASSPATH:.:entity/ \
-    entity/*.java 
+    entity/*.java \
+    entity/enumerated/*.java 
 
 find . -name "*.class" -exec rm {} \;
 
