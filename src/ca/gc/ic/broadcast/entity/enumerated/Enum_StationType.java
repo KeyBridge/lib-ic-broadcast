@@ -84,9 +84,9 @@ public enum Enum_StationType {
    * @return
    */
   public static Enum_StationType findByStationType(String stationType) {
-    for (Enum_StationType enum_Banner : Enum_StationType.values()) {
-      if (enum_Banner.getStationType().equalsIgnoreCase(stationType)) {
-        return enum_Banner;
+    for (Enum_StationType type : Enum_StationType.values()) {
+      if (type.getStationType().equalsIgnoreCase(stationType)) {
+        return type;
       }
     }
     return null;
@@ -107,9 +107,9 @@ public enum Enum_StationType {
     if (dbCode != null && dbCode.endsWith("_CA")) {
       dbCode = dbCode.replace("_CA", "");
     }
-    for (Enum_StationType enum_Banner : Enum_StationType.values()) {
-      if (enum_Banner.name().equalsIgnoreCase(dbCode)) {
-        return enum_Banner;
+    for (Enum_StationType stationType : Enum_StationType.values()) {
+      if (stationType.name().equalsIgnoreCase(dbCode)) {
+        return stationType;
       }
     }
     return null;
