@@ -100,16 +100,15 @@ public enum Enum_StationType {
    */
   public static Enum_StationType findByDbCode(String dbCode) {
     /**
-     * Trim the '_CA' suffix if present. This suffix is present in the dbCode
-     * field for Canada codes entered into the WSIF enumerated list of wireless
-     * services.
+     * This method will receive WSIF WirelessServiceType codes. e.g.
+     * 'TVTX.A_CA'. The matching strategy is therefore to identify if the dbCode
+     * BEGINS with any Enum_StationType name.
      */
-    if (dbCode != null && dbCode.endsWith("_CA")) {
-      dbCode = dbCode.replace("_CA", "");
-    }
-    for (Enum_StationType stationType : Enum_StationType.values()) {
-      if (stationType.name().equalsIgnoreCase(dbCode)) {
-        return stationType;
+    if (dbCode != null) {
+      for (Enum_StationType type : Enum_StationType.values()) {
+        if (dbCode.toUpperCase().startsWith(type.name())) {
+          return type;
+        }
       }
     }
     return null;
