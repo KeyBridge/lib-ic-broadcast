@@ -51,6 +51,12 @@ public abstract class CanadaStation implements Serializable {
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected CanadaStationPK canadaStationPK;
+  /**
+   * Enumerated Discriminator Column used to identify the type of station this
+   * record represents.
+   * <p/>
+   * Supported valued are: am_station, fm_station, sdar_station and tv_station.
+   */
   @Basic(optional = false)
   @Column(name = "station_type", nullable = false, length = 4)
   @XmlAttribute(required = true)
@@ -70,6 +76,9 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "bc_mode")
   @XmlAttribute
   private Character bcMode;
+  /**
+   * Closest distance to Canada US Border(km)
+   */
   @Column(name = "border", precision = 12)
   @XmlAttribute
   private float border;
@@ -79,9 +88,6 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "brdr_long", length = 7)
   @XmlAttribute
   private String brdrLong;
-  @Column(name = "can_land", precision = 12)
-  @XmlAttribute
-  private float canLand;
   @Column(name = "cert_numb", length = 6)
   @XmlAttribute
   private String certNumb;
@@ -98,9 +104,9 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "doc_file")
   @XmlAttribute
   private int docFile;
-  @Column(name = "fre_land", precision = 12)
-  @XmlAttribute
-  private float freLand;
+  /**
+   * Broadcast frequency in MHz.
+   */
   @Column(name = "frequency", precision = 12)
   @XmlAttribute
   private float frequency;
@@ -128,9 +134,24 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "unattended")
   @XmlAttribute
   private Character unattended;
+  /**
+   * Closest distance to Canada Land Edge
+   */
+  @Column(name = "can_land", precision = 12)
+  @XmlAttribute
+  private float landDistanceCanada;
+  /**
+   * Closest distance to French Land Edge near Newfoundland
+   */
+  @Column(name = "fre_land", precision = 12)
+  @XmlAttribute
+  private float landDistanceFrenchNewfoundland;
+  /**
+   * Closest distance to USA Land Edge
+   */
   @Column(name = "usa_land", precision = 12)
   @XmlAttribute
-  private float usaLand;
+  private float landDistanceUSA;
   /**
    * List of Antenna objects. In the Canada database each antenna record
    * describes a different polarization for the same physical antenna.
@@ -211,6 +232,11 @@ public abstract class CanadaStation implements Serializable {
     this.bcMode = bcMode;
   }
 
+  /**
+   * Closest distance to Canada US Border(km)
+   * <p/>
+   * @return
+   */
   public float getBorder() {
     return border;
   }
@@ -233,14 +259,6 @@ public abstract class CanadaStation implements Serializable {
 
   public void setBrdrLong(String brdrLong) {
     this.brdrLong = brdrLong;
-  }
-
-  public float getCanLand() {
-    return canLand;
-  }
-
-  public void setCanLand(float canLand) {
-    this.canLand = canLand;
   }
 
   public String getCertNumb() {
@@ -283,20 +301,53 @@ public abstract class CanadaStation implements Serializable {
     this.docFile = docFile;
   }
 
-  public float getFreLand() {
-    return freLand;
-  }
-
-  public void setFreLand(float freLand) {
-    this.freLand = freLand;
-  }
-
+  /**
+   * Broadcast frequency in MHz.
+   * <p/>
+   * @return
+   */
   public float getFrequency() {
+    /**
+     * Apply multiplier depending upon station_type to normalize units to MHz.
+     * <p/>
+     * AM: database Frequency in kHz. Valid 530 to 1700.
+     * <p/>
+     * FM: Frequency in MHz 88.1 to 107.9.
+     * <p/>
+     * TV: Frequency in MHz.
+     */
+    if (Enum_StationType.AM.equals(Enum_StationType.findByDbCode(stationType))) {
+      return frequency * 1000;
+    }
     return frequency;
   }
 
   public void setFrequency(float frequency) {
     this.frequency = frequency;
+  }
+
+  public float getLandDistanceCanada() {
+    return landDistanceCanada;
+  }
+
+  public void setLandDistanceCanada(float landDistanceCanada) {
+    this.landDistanceCanada = landDistanceCanada;
+  }
+
+  public float getLandDistanceFrenchNewfoundland() {
+    return landDistanceFrenchNewfoundland;
+  }
+
+  public void setLandDistanceFrenchNewfoundland(float landDistanceFrenchNewfoundland) {
+    this.landDistanceFrenchNewfoundland = landDistanceFrenchNewfoundland;
+  }
+
+  public float getLandDistanceUSA() {
+    return landDistanceUSA;
+  }
+
+  public void setLandDistanceUSA(float landDistanceUSA) {
+    this.landDistanceUSA = landDistanceUSA;
   }
 
   public String getNetwork() {
@@ -353,14 +404,6 @@ public abstract class CanadaStation implements Serializable {
 
   public void setUnattended(Character unattended) {
     this.unattended = unattended;
-  }
-
-  public float getUsaLand() {
-    return usaLand;
-  }
-
-  public void setUsaLand(float usaLand) {
-    this.usaLand = usaLand;
   }
 
   public List<Antenna> getAntennaList() {
@@ -452,37 +495,37 @@ public abstract class CanadaStation implements Serializable {
   @Override
   public String toString() {
     return "CanadaStation"
-            + " canadaStationPK [" + canadaStationPK
-            + "]\n stationType [" + stationType
-            + "] channel [" + channel
-            + "] latitude [" + latitude
-            + "] longitude [" + longitude
-            + "] bcMode [" + bcMode
-            + "] border [" + border
-            + "] brdrLat [" + brdrLat
-            + "] brdrLong [" + brdrLong
-            + "] canLand [" + canLand
-            + "] certNumb [" + certNumb
-            + "] city [" + city
-            + "] stationClass [" + stationClass
-            + "] decNumber [" + decNumber
-            + "] docFile [" + docFile
-            + "] freLand [" + freLand
-            + "] frequency [" + frequency
-            + "] network [" + network
-            + "] okDump [" + okDump
-            + "] province [" + province
-            + "] ssCode [" + ssCode
-            + "] stCreat [" + stCreat
-            + "] stMod [" + stMod
-            + "] unattended [" + unattended
-            + "] usaLand [" + usaLand
-            + "]\n comment [" + comment
-            + "]\n regionalFiling [" + regionalFiling
-            + "]\n feedSignal [" + feedSignal
-            + "]\n tsid [" + tsid
-            + "]\n comment [" + comment
-            + "]\n antennaList [" + antennaList
-            + ']';
+      + " canadaStationPK [" + canadaStationPK
+      + "]\n stationType [" + stationType
+      + "] channel [" + channel
+      + "] latitude [" + latitude
+      + "] longitude [" + longitude
+      + "] bcMode [" + bcMode
+      + "] border [" + border
+      + "] brdrLat [" + brdrLat
+      + "] brdrLong [" + brdrLong
+      + "] certNumb [" + certNumb
+      + "] city [" + city
+      + "] stationClass [" + stationClass
+      + "] decNumber [" + decNumber
+      + "] docFile [" + docFile
+      + "] frequency [" + frequency
+      + "] network [" + network
+      + "] okDump [" + okDump
+      + "] province [" + province
+      + "] ssCode [" + ssCode
+      + "] stCreat [" + stCreat
+      + "] stMod [" + stMod
+      + "] unattended [" + unattended
+      + "] landDistanceCanada [" + landDistanceCanada
+      + "] landDistanceFrenchNewfoundland [" + landDistanceFrenchNewfoundland
+      + "] landDistanceUSA [" + landDistanceUSA
+      + "]\n comment [" + comment
+      + "]\n regionalFiling [" + regionalFiling
+      + "]\n feedSignal [" + feedSignal
+      + "]\n tsid [" + tsid
+      + "]\n comment [" + comment
+      + "]\n antennaList [" + antennaList
+      + ']';
   }
 }
