@@ -94,6 +94,11 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "city", length = 25)
   @XmlAttribute
   private String city;
+  /**
+   * The Canadian class of this Station; e.g. A, A1, B, B1, C, C1, C2, D, LP,
+   * VLP; For Canadian Stations, A, A1, B, C, C1, LP, VLP; For Non-Canadian
+   * Stations, A, B, B1, C, C1, C2, D.
+   */
   @Column(name = "clazz", length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
@@ -277,6 +282,13 @@ public abstract class CanadaStation implements Serializable {
     this.city = city;
   }
 
+  /**
+   * The Canadian class of this Station; e.g. A, A1, B, B1, C, C1, C2, D, LP,
+   * VLP; For Canadian Stations, A, A1, B, C, C1, LP, VLP; For Non-Canadian
+   * Stations, A, B, B1, C, C1, C2, D.
+   * <p/>
+   * @return
+   */
   public Enum_StationClass getStationClass() {
     return stationClass;
   }
