@@ -430,9 +430,6 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public RegionalFiling getRegionalFiling() {
-    if (regionalFiling == null) {
-      regionalFiling = new RegionalFiling();
-    }
     return regionalFiling;
   }
 
@@ -441,9 +438,6 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public FeedSignal getFeedSignal() {
-    if (feedSignal == null) {
-      feedSignal = new FeedSignal();
-    }
     return feedSignal;
   }
 
@@ -463,9 +457,6 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public Tsid getTsid() {
-    if (tsid == null) {
-      tsid = new Tsid();
-    }
     return tsid;
   }
 
@@ -474,9 +465,6 @@ public abstract class CanadaStation implements Serializable {
   }
 
   public Comment getComment() {
-    if (comment == null) {
-      comment = new Comment();
-    }
     return comment;
   }
 
