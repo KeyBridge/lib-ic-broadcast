@@ -138,6 +138,16 @@ public enum Enum_Banner {
   }
 
   /**
+   * Find an Enum_Banner by its name.
+   * <p/>
+   * @param name the name. e.g. 'UN'
+   * @return
+   */
+  public static Enum_Banner findByName(String name) {
+    return findByDbCode(name);
+  }
+
+  /**
    * Find an enumBanner object by its 2-character name code.
    * <p/>
    * @param dbCode the 2-character code

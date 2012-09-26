@@ -93,6 +93,21 @@ public enum Enum_StationType {
   }
 
   /**
+   * Find an Enum_StationType class by its name. e.g. 'TV'
+   * <p/>
+   * @param name the name. not case sensitive
+   * @return
+   */
+  public static Enum_StationType findByName(String name) {
+    for (Enum_StationType type : Enum_StationType.values()) {
+      if (type.name().equalsIgnoreCase(name)) {
+        return type;
+      }
+    }
+    return null;
+  }
+
+  /**
    * Find an enumBanner object by its 2-character name code.
    * <p/>
    * @param dbCode the 2-character code
@@ -103,6 +118,9 @@ public enum Enum_StationType {
      * This method will receive WSIF WirelessServiceType codes. e.g.
      * 'TVTX.A_CA'. The matching strategy is therefore to identify if the dbCode
      * BEGINS with any Enum_StationType name.
+     * <p/>
+     * Although the order looks wrong DO NOT EDIT THIS METHOD without reading
+     * the logic behind the implementation.
      */
     if (dbCode != null) {
       for (Enum_StationType type : Enum_StationType.values()) {
