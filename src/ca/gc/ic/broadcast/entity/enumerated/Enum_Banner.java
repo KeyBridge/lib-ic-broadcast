@@ -129,10 +129,18 @@ public enum Enum_Banner {
     this.transmitting = transmitting;
   }
 
+  /**
+   * Human readable description. e.g. 'Temporary Operation'
+   * <p/>
+   * @return
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * @return Whether the banner code is transmitting (on-air) or not.
+   */
   public boolean isTransmitting() {
     return transmitting;
   }
