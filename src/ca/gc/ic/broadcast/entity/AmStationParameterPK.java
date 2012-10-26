@@ -22,6 +22,7 @@ import javax.persistence.Embeddable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -31,6 +32,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AmStationParameterPK implements Serializable {
 
+  @XmlTransient
+  private static final long serialVersionUID = 1L;
   @Basic(optional = false)
   @Column(name = "calls_banr", nullable = false, length = 32)
   @XmlAttribute

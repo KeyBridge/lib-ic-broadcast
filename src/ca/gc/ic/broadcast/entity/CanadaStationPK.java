@@ -17,14 +17,13 @@ package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -34,6 +33,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CanadaStationPK implements Serializable {
 
+  @XmlTransient
+  private static final long serialVersionUID = 1L;
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
   @XmlAttribute

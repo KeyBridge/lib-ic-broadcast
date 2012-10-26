@@ -22,6 +22,7 @@ import javax.persistence.Embeddable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -31,6 +32,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class RadiationPatternPK implements Serializable {
 
+  @XmlTransient
+  private static final long serialVersionUID = 1L;
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
   @XmlAttribute
@@ -93,7 +96,7 @@ public class RadiationPatternPK implements Serializable {
       return false;
     }
     RadiationPatternPK other = (RadiationPatternPK) object;
-    if (this.pattKey != other.pattKey) {
+    if (this.pattKey.equals(other.pattKey)) {
       return false;
     }
     if (this.angle != other.angle) {

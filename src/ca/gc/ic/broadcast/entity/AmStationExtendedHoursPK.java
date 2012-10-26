@@ -21,6 +21,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -30,6 +31,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AmStationExtendedHoursPK implements Serializable {
 
+  @XmlTransient
+  private static final long serialVersionUID = 1L;
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
   @XmlAttribute
