@@ -57,16 +57,16 @@ public class Antenna implements Serializable {
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "patt_numb", precision = 12)
   @XmlAttribute
-  private float pattNumb;
+  private Double pattNumb;
   @Column(name = "patt_type", length = 12)
   @XmlAttribute
   private String pattType;
   @Column(name = "punits", precision = 12)
   @XmlAttribute
-  private float punits;
+  private Double punits;
   @Column(name = "numpoints", precision = 12)
   @XmlAttribute
-  private float numpoints;
+  private Double numpoints;
   /**
    * Date encoded as yyyyMMdd
    */
@@ -114,11 +114,11 @@ public class Antenna implements Serializable {
     this.horVer = horVer;
   }
 
-  public float getPattNumb() {
+  public Double getPattNumb() {
     return pattNumb;
   }
 
-  public void setPattNumb(float pattNumb) {
+  public void setPattNumb(Double pattNumb) {
     this.pattNumb = pattNumb;
   }
 
@@ -130,19 +130,19 @@ public class Antenna implements Serializable {
     this.pattType = pattType;
   }
 
-  public float getPunits() {
+  public Double getPunits() {
     return punits;
   }
 
-  public void setPunits(float punits) {
+  public void setPunits(Double punits) {
     this.punits = punits;
   }
 
-  public float getNumpoints() {
+  public Double getNumpoints() {
     return numpoints;
   }
 
-  public void setNumpoints(float numpoints) {
+  public void setNumpoints(Double numpoints) {
     this.numpoints = numpoints;
   }
 
@@ -217,15 +217,15 @@ public class Antenna implements Serializable {
   @Override
   public String toString() {
     return "Antenna"
-            + " pattKey [" + pattKey
-            + "] horVer [" + horVer
-            + "] pattNumb [" + pattNumb
-            + "] pattType [" + pattType
-            + "] punits [" + punits
-            + "] numpoints [" + numpoints
-            + "] pattDate [" + pattDate
-            + "] canadaStationList [" + canadaStationList
-            + "]\n radiationPatternList [" + radiationPatternList
-            + ']';
+      + " pattKey [" + pattKey
+      + "] horVer [" + horVer
+      + "] pattNumb [" + pattNumb
+      + "] pattType [" + pattType
+      + "] punits [" + punits
+      + "] numpoints [" + numpoints
+      + "] pattDate [" + pattDate
+      + "] canadaStationList [" + canadaStationList
+      + "]\n radiationPatternList [" + radiationPatternList
+      + ']';
   }
 }

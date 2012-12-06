@@ -51,7 +51,7 @@ public class RadiationPattern implements Serializable {
     this.radiationPatternPK = radiationPatternPK;
   }
 
-  public RadiationPattern(int pattKey, float angle, float gain) {
+  public RadiationPattern(int pattKey, double angle, double gain) {
     this.radiationPatternPK = new RadiationPatternPK(pattKey, angle, gain);
   }
 

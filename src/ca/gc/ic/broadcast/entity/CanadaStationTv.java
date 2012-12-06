@@ -38,7 +38,7 @@ public class CanadaStationTv extends CanadaStation {
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
   @XmlAttribute(required = true)
-  private float erpvpk;
+  private Double erpvpk;
   @Column(name = "alloc_zone")
   @XmlAttribute
   private int allocZone;
@@ -47,32 +47,32 @@ public class CanadaStationTv extends CanadaStation {
   private Character antMode;
   @Column(name = "beam_tilt", precision = 12)
   @XmlAttribute
-  private float beamTilt;
+  private Double beamTilt;
   @Column(name = "close_cap")
   @XmlAttribute
   private Character closeCap;
   @Basic(optional = false)
   @Column(name = "ehaat", nullable = false)
   @XmlAttribute
-  private float ehaat;
+  private Double ehaat;
   @Column(name = "erpaav", precision = 12)
   @XmlAttribute
-  private float erpaav;
+  private Double erpaav;
   @Column(name = "erpapk", precision = 12)
   @XmlAttribute
-  private float erpapk;
+  private Double erpapk;
   @Column(name = "erpata")
   @XmlAttribute
   private int erpata;
   @Column(name = "erpvav", precision = 12)
   @XmlAttribute
-  private float erpvav;
+  private Double erpvav;
   @Column(name = "erpvta", precision = 12)
   @XmlAttribute
-  private float erpvta;
+  private Double erpvta;
   @Column(name = "ground_lev", precision = 12)
   @XmlAttribute
-  private float groundLev;
+  private Double groundLev;
   @Column(name = "limit_code", length = 8)
   @XmlAttribute
   private String limitCode;
@@ -84,10 +84,10 @@ public class CanadaStationTv extends CanadaStation {
   private Character offset;
   @Column(name = "overall_h", precision = 12)
   @XmlAttribute
-  private float overallH;
+  private Double overallH;
   @Column(name = "rad_center", precision = 12)
   @XmlAttribute
-  private float radCenter;
+  private Double radCenter;
 
   public CanadaStationTv() {
   }
@@ -101,11 +101,11 @@ public class CanadaStationTv extends CanadaStation {
   }
 
   //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
-  public float getErpvpk() {
+  public Double getErpvpk() {
     return erpvpk;
   }
 
-  public void setErpvpk(float erpvpk) {
+  public void setErpvpk(Double erpvpk) {
     this.erpvpk = erpvpk;
   }
 
@@ -125,11 +125,11 @@ public class CanadaStationTv extends CanadaStation {
     this.antMode = antMode;
   }
 
-  public float getBeamTilt() {
+  public Double getBeamTilt() {
     return beamTilt;
   }
 
-  public void setBeamTilt(float beamTilt) {
+  public void setBeamTilt(Double beamTilt) {
     this.beamTilt = beamTilt;
   }
 
@@ -141,27 +141,27 @@ public class CanadaStationTv extends CanadaStation {
     this.closeCap = closeCap;
   }
 
-  public float getEhaat() {
+  public Double getEhaat() {
     return ehaat;
   }
 
-  public void setEhaat(float ehaat) {
+  public void setEhaat(Double ehaat) {
     this.ehaat = ehaat;
   }
 
-  public float getErpaav() {
+  public Double getErpaav() {
     return erpaav;
   }
 
-  public void setErpaav(float erpaav) {
+  public void setErpaav(Double erpaav) {
     this.erpaav = erpaav;
   }
 
-  public float getErpapk() {
+  public Double getErpapk() {
     return erpapk;
   }
 
-  public void setErpapk(float erpapk) {
+  public void setErpapk(Double erpapk) {
     this.erpapk = erpapk;
   }
 
@@ -173,27 +173,27 @@ public class CanadaStationTv extends CanadaStation {
     this.erpata = erpata;
   }
 
-  public float getErpvav() {
+  public Double getErpvav() {
     return erpvav;
   }
 
-  public void setErpvav(float erpvav) {
+  public void setErpvav(Double erpvav) {
     this.erpvav = erpvav;
   }
 
-  public float getErpvta() {
+  public Double getErpvta() {
     return erpvta;
   }
 
-  public void setErpvta(float erpvta) {
+  public void setErpvta(Double erpvta) {
     this.erpvta = erpvta;
   }
 
-  public float getGroundLev() {
+  public Double getGroundLev() {
     return groundLev;
   }
 
-  public void setGroundLev(float groundLev) {
+  public void setGroundLev(Double groundLev) {
     this.groundLev = groundLev;
   }
 
@@ -221,19 +221,19 @@ public class CanadaStationTv extends CanadaStation {
     this.offset = offset;
   }
 
-  public float getOverallH() {
+  public Double getOverallH() {
     return overallH;
   }
 
-  public void setOverallH(float overallH) {
+  public void setOverallH(Double overallH) {
     this.overallH = overallH;
   }
 
-  public float getRadCenter() {
+  public Double getRadCenter() {
     return radCenter;
   }
 
-  public void setRadCenter(float radCenter) {
+  public void setRadCenter(Double radCenter) {
     this.radCenter = radCenter;
   }//</editor-fold>
 
@@ -259,23 +259,23 @@ public class CanadaStationTv extends CanadaStation {
   @Override
   public String toString() {
     return "CanadaStationTv"
-            + super.toString()
-            + "\n] erpvpk [" + erpvpk
-            + "] allocZone [" + allocZone
-            + "] antMode [" + antMode
-            + "] beamTilt [" + beamTilt
-            + "] closeCap [" + closeCap
-            + "] erpaav [" + erpaav
-            + "] erpapk [" + erpapk
-            + "] erpata [" + erpata
-            + "] erpvav [" + erpvav
-            + "] erpvta [" + erpvta
-            + "] groundLev [" + groundLev
-            + "] limitCode [" + limitCode
-            + "] offPrec [" + offPrec
-            + "] offset [" + offset
-            + "] overallH [" + overallH
-            + "] radCenter [" + radCenter
-            + ']';
+      + super.toString()
+      + "\n] erpvpk [" + erpvpk
+      + "] allocZone [" + allocZone
+      + "] antMode [" + antMode
+      + "] beamTilt [" + beamTilt
+      + "] closeCap [" + closeCap
+      + "] erpaav [" + erpaav
+      + "] erpapk [" + erpapk
+      + "] erpata [" + erpata
+      + "] erpvav [" + erpvav
+      + "] erpvta [" + erpvta
+      + "] groundLev [" + groundLev
+      + "] limitCode [" + limitCode
+      + "] offPrec [" + offPrec
+      + "] offset [" + offset
+      + "] overallH [" + overallH
+      + "] radCenter [" + radCenter
+      + ']';
   }
 }

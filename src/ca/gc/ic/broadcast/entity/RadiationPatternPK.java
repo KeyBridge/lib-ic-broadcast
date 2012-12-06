@@ -16,6 +16,7 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -41,16 +42,16 @@ public class RadiationPatternPK implements Serializable {
   @Basic(optional = false)
   @Column(name = "angle", nullable = false)
   @XmlAttribute
-  private float angle;
+  private Double angle;
   @Basic(optional = false)
   @Column(name = "gain", nullable = false)
   @XmlAttribute
-  private float gain;
+  private Double gain;
 
   public RadiationPatternPK() {
   }
 
-  public RadiationPatternPK(int pattKey, float angle, float gain) {
+  public RadiationPatternPK(int pattKey, Double angle, Double gain) {
     this.pattKey = pattKey;
     this.angle = angle;
     this.gain = gain;
@@ -64,28 +65,28 @@ public class RadiationPatternPK implements Serializable {
     this.pattKey = pattKey;
   }
 
-  public float getAngle() {
+  public Double getAngle() {
     return angle;
   }
 
-  public void setAngle(float angle) {
+  public void setAngle(Double angle) {
     this.angle = angle;
   }
 
-  public float getGain() {
+  public Double getGain() {
     return gain;
   }
 
-  public void setGain(float gain) {
+  public void setGain(Double gain) {
     this.gain = gain;
   }
 
   @Override
   public int hashCode() {
-    int hash = 0;
-    hash += (int) pattKey;
-    hash += (int) angle;
-    hash += (int) gain;
+    int hash = 3;
+    hash = 83 * hash + Objects.hashCode(this.pattKey);
+    hash = 83 * hash + Objects.hashCode(this.angle);
+    hash = 83 * hash + Objects.hashCode(this.gain);
     return hash;
   }
 
