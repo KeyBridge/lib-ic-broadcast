@@ -16,6 +16,7 @@
 package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -23,11 +24,16 @@ import javax.persistence.Entity;
 import javax.xml.bind.annotation.*;
 
 /**
- *
+ * Logical data model container for the CANADA CanadaStation (ca_station) table
+ * describing TV stations.
+ * <p/>
+ * Some fields have been named differently from the table names to improve
+ * clarity.
+ * <p/>
  * @author jesse
  */
 @Entity
-@DiscriminatorValue("tv_station")
+@DiscriminatorValue("TV")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
@@ -35,59 +41,130 @@ public class CanadaStationTv extends CanadaStation {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+  /**
+   * Allocation Planning Zone 0, 1 or 2
+   */
+  @Column(name = "alloc_zone")
+  @XmlAttribute
+  private Integer allocZone;
+  /**
+   * Antenna Mode: O, D, Space; Omnidirectional or Directional
+   */
+  @Column(name = "ant_mode")
+  @XmlAttribute(required = true)
+  private Character antMode;
+  /**
+   * Beam Tilt Angle in Degrees; -10.0 to 10.0
+   */
+  @Column(name = "beam_tilt", precision = 12)
+  @XmlAttribute
+  private Double beamTilt;
+  /**
+   * Closed Captioning; Y or N
+   */
+  @Column(name = "close_cap")
+  @XmlAttribute
+  private Character closedCaptioning;
+  /**
+   * Effective Height of Antenna Above Terrain
+   * <p/>
+   * -1,200.0 to 2,000.0 meters
+   */
+  @Basic(optional = false)
+  @Column(name = "ehaat", nullable = false)
+  @XmlAttribute
+  private Double haat;
+  /**
+   * ERP Aural Average in Watts
+   * <p/>
+   * 0 to 1,000,000
+   */
+  @Column(name = "erpaav", precision = 12)
+  @XmlAttribute
+  private Double erpaav;
+  /**
+   * ERP Aural Peak Power in Watts
+   * <p/>
+   * 0 to 1,000,000
+   */
+  @Column(name = "erpapk", precision = 12)
+  @XmlAttribute
+  private Double erpapk;
+  /**
+   * ERP Average Power at Tilt Angle in watts
+   * <p/>
+   * 0 to 5,000,000
+   */
+  @Column(name = "erpata")
+  @XmlAttribute
+  private Integer erpata;
+  /**
+   * ERP Visual Peak Power in Watts
+   * <p/>
+   * 0 to over 5,000,000
+   */
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
   @XmlAttribute(required = true)
   private Double erpvpk;
-  @Column(name = "alloc_zone")
-  @XmlAttribute
-  private int allocZone;
-  @Column(name = "ant_mode")
-  @XmlAttribute(required = true)
-  private Character antMode;
-  @Column(name = "beam_tilt", precision = 12)
-  @XmlAttribute
-  private Double beamTilt;
-  @Column(name = "close_cap")
-  @XmlAttribute
-  private Character closeCap;
-  @Basic(optional = false)
-  @Column(name = "ehaat", nullable = false)
-  @XmlAttribute
-  private Double ehaat;
-  @Column(name = "erpaav", precision = 12)
-  @XmlAttribute
-  private Double erpaav;
-  @Column(name = "erpapk", precision = 12)
-  @XmlAttribute
-  private Double erpapk;
-  @Column(name = "erpata")
-  @XmlAttribute
-  private int erpata;
+  /**
+   * ERP Visual Average in Watts
+   */
   @Column(name = "erpvav", precision = 12)
   @XmlAttribute
   private Double erpvav;
+  /**
+   * ERP Peak Visual Power at Tilt Angle in Watts
+   * <p/>
+   * 0 to more than 5,000,000
+   */
   @Column(name = "erpvta", precision = 12)
   @XmlAttribute
   private Double erpvta;
+  /**
+   * Ground Level at Tower Base above Sea Level in Meters.
+   * <p/>
+   * 0.0 to 9,999.9
+   */
   @Column(name = "ground_lev", precision = 12)
   @XmlAttribute
-  private Double groundLev;
+  private Double towerElevation;
+  /**
+   * Limitation Identification code "LAAAA".
+   * <p/>
+   * @deprecated Not used in logical data model.
+   */
   @Column(name = "limit_code", length = 8)
   @XmlAttribute
   private String limitCode;
+  /**
+   * Refers to Off-set Precision. Valid Y, Space.
+   */
   @Column(name = "off_prec")
   @XmlAttribute
-  private Character offPrec;
+  private Character offSetPrecision;
+  /**
+   * Refers to TV Off-set Code. Space, +, -, Z.
+   */
   @Column(name = "offset")
   @XmlAttribute
-  private Character offset;
+  private Character offSetCode;
+  /**
+   * Overall Height Above ground in Meters
+   * <p/>
+   * 0.0 to 999.9
+   */
   @Column(name = "overall_h", precision = 12)
   @XmlAttribute
-  private Double overallH;
+  private Double overallHag;
+  /**
+   * Radiating Center Above Ground Level in meters.
+   * <p/>
+   * 0.0 to 5,000.0 meters
+   */
   @Column(name = "rad_center", precision = 12)
   @XmlAttribute
-  private Double radCenter;
+  private Double rcHag;
 
   public CanadaStationTv() {
   }
@@ -101,22 +178,20 @@ public class CanadaStationTv extends CanadaStation {
   }
 
   //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
-  public Double getErpvpk() {
-    return erpvpk;
-  }
-
-  public void setErpvpk(Double erpvpk) {
-    this.erpvpk = erpvpk;
-  }
-
-  public int getAllocZone() {
+  /**
+   * @return Allocation Planning Zone 0, 1 or 2
+   */
+  public Integer getAllocZone() {
     return allocZone;
   }
 
-  public void setAllocZone(int allocZone) {
+  public void setAllocZone(Integer allocZone) {
     this.allocZone = allocZone;
   }
 
+  /**
+   * @return Antenna Mode: O, D, Space; Omnidirectional or Directional
+   */
   public Character getAntMode() {
     return antMode;
   }
@@ -125,6 +200,9 @@ public class CanadaStationTv extends CanadaStation {
     this.antMode = antMode;
   }
 
+  /**
+   * @return Beam Tilt Angle in Degrees
+   */
   public Double getBeamTilt() {
     return beamTilt;
   }
@@ -133,22 +211,31 @@ public class CanadaStationTv extends CanadaStation {
     this.beamTilt = beamTilt;
   }
 
-  public Character getCloseCap() {
-    return closeCap;
+  /**
+   * @return Closed Captioning
+   */
+  public boolean getClosedCaptioning() {
+    return closedCaptioning != null ? closedCaptioning.equals('Y') : false;
   }
 
-  public void setCloseCap(Character closeCap) {
-    this.closeCap = closeCap;
+  public void setClosedCaptioning(boolean closedCaptioning) {
+    this.closedCaptioning = closedCaptioning ? 'Y' : 'N';
   }
 
-  public Double getEhaat() {
-    return ehaat;
+  /**
+   * @return Effective Height of Antenna Above Terrain
+   */
+  public Double getHaat() {
+    return haat;
   }
 
-  public void setEhaat(Double ehaat) {
-    this.ehaat = ehaat;
+  public void setHaat(Double haat) {
+    this.haat = haat;
   }
 
+  /**
+   * @return ERP Aural Average in Watts
+   */
   public Double getErpaav() {
     return erpaav;
   }
@@ -157,6 +244,9 @@ public class CanadaStationTv extends CanadaStation {
     this.erpaav = erpaav;
   }
 
+  /**
+   * @return ERP Aural Peak Power in Watts
+   */
   public Double getErpapk() {
     return erpapk;
   }
@@ -165,14 +255,31 @@ public class CanadaStationTv extends CanadaStation {
     this.erpapk = erpapk;
   }
 
-  public int getErpata() {
+  /**
+   * @return ERP Average Power at Tilt Angle in watts
+   */
+  public Integer getErpata() {
     return erpata;
   }
 
-  public void setErpata(int erpata) {
+  public void setErpata(Integer erpata) {
     this.erpata = erpata;
   }
 
+  /**
+   * @return ERP Visual Peak Power in Watts
+   */
+  public Double getErpvpk() {
+    return erpvpk;
+  }
+
+  public void setErpvpk(Double erpvpk) {
+    this.erpvpk = erpvpk;
+  }
+
+  /**
+   * @return ERP Visual Average in Watts
+   */
   public Double getErpvav() {
     return erpvav;
   }
@@ -181,6 +288,9 @@ public class CanadaStationTv extends CanadaStation {
     this.erpvav = erpvav;
   }
 
+  /**
+   * @return ERP Peak Visual Power at Tilt Angle in Watts
+   */
   public Double getErpvta() {
     return erpvta;
   }
@@ -189,14 +299,20 @@ public class CanadaStationTv extends CanadaStation {
     this.erpvta = erpvta;
   }
 
-  public Double getGroundLev() {
-    return groundLev;
+  /**
+   * @return Ground Level at Tower Base above Sea Level in Meters
+   */
+  public Double getTowerElevation() {
+    return towerElevation;
   }
 
-  public void setGroundLev(Double groundLev) {
-    this.groundLev = groundLev;
+  public void setTowerElevation(Double towerElevation) {
+    this.towerElevation = towerElevation;
   }
 
+  /**
+   * @deprecated Not used in the logical data model.
+   */
   public String getLimitCode() {
     return limitCode;
   }
@@ -205,36 +321,48 @@ public class CanadaStationTv extends CanadaStation {
     this.limitCode = limitCode;
   }
 
-  public Character getOffPrec() {
-    return offPrec;
+  /**
+   * @return Off-set Precision is valid.
+   */
+  public boolean getOffSetPrecision() {
+    return offSetPrecision != null ? offSetPrecision.equals('Y') : false;
   }
 
-  public void setOffPrec(Character offPrec) {
-    this.offPrec = offPrec;
+  public void setOffSetPrecision(boolean offSetPrecision) {
+    this.offSetPrecision = offSetPrecision ? 'Y' : 'N';
   }
 
-  public Character getOffset() {
-    return offset;
+  /**
+   * @return The TV Off-set Code. Space, +, -, Z.
+   */
+  public Character getOffSetCode() {
+    return offSetCode;
   }
 
-  public void setOffset(Character offset) {
-    this.offset = offset;
+  public void setOffSetCode(Character offSetCode) {
+    this.offSetCode = offSetCode;
   }
 
-  public Double getOverallH() {
-    return overallH;
+  /**
+   * @return Overall Height Above ground in Meters
+   */
+  public Double getOverallHag() {
+    return overallHag;
   }
 
-  public void setOverallH(Double overallH) {
-    this.overallH = overallH;
+  public void setOverallHag(Double overallHag) {
+    this.overallHag = overallHag;
   }
 
-  public Double getRadCenter() {
-    return radCenter;
+  /**
+   * @return Radiating Center Above Ground Level in meters.
+   */
+  public Double getRcHag() {
+    return rcHag;
   }
 
-  public void setRadCenter(Double radCenter) {
-    this.radCenter = radCenter;
+  public void setRcHag(Double rcHag) {
+    this.rcHag = rcHag;
   }//</editor-fold>
 
   @Override
@@ -245,12 +373,15 @@ public class CanadaStationTv extends CanadaStation {
   }
 
   @Override
-  public boolean equals(Object object) {
-    if (!(object instanceof CanadaStationTv)) {
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    CanadaStationTv other = (CanadaStationTv) object;
-    if ((this.canadaStationPK == null && other.canadaStationPK != null) || (this.canadaStationPK != null && !this.canadaStationPK.equals(other.canadaStationPK))) {
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final CanadaStationTv other = (CanadaStationTv) obj;
+    if (!Objects.equals(this.canadaStationPK, other.canadaStationPK)) {
       return false;
     }
     return true;
@@ -260,22 +391,23 @@ public class CanadaStationTv extends CanadaStation {
   public String toString() {
     return "CanadaStationTv"
       + super.toString()
-      + "\n] erpvpk [" + erpvpk
+      + "\n"
       + "] allocZone [" + allocZone
       + "] antMode [" + antMode
       + "] beamTilt [" + beamTilt
-      + "] closeCap [" + closeCap
+      + "] closeCap [" + closedCaptioning
       + "] erpaav [" + erpaav
       + "] erpapk [" + erpapk
       + "] erpata [" + erpata
+      + "] erpvpk [" + erpvpk
       + "] erpvav [" + erpvav
       + "] erpvta [" + erpvta
-      + "] groundLev [" + groundLev
+      + "] groundLev [" + towerElevation
       + "] limitCode [" + limitCode
-      + "] offPrec [" + offPrec
-      + "] offset [" + offset
-      + "] overallH [" + overallH
-      + "] radCenter [" + radCenter
+      + "] offSetPrecision [" + offSetPrecision
+      + "] offSetCode [" + offSetCode
+      + "] overallHag [" + overallHag
+      + "] rcHag [" + rcHag
       + ']';
   }
 }

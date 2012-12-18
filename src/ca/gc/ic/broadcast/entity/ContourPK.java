@@ -41,16 +41,16 @@ public class ContourPK implements Serializable {
   @Basic(optional = false)
   @Column(name = "azimuth", nullable = false)
   @XmlAttribute
-  private float azimuth;
+  private double azimuth;
   @Basic(optional = false)
   @Column(name = "valu_dist", nullable = false)
   @XmlAttribute
-  private float valuDist;
+  private double valuDist;
 
   public ContourPK() {
   }
 
-  public ContourPK(String callsBanr, float azimuth, float valuDist) {
+  public ContourPK(String callsBanr, double azimuth, double valuDist) {
     this.callsBanr = callsBanr;
     this.azimuth = azimuth;
     this.valuDist = valuDist;
@@ -64,19 +64,19 @@ public class ContourPK implements Serializable {
     this.callsBanr = callsBanr;
   }
 
-  public float getAzimuth() {
+  public double getAzimuth() {
     return azimuth;
   }
 
-  public void setAzimuth(float azimuth) {
+  public void setAzimuth(double azimuth) {
     this.azimuth = azimuth;
   }
 
-  public float getValuDist() {
+  public double getValuDist() {
     return valuDist;
   }
 
-  public void setValuDist(float valuDist) {
+  public void setValuDist(double valuDist) {
     this.valuDist = valuDist;
   }
 

@@ -45,13 +45,12 @@ public class Contour implements Serializable {
   @Column(name = "name", length = 4)
   @XmlAttribute
   private String name;
-  // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "lat_end", precision = 12)
   @XmlAttribute
-  private float latEnd;
+  private double latEnd;
   @Column(name = "long_end", precision = 12)
   @XmlAttribute
-  private float longEnd;
+  private double longEnd;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
@@ -66,7 +65,7 @@ public class Contour implements Serializable {
     this.contourPK = contourPK;
   }
 
-  public Contour(String callsBanr, float azimuth, float valuDist) {
+  public Contour(String callsBanr, double azimuth, double valuDist) {
     this.contourPK = new ContourPK(callsBanr, azimuth, valuDist);
   }
 
@@ -86,19 +85,19 @@ public class Contour implements Serializable {
     this.name = name;
   }
 
-  public float getLatEnd() {
+  public double getLatEnd() {
     return latEnd;
   }
 
-  public void setLatEnd(float latEnd) {
+  public void setLatEnd(double latEnd) {
     this.latEnd = latEnd;
   }
 
-  public float getLongEnd() {
+  public double getLongEnd() {
     return longEnd;
   }
 
-  public void setLongEnd(float longEnd) {
+  public void setLongEnd(double longEnd) {
     this.longEnd = longEnd;
   }
 

@@ -26,7 +26,9 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- *
+ * Logical data model container for the CANADA RadiationPattern (apatdat) table
+ * compound primary key.
+ * <p/>
  * @author jesse
  */
 @Embeddable
@@ -35,14 +37,24 @@ public class RadiationPatternPK implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+  /**
+   * The Radiation Pattern key. This is a reference to the Antenna Radiation
+   * Pattern key (pattKey) field.
+   */
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
   @XmlAttribute
   private Integer pattKey;
+  /**
+   * Pattern data point azimuth from true north (degrees).
+   */
   @Basic(optional = false)
   @Column(name = "angle", nullable = false)
   @XmlAttribute
   private Double angle;
+  /**
+   * Pattern data point gain at the given angle (dB).
+   */
   @Basic(optional = false)
   @Column(name = "gain", nullable = false)
   @XmlAttribute
@@ -57,6 +69,9 @@ public class RadiationPatternPK implements Serializable {
     this.gain = gain;
   }
 
+  /**
+   * @return The Radiation Pattern key.
+   */
   public Integer getPattKey() {
     return pattKey;
   }
@@ -65,6 +80,9 @@ public class RadiationPatternPK implements Serializable {
     this.pattKey = pattKey;
   }
 
+  /**
+   * @return Pattern data point azimuth from true north (degrees).
+   */
   public Double getAngle() {
     return angle;
   }
@@ -73,6 +91,9 @@ public class RadiationPatternPK implements Serializable {
     this.angle = angle;
   }
 
+  /**
+   * @return Pattern data point gain at the given angle (dB).
+   */
   public Double getGain() {
     return gain;
   }
@@ -84,26 +105,22 @@ public class RadiationPatternPK implements Serializable {
   @Override
   public int hashCode() {
     int hash = 3;
-    hash = 83 * hash + Objects.hashCode(this.pattKey);
-    hash = 83 * hash + Objects.hashCode(this.angle);
-    hash = 83 * hash + Objects.hashCode(this.gain);
+    hash = 23 * hash + Objects.hashCode(this.pattKey);
+    hash = 23 * hash + Objects.hashCode(this.angle);
+    hash = 23 * hash + Objects.hashCode(this.gain);
     return hash;
   }
 
   @Override
-  public boolean equals(Object object) {
-
-    if (!(object instanceof RadiationPatternPK)) {
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    RadiationPatternPK other = (RadiationPatternPK) object;
-    if (this.pattKey.equals(other.pattKey)) {
+    if (getClass() != obj.getClass()) {
       return false;
     }
-    if (this.angle != other.angle) {
-      return false;
-    }
-    if (this.gain != other.gain) {
+    final RadiationPatternPK other = (RadiationPatternPK) obj;
+    if (!Objects.equals(this.hashCode(), other.hashCode())) {
       return false;
     }
     return true;
@@ -111,6 +128,9 @@ public class RadiationPatternPK implements Serializable {
 
   @Override
   public String toString() {
-    return "RadiationPatternPK pattKey [" + pattKey + "] angle [" + angle + "] gain [" + gain + " ]";
+    return "RadiationPattern "
+      + " angle [" + angle
+      + "] gain [" + gain
+      + "]";
   }
 }

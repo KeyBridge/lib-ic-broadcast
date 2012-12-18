@@ -54,7 +54,7 @@ public class AmStationExtendedHours implements Serializable {
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "number", precision = 12)
   @XmlAttribute
-  private float number;
+  private double number;
   @Column(name = "ant_system", length = 1)
   @XmlAttribute
   private String antSystem;
@@ -66,13 +66,13 @@ public class AmStationExtendedHours implements Serializable {
   private String end1;
   @Column(name = "start2", precision = 12)
   @XmlAttribute
-  private float start2;
+  private double start2;
   @Column(name = "end2", precision = 12)
   @XmlAttribute
-  private float end2;
+  private double end2;
   @Column(name = "power", precision = 12)
   @XmlAttribute
-  private float power;
+  private double power;
   @Column(name = "rms")
   @XmlAttribute
   private int rms;
@@ -110,11 +110,11 @@ public class AmStationExtendedHours implements Serializable {
     this.callsBanr = callsBanr;
   }
 
-  public float getNumber() {
+  public double getNumber() {
     return number;
   }
 
-  public void setNumber(float number) {
+  public void setNumber(double number) {
     this.number = number;
   }
 
@@ -142,27 +142,27 @@ public class AmStationExtendedHours implements Serializable {
     this.end1 = end1;
   }
 
-  public float getStart2() {
+  public double getStart2() {
     return start2;
   }
 
-  public void setStart2(float start2) {
+  public void setStart2(double start2) {
     this.start2 = start2;
   }
 
-  public float getEnd2() {
+  public double getEnd2() {
     return end2;
   }
 
-  public void setEnd2(float end2) {
+  public void setEnd2(double end2) {
     this.end2 = end2;
   }
 
-  public float getPower() {
+  public double getPower() {
     return power;
   }
 
-  public void setPower(float power) {
+  public void setPower(double power) {
     this.power = power;
   }
 

@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.*;
  * @author jesse
  */
 @Entity
-@DiscriminatorValue("fm_station")
+@DiscriminatorValue("FM")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
@@ -38,7 +38,7 @@ public class CanadaStationFm extends CanadaStation {
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
   @XmlAttribute(required = true)
-  private float erpvpk;
+  private double erpvpk;
   @Column(name = "ant_mode")
   @XmlAttribute(required = true)
   private Character antMode;
@@ -47,29 +47,29 @@ public class CanadaStationFm extends CanadaStation {
   private String autoProg;
   @Column(name = "beam_tilt", precision = 12)
   @XmlAttribute
-  private float beamTilt;
+  private double beamTilt;
   @Basic(optional = false)
   @Column(name = "ehaat", nullable = false)
   @XmlAttribute
-  private float ehaat;
+  private double ehaat;
   @Column(name = "erphav", precision = 12)
   @XmlAttribute
-  private float erphav;
+  private double erphav;
   @Column(name = "erphpk", precision = 12)
   @XmlAttribute
-  private float erphpk;
+  private double erphpk;
   @Column(name = "erpvav", precision = 12)
   @XmlAttribute
-  private float erpvav;
+  private double erpvav;
   @Column(name = "ground_lev", precision = 12)
   @XmlAttribute
-  private float groundLev;
+  private double groundLev;
   @Column(name = "overall_h", precision = 12)
   @XmlAttribute
-  private float overallH;
+  private double overallH;
   @Column(name = "rad_center", precision = 12)
   @XmlAttribute
-  private float radCenter;
+  private double radCenter;
   @Column(name = "scmo")
   @XmlAttribute
   private Character scmo;
@@ -86,11 +86,11 @@ public class CanadaStationFm extends CanadaStation {
   }
 
   //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
-  public float getErpvpk() {
+  public double getErpvpk() {
     return erpvpk;
   }
 
-  public void setErpvpk(float erpvpk) {
+  public void setErpvpk(double erpvpk) {
     this.erpvpk = erpvpk;
   }
 
@@ -110,67 +110,67 @@ public class CanadaStationFm extends CanadaStation {
     this.autoProg = autoProg;
   }
 
-  public float getBeamTilt() {
+  public double getBeamTilt() {
     return beamTilt;
   }
 
-  public void setBeamTilt(float beamTilt) {
+  public void setBeamTilt(double beamTilt) {
     this.beamTilt = beamTilt;
   }
 
-  public float getEhaat() {
+  public double getEhaat() {
     return ehaat;
   }
 
-  public void setEhaat(float ehaat) {
+  public void setEhaat(double ehaat) {
     this.ehaat = ehaat;
   }
 
-  public float getErphav() {
+  public double getErphav() {
     return erphav;
   }
 
-  public void setErphav(float erphav) {
+  public void setErphav(double erphav) {
     this.erphav = erphav;
   }
 
-  public float getErphpk() {
+  public double getErphpk() {
     return erphpk;
   }
 
-  public void setErphpk(float erphpk) {
+  public void setErphpk(double erphpk) {
     this.erphpk = erphpk;
   }
 
-  public float getErpvav() {
+  public double getErpvav() {
     return erpvav;
   }
 
-  public void setErpvav(float erpvav) {
+  public void setErpvav(double erpvav) {
     this.erpvav = erpvav;
   }
 
-  public float getGroundLev() {
+  public double getGroundLev() {
     return groundLev;
   }
 
-  public void setGroundLev(float groundLev) {
+  public void setGroundLev(double groundLev) {
     this.groundLev = groundLev;
   }
 
-  public float getOverallH() {
+  public double getOverallH() {
     return overallH;
   }
 
-  public void setOverallH(float overallH) {
+  public void setOverallH(double overallH) {
     this.overallH = overallH;
   }
 
-  public float getRadCenter() {
+  public double getRadCenter() {
     return radCenter;
   }
 
-  public void setRadCenter(float radCenter) {
+  public void setRadCenter(double radCenter) {
     this.radCenter = radCenter;
   }
 

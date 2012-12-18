@@ -65,7 +65,7 @@ public class AmStationAugment implements Serializable {
     this.amStationAugmentPK = amStationAugmentPK;
   }
 
-  public AmStationAugment(String callsBanr, String dncCode, float number) {
+  public AmStationAugment(String callsBanr, String dncCode, double number) {
     this.amStationAugmentPK = new AmStationAugmentPK(callsBanr, dncCode, number);
   }
 

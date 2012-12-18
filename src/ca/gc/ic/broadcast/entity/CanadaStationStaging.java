@@ -54,17 +54,17 @@ public class CanadaStationStaging implements Serializable {
   @Basic(optional = false)
   @Column(name = "latitude", nullable = false)
   @XmlAttribute
-  private float latitude;
+  private double latitude;
   @Basic(optional = false)
   @Column(name = "longitude", nullable = false)
   @XmlAttribute
-  private float longitude;
+  private double longitude;
   @Column(name = "bc_mode")
   @XmlAttribute
   private Character bcMode;
   @Column(name = "border", precision = 12)
   @XmlAttribute
-  private float border;
+  private double border;
   @Column(name = "brdr_lat", length = 6)
   @XmlAttribute
   private String brdrLat;
@@ -73,7 +73,7 @@ public class CanadaStationStaging implements Serializable {
   private String brdrLong;
   @Column(name = "can_land", precision = 12)
   @XmlAttribute
-  private float canLand;
+  private double canLand;
   @Column(name = "cert_numb", length = 6)
   @XmlAttribute
   private String certNumb;
@@ -92,10 +92,10 @@ public class CanadaStationStaging implements Serializable {
   private int docFile;
   @Column(name = "fre_land", precision = 12)
   @XmlAttribute
-  private float freLand;
+  private double freLand;
   @Column(name = "frequency", precision = 12)
   @XmlAttribute
-  private float frequency;
+  private double frequency;
   @Column(name = "network", length = 4)
   @XmlAttribute
   private String network;
@@ -122,7 +122,7 @@ public class CanadaStationStaging implements Serializable {
   private Character unattended;
   @Column(name = "usa_land", precision = 12)
   @XmlAttribute
-  private float usaLand;
+  private double usaLand;
 
   public CanadaStationStaging() {
   }
@@ -148,7 +148,7 @@ public class CanadaStationStaging implements Serializable {
   }
 
   public Enum_StationType getStationType() {
-    return Enum_StationType.findByStationType(stationType);
+    return Enum_StationType.valueOf(stationType);
   }
 
   public void setStationType(String stationType) {
@@ -163,19 +163,19 @@ public class CanadaStationStaging implements Serializable {
     this.channel = channel;
   }
 
-  public float getLatitude() {
+  public double getLatitude() {
     return latitude;
   }
 
-  public void setLatitude(float latitude) {
+  public void setLatitude(double latitude) {
     this.latitude = latitude;
   }
 
-  public float getLongitude() {
+  public double getLongitude() {
     return longitude;
   }
 
-  public void setLongitude(float longitude) {
+  public void setLongitude(double longitude) {
     this.longitude = longitude;
   }
 
@@ -187,11 +187,11 @@ public class CanadaStationStaging implements Serializable {
     this.bcMode = bcMode;
   }
 
-  public float getBorder() {
+  public double getBorder() {
     return border;
   }
 
-  public void setBorder(float border) {
+  public void setBorder(double border) {
     this.border = border;
   }
 
@@ -211,11 +211,11 @@ public class CanadaStationStaging implements Serializable {
     this.brdrLong = brdrLong;
   }
 
-  public float getCanLand() {
+  public double getCanLand() {
     return canLand;
   }
 
-  public void setCanLand(float canLand) {
+  public void setCanLand(double canLand) {
     this.canLand = canLand;
   }
 
@@ -259,19 +259,19 @@ public class CanadaStationStaging implements Serializable {
     this.docFile = docFile;
   }
 
-  public float getFreLand() {
+  public double getFreLand() {
     return freLand;
   }
 
-  public void setFreLand(float freLand) {
+  public void setFreLand(double freLand) {
     this.freLand = freLand;
   }
 
-  public float getFrequency() {
+  public double getFrequency() {
     return frequency;
   }
 
-  public void setFrequency(float frequency) {
+  public void setFrequency(double frequency) {
     this.frequency = frequency;
   }
 
@@ -331,11 +331,11 @@ public class CanadaStationStaging implements Serializable {
     this.unattended = unattended;
   }
 
-  public float getUsaLand() {
+  public double getUsaLand() {
     return usaLand;
   }
 
-  public void setUsaLand(float usaLand) {
+  public void setUsaLand(double usaLand) {
     this.usaLand = usaLand;
   }//</editor-fold>
 
@@ -362,31 +362,31 @@ public class CanadaStationStaging implements Serializable {
   @Override
   public String toString() {
     return "CanadaStationStaging"
-            + " canadaStationPK [" + canadaStationPK
-            + "]\n stationType [" + stationType
-            + "] channel [" + channel
-            + "] latitude [" + latitude
-            + "] longitude [" + longitude
-            + "] bcMode [" + bcMode
-            + "] border [" + border
-            + "] brdrLat [" + brdrLat
-            + "] brdrLong [" + brdrLong
-            + "] canLand [" + canLand
-            + "] certNumb [" + certNumb
-            + "] city [" + city
-            + "] stationClass [" + stationClass
-            + "] decNumber [" + decNumber
-            + "] docFile [" + docFile
-            + "] freLand [" + freLand
-            + "] frequency [" + frequency
-            + "] network [" + network
-            + "] okDump [" + okDump
-            + "] province [" + province
-            + "] ssCode [" + ssCode
-            + "] stCreat [" + stCreat
-            + "] stMod [" + stMod
-            + "] unattended [" + unattended
-            + "] usaLand [" + usaLand
-            + ']';
+      + " canadaStationPK [" + canadaStationPK
+      + "]\n stationType [" + stationType
+      + "] channel [" + channel
+      + "] latitude [" + latitude
+      + "] longitude [" + longitude
+      + "] bcMode [" + bcMode
+      + "] border [" + border
+      + "] brdrLat [" + brdrLat
+      + "] brdrLong [" + brdrLong
+      + "] canLand [" + canLand
+      + "] certNumb [" + certNumb
+      + "] city [" + city
+      + "] stationClass [" + stationClass
+      + "] decNumber [" + decNumber
+      + "] docFile [" + docFile
+      + "] freLand [" + freLand
+      + "] frequency [" + frequency
+      + "] network [" + network
+      + "] okDump [" + okDump
+      + "] province [" + province
+      + "] ssCode [" + ssCode
+      + "] stCreat [" + stCreat
+      + "] stMod [" + stMod
+      + "] unattended [" + unattended
+      + "] usaLand [" + usaLand
+      + ']';
   }
 }

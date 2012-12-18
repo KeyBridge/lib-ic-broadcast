@@ -16,11 +16,13 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
 /**
- *
+ * Logical data model container for the CANADA LookupDbCode (lookup) table.
+ * <p/>
  * @author jesse
  */
 @Entity
@@ -30,19 +32,27 @@ import javax.xml.bind.annotation.*;
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "LookupDbCode.findAll", query = "SELECT l FROM LookupDbCode l"),
+  @NamedQuery(name = "LookupDbCode.findByFieldnameAndcode", query = "SELECT l FROM LookupDbCode l WHERE l.lookupDbCodePK.fieldname = :fieldname AND l.lookupDbCodePK.code = :code"),
   @NamedQuery(name = "LookupDbCode.findByFieldname", query = "SELECT l FROM LookupDbCode l WHERE l.lookupDbCodePK.fieldname = :fieldname"),
-  @NamedQuery(name = "LookupDbCode.findByCode", query = "SELECT l FROM LookupDbCode l WHERE l.lookupDbCodePK.code = :code"),
-  @NamedQuery(name = "LookupDbCode.findByDescriptionEnglish", query = "SELECT l FROM LookupDbCode l WHERE l.descriptionEnglish = :descriptionEnglish"),
-  @NamedQuery(name = "LookupDbCode.findByDescriptionFrench", query = "SELECT l FROM LookupDbCode l WHERE l.descriptionFrench = :descriptionFrench")})
+  @NamedQuery(name = "LookupDbCode.findByCode", query = "SELECT l FROM LookupDbCode l WHERE l.lookupDbCodePK.code = :code")})
 public class LookupDbCode implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+  /**
+   * The compound primary key.
+   */
   @EmbeddedId
   protected LookupDbCodePK lookupDbCodePK;
+  /**
+   * Description of the field code (in lookupDbCodePK); English.
+   */
   @Column(name = "description_english", length = 128)
   @XmlAttribute
   private String descriptionEnglish;
+  /**
+   * Description of the field code (in lookupDbCodePK); French.
+   */
   @Column(name = "description_french", length = 128)
   @XmlAttribute
   private String descriptionFrench;
@@ -58,6 +68,9 @@ public class LookupDbCode implements Serializable {
     this.lookupDbCodePK = new LookupDbCodePK(fieldname, code);
   }
 
+  /**
+   * @return The compound primary key.
+   */
   public LookupDbCodePK getLookupDbCodePK() {
     return lookupDbCodePK;
   }
@@ -66,6 +79,9 @@ public class LookupDbCode implements Serializable {
     this.lookupDbCodePK = lookupDbCodePK;
   }
 
+  /**
+   * @return Description of the field code (in lookupDbCodePK); English.
+   */
   public String getDescriptionEnglish() {
     return descriptionEnglish;
   }
@@ -74,6 +90,9 @@ public class LookupDbCode implements Serializable {
     this.descriptionEnglish = descriptionEnglish;
   }
 
+  /**
+   * @return Description of the field code (in lookupDbCodePK); French.
+   */
   public String getDescriptionFrench() {
     return descriptionFrench;
   }
@@ -84,19 +103,21 @@ public class LookupDbCode implements Serializable {
 
   @Override
   public int hashCode() {
-    int hash = 0;
-    hash += (lookupDbCodePK != null ? lookupDbCodePK.hashCode() : 0);
+    int hash = 3;
+    hash = 59 * hash + Objects.hashCode(this.lookupDbCodePK);
     return hash;
   }
 
   @Override
-  public boolean equals(Object object) {
-
-    if (!(object instanceof LookupDbCode)) {
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    LookupDbCode other = (LookupDbCode) object;
-    if ((this.lookupDbCodePK == null && other.lookupDbCodePK != null) || (this.lookupDbCodePK != null && !this.lookupDbCodePK.equals(other.lookupDbCodePK))) {
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final LookupDbCode other = (LookupDbCode) obj;
+    if (!Objects.equals(this.lookupDbCodePK, other.lookupDbCodePK)) {
       return false;
     }
     return true;

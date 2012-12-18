@@ -17,11 +17,15 @@ package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
 /**
- *
+ * Logical data model container for the CANADA Comment (comment) table.
+ * <p/>
+ * This table contains user contact information.
+ * <p/>
  * @author jesse
  */
 @Entity
@@ -31,55 +35,89 @@ import javax.xml.bind.annotation.*;
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "Comment.findAll", query = "SELECT c FROM Comment c"),
-  @NamedQuery(name = "Comment.findByCallsBanr", query = "SELECT c FROM Comment c WHERE c.callsBanr = :callsBanr"),
   @NamedQuery(name = "Comment.findByName", query = "SELECT c FROM Comment c WHERE c.name = :name"),
-  @NamedQuery(name = "Comment.findByAddr1", query = "SELECT c FROM Comment c WHERE c.addr1 = :addr1"),
-  @NamedQuery(name = "Comment.findByAddr2", query = "SELECT c FROM Comment c WHERE c.addr2 = :addr2"),
-  @NamedQuery(name = "Comment.findByAddr3", query = "SELECT c FROM Comment c WHERE c.addr3 = :addr3"),
-  @NamedQuery(name = "Comment.findByAddr4", query = "SELECT c FROM Comment c WHERE c.addr4 = :addr4"),
-  @NamedQuery(name = "Comment.findByHqcomm", query = "SELECT c FROM Comment c WHERE c.hqcomm = :hqcomm"),
-  @NamedQuery(name = "Comment.findByRgcomm", query = "SELECT c FROM Comment c WHERE c.rgcomm = :rgcomm"),
-  @NamedQuery(name = "Comment.findByEdetails", query = "SELECT c FROM Comment c WHERE c.edetails = :edetails"),
-  @NamedQuery(name = "Comment.findByFdetails", query = "SELECT c FROM Comment c WHERE c.fdetails = :fdetails"),
-  @NamedQuery(name = "Comment.findByCallSign", query = "SELECT c FROM Comment c WHERE c.commentPK.callSign = :callSign"),
-  @NamedQuery(name = "Comment.findByBanner", query = "SELECT c FROM Comment c WHERE c.commentPK.banner = :banner")})
+  @NamedQuery(name = "Comment.findByCallSign", query = "SELECT c FROM Comment c WHERE c.commentPK.callSign = :callSign")})
 public class Comment implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+  /**
+   * The table compound primary key.
+   */
   @EmbeddedId
   protected CommentPK commentPK;
+  /**
+   * @deprecated Not used in the logical data model.
+   */
   @Column(name = "calls_banr", length = 32)
   @XmlAttribute
   private String callsBanr;
+  /**
+   * The entity name.
+   */
   @Column(name = "name", length = 40)
   @XmlAttribute
   private String name;
+  /**
+   * The street address.
+   */
   @Column(name = "addr1", length = 40)
   @XmlAttribute
-  private String addr1;
+  private String address;
+  /**
+   * The street address, continued. If present this typically contains a suite
+   * number, etc.
+   */
   @Column(name = "addr2", length = 40)
   @XmlAttribute
-  private String addr2;
+  private String address2;
+  /**
+   * The city.
+   */
   @Column(name = "addr3", length = 40)
   @XmlAttribute
-  private String addr3;
+  private String city;
+  /**
+   * The Province (Canada) or State (USA)
+   */
   @Column(name = "addr4", length = 40)
   @XmlAttribute
-  private String addr4;
-  // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+  private String province;
+  /**
+   * General Headquarters comment code.
+   * <p/>
+   * @deprecated Present in the database but not used in logical data model.
+   */
   @Column(name = "hqcomm", precision = 12)
   @XmlAttribute
   private int hqcomm;
+  /**
+   * General Regional comment code.
+   * <p/>
+   * @deprecated Present in the database but not used in logical data model.
+   */
   @Column(name = "rgcomm", precision = 12)
   @XmlAttribute
   private int rgcomm;
+  /**
+   * Details on Limitations; English.
+   * <p/>
+   * @deprecated Present in the database but not used in logical data model.
+   */
   @Column(name = "edetails", precision = 12)
   @XmlAttribute
   private int edetails;
+  /**
+   * Details on Limitations; French.
+   * <p/>
+   * @deprecated Present in the database but not used in logical data model.
+   */
   @Column(name = "fdetails", precision = 12)
   @XmlAttribute
   private int fdetails;
+  /**
+   * Reverse reference to the CanadaStation record containing this comment.
+   */
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
@@ -98,6 +136,9 @@ public class Comment implements Serializable {
     this.commentPK = new CommentPK(callSign, banner);
   }
 
+  /**
+   * @return The table compound primary key.
+   */
   public CommentPK getCommentPK() {
     return commentPK;
   }
@@ -106,6 +147,9 @@ public class Comment implements Serializable {
     this.commentPK = commentPK;
   }
 
+  /**
+   * @deprecated Not used in the logical data model.
+   */
   public String getCallsBanr() {
     return callsBanr;
   }
@@ -114,6 +158,9 @@ public class Comment implements Serializable {
     this.callsBanr = callsBanr;
   }
 
+  /**
+   * @return The entity name.
+   */
   public String getName() {
     return name;
   }
@@ -122,38 +169,41 @@ public class Comment implements Serializable {
     this.name = name;
   }
 
-  public String getAddr1() {
-    return addr1;
+  public String getAddress() {
+    return address;
   }
 
-  public void setAddr1(String addr1) {
-    this.addr1 = addr1;
+  public void setAddress(String address) {
+    this.address = address;
   }
 
-  public String getAddr2() {
-    return addr2;
+  public String getAddress2() {
+    return address2;
   }
 
-  public void setAddr2(String addr2) {
-    this.addr2 = addr2;
+  public void setAddress2(String address2) {
+    this.address2 = address2;
   }
 
-  public String getAddr3() {
-    return addr3;
+  public String getCity() {
+    return city;
   }
 
-  public void setAddr3(String addr3) {
-    this.addr3 = addr3;
+  public void setCity(String city) {
+    this.city = city;
   }
 
-  public String getAddr4() {
-    return addr4;
+  public String getProvince() {
+    return province;
   }
 
-  public void setAddr4(String addr4) {
-    this.addr4 = addr4;
+  public void setProvince(String province) {
+    this.province = province;
   }
 
+  /**
+   * @deprecated Present in the database but not used in logical data model.
+   */
   public int getHqcomm() {
     return hqcomm;
   }
@@ -162,6 +212,9 @@ public class Comment implements Serializable {
     this.hqcomm = hqcomm;
   }
 
+  /**
+   * @deprecated Present in the database but not used in logical data model.
+   */
   public int getRgcomm() {
     return rgcomm;
   }
@@ -170,6 +223,9 @@ public class Comment implements Serializable {
     this.rgcomm = rgcomm;
   }
 
+  /**
+   * @deprecated Present in the database but not used in logical data model.
+   */
   public int getEdetails() {
     return edetails;
   }
@@ -178,6 +234,9 @@ public class Comment implements Serializable {
     this.edetails = edetails;
   }
 
+  /**
+   * @deprecated Present in the database but not used in logical data model.
+   */
   public int getFdetails() {
     return fdetails;
   }
@@ -186,6 +245,10 @@ public class Comment implements Serializable {
     this.fdetails = fdetails;
   }
 
+  /**
+   * @return Reverse reference to the CanadaStation record containing this
+   *         comment.
+   */
   public CanadaStation getCanadaStation() {
     return canadaStation;
   }
@@ -196,19 +259,21 @@ public class Comment implements Serializable {
 
   @Override
   public int hashCode() {
-    int hash = 0;
-    hash += (commentPK != null ? commentPK.hashCode() : 0);
+    int hash = 7;
+    hash = 79 * hash + Objects.hashCode(this.commentPK);
     return hash;
   }
 
   @Override
-  public boolean equals(Object object) {
-
-    if (!(object instanceof Comment)) {
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    Comment other = (Comment) object;
-    if ((this.commentPK == null && other.commentPK != null) || (this.commentPK != null && !this.commentPK.equals(other.commentPK))) {
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final Comment other = (Comment) obj;
+    if (!Objects.equals(this.commentPK, other.commentPK)) {
       return false;
     }
     return true;
@@ -217,17 +282,11 @@ public class Comment implements Serializable {
   @Override
   public String toString() {
     return "Comment"
-            //      + " commentPK [" + commentPK
-            //      + "] callsBanr [" + callsBanr
-            + "] name [" + name
-            + "] addr1 [" + addr1
-            + "] addr2 [" + addr2
-            + "] addr3 [" + addr3
-            + "] addr4 [" + addr4
-            + "] hqcomm [" + hqcomm
-            + "] rgcomm [" + rgcomm
-            + "] edetails [" + edetails
-            + "] fdetails [" + fdetails
-            + ']';
+      + " name [" + name
+      + "] address [" + address
+      + "] address2 [" + address2
+      + "] city [" + city
+      + "] province [" + province
+      + ']';
   }
 }

@@ -17,6 +17,7 @@ package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -24,7 +25,9 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- *
+ * Logical data model container for the CANADA FeedSignal (feeds) table compound
+ * primary key.
+ * <p/>
  * @author jesse
  */
 @Embeddable
@@ -69,23 +72,25 @@ public class FeedSignalPK implements Serializable {
 
   @Override
   public int hashCode() {
-    int hash = 0;
-    hash += (callSign != null ? callSign.hashCode() : 0);
-    hash += (banner != null ? banner.hashCode() : 0);
+    int hash = 7;
+    hash = 29 * hash + Objects.hashCode(this.callSign);
+    hash = 29 * hash + (this.banner != null ? this.banner.hashCode() : 0);
     return hash;
   }
 
   @Override
-  public boolean equals(Object object) {
-
-    if (!(object instanceof FeedSignalPK)) {
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    FeedSignalPK other = (FeedSignalPK) object;
-    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
+    if (getClass() != obj.getClass()) {
       return false;
     }
-    if ((this.banner == null && other.banner != null) || (this.banner != null && !this.banner.equals(other.banner))) {
+    final FeedSignalPK other = (FeedSignalPK) obj;
+    if (!Objects.equals(this.callSign, other.callSign)) {
+      return false;
+    }
+    if (this.banner != other.banner) {
       return false;
     }
     return true;

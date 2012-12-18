@@ -72,22 +72,22 @@ public class RegionalFiling implements Serializable {
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "spr_dat", precision = 12)
   @XmlAttribute
-  private float sprDat;
+  private double sprDat;
   @Column(name = "rsp_dat", precision = 12)
   @XmlAttribute
-  private float rspDat;
+  private double rspDat;
   @Column(name = "stdett", precision = 12)
   @XmlAttribute
-  private float stdett;
+  private double stdett;
   @Column(name = "air_clear", precision = 12)
   @XmlAttribute
-  private float airClear;
+  private double airClear;
   @Column(name = "inspec_dat", precision = 12)
   @XmlAttribute
-  private float inspecDat;
+  private double inspecDat;
   @Column(name = "rcf_dat", precision = 12)
   @XmlAttribute
-  private float rcfDat;
+  private double rcfDat;
   @Column(name = "stat_type", length = 2)
   @XmlAttribute
   private String statType;
@@ -166,51 +166,51 @@ public class RegionalFiling implements Serializable {
     this.painting = painting;
   }
 
-  public float getSprDat() {
+  public double getSprDat() {
     return sprDat;
   }
 
-  public void setSprDat(float sprDat) {
+  public void setSprDat(double sprDat) {
     this.sprDat = sprDat;
   }
 
-  public float getRspDat() {
+  public double getRspDat() {
     return rspDat;
   }
 
-  public void setRspDat(float rspDat) {
+  public void setRspDat(double rspDat) {
     this.rspDat = rspDat;
   }
 
-  public float getStdett() {
+  public double getStdett() {
     return stdett;
   }
 
-  public void setStdett(float stdett) {
+  public void setStdett(double stdett) {
     this.stdett = stdett;
   }
 
-  public float getAirClear() {
+  public double getAirClear() {
     return airClear;
   }
 
-  public void setAirClear(float airClear) {
+  public void setAirClear(double airClear) {
     this.airClear = airClear;
   }
 
-  public float getInspecDat() {
+  public double getInspecDat() {
     return inspecDat;
   }
 
-  public void setInspecDat(float inspecDat) {
+  public void setInspecDat(double inspecDat) {
     this.inspecDat = inspecDat;
   }
 
-  public float getRcfDat() {
+  public double getRcfDat() {
     return rcfDat;
   }
 
-  public void setRcfDat(float rcfDat) {
+  public void setRcfDat(double rcfDat) {
     this.rcfDat = rcfDat;
   }
 

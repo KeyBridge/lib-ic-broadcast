@@ -45,12 +45,12 @@ public class AmStationAugmentPK implements Serializable {
   @Basic(optional = false)
   @Column(name = "number", nullable = false)
   @XmlAttribute
-  private float number;
+  private double number;
 
   public AmStationAugmentPK() {
   }
 
-  public AmStationAugmentPK(String callsBanr, String dncCode, float number) {
+  public AmStationAugmentPK(String callsBanr, String dncCode, double number) {
     this.callsBanr = callsBanr;
     this.dncCode = dncCode;
     this.number = number;
@@ -72,11 +72,11 @@ public class AmStationAugmentPK implements Serializable {
     this.dncCode = dncCode;
   }
 
-  public float getNumber() {
+  public double getNumber() {
     return number;
   }
 
-  public void setNumber(float number) {
+  public void setNumber(double number) {
     this.number = number;
   }
 

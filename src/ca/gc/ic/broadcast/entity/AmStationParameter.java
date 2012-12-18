@@ -52,34 +52,34 @@ public class AmStationParameter implements Serializable {
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "fieldratio", precision = 12)
   @XmlAttribute
-  private float fieldratio;
+  private double fieldratio;
   @Column(name = "spacing", precision = 12)
   @XmlAttribute
-  private float spacing;
+  private double spacing;
   @Column(name = "orienta", precision = 12)
   @XmlAttribute
-  private float orienta;
+  private double orienta;
   @Column(name = "phasing", precision = 12)
   @XmlAttribute
-  private float phasing;
+  private double phasing;
   @Column(name = "height", precision = 12)
   @XmlAttribute
-  private float height;
+  private double height;
   @Column(name = "type_ant")
   @XmlAttribute
   private int typeAnt;
   @Column(name = "a", precision = 12)
   @XmlAttribute
-  private float a;
+  private double a;
   @Column(name = "b", precision = 12)
   @XmlAttribute
-  private float b;
+  private double b;
   @Column(name = "c", precision = 12)
   @XmlAttribute
-  private float c;
+  private double c;
   @Column(name = "d", precision = 12)
   @XmlAttribute
-  private float d;
+  private double d;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),
     @JoinColumn(name = "banner", referencedColumnName = "banner")})
@@ -106,43 +106,43 @@ public class AmStationParameter implements Serializable {
     this.amStationParameterPK = amStationParameterPK;
   }
 
-  public float getFieldratio() {
+  public double getFieldratio() {
     return fieldratio;
   }
 
-  public void setFieldratio(float fieldratio) {
+  public void setFieldratio(double fieldratio) {
     this.fieldratio = fieldratio;
   }
 
-  public float getSpacing() {
+  public double getSpacing() {
     return spacing;
   }
 
-  public void setSpacing(float spacing) {
+  public void setSpacing(double spacing) {
     this.spacing = spacing;
   }
 
-  public float getOrienta() {
+  public double getOrienta() {
     return orienta;
   }
 
-  public void setOrienta(float orienta) {
+  public void setOrienta(double orienta) {
     this.orienta = orienta;
   }
 
-  public float getPhasing() {
+  public double getPhasing() {
     return phasing;
   }
 
-  public void setPhasing(float phasing) {
+  public void setPhasing(double phasing) {
     this.phasing = phasing;
   }
 
-  public float getHeight() {
+  public double getHeight() {
     return height;
   }
 
-  public void setHeight(float height) {
+  public void setHeight(double height) {
     this.height = height;
   }
 
@@ -154,35 +154,35 @@ public class AmStationParameter implements Serializable {
     this.typeAnt = typeAnt;
   }
 
-  public float getA() {
+  public double getA() {
     return a;
   }
 
-  public void setA(float a) {
+  public void setA(double a) {
     this.a = a;
   }
 
-  public float getB() {
+  public double getB() {
     return b;
   }
 
-  public void setB(float b) {
+  public void setB(double b) {
     this.b = b;
   }
 
-  public float getC() {
+  public double getC() {
     return c;
   }
 
-  public void setC(float c) {
+  public void setC(double c) {
     this.c = c;
   }
 
-  public float getD() {
+  public double getD() {
     return d;
   }
 
-  public void setD(float d) {
+  public void setD(double d) {
     this.d = d;
   }
 

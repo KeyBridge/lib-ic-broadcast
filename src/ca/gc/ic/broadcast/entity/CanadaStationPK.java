@@ -17,6 +17,7 @@ package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.persistence.*;
@@ -26,7 +27,9 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- *
+ * Logical data model container for the CANADA CanadaStation (ca_station)
+ * compound primary key.
+ * <p/>
  * @author jesse
  */
 @Embeddable
@@ -35,11 +38,17 @@ public class CanadaStationPK implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+  /**
+   * The Canadian Banner code.
+   */
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
   private Enum_Banner banner;
+  /**
+   * The station call sign.
+   */
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
   @XmlAttribute
@@ -67,7 +76,7 @@ public class CanadaStationPK implements Serializable {
     Pattern p = Pattern.compile(toString);
     Matcher m = p.matcher(canadaStationPkString);
     if (m.find()) {
-      this.banner = Enum_Banner.findByDbCode(m.group(1));
+      this.banner = Enum_Banner.valueOf(m.group(1));
       this.callSign = m.group(2);
     }
   }
@@ -90,23 +99,25 @@ public class CanadaStationPK implements Serializable {
 
   @Override
   public int hashCode() {
-    int hash = 0;
-    hash += (banner != null ? banner.hashCode() : 0);
-    hash += (callSign != null ? callSign.hashCode() : 0);
+    int hash = 5;
+    hash = 59 * hash + (this.banner != null ? this.banner.hashCode() : 0);
+    hash = 59 * hash + Objects.hashCode(this.callSign);
     return hash;
   }
 
   @Override
-  public boolean equals(Object object) {
-
-    if (!(object instanceof CanadaStationPK)) {
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    CanadaStationPK other = (CanadaStationPK) object;
-    if ((this.banner == null && other.banner != null) || (this.banner != null && !this.banner.equals(other.banner))) {
+    if (getClass() != obj.getClass()) {
       return false;
     }
-    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
+    final CanadaStationPK other = (CanadaStationPK) obj;
+    if (this.banner != other.banner) {
+      return false;
+    }
+    if (!Objects.equals(this.callSign, other.callSign)) {
       return false;
     }
     return true;

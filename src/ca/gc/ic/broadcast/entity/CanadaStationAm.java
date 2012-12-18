@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.*;
  * @author jesse
  */
 @Entity
-@DiscriminatorValue("am_station")
+@DiscriminatorValue("AM")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
@@ -35,13 +35,13 @@ public class CanadaStationAm extends CanadaStation {
   private static final long serialVersionUID = 1L;
   @Column(name = "euvalu", precision = 12)
   @XmlAttribute
-  private float euvalu;
+  private double euvalu;
   @Column(name = "ifrbn_d", precision = 12)
   @XmlAttribute
-  private float ifrbnD;
+  private double ifrbnD;
   @Column(name = "ifrbn_n", precision = 12)
   @XmlAttribute
-  private float ifrbnN;
+  private double ifrbnN;
   @Column(name = "latitude2", length = 6)
   @XmlAttribute
   private String latitude2;
@@ -50,31 +50,31 @@ public class CanadaStationAm extends CanadaStation {
   private String longitude2;
   @Column(name = "par_rms_c", precision = 12)
   @XmlAttribute
-  private float parRmsC;
+  private double parRmsC;
   @Column(name = "par_rms_d", precision = 12)
   @XmlAttribute
-  private float parRmsD;
+  private double parRmsD;
   @Column(name = "par_rms_n", precision = 12)
   @XmlAttribute
-  private float parRmsN;
+  private double parRmsN;
   @Column(name = "powercrit", precision = 12)
   @XmlAttribute
-  private float powercrit;
+  private double powercrit;
   @Column(name = "powerday", precision = 12)
   @XmlAttribute
-  private float powerday;
+  private double powerday;
   @Column(name = "powernight", precision = 12)
   @XmlAttribute
-  private float powernight;
+  private double powernight;
   @Column(name = "q_crit", precision = 12)
   @XmlAttribute
-  private float qCrit;
+  private double qCrit;
   @Column(name = "q_day", precision = 12)
   @XmlAttribute
-  private float qDay;
+  private double qDay;
   @Column(name = "q_night", precision = 12)
   @XmlAttribute
-  private float qNight;
+  private double qNight;
   @Column(name = "status1", length = 2)
   @XmlAttribute
   private String status1;
@@ -100,27 +100,27 @@ public class CanadaStationAm extends CanadaStation {
   }
 
   //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
-  public float getEuvalu() {
+  public double getEuvalu() {
     return euvalu;
   }
 
-  public void setEuvalu(float euvalu) {
+  public void setEuvalu(double euvalu) {
     this.euvalu = euvalu;
   }
 
-  public float getIfrbnD() {
+  public double getIfrbnD() {
     return ifrbnD;
   }
 
-  public void setIfrbnD(float ifrbnD) {
+  public void setIfrbnD(double ifrbnD) {
     this.ifrbnD = ifrbnD;
   }
 
-  public float getIfrbnN() {
+  public double getIfrbnN() {
     return ifrbnN;
   }
 
-  public void setIfrbnN(float ifrbnN) {
+  public void setIfrbnN(double ifrbnN) {
     this.ifrbnN = ifrbnN;
   }
 
@@ -140,75 +140,75 @@ public class CanadaStationAm extends CanadaStation {
     this.longitude2 = longitude2;
   }
 
-  public float getParRmsC() {
+  public double getParRmsC() {
     return parRmsC;
   }
 
-  public void setParRmsC(float parRmsC) {
+  public void setParRmsC(double parRmsC) {
     this.parRmsC = parRmsC;
   }
 
-  public float getParRmsD() {
+  public double getParRmsD() {
     return parRmsD;
   }
 
-  public void setParRmsD(float parRmsD) {
+  public void setParRmsD(double parRmsD) {
     this.parRmsD = parRmsD;
   }
 
-  public float getParRmsN() {
+  public double getParRmsN() {
     return parRmsN;
   }
 
-  public void setParRmsN(float parRmsN) {
+  public void setParRmsN(double parRmsN) {
     this.parRmsN = parRmsN;
   }
 
-  public float getPowercrit() {
+  public double getPowercrit() {
     return powercrit;
   }
 
-  public void setPowercrit(float powercrit) {
+  public void setPowercrit(double powercrit) {
     this.powercrit = powercrit;
   }
 
-  public float getPowerday() {
+  public double getPowerday() {
     return powerday;
   }
 
-  public void setPowerday(float powerday) {
+  public void setPowerday(double powerday) {
     this.powerday = powerday;
   }
 
-  public float getPowernight() {
+  public double getPowernight() {
     return powernight;
   }
 
-  public void setPowernight(float powernight) {
+  public void setPowernight(double powernight) {
     this.powernight = powernight;
   }
 
-  public float getqCrit() {
+  public double getqCrit() {
     return qCrit;
   }
 
-  public void setqCrit(float qCrit) {
+  public void setqCrit(double qCrit) {
     this.qCrit = qCrit;
   }
 
-  public float getqDay() {
+  public double getqDay() {
     return qDay;
   }
 
-  public void setqDay(float qDay) {
+  public void setqDay(double qDay) {
     this.qDay = qDay;
   }
 
-  public float getqNight() {
+  public double getqNight() {
     return qNight;
   }
 
-  public void setqNight(float qNight) {
+  public void setqNight(double qNight) {
     this.qNight = qNight;
   }
 

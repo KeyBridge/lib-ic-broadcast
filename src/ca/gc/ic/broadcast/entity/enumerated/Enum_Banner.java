@@ -16,10 +16,11 @@
 package ca.gc.ic.broadcast.entity.enumerated;
 
 /**
- * Enumerated list of banner codes. This is a consolidated list of all banner
- * codes including AM, FM, TV and SDAR stations taken from the 'lookup' table
- * and cross-referenced with the respective station tables to ensure 100%
- * coverage.
+ * Enumerated values for the CanadaStation banner field.
+ * <p/>
+ * This is a consolidated list of all banner codes including AM, FM, TV and SDAR
+ * stations taken from the 'lookup' table and cross-referenced with the
+ * respective station tables to ensure 100% coverage.
  * <p/>
  * @author jesse
  */
@@ -143,30 +144,5 @@ public enum Enum_Banner {
    */
   public boolean isTransmitting() {
     return transmitting;
-  }
-
-  /**
-   * Find an Enum_Banner by its name.
-   * <p/>
-   * @param name the name. e.g. 'UN'
-   * @return
-   */
-  public static Enum_Banner findByName(String name) {
-    return findByDbCode(name);
-  }
-
-  /**
-   * Find an enumBanner object by its 2-character name code.
-   * <p/>
-   * @param dbCode the 2-character code
-   * @return
-   */
-  public static Enum_Banner findByDbCode(String dbCode) {
-    for (Enum_Banner enum_Banner : Enum_Banner.values()) {
-      if (enum_Banner.name().equalsIgnoreCase(dbCode)) {
-        return enum_Banner;
-      }
-    }
-    return null;
   }
 }

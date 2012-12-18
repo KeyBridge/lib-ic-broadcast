@@ -18,14 +18,18 @@ package ca.gc.ic.broadcast.entity;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
 /**
- *
+ * Logical data model container for the CANADA Antenna (apatdesc) table.
+ * <p/>
+ * The APATDESC file contains a single "header" type record describing the
+ * attributes of the antenna patterns. All the parameters describing the
+ * patterns are found in this file with the exception of the data points
+ * describing the actual patterns.
+ * <p/>
  * @author jesse
  */
 @Entity
@@ -46,33 +50,83 @@ public class Antenna implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+  /**
+   * The Antenna Radiation Pattern Key. This is used to attach RadiationPattern
+   * records to this Antenna.
+   */
   @Id
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
   @XmlAttribute
   private Integer pattKey;
+  /**
+   * Orientation. "H" for horizontal and "V" for vertical.
+   */
   @Column(name = "hor_ver", length = 1)
   @XmlAttribute
-  private String horVer;
-  // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+  private String polarization;
+  /**
+   * @deprecated Future use.
+   */
   @Column(name = "patt_numb", precision = 12)
   @XmlAttribute
   private Double pattNumb;
+  /**
+   * Type of pattern: 'PRECISE', 'BRIEF', 'THEORETICAL'.
+   * <p/>
+   * As part of the analysis of broadcast undertakings, antenna pattern data is
+   * lifted from tables in the brief or digitized from diagrams of the
+   * horizontal and vertical pattern.
+   * <p/>
+   * When no vertical antenna pattern data appears in the brief, a theoretical
+   * pattern for an antenna with the same number of bays is selected. In this
+   * case PATT_TYPE is set to "THEORETICAL".
+   * <p/>
+   * Omnidirectional Patterns: In the case of an Omnidirectional antenna, the
+   * Effective Radiated Power value from the main database is assumed to be the
+   * same for all azimuths. For this reason, no Horizontal pattern data is
+   * stored for Omnidirectional stations.
+   * <p/>
+   * Vertical Patterns: As described in the record layouts, the HOR_VER field is
+   * used to indicate a (H)orizontal or (V)ertical pattern. It is possible that
+   * a station with an Omnidirectional antenna may still have a Vertical antenna
+   * pattern, and this is supported.
+   * <p/>
+   * "THEORETICAL" Patterns: Very often measured patterns are not available at
+   * the time of the brief's analysis. In such cases, the department uses
+   * theoretical vertical patterns based on the Cosine Law. They have names from
+   * BAY-2 to BAY-12, corresponding to the theoretical vertical patterns of a
+   * two bay antenna, up to that of a twelve bay antenna.
+   * <p/>
+   * "BRIEF"/"PRECISE" Patterns: When pattern values area taken from a table in
+   * a technical brief, PATT_TYPE is set to "BRIEF". If the values are digitized
+   * from antenna diagrams, PATT_TYPE is set to "PRECISE".
+   */
   @Column(name = "patt_type", length = 12)
   @XmlAttribute
   private String pattType;
+  /**
+   * @deprecated Future use.
+   */
   @Column(name = "punits", precision = 12)
   @XmlAttribute
   private Double punits;
+  /**
+   * Number of points in the pattern.
+   */
   @Column(name = "numpoints", precision = 12)
   @XmlAttribute
   private Double numpoints;
   /**
-   * Date encoded as yyyyMMdd
+   * Date pattern added to system.
+   * <p/>
    */
   @Column(name = "patt_date", precision = 12)
   @XmlTransient
   private String pattDate;
+  /**
+   * Reverse pointer to one or more CanadaStations using this Antenna.
+   */
   @JoinTable(name = "apatstat", joinColumns = {
     @JoinColumn(name = "patt_key", referencedColumnName = "patt_key", nullable = false)}, inverseJoinColumns = {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false),
@@ -80,15 +134,11 @@ public class Antenna implements Serializable {
   @ManyToMany
   @XmlTransient
   private List<CanadaStation> canadaStationList;
+  /**
+   * A list of 'gains' versus 'angle' data points defining the antenna pattern.
+   */
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "antenna")
   private List<RadiationPattern> radiationPatternList;
-  /**
-   * The date this pattern data was imported into the Canada database. This
-   * field is post-loaded from the pattDate value.
-   */
-  @Transient
-  @XmlAttribute(name = "patDate")
-  private Date datePatternData;
 
   public Antenna() {
   }
@@ -98,6 +148,11 @@ public class Antenna implements Serializable {
   }
 
   //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
+  /**
+   * The Antenna Radiation Pattern Key.
+   * <p/>
+   * @return
+   */
   public Integer getPattKey() {
     return pattKey;
   }
@@ -106,14 +161,20 @@ public class Antenna implements Serializable {
     this.pattKey = pattKey;
   }
 
-  public String getHorVer() {
-    return horVer;
+  /**
+   * @return Orientation. "H" for horizontal and "V" for vertical.
+   */
+  public String getPolarization() {
+    return polarization;
   }
 
-  public void setHorVer(String horVer) {
-    this.horVer = horVer;
+  public void setPolarization(String polarization) {
+    this.polarization = polarization;
   }
 
+  /**
+   * @deprecated Future use.
+   */
   public Double getPattNumb() {
     return pattNumb;
   }
@@ -122,6 +183,9 @@ public class Antenna implements Serializable {
     this.pattNumb = pattNumb;
   }
 
+  /**
+   * @return Type of pattern: 'PRECISE', 'BRIEF', 'THEORETICAL'.
+   */
   public String getPattType() {
     return pattType;
   }
@@ -130,6 +194,9 @@ public class Antenna implements Serializable {
     this.pattType = pattType;
   }
 
+  /**
+   * @deprecated Future use.
+   */
   public Double getPunits() {
     return punits;
   }
@@ -138,6 +205,9 @@ public class Antenna implements Serializable {
     this.punits = punits;
   }
 
+  /**
+   * @return Number of points in the pattern.
+   */
   public Double getNumpoints() {
     return numpoints;
   }
@@ -146,14 +216,24 @@ public class Antenna implements Serializable {
     this.numpoints = numpoints;
   }
 
-  public String getPattDate() {
-    return pattDate;
+  /**
+   * @return Date pattern added to system
+   */
+  public Date getPattDate() {
+    try {
+      return new SimpleDateFormat("yyyyMMdd").parse(pattDate);
+    } catch (ParseException ex) {
+      return null;
+    }
   }
 
-  public void setPattDate(String pattDate) {
-    this.pattDate = pattDate;
+  public void setPattDate(Date pattDate) {
+    this.pattDate = new SimpleDateFormat("yyyyMMdd").format(pattDate);
   }
 
+  /**
+   * @return One or more CanadaStations using this Antenna.
+   */
   public List<CanadaStation> getCanadaStationList() {
     return canadaStationList;
   }
@@ -162,6 +242,13 @@ public class Antenna implements Serializable {
     this.canadaStationList = canadaStationList;
   }
 
+  /**
+   * Recommend using getRadiationPatternMap for convenience unless you need to
+   * address a specific entry.
+   * <p/>
+   * @return A list of 'gains' versus 'angle' data points defining the antenna
+   *         pattern.
+   */
   public List<RadiationPattern> getRadiationPatternList() {
     if (radiationPatternList == null) {
       radiationPatternList = new ArrayList<RadiationPattern>();
@@ -173,26 +260,16 @@ public class Antenna implements Serializable {
     this.radiationPatternList = radiationPatternList;
   }
 
-  public Date getDatePatternData() {
-    return datePatternData;
-  }
-
-  public void setDatePatternData(Date datePatternData) {
-    this.datePatternData = datePatternData;
-  }//</editor-fold>
-
   /**
-   * Process and convert the antenna values after loading from the database.
+   * @return The RadiationPattern list wrapped up nicely in a TreeMap.
    */
-  @PostLoad
-  public void postLoad() {
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-    try {
-      datePatternData = sdf.parse(pattDate);
-    } catch (ParseException ex) {
-//      Logger.getLogger(Antenna.class.getName()).log(Level.SEVERE, null, ex);
+  public Map<Double, Double> getRadiationPatternMap() {
+    Map<Double, Double> radiationPatternMap = new TreeMap<Double, Double>();
+    for (RadiationPattern radiationPattern : getRadiationPatternList()) {
+      radiationPatternMap.put(radiationPattern.getRadiationPatternPK().getAngle(), radiationPattern.getRadiationPatternPK().getGain());
     }
-  }
+    return radiationPatternMap;
+  }//</editor-fold>
 
   @Override
   public int hashCode() {
@@ -217,15 +294,15 @@ public class Antenna implements Serializable {
   @Override
   public String toString() {
     return "Antenna"
-      + " pattKey [" + pattKey
-      + "] horVer [" + horVer
-      + "] pattNumb [" + pattNumb
+      //      + " pattKey [" + pattKey
+      + " polarization [" + polarization
+      //      + "] pattNumb [" + pattNumb
       + "] pattType [" + pattType
-      + "] punits [" + punits
+      //      + "] punits [" + punits
       + "] numpoints [" + numpoints
-      + "] pattDate [" + pattDate
-      + "] canadaStationList [" + canadaStationList
-      + "]\n radiationPatternList [" + radiationPatternList
+      //      + "] pattDate [" + pattDate
+      //      + "] canadaStationList [" + canadaStationList
+      + "]\n radiationPatternMap [" + getRadiationPatternMap()
       + ']';
   }
 }

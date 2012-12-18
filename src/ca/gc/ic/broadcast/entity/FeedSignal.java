@@ -17,11 +17,14 @@ package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
 /**
- *
+ * Logical data model container for the CANADA FeedSignal (feeds) table.
+ * <p/>
  * @author jesse
  */
 @Entity
@@ -31,43 +34,55 @@ import javax.xml.bind.annotation.*;
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
   @NamedQuery(name = "FeedSignal.findAll", query = "SELECT f FROM FeedSignal f"),
-  @NamedQuery(name = "FeedSignal.findByCallsBanr", query = "SELECT f FROM FeedSignal f WHERE f.callsBanr = :callsBanr"),
-  @NamedQuery(name = "FeedSignal.findByFeedId", query = "SELECT f FROM FeedSignal f WHERE f.feedId = :feedId"),
-  @NamedQuery(name = "FeedSignal.findByFeedChan", query = "SELECT f FROM FeedSignal f WHERE f.feedChan = :feedChan"),
-  @NamedQuery(name = "FeedSignal.findByLinkType", query = "SELECT f FROM FeedSignal f WHERE f.linkType = :linkType"),
-  @NamedQuery(name = "FeedSignal.findByFeedCall", query = "SELECT f FROM FeedSignal f WHERE f.feedCall = :feedCall"),
-  @NamedQuery(name = "FeedSignal.findByFeedLat", query = "SELECT f FROM FeedSignal f WHERE f.feedLat = :feedLat"),
-  @NamedQuery(name = "FeedSignal.findByFeedLong", query = "SELECT f FROM FeedSignal f WHERE f.feedLong = :feedLong"),
-  @NamedQuery(name = "FeedSignal.findByCallSign", query = "SELECT f FROM FeedSignal f WHERE f.feedSignalPK.callSign = :callSign"),
-  @NamedQuery(name = "FeedSignal.findByBanner", query = "SELECT f FROM FeedSignal f WHERE f.feedSignalPK.banner = :banner")})
+  @NamedQuery(name = "FeedSignal.findByCallSign", query = "SELECT f FROM FeedSignal f WHERE f.feedSignalPK.callSign = :callSign")})
 public class FeedSignal implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
   protected FeedSignalPK feedSignalPK;
+  /**
+   * @deprecated Not used in the logical data model.
+   */
   @Column(name = "calls_banr", length = 32)
   @XmlAttribute
   private String callsBanr;
+  /**
+   * Feed Identifier; A or B
+   */
   @Column(name = "feed_id", length = 1)
   @XmlAttribute
   private String feedId;
-  // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+  /**
+   * Feed input channel: 0, 2 - 83, or 2500 - 2680
+   */
   @Column(name = "feed_chan", precision = 12)
   @XmlAttribute
-  private float feedChan;
+  private double feedChannel;
+  /**
+   * Type of FEED LINK; O, U, S, C
+   */
   @Column(name = "link_type", length = 1)
   @XmlAttribute
   private String linkType;
+  /**
+   * Name of the SOURCE of the FEED. Call sign reference.
+   */
   @Column(name = "feed_call", length = 12)
   @XmlAttribute
-  private String feedCall;
+  private String feedCallSign;
+  /**
+   * N.Latitude of the FEED SOURCE(ddmmss)
+   */
   @Column(name = "feed_lat", precision = 12)
   @XmlAttribute
-  private float feedLat;
+  private String feedLat;
+  /**
+   * W.Longitude of the FEED SOURCE(dddmmss)
+   */
   @Column(name = "feed_long", precision = 12)
   @XmlAttribute
-  private float feedLong;
+  private String feedLong;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
@@ -110,12 +125,12 @@ public class FeedSignal implements Serializable {
     this.feedId = feedId;
   }
 
-  public float getFeedChan() {
-    return feedChan;
+  public double getFeedChannel() {
+    return feedChannel;
   }
 
-  public void setFeedChan(float feedChan) {
-    this.feedChan = feedChan;
+  public void setFeedChannel(double feedChannel) {
+    this.feedChannel = feedChannel;
   }
 
   public String getLinkType() {
@@ -126,28 +141,85 @@ public class FeedSignal implements Serializable {
     this.linkType = linkType;
   }
 
-  public String getFeedCall() {
-    return feedCall;
+  public String getFeedCallSign() {
+    return feedCallSign;
   }
 
-  public void setFeedCall(String feedCall) {
-    this.feedCall = feedCall;
+  public void setFeedCallSign(String feedCallSign) {
+    this.feedCallSign = feedCallSign;
   }
 
-  public float getFeedLat() {
+  public String getFeedLat() {
     return feedLat;
   }
 
-  public void setFeedLat(float feedLat) {
+  public void setFeedLat(String feedLat) {
     this.feedLat = feedLat;
   }
 
-  public float getFeedLong() {
+  public String getFeedLong() {
     return feedLong;
   }
 
-  public void setFeedLong(float feedLong) {
+  public void setFeedLong(String feedLong) {
     this.feedLong = feedLong;
+  }
+
+  /**
+   * @return WGS_84
+   */
+  public String getDatum() {
+    return "WGS_84";
+  }
+
+  /**
+   * @return Latitude of the FEED SOURCE in decimal degrees.
+   */
+  public Double getLatitude() {
+//       * N.Latitude of the FEED SOURCE(ddmmss)
+    Pattern p = Pattern.compile("(\\d\\d)(\\d\\d)(\\d\\d)");
+    Matcher m = p.matcher(feedLat);
+    if (m.find()) {
+      return DMStoDEC(Integer.valueOf(m.group(0)),
+                      Integer.valueOf(m.group(1)),
+                      Double.valueOf(m.group(2)),
+                      "N");
+    }
+    return null;
+  }
+
+  /**
+   * @return Longitude of the FEED SOURCE in decimal degrees.
+   */
+  public Double getLongitude() {
+//       * W.Longitude of the FEED SOURCE(dddmmss)
+    Pattern p = Pattern.compile("(\\d\\d\\d)(\\d\\d)(\\d\\d)");
+    Matcher m = p.matcher(feedLong);
+    if (m.find()) {
+      return DMStoDEC(Integer.valueOf(m.group(0)),
+                      Integer.valueOf(m.group(1)),
+                      Double.valueOf(m.group(2)),
+                      "W");
+    }
+    return null;
+  }
+
+  /**
+   * Convert DMS to decimal
+   * <p/>
+   * @param deg       degrees
+   * @param min       minutes
+   * @param sec       seconds
+   * @param direction direction [N, S, E, W]
+   * @return values converted to degrees.
+   */
+  private double DMStoDEC(int deg, int min, double sec, String direction) {
+    double decimalDegree = deg + ((double) min + (sec / 60)) / 60;
+    double directionMultiplier = 1;
+    if ("S".equalsIgnoreCase(direction) || "W".equalsIgnoreCase(direction)) {
+      directionMultiplier = -1;
+    }
+    return directionMultiplier * decimalDegree;
   }
 
   public CanadaStation getCanadaStation() {
@@ -180,6 +252,11 @@ public class FeedSignal implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.FeedSignal[ feedSignalPK=" + feedSignalPK + " ]";
+    return "FeedSignal"
+      + " feedCallSign [" + feedCallSign
+      + " feedChannel [" + feedChannel
+      + "] latitude [" + getLatitude()
+      + "] longitude [" + getLongitude()
+      + "]";
   }
 }

@@ -21,7 +21,27 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
 /**
- *
+ * Logical data model container for the CANADA Tsid (tsid) table.
+ * <p/>
+ * Contains Station TSID information.
+ * <p/>
+ * TSID (which stands for Transmission Signal Identifier) is a 16-bit packet
+ * contained within the Extended Data Services (XDS) of EIA-608B. Each station
+ * is given a unique TSID identifier that has been assigned by the FCC to insert
+ * into their Station signal. The recent FCC mandate states the TSID packet must
+ * be present in the broadcasters NTSC signal if the broadcaster chooses to have
+ * PSIP guide information.
+ * <p/>
+ * “The FCC emphasized that when the NTSC channel is announced in PSIP,
+ * transmission of the NTSC TSID in line 21, field 2 of the NTSC broadcast is
+ * now mandatory (as required by A/65B)”.
+ * <p/>
+ * In short, to ensure proper operation of digital receivers, the TSID data
+ * within the NTSC signal must be present. DTV receivers will compare the TSID
+ * information received in the PSIP with the TSID information in the
+ * corresponding NTSC broadcast, verifying that the NTSC signal referenced in
+ * the PSIP is actually the desired signal.
+ * <p/>
  * @author jesse
  */
 @Entity
@@ -52,6 +72,10 @@ public class Tsid implements Serializable {
   @Column(name = "channel")
   @XmlAttribute
   private int channel;
+  /**
+   * The Transmission Signal Identifier. A 16-bit packet contained within the
+   * MPEG-2 Extended Data Services (XDS) of EIA-608B.
+   */
   @Column(name = "tsid", length = 4)
   @XmlAttribute
   private String tsid;

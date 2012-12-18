@@ -17,6 +17,7 @@ package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -69,23 +70,25 @@ public class CommentPK implements Serializable {
 
   @Override
   public int hashCode() {
-    int hash = 0;
-    hash += (callSign != null ? callSign.hashCode() : 0);
-    hash += (banner != null ? banner.hashCode() : 0);
+    int hash = 3;
+    hash = 67 * hash + Objects.hashCode(this.callSign);
+    hash = 67 * hash + (this.banner != null ? this.banner.hashCode() : 0);
     return hash;
   }
 
   @Override
-  public boolean equals(Object object) {
-
-    if (!(object instanceof CommentPK)) {
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    CommentPK other = (CommentPK) object;
-    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
+    if (getClass() != obj.getClass()) {
       return false;
     }
-    if ((this.banner == null && other.banner != null) || (this.banner != null && !this.banner.equals(other.banner))) {
+    final CommentPK other = (CommentPK) obj;
+    if (!Objects.equals(this.callSign, other.callSign)) {
+      return false;
+    }
+    if (this.banner != other.banner) {
       return false;
     }
     return true;
@@ -93,6 +96,9 @@ public class CommentPK implements Serializable {
 
   @Override
   public String toString() {
-    return "CommentPK callSign [" + callSign + "] banner [" + banner + "]";
+    return "Comment"
+      + " callSign [" + callSign
+      + "] banner [" + banner
+      + "]";
   }
 }

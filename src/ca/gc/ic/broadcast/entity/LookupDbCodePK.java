@@ -16,6 +16,7 @@
 package ca.gc.ic.broadcast.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -25,7 +26,9 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- *
+ * Logical data model container for the CANADA LookupDbCode (lookup) table
+ * compound primary key.
+ * <p/>
  * @author jesse
  */
 @Embeddable
@@ -34,10 +37,16 @@ public class LookupDbCodePK implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+  /**
+   * The reference field name.
+   */
   @Basic(optional = false)
   @Column(name = "fieldname", nullable = false, length = 32)
   @XmlAttribute
   private String fieldname;
+  /**
+   * The field code.
+   */
   @Basic(optional = false)
   @Column(name = "code", nullable = false, length = 8)
   @XmlAttribute
@@ -69,23 +78,25 @@ public class LookupDbCodePK implements Serializable {
 
   @Override
   public int hashCode() {
-    int hash = 0;
-    hash += (fieldname != null ? fieldname.hashCode() : 0);
-    hash += (code != null ? code.hashCode() : 0);
+    int hash = 7;
+    hash = 71 * hash + Objects.hashCode(this.fieldname);
+    hash = 71 * hash + Objects.hashCode(this.code);
     return hash;
   }
 
   @Override
-  public boolean equals(Object object) {
-
-    if (!(object instanceof LookupDbCodePK)) {
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    LookupDbCodePK other = (LookupDbCodePK) object;
-    if ((this.fieldname == null && other.fieldname != null) || (this.fieldname != null && !this.fieldname.equals(other.fieldname))) {
+    if (getClass() != obj.getClass()) {
       return false;
     }
-    if ((this.code == null && other.code != null) || (this.code != null && !this.code.equals(other.code))) {
+    final LookupDbCodePK other = (LookupDbCodePK) obj;
+    if (!Objects.equals(this.fieldname, other.fieldname)) {
+      return false;
+    }
+    if (!Objects.equals(this.code, other.code)) {
       return false;
     }
     return true;
