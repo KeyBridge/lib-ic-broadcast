@@ -38,14 +38,7 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
 @NamedQueries({
-  @NamedQuery(name = "Antenna.findAll", query = "SELECT a FROM Antenna a"),
-  @NamedQuery(name = "Antenna.findByPattKey", query = "SELECT a FROM Antenna a WHERE a.pattKey = :pattKey"),
-  @NamedQuery(name = "Antenna.findByHorVer", query = "SELECT a FROM Antenna a WHERE a.horVer = :horVer"),
-  @NamedQuery(name = "Antenna.findByPattNumb", query = "SELECT a FROM Antenna a WHERE a.pattNumb = :pattNumb"),
-  @NamedQuery(name = "Antenna.findByPattType", query = "SELECT a FROM Antenna a WHERE a.pattType = :pattType"),
-  @NamedQuery(name = "Antenna.findByPunits", query = "SELECT a FROM Antenna a WHERE a.punits = :punits"),
-  @NamedQuery(name = "Antenna.findByNumpoints", query = "SELECT a FROM Antenna a WHERE a.numpoints = :numpoints"),
-  @NamedQuery(name = "Antenna.findByPattDate", query = "SELECT a FROM Antenna a WHERE a.pattDate = :pattDate")})
+  @NamedQuery(name = "Antenna.findAll", query = "SELECT a FROM Antenna a")})
 public class Antenna implements Serializable {
 
   @XmlTransient
