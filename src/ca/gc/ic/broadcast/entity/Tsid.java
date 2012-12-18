@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -93,7 +93,7 @@ public class Tsid implements Serializable {
     this.tsidPK = tsidPK;
   }
 
-  public Tsid(String callSign, Enum_Banner banner) {
+  public Tsid(String callSign, Enum_CanadaBanner banner) {
     this.tsidPK = new TsidPK(callSign, banner);
   }
 

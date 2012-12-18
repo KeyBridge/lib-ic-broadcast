@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -114,7 +114,7 @@ public class RegionalFiling implements Serializable {
     this.regionalFilingPK = regionalFilingPK;
   }
 
-  public RegionalFiling(String callSign, Enum_Banner banner) {
+  public RegionalFiling(String callSign, Enum_CanadaBanner banner) {
     this.regionalFilingPK = new RegionalFilingPK(callSign, banner);
   }
 

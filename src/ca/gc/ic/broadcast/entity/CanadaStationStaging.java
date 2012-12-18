@@ -15,9 +15,9 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
-import ca.gc.ic.broadcast.entity.enumerated.Enum_StationClass;
-import ca.gc.ic.broadcast.entity.enumerated.Enum_StationType;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaStationClass;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaStationType;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
@@ -83,7 +83,7 @@ public class CanadaStationStaging implements Serializable {
   @Column(name = "clazz", length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
-  private Enum_StationClass stationClass;
+  private Enum_CanadaStationClass stationClass;
   @Column(name = "dec_number")
   @XmlAttribute
   private int decNumber;
@@ -131,7 +131,7 @@ public class CanadaStationStaging implements Serializable {
     this.canadaStationPK = canadaStationPK;
   }
 
-  public CanadaStationStaging(Enum_Banner banner, String callSign) {
+  public CanadaStationStaging(Enum_CanadaBanner banner, String callSign) {
     this.canadaStationPK = new CanadaStationPK(banner, callSign);
   }
 
@@ -147,8 +147,8 @@ public class CanadaStationStaging implements Serializable {
     this.canadaStationPK = canadaStationPK;
   }
 
-  public Enum_StationType getStationType() {
-    return Enum_StationType.valueOf(stationType);
+  public Enum_CanadaStationType getStationType() {
+    return Enum_CanadaStationType.valueOf(stationType);
   }
 
   public void setStationType(String stationType) {
@@ -235,11 +235,11 @@ public class CanadaStationStaging implements Serializable {
     this.city = city;
   }
 
-  public Enum_StationClass getStationClass() {
+  public Enum_CanadaStationClass getStationClass() {
     return stationClass;
   }
 
-  public void setStationClass(Enum_StationClass stationClass) {
+  public void setStationClass(Enum_CanadaStationClass stationClass) {
     this.stationClass = stationClass;
   }
 

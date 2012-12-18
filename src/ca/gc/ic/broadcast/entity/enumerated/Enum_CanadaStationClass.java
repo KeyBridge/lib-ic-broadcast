@@ -20,14 +20,14 @@ package ca.gc.ic.broadcast.entity.enumerated;
  * tables 'am_statio', 'fm_statio', 'tv_statio' and 'sdars'.
  * <p/>
  * To prevent Java language conflict the table field is named 'clazz' and the
- * Java object (this) is named 'Enum_StationClass'.
+ * Java object (this) is named 'Enum_CanadaStationClass'.
  * <p/>
  * Some classes are used across service types. For example. 'A' is used for AM,
  * FM and TV stations.
  * <p/>
  * @author jesse
  */
-public enum Enum_StationClass {
+public enum Enum_CanadaStationClass {
 
   /**
    * Class A. Present in AM stations. Present in FM and TV stations. For TV
@@ -110,7 +110,7 @@ public enum Enum_StationClass {
   VU("DTV Upper VHF");
   private String description;
 
-  private Enum_StationClass(String description) {
+  private Enum_CanadaStationClass(String description) {
     this.description = description;
   }
 
@@ -119,13 +119,13 @@ public enum Enum_StationClass {
   }
 
   /**
-   * Find an Enum_StationClass object by its 2 or 3-character database code.
+   * Find an Enum_CanadaStationClass object by its 2 or 3-character database code.
    * <p/>
    * @param dbCode The 2 or 3-character database code (not case-sensistive)
    * @return null if no match
    */
-  public static Enum_StationClass findByDbCode(String dbCode) {
-    for (Enum_StationClass enum_Banner : Enum_StationClass.values()) {
+  public static Enum_CanadaStationClass findByDbCode(String dbCode) {
+    for (Enum_CanadaStationClass enum_Banner : Enum_CanadaStationClass.values()) {
       if (enum_Banner.name().equalsIgnoreCase(dbCode)) {
         return enum_Banner;
       }

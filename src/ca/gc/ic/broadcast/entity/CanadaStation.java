@@ -15,9 +15,9 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
-import ca.gc.ic.broadcast.entity.enumerated.Enum_StationClass;
-import ca.gc.ic.broadcast.entity.enumerated.Enum_StationType;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaStationClass;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaStationType;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -72,7 +72,7 @@ public abstract class CanadaStation implements Serializable {
   @Basic(optional = false)
   @Column(name = "station_type", nullable = false, length = 4)
   @XmlAttribute(required = true)
-  private Enum_StationType stationType;
+  private Enum_CanadaStationType stationType;
   /**
    * The CHANNEL; The channel value varies by Station Type and is context
    * dependent.
@@ -141,7 +141,7 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "clazz", length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
-  private Enum_StationClass stationClass;
+  private Enum_CanadaStationClass stationClass;
   /**
    * CRTC Decision Number "YYNNNN"
    */
@@ -268,7 +268,7 @@ public abstract class CanadaStation implements Serializable {
     this.canadaStationPK = canadaStationPK;
   }
 
-  public CanadaStation(Enum_Banner banner, String callSign) {
+  public CanadaStation(Enum_CanadaBanner banner, String callSign) {
     this.canadaStationPK = new CanadaStationPK(banner, callSign);
   }
 
@@ -290,11 +290,11 @@ public abstract class CanadaStation implements Serializable {
   /**
    * @return The type of station.
    */
-  public Enum_StationType getStationType() {
+  public Enum_CanadaStationType getStationType() {
     return stationType;
   }
 
-  public void setStationType(Enum_StationType stationType) {
+  public void setStationType(Enum_CanadaStationType stationType) {
     this.stationType = stationType;
   }
 
@@ -401,11 +401,11 @@ public abstract class CanadaStation implements Serializable {
   /**
    * @return The Canadian class of this Station;
    */
-  public Enum_StationClass getStationClass() {
+  public Enum_CanadaStationClass getStationClass() {
     return stationClass;
   }
 
-  public void setStationClass(Enum_StationClass stationClass) {
+  public void setStationClass(Enum_CanadaStationClass stationClass) {
     this.stationClass = stationClass;
   }
 

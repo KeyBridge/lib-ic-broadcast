@@ -24,7 +24,7 @@ package ca.gc.ic.broadcast.entity.enumerated;
  * <p/>
  * @author jesse
  */
-public enum Enum_Banner {
+public enum Enum_CanadaBanner {
 
   /**
    * Allotment
@@ -125,7 +125,7 @@ public enum Enum_Banner {
    */
   private boolean transmitting;
 
-  private Enum_Banner(String description, boolean transmitting) {
+  private Enum_CanadaBanner(String description, boolean transmitting) {
     this.description = description;
     this.transmitting = transmitting;
   }

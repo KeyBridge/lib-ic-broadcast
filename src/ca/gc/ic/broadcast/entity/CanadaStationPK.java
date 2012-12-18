@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -45,7 +45,7 @@ public class CanadaStationPK implements Serializable {
   @Column(name = "banner", nullable = false, length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
-  private Enum_Banner banner;
+  private Enum_CanadaBanner banner;
   /**
    * The station call sign.
    */
@@ -57,7 +57,7 @@ public class CanadaStationPK implements Serializable {
   public CanadaStationPK() {
   }
 
-  public CanadaStationPK(Enum_Banner banner, String callSign) {
+  public CanadaStationPK(Enum_CanadaBanner banner, String callSign) {
     this.banner = banner;
     this.callSign = callSign;
   }
@@ -76,16 +76,16 @@ public class CanadaStationPK implements Serializable {
     Pattern p = Pattern.compile(toString);
     Matcher m = p.matcher(canadaStationPkString);
     if (m.find()) {
-      this.banner = Enum_Banner.valueOf(m.group(1));
+      this.banner = Enum_CanadaBanner.valueOf(m.group(1));
       this.callSign = m.group(2);
     }
   }
 
-  public Enum_Banner getBanner() {
+  public Enum_CanadaBanner getBanner() {
     return banner;
   }
 
-  public void setBanner(Enum_Banner banner) {
+  public void setBanner(Enum_CanadaBanner banner) {
     this.banner = banner;
   }
 

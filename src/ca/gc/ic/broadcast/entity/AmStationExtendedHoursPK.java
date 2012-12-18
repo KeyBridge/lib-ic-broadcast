@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -41,12 +41,12 @@ public class AmStationExtendedHoursPK implements Serializable {
   @Column(name = "banner", nullable = false, length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
-  private Enum_Banner banner;
+  private Enum_CanadaBanner banner;
 
   public AmStationExtendedHoursPK() {
   }
 
-  public AmStationExtendedHoursPK(String callSign, Enum_Banner banner) {
+  public AmStationExtendedHoursPK(String callSign, Enum_CanadaBanner banner) {
     this.callSign = callSign;
     this.banner = banner;
   }
@@ -59,11 +59,11 @@ public class AmStationExtendedHoursPK implements Serializable {
     this.callSign = callSign;
   }
 
-  public Enum_Banner getBanner() {
+  public Enum_CanadaBanner getBanner() {
     return banner;
   }
 
-  public void setBanner(Enum_Banner banner) {
+  public void setBanner(Enum_CanadaBanner banner) {
     this.banner = banner;
   }
 

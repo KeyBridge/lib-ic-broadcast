@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_Banner;
+import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.*;
@@ -44,12 +44,12 @@ public class FeedSignalPK implements Serializable {
   @Column(name = "banner", nullable = false, length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
-  private Enum_Banner banner;
+  private Enum_CanadaBanner banner;
 
   public FeedSignalPK() {
   }
 
-  public FeedSignalPK(String callSign, Enum_Banner banner) {
+  public FeedSignalPK(String callSign, Enum_CanadaBanner banner) {
     this.callSign = callSign;
     this.banner = banner;
   }
@@ -62,11 +62,11 @@ public class FeedSignalPK implements Serializable {
     this.callSign = callSign;
   }
 
-  public Enum_Banner getBanner() {
+  public Enum_CanadaBanner getBanner() {
     return banner;
   }
 
-  public void setBanner(Enum_Banner banner) {
+  public void setBanner(Enum_CanadaBanner banner) {
     this.banner = banner;
   }
 
