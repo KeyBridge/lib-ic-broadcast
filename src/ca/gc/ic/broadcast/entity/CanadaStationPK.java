@@ -41,17 +41,17 @@ public class CanadaStationPK implements Serializable {
   /**
    * The Canadian Banner code.
    */
+  @Enumerated(EnumType.STRING)
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
-  @XmlAttribute
-  @Enumerated(EnumType.STRING)
+  @XmlAttribute(required = true)
   private Enum_CanadaBanner banner;
   /**
    * The station call sign.
    */
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private String callSign;
 
   public CanadaStationPK() {
