@@ -125,6 +125,6 @@ public class CanadaStationPK implements Serializable {
 
   @Override
   public String toString() {
-    return "CanadaStationPK banner [" + banner + "] callSign [" + callSign + "]";
+    return "CanadaStation banner [" + banner + "] callSign [" + callSign + "]";
   }
 }
