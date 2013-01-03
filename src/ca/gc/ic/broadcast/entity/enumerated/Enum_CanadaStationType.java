@@ -54,7 +54,7 @@ public enum Enum_CanadaStationType {
   /**
    * @return A dot-delimited name. e.g. 'ca.gc.ic.stationType.TV'
    */
-  public String getStationTypeName() {
+  public String getNameDotDelimited() {
     return "ca.gc.ic.stationType." + name();
   }
 

@@ -22,6 +22,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
@@ -636,18 +637,16 @@ public abstract class CanadaStation implements Serializable {
 
   @Override
   public int hashCode() {
-    int hash = 0;
-    hash += (canadaStationPK != null ? canadaStationPK.hashCode() : 0);
-    return hash;
+    return canadaStationPK.hashCode();
   }
 
   @Override
-  public boolean equals(Object object) {
+  public boolean equals(Object canadaStation) {
 
-    if (!(object instanceof CanadaStation)) {
+    if (!(canadaStation instanceof CanadaStation)) {
       return false;
     }
-    CanadaStation other = (CanadaStation) object;
+    CanadaStation other = (CanadaStation) canadaStation;
     if ((this.canadaStationPK == null && other.canadaStationPK != null) || (this.canadaStationPK != null && !this.canadaStationPK.equals(other.canadaStationPK))) {
       return false;
     }

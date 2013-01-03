@@ -99,25 +99,22 @@ public class CanadaStationPK implements Serializable {
 
   @Override
   public int hashCode() {
-    int hash = 5;
-    hash = 59 * hash + (this.banner != null ? this.banner.hashCode() : 0);
-    hash = 59 * hash + Objects.hashCode(this.callSign);
-    return hash;
+    int hash = 7;
+    hash = 29 * hash + (this.banner != null ? this.banner.hashCode() : 0);
+    hash = 29 * hash + Objects.hashCode(this.callSign);
+    return Math.abs(hash);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (obj == null) {
+  public boolean equals(Object canadaStationPk) {
+    if (canadaStationPk == null) {
       return false;
     }
-    if (getClass() != obj.getClass()) {
+    if (getClass() != canadaStationPk.getClass()) {
       return false;
     }
-    final CanadaStationPK other = (CanadaStationPK) obj;
-    if (this.banner != other.banner) {
-      return false;
-    }
-    if (!Objects.equals(this.callSign, other.callSign)) {
+    final CanadaStationPK other = (CanadaStationPK) canadaStationPk;
+    if (!Objects.equals(this.hashCode(), other.hashCode())) {
       return false;
     }
     return true;
