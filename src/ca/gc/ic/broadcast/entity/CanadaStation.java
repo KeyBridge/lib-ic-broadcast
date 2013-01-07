@@ -20,9 +20,9 @@ import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaStationClass;
 import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaStationType;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
@@ -632,8 +632,7 @@ public abstract class CanadaStation implements Serializable {
    */
   public String getDatum() {
     return "WGS_84";
-  }
-  //</editor-fold>
+  }//</editor-fold>
 
   @Override
   public int hashCode() {
@@ -688,5 +687,26 @@ public abstract class CanadaStation implements Serializable {
       + "]\n comment [" + comment
       + "]\n antennaList [" + antennaList
       + ']';
+  }
+
+  /**
+   * Test this Entity record to determine if it represents a valid transmitter
+   * configuration.
+   * <p/>
+   * @return TRUE if the Provinces are in Canada and the banner code indicates
+   *         the record is current and transmitting.
+   * @throws Exception If the station is not transmitting.
+   */
+  public boolean isValidTransmitter() throws Exception {
+    if (!Arrays.asList(new String[]{"AB", "BC", "MB", "NB", "NF", "NS", "NT", "ON", "PE", "QC", "SK", "YT"}).contains(province)) {
+      throw new Exception(province + " is not a recognized Canadian province.");
+    }
+    if (canadaStationPK == null) {
+      throw new Exception("Invalid Canadia Station record - null or empty Primary Key.");
+    }
+    if (!canadaStationPK.getBanner().isTransmitting()) {
+      throw new Exception("Invalid Canadia Station banner: '" + canadaStationPK.getBanner().getDescription() + "' is a non-transmitting configuration.");
+    }
+    return true;
   }
 }

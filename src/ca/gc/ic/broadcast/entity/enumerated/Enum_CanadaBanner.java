@@ -131,12 +131,10 @@ public enum Enum_CanadaBanner {
   }
 
   /**
-   * Human readable description. e.g. 'Temporary Operation'
-   * <p/>
-   * @return
+   * @return Human readable description. e.g. 'TP: Temporary Operation'
    */
   public String getDescription() {
-    return description;
+    return name() + ": " + description;
   }
 
   /**
