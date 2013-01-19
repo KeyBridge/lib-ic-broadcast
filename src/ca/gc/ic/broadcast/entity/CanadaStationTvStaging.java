@@ -30,6 +30,8 @@ import javax.xml.bind.annotation.*;
   @NamedQuery(name = "CanadaStationTvStaging.findAll", query = "SELECT c FROM CanadaStationTvStaging c"),
   @NamedQuery(name = "CanadaStationTvStaging.findByCallSign", query = "SELECT c FROM CanadaStationTvStaging c WHERE c.callSign = :callSign"),
   @NamedQuery(name = "CanadaStationTvStaging.findByBanner", query = "SELECT c FROM CanadaStationTvStaging c WHERE c.banner = :banner"),
+  @NamedQuery(name = "CanadaStationTvStaging.findByClazz", query = "SELECT c FROM CanadaStationTvStaging c WHERE c.clazz = :clazz"),
+  @NamedQuery(name = "CanadaStationTvStaging.countByClazz", query = "SELECT COUNT(c) FROM CanadaStationTvStaging c WHERE c.clazz = :clazz"),
   @NamedQuery(name = "CanadaStationTvStaging.findByNetwork", query = "SELECT c FROM CanadaStationTvStaging c WHERE c.network = :network")})
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
