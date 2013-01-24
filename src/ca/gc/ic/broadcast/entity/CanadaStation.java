@@ -697,7 +697,7 @@ public abstract class CanadaStation implements Serializable {
    *         the record is current and transmitting.
    * @throws Exception If the station is not transmitting.
    */
-  public boolean isValidTransmitter() throws Exception {
+  public boolean isValid() throws Exception {
     if (!Arrays.asList(new String[]{"AB", "BC", "MB", "NB", "NF", "NS", "NT", "ON", "PE", "QC", "SK", "YT"}).contains(province)) {
       throw new Exception(province + " is not a recognized Canadian province.");
     }
