@@ -699,13 +699,13 @@ public abstract class CanadaStation implements Serializable {
    */
   public boolean isValid() throws Exception {
     if (!Arrays.asList(new String[]{"AB", "BC", "MB", "NB", "NF", "NS", "NT", "ON", "PE", "QC", "SK", "YT"}).contains(province)) {
-      throw new Exception(province + " is not a recognized Canadian province.");
+      throw new Exception(canadaStationPK + " " + province + " is not a recognized Canadian province.");
     }
     if (canadaStationPK == null) {
-      throw new Exception("Invalid Canadia Station record - null or empty Primary Key.");
+      throw new Exception(canadaStationPK + " Invalid Canadia Station record - null or empty Primary Key.");
     }
     if (!canadaStationPK.getBanner().isTransmitting()) {
-      throw new Exception("Invalid Canadia Station banner: '" + canadaStationPK.getBanner().getDescription() + "' is a non-transmitting configuration.");
+      throw new Exception(canadaStationPK + " Invalid banner: '" + canadaStationPK.getBanner().getDescription() + "' is a non-transmitting configuration.");
     }
     return true;
   }
