@@ -158,13 +158,18 @@ public class CanadaStationTv extends CanadaStation {
   @XmlAttribute
   private Double overallHag;
   /**
-   * Radiating Center Above Ground Level in meters.
+   * Radiating Center Above Mean Sea Level in meters.
+   * <p/>
+   * Developer note: The BDBS documentation appears to be in error and cites
+   * this values as "Radiating Center Above Ground Level 0.0 to 5,000.0 metres".
+   * However the earlier document entry for FM stations identifies this field as
+   * "Above Mean Sea Level 0.0 to 5000.0 metres"
    * <p/>
    * 0.0 to 5,000.0 meters
    */
   @Column(name = "rad_center", precision = 12)
   @XmlAttribute
-  private Double rcHag;
+  private Double radCenter;
 
   public CanadaStationTv() {
   }
@@ -355,16 +360,17 @@ public class CanadaStationTv extends CanadaStation {
   }
 
   /**
-   * @return Radiating Center Above Ground Level in meters.
+   * @return Radiating Center Above Mean Sea Level in meters.
    */
-  public Double getRcHag() {
-    return rcHag;
+  public Double getRadCenter() {
+    return radCenter;
   }
 
-  public void setRcHag(Double rcHag) {
-    this.rcHag = rcHag;
-  }//</editor-fold>
+  public void setRadCenter(Double radCenter) {
+    this.radCenter = radCenter;
+  }
 
+  //</editor-fold>
   @Override
   public int hashCode() {
     int hash = 0;
@@ -407,7 +413,7 @@ public class CanadaStationTv extends CanadaStation {
       + "] offSetPrecision [" + offSetPrecision
       + "] offSetCode [" + offSetCode
       + "] overallHag [" + overallHag
-      + "] rcHag [" + rcHag
+      + "] radCenter [" + radCenter
       + ']';
   }
 }
