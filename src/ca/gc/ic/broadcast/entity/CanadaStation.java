@@ -54,6 +54,7 @@ import javax.xml.bind.annotation.*;
   @NamedQuery(name = "CanadaStation.countByStationType", query = "SELECT COUNT(c) FROM CanadaStation c WHERE c.stationType = :stationType"),
   @NamedQuery(name = "CanadaStation.findByBanner", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.banner = :banner"),
   @NamedQuery(name = "CanadaStation.findByCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign = :callSign"),
+  @NamedQuery(name = "CanadaStation.findByLikeCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign LIKE :callSign"),
   @NamedQuery(name = "CanadaStation.findByChannel", query = "SELECT c FROM CanadaStation c WHERE c.channel = :channel")})
 public abstract class CanadaStation implements Serializable {
 

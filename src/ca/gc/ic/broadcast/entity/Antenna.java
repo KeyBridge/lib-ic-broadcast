@@ -259,7 +259,7 @@ public class Antenna implements Serializable {
   public Map<Double, Double> getRadiationPatternMap() {
     Map<Double, Double> radiationPatternMap = new TreeMap<Double, Double>();
     for (RadiationPattern radiationPattern : getRadiationPatternList()) {
-      radiationPatternMap.put(radiationPattern.getRadiationPatternPK().getAngle(), radiationPattern.getRadiationPatternPK().getGain());
+      radiationPatternMap.put(radiationPattern.getAngle(), radiationPattern.getGain());
     }
     return radiationPatternMap;
   }//</editor-fold>
@@ -287,7 +287,7 @@ public class Antenna implements Serializable {
   @Override
   public String toString() {
     return "Antenna"
-      //      + " pattKey [" + pattKey
+      + " pattKey [" + pattKey
       + " polarization [" + polarization
       //      + "] pattNumb [" + pattNumb
       + "] pattType [" + pattType

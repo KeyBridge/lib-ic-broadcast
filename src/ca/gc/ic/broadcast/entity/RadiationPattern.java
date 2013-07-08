@@ -76,6 +76,9 @@ public class RadiationPattern implements Serializable {
    * @return The RadiationPattern compound primary key.
    */
   public RadiationPatternPK getRadiationPatternPK() {
+    if (radiationPatternPK == null) {
+      radiationPatternPK = new RadiationPatternPK();
+    }
     return radiationPatternPK;
   }
 
@@ -92,6 +95,24 @@ public class RadiationPattern implements Serializable {
 
   public void setAntenna(Antenna antenna) {
     this.antenna = antenna;
+  }
+
+  /**
+   * Shortcut method to get the radiationPatternPK angle value.
+   * <p/>
+   * @return Pattern data point azimuth from true north (degrees).
+   */
+  public Double getAngle() {
+    return getRadiationPatternPK().getAngle();
+  }
+
+  /**
+   * Shortcut method to get the radiationPatternPK gain value.
+   * <p/>
+   * @return Pattern data point gain at the given angle (dB).
+   */
+  public Double getGain() {
+    return getRadiationPatternPK().getGain();
   }
 
   @Override
