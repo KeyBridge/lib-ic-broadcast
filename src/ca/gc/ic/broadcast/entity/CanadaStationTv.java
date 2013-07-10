@@ -91,9 +91,18 @@ public class CanadaStationTv extends CanadaStation {
   @XmlAttribute
   private Double erpapk;
   /**
-   * ERP Average Power at Tilt Angle in watts
+   * The Documentation claims this is the ERP Average Power at Tilt Angle in
+   * watts [0 to 5,000,000]. However, FCC guidance and the data indicate that
+   * this field is used to positively differentiate Analog or Digital operation
+   * as follows:
    * <p/>
-   * 0 to 5,000,000
+   * The modulation field specifies the type of operation (analog or digital).
+   * TV modulation information is contained in the table column ERPATA and coded
+   * as 0=Analog; 1=Digital and 2=Post-transition.
+   * <p/>
+   * Developer note: 07/10/13: The canada 'tvstatio' database table contains the
+   * following values for this field [0, 1, 2], with active records showing the
+   * following values [0, 1].
    */
   @Column(name = "erpata")
   @XmlAttribute
@@ -368,9 +377,20 @@ public class CanadaStationTv extends CanadaStation {
 
   public void setRadCenter(Double radCenter) {
     this.radCenter = radCenter;
+  }//</editor-fold>
+
+  /**
+   * Boolean indicator that the television transmitter is a digital signal.
+   * <p/>
+   * @return TRUE for digital signals.
+   */
+  public boolean isDigital() {
+    if (erpata == null) {
+      return false;
+    }
+    return erpata > 0;
   }
 
-  //</editor-fold>
   @Override
   public int hashCode() {
     int hash = 0;
