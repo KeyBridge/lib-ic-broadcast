@@ -22,9 +22,9 @@ package ca.gc.ic.broadcast.entity.enumerated;
  * stations taken from the 'lookup' table and cross-referenced with the
  * respective station tables to ensure 100% coverage.
  * <p/>
- * @author jesse
+ * @author Jesse Caulfield <jesse@caulfield.org>
  */
-public enum Enum_CanadaBanner {
+public enum ECanadaBanner {
 
   /**
    * Allotment
@@ -118,14 +118,17 @@ public enum Enum_CanadaBanner {
    * Cancelled
    */
   XX("Cancelled Application", false);
-  private String description;
+  /**
+   * Human readable description. e.g. 'TP: Temporary Operation'
+   */
+  private final String description;
   /**
    * Indicates whether the station is on or off air. TRUE means the station is
    * transmitting and should be protected.
    */
-  private boolean transmitting;
+  private final boolean transmitting;
 
-  private Enum_CanadaBanner(String description, boolean transmitting) {
+  private ECanadaBanner(String description, boolean transmitting) {
     this.description = description;
     this.transmitting = transmitting;
   }

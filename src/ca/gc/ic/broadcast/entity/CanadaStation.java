@@ -15,9 +15,9 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaStationClass;
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaStationType;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaStationClass;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaStationType;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,14 +47,19 @@ import javax.xml.bind.annotation.*;
   @NamedQuery(name = "CanadaStation.findAll", query = "SELECT c FROM CanadaStation c"),
   @NamedQuery(name = "CanadaStation.findByStationType", query = "SELECT c FROM CanadaStation c WHERE c.stationType = :stationType"),
   /**
+   * Find stations of the indicated station type with a Banner code that
+   * indicates the station is transmitting.
+   */
+  @NamedQuery(name = "CanadaStation.findTransmitting", query = "SELECT c FROM CanadaStation c WHERE c.stationType = :stationType AND c.canadaStationPK.banner IN (\"AP\", \"AU\", \"O\", \"OP\", \"TO\")"),
+  @NamedQuery(name = "CanadaStation.countTransmitting", query = "SELECT COUNT(c) FROM CanadaStation c WHERE c.stationType = :stationType AND c.canadaStationPK.banner IN (\"AP\", \"AU\", \"O\", \"OP\", \"TO\")"),
+  /**
    * SQL Query to identify valid stations by type. E.G. stationType = 'TV' and
    * banner in 'AP, AU, OP'.
    */
   @NamedQuery(name = "CanadaStation.findByStationTypeAndBanner", query = "SELECT c FROM CanadaStation c WHERE c.stationType = :stationType AND c.canadaStationPK.banner = :banner"),
   @NamedQuery(name = "CanadaStation.countByStationType", query = "SELECT COUNT(c) FROM CanadaStation c WHERE c.stationType = :stationType"),
   @NamedQuery(name = "CanadaStation.findByBanner", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.banner = :banner"),
-  @NamedQuery(name = "CanadaStation.findByCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign = :callSign"),
-  @NamedQuery(name = "CanadaStation.findByLikeCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign LIKE :callSign"),
+  @NamedQuery(name = "CanadaStation.findByCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign LIKE :callSign"),
   @NamedQuery(name = "CanadaStation.findByChannel", query = "SELECT c FROM CanadaStation c WHERE c.channel = :channel")})
 public abstract class CanadaStation implements Serializable {
 
@@ -74,7 +79,7 @@ public abstract class CanadaStation implements Serializable {
   @Basic(optional = false)
   @Column(name = "station_type", nullable = false, length = 4)
   @XmlAttribute(required = true)
-  private Enum_CanadaStationType stationType;
+  private ECanadaStationType stationType;
   /**
    * The CHANNEL; The channel value varies by Station Type and is context
    * dependent.
@@ -143,7 +148,7 @@ public abstract class CanadaStation implements Serializable {
   @Column(name = "clazz", length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
-  private Enum_CanadaStationClass stationClass;
+  private ECanadaStationClass stationClass;
   /**
    * CRTC Decision Number "YYNNNN"
    */
@@ -270,7 +275,7 @@ public abstract class CanadaStation implements Serializable {
     this.canadaStationPK = canadaStationPK;
   }
 
-  public CanadaStation(Enum_CanadaBanner banner, String callSign) {
+  public CanadaStation(ECanadaBanner banner, String callSign) {
     this.canadaStationPK = new CanadaStationPK(banner, callSign);
   }
 
@@ -292,11 +297,11 @@ public abstract class CanadaStation implements Serializable {
   /**
    * @return The type of station.
    */
-  public Enum_CanadaStationType getStationType() {
+  public ECanadaStationType getStationType() {
     return stationType;
   }
 
-  public void setStationType(Enum_CanadaStationType stationType) {
+  public void setStationType(ECanadaStationType stationType) {
     this.stationType = stationType;
   }
 
@@ -403,11 +408,11 @@ public abstract class CanadaStation implements Serializable {
   /**
    * @return The Canadian class of this Station;
    */
-  public Enum_CanadaStationClass getStationClass() {
+  public ECanadaStationClass getStationClass() {
     return stationClass;
   }
 
-  public void setStationClass(Enum_CanadaStationClass stationClass) {
+  public void setStationClass(ECanadaStationClass stationClass) {
     this.stationClass = stationClass;
   }
 
@@ -635,6 +640,27 @@ public abstract class CanadaStation implements Serializable {
     return "WGS_84";
   }//</editor-fold>
 
+  /**
+   * Test this Entity record to determine if it represents a valid transmitter
+   * configuration.
+   * <p/>
+   * @return TRUE if the Provinces are in Canada and the banner code indicates
+   *         the record is current and transmitting.
+   * @throws Exception If the station is not transmitting.
+   */
+  public boolean isValid() throws Exception {
+    if (!Arrays.asList(new String[]{"AB", "BC", "MB", "NB", "NF", "NS", "NT", "ON", "PE", "QC", "SK", "YT"}).contains(province)) {
+      throw new Exception(canadaStationPK + " " + province + " is not a recognized Canadian province.");
+    }
+    if (canadaStationPK == null) {
+      throw new Exception(canadaStationPK + " Invalid Canada Station record - null or empty Primary Key.");
+    }
+    if (!canadaStationPK.getBanner().isTransmitting()) {
+      throw new Exception(canadaStationPK + " Invalid Canada Station banner: " + canadaStationPK.getBanner().name() + " (" + canadaStationPK.getBanner().getDescription() + ") is a non-transmitting configuration.");
+    }
+    return true;
+  }
+
   @Override
   public int hashCode() {
     return canadaStationPK.hashCode();
@@ -642,7 +668,6 @@ public abstract class CanadaStation implements Serializable {
 
   @Override
   public boolean equals(Object canadaStation) {
-
     if (!(canadaStation instanceof CanadaStation)) {
       return false;
     }
@@ -653,8 +678,25 @@ public abstract class CanadaStation implements Serializable {
     return true;
   }
 
+  /**
+   * Get a brief summary of this Canada Station record.
+   * <p>
+   * @return the PK output, e.g. CanadaStation banner [" + banner + "] callSign
+   *         [" + callSign + "]"
+   */
   @Override
   public String toString() {
+    return canadaStationPK != null
+      ? canadaStationPK.toString()
+      : "CanadaStation stationType[" + stationType + "]";
+  }
+
+  /**
+   * Get a complete dump of the Canada Station record configuration.
+   * <p>
+   * @return all field values.
+   */
+  public String toStringFull() {
     return "CanadaStation"
       + " canadaStationPK [" + canadaStationPK
       + "]\n stationType [" + stationType
@@ -690,24 +732,4 @@ public abstract class CanadaStation implements Serializable {
       + ']';
   }
 
-  /**
-   * Test this Entity record to determine if it represents a valid transmitter
-   * configuration.
-   * <p/>
-   * @return TRUE if the Provinces are in Canada and the banner code indicates
-   *         the record is current and transmitting.
-   * @throws Exception If the station is not transmitting.
-   */
-  public boolean isValid() throws Exception {
-    if (!Arrays.asList(new String[]{"AB", "BC", "MB", "NB", "NF", "NS", "NT", "ON", "PE", "QC", "SK", "YT"}).contains(province)) {
-      throw new Exception(canadaStationPK + " " + province + " is not a recognized Canadian province.");
-    }
-    if (canadaStationPK == null) {
-      throw new Exception(canadaStationPK + " Invalid Canadia Station record - null or empty Primary Key.");
-    }
-    if (!canadaStationPK.getBanner().isTransmitting()) {
-      throw new Exception(canadaStationPK + " Invalid banner: '" + canadaStationPK.getBanner().getDescription() + "' is a non-transmitting configuration.");
-    }
-    return true;
-  }
 }

@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -96,7 +96,7 @@ public class CanadaStationSdar extends CanadaStation {
     this.canadaStationPK = canadaStationPK;
   }
 
-  public CanadaStationSdar(Enum_CanadaBanner banner, String callSign) {
+  public CanadaStationSdar(ECanadaBanner banner, String callSign) {
     this.canadaStationPK = new CanadaStationPK(banner, callSign);
   }
 

@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -41,12 +41,12 @@ public class RegionalFilingPK implements Serializable {
   @Column(name = "banner", nullable = false, length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
-  private Enum_CanadaBanner banner;
+  private ECanadaBanner banner;
 
   public RegionalFilingPK() {
   }
 
-  public RegionalFilingPK(String callSign, Enum_CanadaBanner banner) {
+  public RegionalFilingPK(String callSign, ECanadaBanner banner) {
     this.callSign = callSign;
     this.banner = banner;
   }
@@ -59,11 +59,11 @@ public class RegionalFilingPK implements Serializable {
     this.callSign = callSign;
   }
 
-  public Enum_CanadaBanner getBanner() {
+  public ECanadaBanner getBanner() {
     return banner;
   }
 
-  public void setBanner(Enum_CanadaBanner banner) {
+  public void setBanner(ECanadaBanner banner) {
     this.banner = banner;
   }
 

@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
 import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -97,7 +97,7 @@ public class FeedSignal implements Serializable {
     this.feedSignalPK = feedSignalPK;
   }
 
-  public FeedSignal(String callSign, Enum_CanadaBanner banner) {
+  public FeedSignal(String callSign, ECanadaBanner banner) {
     this.feedSignalPK = new FeedSignalPK(callSign, banner);
   }
 

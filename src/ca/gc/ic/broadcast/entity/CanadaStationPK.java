@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -39,13 +39,20 @@ public class CanadaStationPK implements Serializable {
   @XmlTransient
   private static final long serialVersionUID = 1L;
   /**
-   * The Canadian Banner code.
+   * The Industry Canada station banner code.
+   * <p>
+   * The Banner's <code>transmitting</code> field can be interrogated to
+   * determine whether the station is on or off air. TRUE means the station is
+   * transmitting and should be protected.
+   * <p>
+   * Depending upon the type of service the following Banner codes are
+   * transmitting: <code>[AP, AU, O, OP, TO]</code>.
    */
   @Enumerated(EnumType.STRING)
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
   @XmlAttribute(required = true)
-  private Enum_CanadaBanner banner;
+  private ECanadaBanner banner;
   /**
    * The station call sign.
    */
@@ -57,7 +64,7 @@ public class CanadaStationPK implements Serializable {
   public CanadaStationPK() {
   }
 
-  public CanadaStationPK(Enum_CanadaBanner banner, String callSign) {
+  public CanadaStationPK(ECanadaBanner banner, String callSign) {
     this.banner = banner;
     this.callSign = callSign;
   }
@@ -76,16 +83,16 @@ public class CanadaStationPK implements Serializable {
     Pattern p = Pattern.compile(toString);
     Matcher m = p.matcher(canadaStationPkString);
     if (m.find()) {
-      this.banner = Enum_CanadaBanner.valueOf(m.group(1));
+      this.banner = ECanadaBanner.valueOf(m.group(1));
       this.callSign = m.group(2);
     }
   }
 
-  public Enum_CanadaBanner getBanner() {
+  public ECanadaBanner getBanner() {
     return banner;
   }
 
-  public void setBanner(Enum_CanadaBanner banner) {
+  public void setBanner(ECanadaBanner banner) {
     this.banner = banner;
   }
 

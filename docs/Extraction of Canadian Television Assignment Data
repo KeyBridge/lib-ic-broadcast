@@ -1,0 +1,38 @@
++------------------------------------------------------------------------------+
+|            Extraction of Canadian Television Assignment Data                 |
++------------------------------------------------------------------------------+
+http://www.fcc.gov/encyclopedia/white-space-database-administration
+ 
+For purposes of protecting Canadian TV stations (serving locations wholly within 
+Canada) from interference from unlicensed TV bands transmitting devices (TV white 
+space devices), the TV white space database systems are to use Canadian TV station 
+engineering data from Industry Canada’s licensing system rather than the Canadian 
+records in the Commission’s Consolidated Database System (CDBS). (The Canadian 
+station records in the CDBS contain data for internationally coordinated TV station 
+agreements, which may not reflect actual station operations.) Industry Canada’s 
+TV station engineering data for actual operations is placed on the FCC’s website 
+daily using the following procedure and may be obtained by the database systems 
+from the FCC’s website. The data, along with more detailed descriptions, may 
+be obtained using the links below. 
+ 
+Download Canadian Television Assignment (CTA) Data:
++------------------------------------------------------------------------------+
+  FCC Extracted:
+    http://data.fcc.gov/download/white-space-database-administration/ca_tv_data.zip
+
+  Industry Canada (RAW)
+    http://spectrum.ic.gc.ca/engineering/engdoc/baserad.zip
+ 
+Resources
++------------------------------------------------------------------------------+
+  dbview(1) - Linux man page
+    http://linux.die.net/man/1/dbview
+
+  Broadcast Data Extract (AM-FM-TV) — User Manual
+    http://www.ic.gc.ca/eic/site/sp_dgse-ps_dggs.nsf/eng/gg00071.html#p3
+
+  Extraction of Canadian Television Assignment Data
+    http://www.fcc.gov/encyclopedia/white-space-database-administration
+
+  Raw Canadian data is located on the Industry Canada website at
+    www.ic.gc.ca/eic/site/sp_dgse-ps_dggs.nsf/eng/gg00026.html

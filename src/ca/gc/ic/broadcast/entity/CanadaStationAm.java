@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
 import java.util.List;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -95,7 +95,7 @@ public class CanadaStationAm extends CanadaStation {
     this.canadaStationPK = canadaStationPK;
   }
 
-  public CanadaStationAm(Enum_CanadaBanner banner, String callSign) {
+  public CanadaStationAm(ECanadaBanner banner, String callSign) {
     this.canadaStationPK = new CanadaStationPK(banner, callSign);
   }
 

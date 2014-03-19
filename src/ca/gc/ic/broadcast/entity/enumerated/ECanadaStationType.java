@@ -20,7 +20,7 @@ package ca.gc.ic.broadcast.entity.enumerated;
  * <p/>
  * @author jesse
  */
-public enum Enum_CanadaStationType {
+public enum ECanadaStationType {
 
   /**
    * AM Radio
@@ -38,9 +38,9 @@ public enum Enum_CanadaStationType {
    * Broadcast Television
    */
   TV("Broadcast Television");
-  private String description;
+  private final String description;
 
-  private Enum_CanadaStationType(String description) {
+  private ECanadaStationType(String description) {
     this.description = description;
   }
 

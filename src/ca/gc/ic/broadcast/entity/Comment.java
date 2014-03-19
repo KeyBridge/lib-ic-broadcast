@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.*;
@@ -132,7 +132,7 @@ public class Comment implements Serializable {
     this.commentPK = commentPK;
   }
 
-  public Comment(String callSign, Enum_CanadaBanner banner) {
+  public Comment(String callSign, ECanadaBanner banner) {
     this.commentPK = new CommentPK(callSign, banner);
   }
 

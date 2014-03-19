@@ -15,7 +15,7 @@
  */
 package ca.gc.ic.broadcast.entity;
 
-import ca.gc.ic.broadcast.entity.enumerated.Enum_CanadaBanner;
+import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
 import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -90,7 +90,7 @@ public class AmStationExtendedHours implements Serializable {
     this.amStationExtendedHoursPK = amStationExtendedHoursPK;
   }
 
-  public AmStationExtendedHours(String callSign, Enum_CanadaBanner banner) {
+  public AmStationExtendedHours(String callSign, ECanadaBanner banner) {
     this.amStationExtendedHoursPK = new AmStationExtendedHoursPK(callSign, banner);
   }
 
