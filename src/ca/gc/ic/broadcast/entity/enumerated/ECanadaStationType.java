@@ -38,6 +38,9 @@ public enum ECanadaStationType {
    * Broadcast Television
    */
   TV("Broadcast Television");
+  /**
+   * A human readable description. e.g. 'Satellite Digital Audio Radio'
+   */
   private final String description;
 
   private ECanadaStationType(String description) {
@@ -45,14 +48,18 @@ public enum ECanadaStationType {
   }
 
   /**
-   * @return A human readable description. e.g. 'Satellite Digital Audio Radio'
+   * Get a human readable description. e.g. 'Satellite Digital Audio Radio'
+   * <p>
+   * @return a non-null, non-empty String
    */
   public String getDescription() {
     return description;
   }
 
   /**
-   * @return A dot-delimited name. e.g. 'ca.gc.ic.stationType.TV'
+   * Get a dot-delimited name.
+   * <p>
+   * @return a dot-delimited name. e.g. 'ca.gc.ic.stationType.TV'
    */
   public String getNameDotDelimited() {
     return "ca.gc.ic.stationType." + name();
@@ -60,6 +67,6 @@ public enum ECanadaStationType {
 
   @Override
   public String toString() {
-    return description;
+    return name() + " - " + description;
   }
 }

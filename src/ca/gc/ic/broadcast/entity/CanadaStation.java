@@ -50,8 +50,8 @@ import javax.xml.bind.annotation.*;
    * Find stations of the indicated station type with a Banner code that
    * indicates the station is transmitting.
    */
-  @NamedQuery(name = "CanadaStation.findTransmitting", query = "SELECT c FROM CanadaStation c WHERE c.stationType = :stationType AND c.canadaStationPK.banner IN (\"AP\", \"AU\", \"O\", \"OP\", \"TO\")"),
-  @NamedQuery(name = "CanadaStation.countTransmitting", query = "SELECT COUNT(c) FROM CanadaStation c WHERE c.stationType = :stationType AND c.canadaStationPK.banner IN (\"AP\", \"AU\", \"O\", \"OP\", \"TO\")"),
+  @NamedQuery(name = "CanadaStation.findCallSignByStationTypeAndBanner", query = "SELECT c.canadaStationPK.callSign FROM CanadaStation c WHERE c.stationType = :stationType AND c.canadaStationPK.banner = :banner"),
+//  @NamedQuery(name = "CanadaStation.countTransmitting", query = "SELECT COUNT(c) FROM CanadaStation c WHERE c.stationType = :stationType AND c.canadaStationPK.banner IN ('AP', 'AU', 'O', 'OP', 'TO')"),
   /**
    * SQL Query to identify valid stations by type. E.G. stationType = 'TV' and
    * banner in 'AP, AU, OP'.
@@ -60,6 +60,7 @@ import javax.xml.bind.annotation.*;
   @NamedQuery(name = "CanadaStation.countByStationType", query = "SELECT COUNT(c) FROM CanadaStation c WHERE c.stationType = :stationType"),
   @NamedQuery(name = "CanadaStation.findByBanner", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.banner = :banner"),
   @NamedQuery(name = "CanadaStation.findByCallSign", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign LIKE :callSign"),
+  @NamedQuery(name = "CanadaStation.findByCallSignAndBanner", query = "SELECT c FROM CanadaStation c WHERE c.canadaStationPK.callSign LIKE :callSign AND c.canadaStationPK.banner = :banner"),
   @NamedQuery(name = "CanadaStation.findByChannel", query = "SELECT c FROM CanadaStation c WHERE c.channel = :channel")})
 public abstract class CanadaStation implements Serializable {
 
