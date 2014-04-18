@@ -47,6 +47,10 @@ public enum ECanadaStationType {
     this.description = description;
   }
 
+  public String getName() {
+    return name();
+  }
+
   /**
    * Get a human readable description. e.g. 'Satellite Digital Audio Radio'
    * <p>
@@ -54,15 +58,6 @@ public enum ECanadaStationType {
    */
   public String getDescription() {
     return description;
-  }
-
-  /**
-   * Get a dot-delimited name.
-   * <p>
-   * @return a dot-delimited name. e.g. 'ca.gc.ic.stationType.TV'
-   */
-  public String getNameDotDelimited() {
-    return "ca.gc.ic.stationType." + name();
   }
 
   @Override
