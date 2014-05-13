@@ -121,14 +121,31 @@ public class CanadaStationPK implements Serializable {
       return false;
     }
     final CanadaStationPK other = (CanadaStationPK) obj;
-    if (this.banner != other.banner) {
+    if (this.banner != other.getBanner()) {
       return false;
     }
     return Objects.equals(this.callSign, other.getCallSign());
   }
 
+  /**
+   * Return a class-friendly output. e.g. CanadaStation banner [" + banner + "]
+   * callSign [" + callSign + "]"
+   * <p>
+   * @return the call sign and banner.
+   */
   @Override
   public String toString() {
     return "CanadaStation banner [" + banner + "] callSign [" + callSign + "]";
   }
+
+  /**
+   * Return a de-minimus output. e.g. "banner [" + banner + "] callSign [" +
+   * callSign + "]"
+   * <p>
+   * @return the banner and call sign.
+   */
+  public String toStringBrief() {
+    return "banner [" + banner + "] callSign [" + callSign + "]";
+  }
+
 }
