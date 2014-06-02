@@ -5,7 +5,8 @@
 -- -----------------------------------------------------------------------------
 -- HISTORY
 -- -----------------------------------------------------------------------------
---
+-- 06/01/14 - rename database from 'canada' to 'ic_bdbs' 
+--            all FCC databases now have the 'ic_' prefix
 -- 03/19/14 - allow null erpvpk entries - NULL for AM, required for all others
 --            same for ehaat - null or AM, required for all others
 --            remove the table tvstatio_staging - FCC Data is duplicatative  of 
@@ -23,9 +24,57 @@
 -- CREATE THE DATABASE
 -- -----------------------------------------------------------------------------
 --
-DROP DATABASE IF EXISTS canada;
-CREATE DATABASE canada;
-USE canada;
+DROP DATABASE IF EXISTS ic_bdbs;
+CREATE DATABASE ic_bdbs;
+USE ic_bdbs;
+
+
+-- -----------------------------------------------------------------------------
+-- Function asdate
+-- Converts string encoded data information into a date instance
+--   encoding strategy is: yyyyMMDD
+-- This method is called from the JPA dynamically-generated SQL script to load
+-- the ca_station table.
+-- -----------------------------------------------------------------------------
+DROP function if EXISTS ic_bdbs.asdate;
+DELIMITER //
+CREATE FUNCTION ic_bdbs.asdate(col char(8)) 
+  RETURNS DATE
+  DETERMINISTIC
+  READS SQL DATA
+  BEGIN 
+  DECLARE d DATE;
+    SET d =  concat(substr(col,1,4),"-",substr(col,5,2) ,"-",substr(col,7,2));
+    IF d = date("0000-00-00") THEN SET d = DATE("1900-01-01");
+    END IF;
+    RETURN d;
+END // 
+DELIMITER ;
+
+
+-- -----------------------------------------------------------------------------
+-- Function DMS2DEC
+-- Converts string encoded DMS information into a decimal number
+--   encoding strategy is: 503720 = 50' 37" 20s
+-- This method is called from the JPA dynamically-generated SQL script to load
+-- the ca_station table.
+-- -----------------------------------------------------------------------------
+DROP function if EXISTS ic_bdbs.dms2dec;
+DELIMITER //
+CREATE FUNCTION ic_bdbs.dms2dec(col varchar(7)) 
+  RETURNS double
+  DETERMINISTIC
+  READS SQL DATA
+  BEGIN 
+  DECLARE d double;
+    IF LENGTH(col) = 7 THEN SET d =  substr(col,1,3) + substr(col,4,2)/60 + substr(col,6,2)/3600;
+    ELSE SET d =  substr(col,1,2) + substr(col,3,2)/60 + substr(col,5,2)/3600;
+    END IF;
+    RETURN d;
+END // 
+DELIMITER ;
+
+
 
 -- -----------------------------------------------------------------------------
 -- CREATE THE TABLES
@@ -536,52 +585,6 @@ CREATE TABLE `tvstatio` (
   `channel` int(11),
   PRIMARY KEY (`call_sign`,`banner`)
 ) ENGINE=MyISAM;
-
-
--- -----------------------------------------------------------------------------
--- Function asdate
--- Converts string encoded data information into a date instance
---   encoding strategy is: yyyyMMDD
--- This method is called from the JPA dynamically-generated SQL script to load
--- the ca_station table.
--- -----------------------------------------------------------------------------
-DROP function if EXISTS canada.asdate;
-DELIMITER //
-CREATE FUNCTION canada.asdate(col char(8)) 
-  RETURNS DATE
-  DETERMINISTIC
-  READS SQL DATA
-  BEGIN 
-  DECLARE d DATE;
-    SET d =  concat(substr(col,1,4),"-",substr(col,5,2) ,"-",substr(col,7,2));
-    IF d = date("0000-00-00") THEN SET d = DATE("1900-01-01");
-    END IF;
-    RETURN d;
-END // 
-DELIMITER ;
-
-
--- -----------------------------------------------------------------------------
--- Function DMS2DEC
--- Converts string encoded DMS information into a decimal number
---   encoding strategy is: 503720 = 50' 37" 20s
--- This method is called from the JPA dynamically-generated SQL script to load
--- the ca_station table.
--- -----------------------------------------------------------------------------
-DROP function if EXISTS canada.dms2dec;
-DELIMITER //
-CREATE FUNCTION canada.dms2dec(col varchar(7)) 
-  RETURNS double
-  DETERMINISTIC
-  READS SQL DATA
-  BEGIN 
-  DECLARE d double;
-    IF LENGTH(col) = 7 THEN SET d =  substr(col,1,3) + substr(col,4,2)/60 + substr(col,6,2)/3600;
-    ELSE SET d =  substr(col,1,2) + substr(col,3,2)/60 + substr(col,5,2)/3600;
-    END IF;
-    RETURN d;
-END // 
-DELIMITER ;
 
 
 -- -----------------------------------------------------------------------------
