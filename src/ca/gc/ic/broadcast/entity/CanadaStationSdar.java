@@ -238,44 +238,25 @@ public class CanadaStationSdar extends CanadaStation {
   }//</editor-fold>
 
   @Override
-  public int hashCode() {
-    int hash = 0;
-    hash += (canadaStationPK != null ? canadaStationPK.hashCode() : 0);
-    return hash;
-  }
-
-  @Override
-  public boolean equals(Object object) {
-    if (!(object instanceof CanadaStationSdar)) {
-      return false;
-    }
-    CanadaStationSdar other = (CanadaStationSdar) object;
-    if ((this.canadaStationPK == null && other.canadaStationPK != null) || (this.canadaStationPK != null && !this.canadaStationPK.equals(other.canadaStationPK))) {
-      return false;
-    }
-    return true;
-  }
-
-  @Override
   public String toString() {
     return "CanadaStationTv"
-            + super.toString()
-            + "\n] erpvpk [" + erpvpk
-            + "] allocZone [" + allocZone
-            + "] antMode [" + antMode
-            + "] beamTilt [" + beamTilt
-            + "] closeCap [" + closeCap
-            + "] erpaav [" + erpaav
-            + "] erpapk [" + erpapk
-            + "] erpata [" + erpata
-            + "] erpvav [" + erpvav
-            + "] erpvta [" + erpvta
-            + "] groundLev [" + groundLev
-            + "] limitCode [" + limitCode
-            + "] offPrec [" + offPrec
-            + "] offset [" + offset
-            + "] overallH [" + overallH
-            + "] radCenter [" + radCenter
-            + ']';
+      + super.toString()
+      + "\n] erpvpk [" + erpvpk
+      + "] allocZone [" + allocZone
+      + "] antMode [" + antMode
+      + "] beamTilt [" + beamTilt
+      + "] closeCap [" + closeCap
+      + "] erpaav [" + erpaav
+      + "] erpapk [" + erpapk
+      + "] erpata [" + erpata
+      + "] erpvav [" + erpvav
+      + "] erpvta [" + erpvta
+      + "] groundLev [" + groundLev
+      + "] limitCode [" + limitCode
+      + "] offPrec [" + offPrec
+      + "] offset [" + offset
+      + "] overallH [" + overallH
+      + "] radCenter [" + radCenter
+      + ']';
   }
 }

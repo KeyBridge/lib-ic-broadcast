@@ -254,48 +254,28 @@ public class CanadaStationAm extends CanadaStation {
   //</editor-fold>
 
   @Override
-  public int hashCode() {
-    int hash = 0;
-    hash += (canadaStationPK != null ? canadaStationPK.hashCode() : 0);
-    return hash;
-  }
-
-  @Override
-  public boolean equals(Object object) {
-
-    if (!(object instanceof CanadaStationAm)) {
-      return false;
-    }
-    CanadaStationAm other = (CanadaStationAm) object;
-    if ((this.canadaStationPK == null && other.canadaStationPK != null) || (this.canadaStationPK != null && !this.canadaStationPK.equals(other.canadaStationPK))) {
-      return false;
-    }
-    return true;
-  }
-
-  @Override
   public String toString() {
     return "CanadaStationAm"
-            + super.toString()
-            + "] euvalu [" + euvalu
-            + "] ifrbnD [" + ifrbnD
-            + "] ifrbnN [" + ifrbnN
-            + "] latitude2 [" + latitude2
-            + "] longitude2 [" + longitude2
-            + "] parRmsC [" + parRmsC
-            + "] parRmsD [" + parRmsD
-            + "] parRmsN [" + parRmsN
-            + "] powercrit [" + powercrit
-            + "] powerday [" + powerday
-            + "] powernight [" + powernight
-            + "] qCrit [" + qCrit
-            + "] qDay [" + qDay
-            + "] qNight [" + qNight
-            + "] status1 [" + status1
-            + "] status2 [" + status2
-            + "]\n amStationExtendedHours [" + amStationExtendedHours
-            + "]\n amStationParameterList [" + amStationParameterList
-            + "]\n amStationAugmentList [" + amStationAugmentList
-            + ']';
+      + super.toString()
+      + "] euvalu [" + euvalu
+      + "] ifrbnD [" + ifrbnD
+      + "] ifrbnN [" + ifrbnN
+      + "] latitude2 [" + latitude2
+      + "] longitude2 [" + longitude2
+      + "] parRmsC [" + parRmsC
+      + "] parRmsD [" + parRmsD
+      + "] parRmsN [" + parRmsN
+      + "] powercrit [" + powercrit
+      + "] powerday [" + powerday
+      + "] powernight [" + powernight
+      + "] qCrit [" + qCrit
+      + "] qDay [" + qDay
+      + "] qNight [" + qNight
+      + "] status1 [" + status1
+      + "] status2 [" + status2
+      + "]\n amStationExtendedHours [" + amStationExtendedHours
+      + "]\n amStationParameterList [" + amStationParameterList
+      + "]\n amStationAugmentList [" + amStationAugmentList
+      + ']';
   }
 }

@@ -183,39 +183,20 @@ public class CanadaStationFm extends CanadaStation {
   }//</editor-fold>
 
   @Override
-  public int hashCode() {
-    int hash = 0;
-    hash += (canadaStationPK != null ? canadaStationPK.hashCode() : 0);
-    return hash;
-  }
-
-  @Override
-  public boolean equals(Object object) {
-    if (!(object instanceof CanadaStationFm)) {
-      return false;
-    }
-    CanadaStationFm other = (CanadaStationFm) object;
-    if ((this.canadaStationPK == null && other.canadaStationPK != null) || (this.canadaStationPK != null && !this.canadaStationPK.equals(other.canadaStationPK))) {
-      return false;
-    }
-    return true;
-  }
-
-  @Override
   public String toString() {
     return "CanadaStationFm"
-            + super.toString()
-            + "] autoProg [" + autoProg
-            + "] scmo [" + scmo
-            + "] erpvpk [" + erpvpk
-            + "] antMode [" + antMode
-            + "] beamTilt [" + beamTilt
-            + "] erphav [" + erphav
-            + "] erphpk [" + erphpk
-            + "] erpvav [" + erpvav
-            + "] groundLev [" + groundLev
-            + "] overallH [" + overallH
-            + "] radCenter [" + radCenter
-            + ']';
+      + super.toString()
+      + "] autoProg [" + autoProg
+      + "] scmo [" + scmo
+      + "] erpvpk [" + erpvpk
+      + "] antMode [" + antMode
+      + "] beamTilt [" + beamTilt
+      + "] erphav [" + erphav
+      + "] erphpk [" + erphpk
+      + "] erpvav [" + erpvav
+      + "] groundLev [" + groundLev
+      + "] overallH [" + overallH
+      + "] radCenter [" + radCenter
+      + ']';
   }
 }

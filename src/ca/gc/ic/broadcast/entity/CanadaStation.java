@@ -19,10 +19,7 @@ import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
 import ca.gc.ic.broadcast.entity.enumerated.ECanadaStationClass;
 import ca.gc.ic.broadcast.entity.enumerated.ECanadaStationType;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
@@ -662,21 +659,52 @@ public abstract class CanadaStation implements Serializable {
     return true;
   }
 
+  /**
+   * Hash code is based on the call sign, latitude and longitude.
+   * <p>
+   * @return a unique hash code integer (always positive)
+   */
   @Override
   public int hashCode() {
-    return canadaStationPK.hashCode();
+    int hash = 3;
+    hash = 59 * hash + Objects.hash(getCanadaStationPK().getCallSign());
+    hash = 59 * hash + (int) (Double.doubleToLongBits(this.latitude) ^ (Double.doubleToLongBits(this.latitude) >>> 32));
+    hash = 59 * hash + (int) (Double.doubleToLongBits(this.longitude) ^ (Double.doubleToLongBits(this.longitude) >>> 32));
+    return Math.abs(hash);
   }
 
-  @Override
-  public boolean equals(Object canadaStation) {
+  /**
+   * Equals is based on hash code comparison, which itself is based on call
+   * sign, latitude and longitude.
+   * <p>
+   * @param canadaStation the other object to compare
+   * @return TRUE if the call sign, latitude and longitude are equal
+   */
+//  @Override
+  public boolean equalsx(Object canadaStation) {
     if (!(canadaStation instanceof CanadaStation)) {
       return false;
     }
     CanadaStation other = (CanadaStation) canadaStation;
-    if ((this.canadaStationPK == null && other.canadaStationPK != null) || (this.canadaStationPK != null && !this.canadaStationPK.equals(other.canadaStationPK))) {
+    return this.hashCode() == other.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
       return false;
     }
-    return true;
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final CanadaStation other = (CanadaStation) obj;
+    if (!Objects.equals(this.getCanadaStationPK().getCallSign(), other.getCanadaStationPK().getCallSign())) {
+      return false;
+    }
+    if (Double.doubleToLongBits(this.latitude) != Double.doubleToLongBits(other.latitude)) {
+      return false;
+    }
+    return Double.doubleToLongBits(this.longitude) == Double.doubleToLongBits(other.longitude);
   }
 
   /**

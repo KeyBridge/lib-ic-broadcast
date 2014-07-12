@@ -16,7 +16,6 @@
 package ca.gc.ic.broadcast.entity;
 
 import ca.gc.ic.broadcast.entity.enumerated.ECanadaBanner;
-import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -389,28 +388,6 @@ public class CanadaStationTv extends CanadaStation {
       return false;
     }
     return erpata > 0;
-  }
-
-  @Override
-  public int hashCode() {
-    int hash = 0;
-    hash += (canadaStationPK != null ? canadaStationPK.hashCode() : 0);
-    return hash;
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (obj == null) {
-      return false;
-    }
-    if (getClass() != obj.getClass()) {
-      return false;
-    }
-    final CanadaStationTv other = (CanadaStationTv) obj;
-    if (!Objects.equals(this.canadaStationPK, other.canadaStationPK)) {
-      return false;
-    }
-    return true;
   }
 
   @Override
