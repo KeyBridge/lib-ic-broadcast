@@ -54,7 +54,8 @@ public class CanadaStationPK implements Serializable {
   @XmlAttribute(required = true)
   private ECanadaBanner banner;
   /**
-   * The station call sign.
+   * The station call sign. All Canadian station call signs begin with the
+   * letter 'C'.
    */
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)

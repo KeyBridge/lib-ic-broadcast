@@ -25,8 +25,14 @@ import javax.xml.bind.annotation.*;
 
 /**
  * Logical data model container for the CANADA CanadaStation (ca_station) table.
- * <p/>
- * This abstract object is extended by the AM, FM, TV and SDAR station subtypes.
+ * <p>
+ * The CanadaStation is a consolidated / hybrid record that incorporates fields
+ * from the AM, FM, TV and SDAR station descriptions. This abstract object is
+ * not used directly, but instead is extended by the AM, FM, TV and SDAR station
+ * subtype implementations.
+ * <p>
+ * Station implementations are differentiated in the database by the stationType
+ * ("station_type") field.
  * <p/>
  * @author jesse
  */
@@ -63,15 +69,16 @@ public abstract class CanadaStation implements Serializable {
 
   private static final long serialVersionUID = 1L;
   /**
-   * The CanadaStation table compound primary key object.
+   * The CanadaStation table compound primary key object. Contains the call sign
+   * and status banner.
    */
   @EmbeddedId
   protected CanadaStationPK canadaStationPK;
   /**
-   * Enumerated Discriminator Column used to identify the type of station this
-   * record represents.
+   * The (Enumerated) station type discriminator. This column is used to
+   * identify the type of station in the database that this record represents.
    * <p/>
-   * Supported valued are: AM, FM, SDAR, TV.
+   * Supported valued are: [AM, FM, SDAR, TV].
    */
   @Enumerated(EnumType.STRING)
   @Basic(optional = false)
@@ -79,35 +86,36 @@ public abstract class CanadaStation implements Serializable {
   @XmlAttribute(required = true)
   private ECanadaStationType stationType;
   /**
-   * The CHANNEL; The channel value varies by Station Type and is context
-   * dependent.
+   * The transmitting CHANNEL; The channel value varies by Station Type and is
+   * context dependent.
    */
   @Basic(optional = false)
   @Column(name = "channel", nullable = false)
   @XmlAttribute
   private int channel;
   /**
-   * Latitude coordinate in degrees of the Station Transmitter
+   * Latitude coordinate in decimal degrees of the Station Transmitter
    */
   @Basic(optional = false)
   @Column(name = "latitude", nullable = false)
   @XmlAttribute
   private double latitude;
   /**
-   * Longitude coordinate in degrees of the Station Transmitter
+   * Longitude coordinate in decimal degrees of the Station Transmitter
    */
   @Basic(optional = false)
   @Column(name = "longitude", nullable = false)
   @XmlAttribute
   private double longitude;
   /**
-   * Broadcasting Mode; S: Stereo, M: Mono, P: Second Audio Channels or B: Both
+   * Broadcasting Mode; [S: Stereo, M: Mono, P: Second Audio Channels or B:
+   * Both]
    */
   @Column(name = "bc_mode")
   @XmlAttribute
   private Character bcMode;
   /**
-   * Closest distance to Canada US Border (km)
+   * Closest distance to Canada / U.S. Border (km)
    */
   @Column(name = "border", precision = 12)
   @XmlAttribute
@@ -125,36 +133,37 @@ public abstract class CanadaStation implements Serializable {
   @XmlAttribute
   private String brdrLong;
   /**
-   * Broadcasting Certificate Number "FANNNN"
+   * Broadcasting Certificate Number. Format is "FANNNN"
    */
   @Column(name = "cert_numb", length = 6)
   @XmlAttribute
   private String certNumb;
   /**
-   * City name.
+   * The station City name.
    */
   @Column(name = "city", length = 25)
   @XmlAttribute
   private String city;
   /**
-   * The Canadian class of this Station;
+   * The (enumerated) Canadian class code of this Station;
    * <p/>
-   * For Canadian Stations, A, A1, B, C, C1, LP, VLP;
+   * For Canadian Stations: [A, A1, B, C, C1, LP, VLP]
    * <p/>
-   * For Non-Canadian Stations, A, B, B1, C, C1, C2, D.
+   * For Non-Canadian Stations: [A, B, B1, C, C1, C2, D]
    */
   @Column(name = "clazz", length = 2)
   @XmlAttribute
   @Enumerated(EnumType.STRING)
   private ECanadaStationClass stationClass;
   /**
-   * CRTC Decision Number "YYNNNN"
+   * Canadian Radio-television and Telecommunications Commission (CRTC) Decision
+   * Number. Format is "YYNNNN"
    */
   @Column(name = "dec_number")
   @XmlAttribute
   private int decNumber;
   /**
-   * I.C. file number
+   * Industry Canada document file number
    */
   @Column(name = "doc_file")
   @XmlAttribute
@@ -175,14 +184,14 @@ public abstract class CanadaStation implements Serializable {
   @XmlAttribute
   private String network;
   /**
-   * Last date of record update for the Consultants dump
+   * Last date of record update for the "Consultants" database export dump
    */
   @Column(name = "ok_dump", length = 8)
   @Temporal(javax.persistence.TemporalType.DATE)
   @XmlAttribute
   private Date okDump;
   /**
-   * Province (Canada) / State (US)
+   * The station province (Canada) or state (US)
    */
   @Column(name = "province", length = 2)
   @XmlAttribute
@@ -194,14 +203,14 @@ public abstract class CanadaStation implements Serializable {
   @XmlAttribute
   private String ssCode;
   /**
-   * Date station entered in database
+   * Date the station was first entered in the database
    */
   @Column(name = "st_creat", length = 8)
   @Temporal(javax.persistence.TemporalType.DATE)
   @XmlAttribute
   private Date stCreat;
   /**
-   * Date station last modified
+   * Date the station record was last modified in the database
    */
   @Column(name = "st_mod", length = 8)
   @Temporal(javax.persistence.TemporalType.DATE)
@@ -238,20 +247,23 @@ public abstract class CanadaStation implements Serializable {
   @ManyToMany(mappedBy = "canadaStationList")
   private List<Antenna> antennaList;
   /**
-   * RegionalFiling table reference.
+   * Regional Filing table reference.
    */
+  @XmlTransient
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
   private RegionalFiling regionalFiling;
   /**
-   * FeedSignal table reference.
+   * Feed Signal table reference.
    * <p/>
-   * Source of feed signals for TV services.
+   * This defines the source of a feed signal for a TV service.
    */
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
   private FeedSignal feedSignal;
   /**
-   * Contour table reference.
+   * Contour table reference. This is not used for white space calculations and
+   * is therefore hidden in the logical data model..
    */
+  @XmlTransient
   @OneToMany(mappedBy = "canadaStation")
   private List<Contour> contourList;
   /**
@@ -674,21 +686,11 @@ public abstract class CanadaStation implements Serializable {
   }
 
   /**
-   * Equals is based on hash code comparison, which itself is based on call
-   * sign, latitude and longitude.
+   * Equals is based on call sign, latitude and longitude.
    * <p>
-   * @param canadaStation the other object to compare
+   * @param obj the other object to compare
    * @return TRUE if the call sign, latitude and longitude are equal
    */
-//  @Override
-  public boolean equalsx(Object canadaStation) {
-    if (!(canadaStation instanceof CanadaStation)) {
-      return false;
-    }
-    CanadaStation other = (CanadaStation) canadaStation;
-    return this.hashCode() == other.hashCode();
-  }
-
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

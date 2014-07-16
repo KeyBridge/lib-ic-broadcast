@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.*;
 /**
  * Logical data model container for the CANADA Comment (comment) table.
  * <p/>
- * This table contains user contact information.
+ * This table contains user contact information for the service.
  * <p/>
  * @author jesse
  */
@@ -42,7 +42,8 @@ public class Comment implements Serializable {
   @XmlTransient
   private static final long serialVersionUID = 1L;
   /**
-   * The table compound primary key.
+   * The table compound primary key. This is used to bind the comment record
+   * with a CanadaStation record.
    */
   @EmbeddedId
   protected CommentPK commentPK;
@@ -53,7 +54,7 @@ public class Comment implements Serializable {
   @XmlAttribute
   private String callsBanr;
   /**
-   * The entity name.
+   * The entity (company) name.
    */
   @Column(name = "name", length = 40)
   @XmlAttribute
@@ -97,7 +98,7 @@ public class Comment implements Serializable {
    * @deprecated Present in the database but not used in logical data model.
    */
   @Column(name = "rgcomm", precision = 12)
-  @XmlAttribute
+  @XmlTransient
   private int rgcomm;
   /**
    * Details on Limitations; English.
@@ -105,7 +106,7 @@ public class Comment implements Serializable {
    * @deprecated Present in the database but not used in logical data model.
    */
   @Column(name = "edetails", precision = 12)
-  @XmlAttribute
+  @XmlTransient
   private int edetails;
   /**
    * Details on Limitations; French.
@@ -113,7 +114,7 @@ public class Comment implements Serializable {
    * @deprecated Present in the database but not used in logical data model.
    */
   @Column(name = "fdetails", precision = 12)
-  @XmlAttribute
+  @XmlTransient
   private int fdetails;
   /**
    * Reverse reference to the CanadaStation record containing this comment.

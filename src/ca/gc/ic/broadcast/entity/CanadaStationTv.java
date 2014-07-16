@@ -25,9 +25,15 @@ import javax.xml.bind.annotation.*;
 /**
  * Logical data model container for the CANADA CanadaStation (ca_station) table
  * describing TV stations.
+ * <p>
+ * This class extends the CanadaStation object with fields specific to Broadcast
+ * Television and not used by other station types. The total complement of
+ * fields supported by this record is the union of both the the CanadaStation
+ * and CanadaStationTv field set.
  * <p/>
- * Some fields have been named differently from the table names to improve
- * clarity.
+ * Developer note: Some fields in the logical data model (e.g. this
+ * implementation) are named differently from the physical data model (e.g.
+ * database table) names to improve software clarity and usability.
  * <p/>
  * @author jesse
  */
@@ -107,9 +113,13 @@ public class CanadaStationTv extends CanadaStation {
   @XmlAttribute
   private Integer erpata;
   /**
-   * ERP Visual Peak Power in Watts
+   * ERP Visual Peak Power in Watts.
+   * <p>
+   * This value is used by default. If not set then the ERP Visual Average
+   * {@link #erpvav} is used.
    * <p/>
-   * 0 to over 5,000,000
+   * Documentation allows range of 0 to over 5,000,000. Database range is 0 to
+   * 846,000.
    */
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
@@ -117,6 +127,8 @@ public class CanadaStationTv extends CanadaStation {
   private Double erpvpk;
   /**
    * ERP Visual Average in Watts
+   * <p>
+   * Database range is 0 to 609,000.
    */
   @Column(name = "erpvav", precision = 12)
   @XmlAttribute
@@ -124,15 +136,16 @@ public class CanadaStationTv extends CanadaStation {
   /**
    * ERP Peak Visual Power at Tilt Angle in Watts
    * <p/>
-   * 0 to more than 5,000,000
+   * Documentation allows range of 0 to over 5,000,000. This field is not set in
+   * the database (always zero).
    */
   @Column(name = "erpvta", precision = 12)
   @XmlAttribute
   private Double erpvta;
   /**
-   * Ground Level at Tower Base above Sea Level in Meters.
+   * Ground Level at Tower Base above Sea Level in Meters. (AMSL)
    * <p/>
-   * 0.0 to 9,999.9
+   * Documentation allows range of 0.0 to 9,999.9. Database range is 0 to 2955.
    */
   @Column(name = "ground_lev", precision = 12)
   @XmlAttribute
@@ -143,7 +156,7 @@ public class CanadaStationTv extends CanadaStation {
    * @deprecated Not used in logical data model.
    */
   @Column(name = "limit_code", length = 8)
-  @XmlAttribute
+  @XmlTransient
   private String limitCode;
   /**
    * Refers to Off-set Precision. Valid Y, Space.
@@ -160,20 +173,21 @@ public class CanadaStationTv extends CanadaStation {
   /**
    * Overall Height Above ground in Meters
    * <p/>
-   * 0.0 to 999.9
+   * Documentation allows range of 0.0 to 999.9. Database range is 0 to 797.
    */
   @Column(name = "overall_h", precision = 12)
   @XmlAttribute
   private Double overallHag;
   /**
-   * Radiating Center Above Mean Sea Level in meters.
+   * Radiating Center Above Mean Sea Level in meters. (AMSL)
    * <p/>
    * Developer note: The BDBS documentation appears to be in error and cites
    * this values as "Radiating Center Above Ground Level 0.0 to 5,000.0 metres".
    * However the earlier document entry for FM stations identifies this field as
    * "Above Mean Sea Level 0.0 to 5000.0 metres"
    * <p/>
-   * 0.0 to 5,000.0 meters
+   * Documentation allows range of 0.0 to 5,000.0 meters. Database range is 0 to
+   * 2790.
    */
   @Column(name = "rad_center", precision = 12)
   @XmlAttribute

@@ -24,6 +24,9 @@ import javax.xml.bind.annotation.*;
 
 /**
  * Logical data model container for the CANADA FeedSignal (feeds) table.
+ * <p>
+ * This table is used to identify the upstream transmitter system for repeater
+ * and translator stations.
  * <p/>
  * @author jesse
  */
@@ -39,13 +42,14 @@ public class FeedSignal implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+
   @EmbeddedId
   protected FeedSignalPK feedSignalPK;
   /**
    * @deprecated Not used in the logical data model.
    */
   @Column(name = "calls_banr", length = 32)
-  @XmlAttribute
+  @XmlTransient
   private String callsBanr;
   /**
    * Feed Identifier; A or B
