@@ -660,13 +660,13 @@ public abstract class CanadaStation implements Serializable {
    */
   public boolean isValid() throws Exception {
     if (!Arrays.asList(new String[]{"AB", "BC", "MB", "NB", "NF", "NS", "NT", "ON", "PE", "QC", "SK", "YT"}).contains(province)) {
-      throw new Exception(canadaStationPK + " " + province + " is not a recognized Canadian province.");
+      throw new Exception(canadaStationPK.toString() + " " + province + " is not a recognized Canadian province.");
     }
     if (canadaStationPK == null) {
-      throw new Exception(canadaStationPK + " Invalid Canada Station record - null or empty Primary Key.");
+      throw new Exception(canadaStationPK + " has a null or empty Primary Key.");
     }
     if (!canadaStationPK.getBanner().isTransmitting()) {
-      throw new Exception(canadaStationPK + " Invalid Canada Station banner: " + canadaStationPK.getBanner().name() + " (" + canadaStationPK.getBanner().getDescription() + ") is a non-transmitting configuration.");
+      throw new Exception(canadaStationPK + " has invalid Canada Station banner: " + canadaStationPK.getBanner().name() + " (" + canadaStationPK.getBanner().getDescription() + ") is a non-transmitting configuration.");
     }
     return true;
   }

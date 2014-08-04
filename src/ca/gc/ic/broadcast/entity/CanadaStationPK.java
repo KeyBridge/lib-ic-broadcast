@@ -138,15 +138,4 @@ public class CanadaStationPK implements Serializable {
   public String toString() {
     return "CanadaStation banner [" + banner + "] callSign [" + callSign + "]";
   }
-
-  /**
-   * Return a de-minimus output. e.g. "banner [" + banner + "] callSign [" +
-   * callSign + "]"
-   * <p>
-   * @return the banner and call sign.
-   */
-  public String toStringBrief() {
-    return "banner [" + banner + "] callSign [" + callSign + "]";
-  }
-
 }
