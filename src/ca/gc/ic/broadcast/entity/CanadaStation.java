@@ -73,6 +73,7 @@ public abstract class CanadaStation implements Serializable {
    * and status banner.
    */
   @EmbeddedId
+  @XmlElement(required = true)
   protected CanadaStationPK canadaStationPK;
   /**
    * The (Enumerated) station type discriminator. This column is used to
@@ -91,28 +92,28 @@ public abstract class CanadaStation implements Serializable {
    */
   @Basic(optional = false)
   @Column(name = "channel", nullable = false)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private int channel;
   /**
    * Latitude coordinate in decimal degrees of the Station Transmitter
    */
   @Basic(optional = false)
   @Column(name = "latitude", nullable = false)
-  @XmlAttribute
-  private double latitude;
+  @XmlAttribute(required = true)
+  private Double latitude;
   /**
    * Longitude coordinate in decimal degrees of the Station Transmitter
    */
   @Basic(optional = false)
   @Column(name = "longitude", nullable = false)
-  @XmlAttribute
-  private double longitude;
+  @XmlAttribute(required = true)
+  private Double longitude;
   /**
    * Broadcasting Mode; [S: Stereo, M: Mono, P: Second Audio Channels or B:
    * Both]
    */
   @Column(name = "bc_mode")
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private Character bcMode;
   /**
    * Closest distance to Canada / U.S. Border (km)
@@ -245,6 +246,7 @@ public abstract class CanadaStation implements Serializable {
    * describes a different polarization for the same physical antenna.
    */
   @ManyToMany(mappedBy = "canadaStationList")
+  @XmlElement(required = true)
   private List<Antenna> antennaList;
   /**
    * Regional Filing table reference.
@@ -276,6 +278,7 @@ public abstract class CanadaStation implements Serializable {
    * Comment table reference. (This table contains user information)
    */
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
+  @XmlElement(required = true)
   private Comment comment;
 
   public CanadaStation() {
@@ -575,7 +578,7 @@ public abstract class CanadaStation implements Serializable {
    */
   public List<Antenna> getAntennaList() {
     if (antennaList == null) {
-      antennaList = new ArrayList<Antenna>();
+      antennaList = new ArrayList<>();
     }
     return antennaList;
   }
@@ -612,7 +615,7 @@ public abstract class CanadaStation implements Serializable {
    */
   public List<Contour> getContourList() {
     if (contourList == null) {
-      contourList = new ArrayList<Contour>();
+      contourList = new ArrayList<>();
     }
     return contourList;
   }
@@ -680,8 +683,8 @@ public abstract class CanadaStation implements Serializable {
   public int hashCode() {
     int hash = 3;
     hash = 59 * hash + Objects.hash(getCanadaStationPK().getCallSign());
-    hash = 59 * hash + (int) (Double.doubleToLongBits(this.latitude) ^ (Double.doubleToLongBits(this.latitude) >>> 32));
-    hash = 59 * hash + (int) (Double.doubleToLongBits(this.longitude) ^ (Double.doubleToLongBits(this.longitude) >>> 32));
+    hash = 59 * hash + Objects.hash(this.latitude);
+    hash = 59 * hash + Objects.hash(this.longitude);
     return Math.abs(hash);
   }
 
@@ -703,10 +706,10 @@ public abstract class CanadaStation implements Serializable {
     if (!Objects.equals(this.getCanadaStationPK().getCallSign(), other.getCanadaStationPK().getCallSign())) {
       return false;
     }
-    if (Double.doubleToLongBits(this.latitude) != Double.doubleToLongBits(other.latitude)) {
+    if (!Objects.equals(this.latitude, other.latitude)) {
       return false;
     }
-    return Double.doubleToLongBits(this.longitude) == Double.doubleToLongBits(other.longitude);
+    return Objects.equals(this.longitude, other.longitude);
   }
 
   /**

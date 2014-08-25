@@ -46,12 +46,13 @@ public class Comment implements Serializable {
    * with a CanadaStation record.
    */
   @EmbeddedId
+  @XmlElement(required = true)
   protected CommentPK commentPK;
   /**
    * @deprecated Not used in the logical data model.
    */
   @Column(name = "calls_banr", length = 32)
-  @XmlAttribute
+  @XmlTransient
   private String callsBanr;
   /**
    * The entity (company) name.
@@ -90,7 +91,7 @@ public class Comment implements Serializable {
    * @deprecated Present in the database but not used in logical data model.
    */
   @Column(name = "hqcomm", precision = 12)
-  @XmlAttribute
+  @XmlTransient
   private int hqcomm;
   /**
    * General Regional comment code.

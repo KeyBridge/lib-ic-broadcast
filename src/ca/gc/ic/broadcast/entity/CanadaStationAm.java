@@ -33,12 +33,22 @@ public class CanadaStationAm extends CanadaStation {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+
+  /**
+   * RSS Night Interference Free Value
+   */
   @Column(name = "euvalu", precision = 12)
   @XmlAttribute
   private double euvalu;
+  /**
+   * IFRB Number for day time
+   */
   @Column(name = "ifrbn_d", precision = 12)
   @XmlAttribute
   private double ifrbnD;
+  /**
+   * IFRB Number for night time
+   */
   @Column(name = "ifrbn_n", precision = 12)
   @XmlAttribute
   private double ifrbnN;

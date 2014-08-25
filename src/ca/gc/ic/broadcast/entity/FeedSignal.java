@@ -44,6 +44,7 @@ public class FeedSignal implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @EmbeddedId
+  @XmlElement(required = true)
   protected FeedSignalPK feedSignalPK;
   /**
    * @deprecated Not used in the logical data model.
@@ -76,17 +77,31 @@ public class FeedSignal implements Serializable {
   @XmlAttribute
   private String feedCallSign;
   /**
-   * N.Latitude of the FEED SOURCE(ddmmss)
+   * N.Latitude of the FEED SOURCE (ddmmss)
    */
   @Column(name = "feed_lat", precision = 12)
-  @XmlAttribute
+  @XmlTransient
   private String feedLat;
   /**
-   * W.Longitude of the FEED SOURCE(dddmmss)
+   * W.Longitude of the FEED SOURCE (dddmmss)
    */
   @Column(name = "feed_long", precision = 12)
-  @XmlAttribute
+  @XmlTransient
   private String feedLong;
+
+  /**
+   * The calculated latitude value.
+   */
+  @Transient
+  @XmlAttribute
+  private Double latitude;
+  /**
+   * The calculated longitude value.
+   */
+  @Transient
+  @XmlAttribute
+  private Double longitude;
+
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
     @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
@@ -105,6 +120,7 @@ public class FeedSignal implements Serializable {
     this.feedSignalPK = new FeedSignalPK(callSign, banner);
   }
 
+  //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
   public FeedSignalPK getFeedSignalPK() {
     return feedSignalPK;
   }
@@ -167,7 +183,7 @@ public class FeedSignal implements Serializable {
 
   public void setFeedLong(String feedLong) {
     this.feedLong = feedLong;
-  }
+  }//</editor-fold>
 
   /**
    * @return WGS_84
@@ -232,6 +248,15 @@ public class FeedSignal implements Serializable {
 
   public void setCanadaStation(CanadaStation canadaStation) {
     this.canadaStation = canadaStation;
+  }
+
+  /**
+   * Set the latitude and longitude after loading the record from the database.
+   */
+  @PostLoad
+  private void postLoad() {
+    this.latitude = getLatitude();
+    this.longitude = getLongitude();
   }
 
   @Override

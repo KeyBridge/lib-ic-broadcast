@@ -43,21 +43,21 @@ public class RadiationPatternPK implements Serializable {
    */
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private Integer pattKey;
   /**
    * Pattern data point azimuth from true north (degrees).
    */
   @Basic(optional = false)
   @Column(name = "angle", nullable = false)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private Double angle;
   /**
    * Pattern data point gain at the given angle (dB).
    */
   @Basic(optional = false)
   @Column(name = "gain", nullable = false)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private Double gain;
 
   public RadiationPatternPK() {

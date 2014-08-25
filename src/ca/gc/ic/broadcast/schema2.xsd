@@ -1,184 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" xmlns:ns1="http://ca.gc.ic/broadcast/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-  <xs:import namespace="http://ca.gc.ic/broadcast/entity" schemaLocation="schema1.xsd"/>
-
-  <xs:element name="amStationAugment" type="ns1:amStationAugment"/>
-
-  <xs:element name="amStationExtendedHours" type="ns1:amStationExtendedHours"/>
-
-  <xs:element name="amStationParameter" type="ns1:amStationParameter"/>
-
-  <xs:element name="antenna" type="ns1:antenna"/>
-
-  <xs:element name="canadaStation" type="ns1:canadaStation"/>
-
-  <xs:element name="canadaStationAm" type="ns1:canadaStationAm"/>
-
-  <xs:element name="canadaStationFm" type="ns1:canadaStationFm"/>
-
-  <xs:element name="canadaStationSdar" type="ns1:canadaStationSdar"/>
-
-  <xs:element name="canadaStationTv" type="ns1:canadaStationTv"/>
-
-  <xs:element name="comment" type="ns1:comment"/>
-
-  <xs:element name="contour" type="ns1:contour"/>
-
-  <xs:element name="feedSignal" type="ns1:feedSignal"/>
-
-  <xs:element name="lookupDbCode" type="ns1:lookupDbCode"/>
-
-  <xs:element name="radiationPattern" type="ns1:radiationPattern"/>
-
-  <xs:element name="regionalFiling" type="ns1:regionalFiling"/>
-
-  <xs:element name="tsid" type="ns1:tsid"/>
-
-
-  <xs:complexType name="amStationAugmentPK">
-    <xs:sequence/>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="dncCode" type="xs:string"/>
-    <xs:attribute name="number" type="xs:double" use="required"/>
-  </xs:complexType>
-
-
-  <xs:complexType name="amStationExtendedHoursPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string"/>
-    <xs:attribute name="banner" type="eCanadaBanner"/>
-  </xs:complexType>
-
-
-  <xs:complexType name="amStationParameterPK">
-    <xs:sequence/>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="dncCode" type="xs:string"/>
-    <xs:attribute name="towerNumb" type="xs:int" use="required"/>
-  </xs:complexType>
-
-
-
-  <xs:complexType name="radiationPatternPK">
-    <xs:sequence/>
-    <xs:attribute name="pattKey" type="xs:int"/>
-    <xs:attribute name="angle" type="xs:double"/>
-    <xs:attribute name="gain" type="xs:double"/>
-  </xs:complexType>
-
-
-  <xs:complexType name="canadaStationPK">
-    <xs:sequence/>
-    <xs:attribute name="banner" type="eCanadaBanner" use="required"/>
-    <xs:attribute name="callSign" type="xs:string" use="required"/>
-  </xs:complexType>
-
-
-  <xs:complexType name="feedSignalPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string"/>
-    <xs:attribute name="banner" type="eCanadaBanner"/>
-  </xs:complexType>
-
-
-  <xs:complexType name="tsidPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string"/>
-    <xs:attribute name="banner" type="eCanadaBanner"/>
-  </xs:complexType>
-
-
-  <xs:complexType name="commentPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string"/>
-    <xs:attribute name="banner" type="eCanadaBanner"/>
-  </xs:complexType>
-
-
-
-
-
-
-  <xs:complexType name="contourPK">
-    <xs:sequence/>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="azimuth" type="xs:double" use="required"/>
-    <xs:attribute name="valuDist" type="xs:double" use="required"/>
-  </xs:complexType>
-
-
-  <xs:complexType name="lookupDbCodePK">
-    <xs:sequence/>
-    <xs:attribute name="fieldname" type="xs:string"/>
-    <xs:attribute name="code" type="xs:string"/>
-  </xs:complexType>
-
-
-  <xs:complexType name="regionalFilingPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string"/>
-    <xs:attribute name="banner" type="eCanadaBanner"/>
-  </xs:complexType>
-
-  <xs:simpleType name="eCanadaBanner">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="A"/>
-      <xs:enumeration value="AL"/>
-      <xs:enumeration value="AP"/>
-      <xs:enumeration value="AU"/>
-      <xs:enumeration value="C"/>
-      <xs:enumeration value="CN"/>
-      <xs:enumeration value="CP"/>
-      <xs:enumeration value="IC"/>
-      <xs:enumeration value="IL"/>
-      <xs:enumeration value="O"/>
-      <xs:enumeration value="OP"/>
-      <xs:enumeration value="P"/>
-      <xs:enumeration value="PC"/>
-      <xs:enumeration value="PR"/>
-      <xs:enumeration value="RE"/>
-      <xs:enumeration value="SD"/>
-      <xs:enumeration value="TD"/>
-      <xs:enumeration value="TO"/>
-      <xs:enumeration value="TP"/>
-      <xs:enumeration value="UC"/>
-      <xs:enumeration value="UN"/>
-      <xs:enumeration value="X"/>
-      <xs:enumeration value="XX"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="eCanadaStationType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="AM"/>
-      <xs:enumeration value="FM"/>
-      <xs:enumeration value="SDAR"/>
-      <xs:enumeration value="TV"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="eCanadaStationClass">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="A"/>
-      <xs:enumeration value="A1"/>
-      <xs:enumeration value="B"/>
-      <xs:enumeration value="B1"/>
-      <xs:enumeration value="C"/>
-      <xs:enumeration value="C1"/>
-      <xs:enumeration value="C2"/>
-      <xs:enumeration value="CC"/>
-      <xs:enumeration value="D"/>
-      <xs:enumeration value="F"/>
-      <xs:enumeration value="LP"/>
-      <xs:enumeration value="N"/>
-      <xs:enumeration value="R"/>
-      <xs:enumeration value="S"/>
-      <xs:enumeration value="SA"/>
-      <xs:enumeration value="VL"/>
-      <xs:enumeration value="VLP"/>
-      <xs:enumeration value="VU"/>
-    </xs:restriction>
-  </xs:simpleType>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by FOOBAR (FOO) -->
+<xs:schema xmlns:ns1="http://ca.gc.ic/broadcast/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
+	<xs:import namespace="http://ca.gc.ic/broadcast/entity" schemaLocation="schema1.xsd"/>
+	<xs:element name="amStationAugment" type="ns1:amStationAugment"/>
+	<xs:element name="amStationExtendedHours" type="ns1:amStationExtendedHours"/>
+	<xs:element name="amStationParameter" type="ns1:amStationParameter"/>
+	<xs:element name="antenna" type="ns1:antenna"/>
+	<xs:element name="canadaStation" type="ns1:canadaStation"/>
+	<xs:element name="canadaStationAm" type="ns1:canadaStationAm"/>
+	<xs:element name="canadaStationFm" type="ns1:canadaStationFm"/>
+	<xs:element name="canadaStationSdar" type="ns1:canadaStationSdar"/>
+	<xs:element name="canadaStationTv" type="ns1:canadaStationTv"/>
+	<xs:element name="comment" type="ns1:comment"/>
+	<xs:element name="contour" type="ns1:contour"/>
+	<xs:element name="feedSignal" type="ns1:feedSignal"/>
+	<xs:element name="lookupDbCode" type="ns1:lookupDbCode"/>
+	<xs:element name="radiationPattern" type="ns1:radiationPattern"/>
+	<xs:element name="regionalFiling" type="ns1:regionalFiling"/>
+	<xs:element name="tsid" type="ns1:tsid"/>
+	<xs:complexType name="amStationAugmentPK">
+		<xs:sequence/>
+		<xs:attribute name="callsBanr" type="xs:string"/>
+		<xs:attribute name="dncCode" type="xs:string"/>
+		<xs:attribute name="number" type="xs:double" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="amStationExtendedHoursPK">
+		<xs:sequence/>
+		<xs:attribute name="callSign" type="xs:string"/>
+		<xs:attribute name="banner" type="eCanadaBanner"/>
+	</xs:complexType>
+	<xs:complexType name="amStationParameterPK">
+		<xs:sequence/>
+		<xs:attribute name="callsBanr" type="xs:string"/>
+		<xs:attribute name="dncCode" type="xs:string"/>
+		<xs:attribute name="towerNumb" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="radiationPatternPK">
+		<xs:sequence/>
+		<xs:attribute name="pattKey" type="xs:int" use="required"/>
+		<xs:attribute name="angle" type="xs:double" use="required"/>
+		<xs:attribute name="gain" type="xs:double" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="canadaStationPK">
+		<xs:sequence/>
+		<xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+		<xs:attribute name="callSign" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="feedSignalPK">
+		<xs:attribute name="callSign" type="xs:string" use="required"/>
+		<xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="tsidPK">
+		<xs:sequence/>
+		<xs:attribute name="callSign" type="xs:string" use="required"/>
+		<xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="commentPK">
+		<xs:sequence/>
+		<xs:attribute name="callSign" type="xs:string" use="required"/>
+		<xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="contourPK">
+		<xs:sequence/>
+		<xs:attribute name="callsBanr" type="xs:string"/>
+		<xs:attribute name="azimuth" type="xs:double" use="required"/>
+		<xs:attribute name="valuDist" type="xs:double" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="lookupDbCodePK">
+		<xs:sequence/>
+		<xs:attribute name="fieldname" type="xs:string"/>
+		<xs:attribute name="code" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="regionalFilingPK">
+		<xs:sequence/>
+		<xs:attribute name="callSign" type="xs:string" use="required"/>
+		<xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="eCanadaBanner">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="AL"/>
+			<xs:enumeration value="AP"/>
+			<xs:enumeration value="AU"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="CN"/>
+			<xs:enumeration value="CP"/>
+			<xs:enumeration value="IC"/>
+			<xs:enumeration value="IL"/>
+			<xs:enumeration value="O"/>
+			<xs:enumeration value="OP"/>
+			<xs:enumeration value="P"/>
+			<xs:enumeration value="PC"/>
+			<xs:enumeration value="PR"/>
+			<xs:enumeration value="RE"/>
+			<xs:enumeration value="SD"/>
+			<xs:enumeration value="TD"/>
+			<xs:enumeration value="TO"/>
+			<xs:enumeration value="TP"/>
+			<xs:enumeration value="UC"/>
+			<xs:enumeration value="UN"/>
+			<xs:enumeration value="X"/>
+			<xs:enumeration value="XX"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eCanadaStationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AM"/>
+			<xs:enumeration value="FM"/>
+			<xs:enumeration value="SDAR"/>
+			<xs:enumeration value="TV"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eCanadaStationClass">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="A1"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="B1"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="C1"/>
+			<xs:enumeration value="C2"/>
+			<xs:enumeration value="CC"/>
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="LP"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="R"/>
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="SA"/>
+			<xs:enumeration value="VL"/>
+			<xs:enumeration value="VLP"/>
+			<xs:enumeration value="VU"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
-

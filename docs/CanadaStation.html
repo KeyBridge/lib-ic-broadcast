@@ -1,0 +1,1482 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.5  (Linux)">
+	<META NAME="AUTHOR" CONTENT="Jesse Caulfield">
+	<META NAME="CREATED" CONTENT="20140824;15374700">
+	<META NAME="CHANGEDBY" CONTENT="Jesse Caulfield">
+	<META NAME="CHANGED" CONTENT="20140824;15385000">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 0.79in }
+		P { margin-bottom: 0.08in }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P STYLE="margin-bottom: 0in">CanadaStation</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=238>
+	<COL WIDTH=134>
+	<COL WIDTH=176>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Attribute</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>stationType</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P STYLE="margin-bottom: 0in">eCanadaStationType</P>
+			<P>(String)</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The CanadaStation is a consolidated / hybrid record that
+			incorporates fields from the AM, FM, TV and SDAR station
+			descriptions. This abstract object is not used directly, but
+			instead is extended by the AM, FM, TV and SDAR station subtype
+			implementations.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Channel</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The transmitting CHANNEL; The channel value varies by Station
+			Type and is context dependent.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Latitude</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>N.Latitude used when BORDER last calculated</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Longitude</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>W.Longitude used when BORDER last calculated</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>bcMode</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Character</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Broadcasting Mode; [S: Stereo, M: Mono, P: Second Audio
+			Channels or B: Both]</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>border</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closest distance to Canada / U.S. Border (km)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>brdrLat</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The latitude coordinates of the closest distance to the
+			US-Canada border.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>brdrLong</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The longitude coordinates of the closest distance to the
+			US-Canada border.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>certNumb</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Broadcasting Certificate Number. Format is &quot;FANNNN&quot;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>City</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The station City name.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>stationClass</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>eCanadaStationType</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The (enumerated) Canadian class code of this Station; For
+			Canadian Stations: [A, A1, B, C, C1, LP, VLP] For Non-Canadian
+			Stations: [A, B, B1, C, C1, C2, D]</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>decNumber</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Int</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Canadian Radio-television and Telecommunications Commission
+			(CRTC) Decision Number. Format is &quot;YYNNNN&quot;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>docFile</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Industry Canada document file number</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>frequency</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">Broadcast frequency in MHz.</P>
+			<P>(NOTE: AM Station frequencies are originally recorded in kHz
+			but are automatically converted to MHz upon import into the
+			ca_station table.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>network</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The broadcast Network (CBCE, CBCF, IND, INDE, INDF, BCMH, or
+			none)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>okDump</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>dateTime</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Last date of record update for the &quot;Consultants&quot;
+			database export dump</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>province</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The station province (Canada) or state (US) is located.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>ssCode</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Short spacing code; &quot;*O#aa&quot;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>stCreat</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>dateTime</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Date the station was first entered in the database</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>stMod</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>dateTime</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Date the station record was last modified in the database</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>unattended</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Character</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Unattended operation code (Y, N)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>landDistanceCanada</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Double</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closest distance to Canada land edge</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>landDistanceFrenchNewfoundland</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Double</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closest distance to French Land edge near Newfoundland</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=238 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>landDistanceUSA</P>
+		</TD>
+		<TD WIDTH=134 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Double</P>
+		</TD>
+		<TD WIDTH=176 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closest distance to USA land edge</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=182>
+	<COL WIDTH=183>
+	<COL WIDTH=182>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Element</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>canadaStationPK</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>canadaStation</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">The (Enumerated) station type
+			discriminator. This column is used to</P>
+			<P STYLE="margin-bottom: 0in">* identify the type of station in
+			the database that this record represents.</P>
+			<P STYLE="margin-bottom: 0in">* &lt;p/&gt;</P>
+			<P>* Supported valued are: [AM, FM, SDAR, TV].</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>antennaList</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>List of Antennas</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>List of Antenna objects. In the Canada database each antenna
+			record describes a different polarization for the same physical
+			antenna.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>feedSignal</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>FeedSignal</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Feed Signal table reference. This defines the source of a feed
+			signal for a TV service.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>tsid</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Tsid</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>A 16-bit packet contained within the Extended Data Services
+			(XDS) of EIA-608B.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>comment</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Comment</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Comment table reference containing user information.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">CanadaStationTV</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=220>
+	<COL WIDTH=130>
+	<COL WIDTH=197>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Attribute</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>stationType</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P STYLE="margin-bottom: 0in">eCanadaStationType</P>
+			<P>(String)</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The CanadaStation is a consolidated / hybrid record that
+			incorporates fields from the AM, FM, TV and SDAR station
+			descriptions. This abstract object is not used directly, but
+			instead is extended by the AM, FM, TV and SDAR station subtype
+			implementations.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Channel</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The transmitting CHANNEL; The channel value varies by Station
+			Type and is context dependent.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Latitude</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>N.Latitude used when BORDER last calculated</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Longitude</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>W.Longitude used when BORDER last calculated</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>bcMode</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Character</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Broadcasting Mode; [S: Stereo, M: Mono, P: Second Audio
+			Channels or B: Both]</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>border</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closest distance to Canada / U.S. Border (km)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>brdrLat</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The latitude coordinates of the closest distance to the
+			US-Canada border.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>brdrLong</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The longitude coordinates of the closest distance to the
+			US-Canada border.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>certNumb</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Broadcasting Certificate Number. Format is &quot;FANNNN&quot;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>City</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The station City name.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>stationClass</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>eCanadaStationType</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The (enumerated) Canadian class code of this Station; For
+			Canadian Stations: [A, A1, B, C, C1, LP, VLP] For Non-Canadian
+			Stations: [A, B, B1, C, C1, C2, D]</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>decNumber</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Int</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Canadian Radio-television and Telecommunications Commission
+			(CRTC) Decision Number. Format is &quot;YYNNNN&quot;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>docFile</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Industry Canada document file number</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>frequency</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">Broadcast frequency in MHz.</P>
+			<P>(NOTE: AM Station frequencies are originally recorded in kHz
+			but are automatically converted to MHz upon import into the
+			ca_station table.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>network</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The broadcast Network (CBCE, CBCF, IND, INDE, INDF, BCMH, or
+			none)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>okDump</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>dateTime</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Last date of record update for the &quot;Consultants&quot;
+			database export dump</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>province</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The station province (Canada) or state (US) is located.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>ssCode</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Short spacing code; &quot;*O#aa&quot;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>stCreat</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>dateTime</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Date the station was first entered in the database</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>stMod</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>dateTime</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Date the station record was last modified in the database</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>unattended</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Character</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Unattended operation code (Y, N)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>landDistanceCanada</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closest distance to Canada land edge</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>landDistanceFrenchNewfoundland</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closest distance to French Land edge near Newfoundland</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>landDistanceUSA</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closest distance to USA land edge</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>allocZone</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Allocation Planning Zone (0, 1, or 2)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>antMode</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Character</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Antenna Mode: O, D, Space; Omnidirectional or Directional</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>beamTilt</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Beam tilt angle in degrees (-10.0 to 10.0)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>closedCaptioning</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Character</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Closed captioning (Y or N)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>haat</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Effective height of antenna above the terrain in meters
+			(-1200.0 to 2000.0)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>erpaav</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">ERP Aural Average in Watts</P>
+			<P>0 to 1,000,000</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>erpapk</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">ERP Aural Peak Power in Watts 
+			</P>
+			<P>0 to 1,000,000</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>erpata</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">ERP Average Power at Tilt Angle in
+			watts</P>
+			<P>0 to 5,000,000</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>erpvpk</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">ERP Visual Peak Power in Watts 
+			</P>
+			<P>0 to over 5,000,000</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>erpvav</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">ERP Visual Average in Watts</P>
+			<P>Database range is 0 to 609,000</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>erpvta</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">ERP Peak Visual Power at Tilt Angle
+			in Watts</P>
+			<P>0 to over 5,000,000</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>towerElevation</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">Ground Level at Tower Base above Sea
+			Level in meters.</P>
+			<OL START=0>
+				<LI><P STYLE="margin-bottom: 0in">to 9,999.9</P>
+			</OL>
+			<P>Database range is 0 to 2995</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>offSetPrecision</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Character</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Refers to Off-set Precision. Valid Y, Space.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>offSetCode</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Character</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Refers to TV Off-set Code. Space, +, -, z.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>overallHag</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P STYLE="margin-bottom: 0in">Overall Height Above ground in
+			Meters</P>
+			<P>0.0 to 999.9 meters</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=220 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>radCenter</P>
+		</TD>
+		<TD WIDTH=130 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=197 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Radiating Center Above Mean Sea Level in meters</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">CanadaStationPK</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=222>
+	<COL WIDTH=162>
+	<COL WIDTH=162>
+	<TR VALIGN=TOP>
+		<TD WIDTH=222 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Attribute</P>
+		</TD>
+		<TD WIDTH=162 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=162 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=222 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>banner</P>
+		</TD>
+		<TD WIDTH=162 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>eCanadaBanner</P>
+		</TD>
+		<TD WIDTH=162 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The banner flag (A, C, O, P); the banner’s field can be used
+			to determine whether the station is on or off air</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=222 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>callSign</P>
+		</TD>
+		<TD WIDTH=162 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=162 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The station’s call sign.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Antenna</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=184>
+	<COL WIDTH=178>
+	<COL WIDTH=185>
+	<TR VALIGN=TOP>
+		<TD WIDTH=184 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Attribute</P>
+		</TD>
+		<TD WIDTH=178 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=185 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=184 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>pattKey</P>
+		</TD>
+		<TD WIDTH=178 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=185 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The Antenna Radiation Pattern Key, this is used to attach
+			RadiationPattern records to this Antenna.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=184 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>polarization</P>
+		</TD>
+		<TD WIDTH=178 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=185 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Orientation of the antenna; horizontal or vertical. 
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=184 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>pattType</P>
+		</TD>
+		<TD WIDTH=178 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=185 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The type of antenna pattern. 
+			</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=184 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>numpoints</P>
+		</TD>
+		<TD WIDTH=178 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=185 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The number of points in the pattern.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=182>
+	<COL WIDTH=183>
+	<COL WIDTH=182>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Element</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>radiationPatternList</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>List of radiationPatterns 
+			</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>A list of 'gains' versus 'angle' data points defining the
+			antenna pattern.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>FeedSignal</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=182>
+	<COL WIDTH=183>
+	<COL WIDTH=182>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Attribute</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>feedId</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Feed Identifier; A or B</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>feedChannel</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>double</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Feed input channel: 0, 2-83, or 2500-2680</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>linkType</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Type of FEED LINK; O, U, S, C</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>feedCallSign</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Name of the SOURCE of the FEED.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>feedLat</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>N.Latitude of the FEED SOURCE(ddmmss)</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>feedLong</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>W.Longitude of the FEED SOURCE(dddmmss)</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=182>
+	<COL WIDTH=183>
+	<COL WIDTH=182>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Element</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>feedSignalPK</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>feedSignal</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Logical data model container for the CANADA FeedSignal (feeds)
+			table compound primary key.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>TSID</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=182>
+	<COL WIDTH=183>
+	<COL WIDTH=182>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Attribute</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>province</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The station province (Canada) or state (US) is located.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>city</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The station City name.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>channel</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The transmitting CHANNEL; The channel value varies by Station
+			Type and is context dependent.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>tsid</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The Transmission Signal Identifier. A 16-bit packet contained
+			within the MPEG-2 Extended Data Services (XDS) of EIA-608B.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=182>
+	<COL WIDTH=183>
+	<COL WIDTH=182>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Element</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>tsidPK</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>tsidPK</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Compound primary key for the Canada TSID table.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>Comment</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=182>
+	<COL WIDTH=183>
+	<COL WIDTH=182>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Attribute</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>name</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The entity (company) name.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>address</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The street address.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Adress2</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The street address, continued. If present this typically
+			contains a suite number, etc.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>city</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The city.</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>province</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>String</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The Province (Canada) or State (USA).</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>hqcomm</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>int</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>General Headquarters comment code.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<TABLE WIDTH=591 CELLPADDING=7 CELLSPACING=0>
+	<COL WIDTH=182>
+	<COL WIDTH=183>
+	<COL WIDTH=182>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Element</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>Type/UOM</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>Description</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=182 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>commentPK</P>
+		</TD>
+		<TD WIDTH=183 STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0.02in; padding-bottom: 0.02in; padding-left: 0.08in; padding-right: 0in">
+			<P>CommentPK</P>
+		</TD>
+		<TD WIDTH=182 STYLE="border: 1px solid #000000; padding: 0.02in 0.08in">
+			<P>The table compound primary key. This is used to bind the
+			comment record with a CanadaStation record.</P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>

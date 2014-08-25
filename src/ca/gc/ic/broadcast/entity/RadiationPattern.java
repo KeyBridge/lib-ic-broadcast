@@ -51,6 +51,7 @@ public class RadiationPattern implements Serializable {
    * This contains the useful field values.
    */
   @EmbeddedId
+  @XmlElement(required = true)
   protected RadiationPatternPK radiationPatternPK;
   /**
    * Reverse pointer to the Antenna object containing this RadiationPattern

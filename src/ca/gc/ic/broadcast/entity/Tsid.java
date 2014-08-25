@@ -62,6 +62,7 @@ public class Tsid implements Serializable {
   @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
+  @XmlElement(required = true)
   protected TsidPK tsidPK;
   @Column(name = "province", length = 2)
   @XmlAttribute

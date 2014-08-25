@@ -53,9 +53,10 @@ public class RegionalFiling implements Serializable {
   @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
+  @XmlElement(required = true)
   protected RegionalFilingPK regionalFilingPK;
   @Column(name = "calls_banr", length = 32)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private String callsBanr;
   @Column(name = "region", length = 1)
   @XmlAttribute

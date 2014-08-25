@@ -34,9 +34,10 @@ public class AmStationParameterPK implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+
   @Basic(optional = false)
   @Column(name = "calls_banr", nullable = false, length = 32)
-  @XmlAttribute
+  @XmlTransient
   private String callsBanr;
   @Basic(optional = false)
   @Column(name = "dnc_code", nullable = false, length = 1)

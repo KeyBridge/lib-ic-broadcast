@@ -50,13 +50,13 @@ public class Antenna implements Serializable {
   @Id
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private Integer pattKey;
   /**
    * Orientation. "H" for horizontal and "V" for vertical.
    */
   @Column(name = "hor_ver", length = 1)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private String polarization;
   /**
    * @deprecated Future use.
@@ -96,7 +96,7 @@ public class Antenna implements Serializable {
    * from antenna diagrams, PATT_TYPE is set to "PRECISE".
    */
   @Column(name = "patt_type", length = 12)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private String pattType;
   /**
    * @deprecated Future use.
@@ -108,7 +108,7 @@ public class Antenna implements Serializable {
    * Number of points in the pattern.
    */
   @Column(name = "numpoints", precision = 12)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private Double numpoints;
   /**
    * Date pattern added to system.
@@ -131,6 +131,7 @@ public class Antenna implements Serializable {
    * A list of 'gains' versus 'angle' data points defining the antenna pattern.
    */
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "antenna")
+  @XmlElement(required = true)
   private List<RadiationPattern> radiationPatternList;
 
   public Antenna() {

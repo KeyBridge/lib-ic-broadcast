@@ -38,11 +38,11 @@ public class FeedSignalPK implements Serializable {
   private static final long serialVersionUID = 1L;
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   private String callSign;
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
-  @XmlAttribute
+  @XmlAttribute(required = true)
   @Enumerated(EnumType.STRING)
   private ECanadaBanner banner;
 
