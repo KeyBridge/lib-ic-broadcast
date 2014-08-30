@@ -264,10 +264,10 @@ public class CanadaStationAm extends CanadaStation {
   //</editor-fold>
 
   @Override
-  public String toString() {
+  public String toStringFull() {
     return "CanadaStationAm"
       + super.toString()
-      + "] euvalu [" + euvalu
+      + " euvalu [" + euvalu
       + "] ifrbnD [" + ifrbnD
       + "] ifrbnN [" + ifrbnN
       + "] latitude2 [" + latitude2

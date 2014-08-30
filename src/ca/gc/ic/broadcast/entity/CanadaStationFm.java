@@ -183,10 +183,10 @@ public class CanadaStationFm extends CanadaStation {
   }//</editor-fold>
 
   @Override
-  public String toString() {
+  public String toStringFull() {
     return "CanadaStationFm"
       + super.toString()
-      + "] autoProg [" + autoProg
+      + " autoProg [" + autoProg
       + "] scmo [" + scmo
       + "] erpvpk [" + erpvpk
       + "] antMode [" + antMode

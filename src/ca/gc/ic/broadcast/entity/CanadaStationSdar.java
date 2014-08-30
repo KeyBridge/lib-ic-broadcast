@@ -238,10 +238,10 @@ public class CanadaStationSdar extends CanadaStation {
   }//</editor-fold>
 
   @Override
-  public String toString() {
+  public String toStringFull() {
     return "CanadaStationTv"
       + super.toString()
-      + "\n] erpvpk [" + erpvpk
+      + " erpvpk [" + erpvpk
       + "] allocZone [" + allocZone
       + "] antMode [" + antMode
       + "] beamTilt [" + beamTilt

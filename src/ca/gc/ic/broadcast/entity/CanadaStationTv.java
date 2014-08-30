@@ -405,11 +405,10 @@ public class CanadaStationTv extends CanadaStation {
   }
 
   @Override
-  public String toString() {
+  public String toStringFull() {
     return "CanadaStationTv"
       + super.toString()
-      + "\n"
-      + "] allocZone [" + allocZone
+      + " allocZone [" + allocZone
       + "] antMode [" + antMode
       + "] beamTilt [" + beamTilt
       + "] closeCap [" + closedCaptioning
