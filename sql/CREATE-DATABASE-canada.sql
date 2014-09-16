@@ -587,33 +587,4 @@ CREATE TABLE `tvstatio` (
 ) ENGINE=MyISAM;
 
 
--- -----------------------------------------------------------------------------
--- 03/19/14 - DEPRECATED
--- The FCC data is redundant, identical and duplicative of our own query into the
--- ca_station table
--- -----------------------------------------------------------------------------
--- The Staging Table : This is populated with data from the FCC by the script
--- 'get_and_load_CANADA_FCC.sh'
--- -----------------------------------------------------------------------------
--- DROP TABLE IF EXISTS `tvstatio_staging`;
--- CREATE TABLE `tvstatio_staging` (
---   `call_banr_key` varchar(18), `province` varchar(2), `city` varchar(20),
---   `call_sign` varchar(16), `frequency` float, `clazz` varchar(3),
---   `latitude` char(6), `longitude` char(7), `banner` char(2),
---   `limit_code` varchar(8), `network` varchar(4), `ant_mode` varchar(1),
---   `bc_mode` varchar(1), `offset` varchar(1), `off_prec` varchar(1),
---   `brdr_lat` char(6), `brdr_long` char(7), `border` float,
---   `can_land` float, `usa_land` float, `fre_land` float,
---   `st_creat` char(8), `st_mod` char(8), `ok_dump` char(8),
---   `doc_file` int(11), `dec_number` int(11), `unattended` varchar(1),
---   `cert_numb` varchar(6), `close_cap` varchar(1), `alloc_zone` float,
---   `beam_tilt` float, `ehaat` float, `erpvav` float,
---   `erpvpk` float, `erpaav` float, `erpapk` float,
---   `erpvta` float, `erpata` float, `ground_lev` float,
---   `overall_h` float, `rad_center` float, `channel` int(11),
---   PRIMARY KEY (`call_banr_key`), KEY (`call_sign`), KEY (`banner`),
---   KEY `province` (`province`)
--- ) ENGINE=MyISAM;
-
-
 
