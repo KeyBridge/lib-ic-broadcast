@@ -1,17 +1,18 @@
-/*
- *   Copyright (C) 2012 Caulfield IP Holdings (Caulfield)
- *   and/or its affiliates.
- *   All rights reserved. Use is subject to license terms.
+/* 
+ * Copyright (C) 2014 Jesse Caulfield <jesse@caulfield.org>
  *
- *   Software Code is protected by Caulfield Copyrights. Caulfield hereby
- *   reserves all rights in and to Caulfield Copyrights and no license is
- *   granted under Caulfield Copyrights in this Software License Agreement.
- *   Caulfield generally licenses Caulfield Copyrights for commercialization
- *   pursuant to the terms of either Caulfield's Standard Software Source Code
- *   License Agreement or Caulfield's Standard Product License Agreement.
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
- *   A copy of Caulfield's either License Agreement can be obtained on request
- *   by email from: info@caufield.org.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package ca.gc.ic.broadcast.entity.enumerated;
 

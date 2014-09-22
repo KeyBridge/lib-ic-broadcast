@@ -1,0 +1,1864 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <canadaStationFm erpvpk="0.0" antMode="68" autoProg="N" beamTilt="0.0" ehaat="126.5" erphav="49000.0" erphpk="100000.0" erpvav="0.0" groundLev="167.5" overallH="167.5" radCenter="286.5" scmo="78" stationType="FM" channel="223" latitude="45.68138888888889" longitude="-77.0961111111111" bcMode="77" border="159.9" brdrLat="454053" brdrLong="770547" certNumb="FE0274" city="Pembroke" stationClass="C1" decNumber="940932" docFile="2164" frequency="0.0925" network="CBCE" okDump="1996-05-10T00:00:00-04:00" province="ON" ssCode="* #75" stCreat="1994-06-20T00:00:00-04:00" stMod="2008-04-10T00:00:00-04:00" unattended="89" landDistanceCanada="158.0" landDistanceFrenchNewfoundland="1588.5" landDistanceUSA="162.4">
+    <canadaStationPK banner="OP" callSign="CBCD-FM"/>
+    <antennaList pattKey="10438" polarization="H" pattNumb="1.0" pattType="PRECISE" punits="1.0" numpoints="74.0">
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="0.2072" gain="-1.1896"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="5.1116" gain="-1.5771"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="10.0262" gain="-2.1182"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="14.3723" gain="-2.6479"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="20.21" gain="-3.4659"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="25.0838" gain="-4.099"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="29.8408" gain="-4.6404"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="34.755" gain="-5.2353"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="40.3388" gain="-5.7702"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="44.7884" gain="-6.2479"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="49.9297" gain="-6.7999"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="54.6466" gain="-7.4988"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="59.8341" gain="-8.2779"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="65.0961" gain="-9.318"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="70.2988" gain="-10.3368"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="75.0432" gain="-11.5994"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="80.0433" gain="-12.8403"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="84.4196" gain="-14.0676"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="90.3115" gain="-15.2072"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="94.0233" gain="-15.2938"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="99.891" gain="-14.7441"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="105.5082" gain="-13.1125"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="110.5586" gain="-11.6785"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="114.9903" gain="-10.5535"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="120.2784" gain="-9.4692"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="125.2466" gain="-8.8027"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="130.1103" gain="-8.4617"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="135.4658" gain="-8.6109"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="140.2297" gain="-9.0004"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="145.0365" gain="-9.4512"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="149.7543" gain="-9.5307"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="154.4405" gain="-8.9684"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="160.5738" gain="-7.1816"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="165.4128" gain="-5.4832"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="170.4507" gain="-4.1232"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="175.3126" gain="-2.971"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="180.1565" gain="-2.0025"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="184.8009" gain="-1.3039"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="190.1173" gain="-0.7468"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="195.2344" gain="-0.2758"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="200.2768" gain="0.0"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="204.5372" gain="0.0"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="209.8951" gain="-0.1359"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="214.8124" gain="-0.3662"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="219.8006" gain="-0.7647"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="224.825" gain="-1.2381"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="229.6663" gain="-1.8054"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="234.6519" gain="-2.4073"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="239.9324" gain="-2.9847"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="244.8743" gain="-3.3527"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="249.6309" gain="-3.4878"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="254.778" gain="-3.3431"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="259.6349" gain="-3.0628"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="265.0322" gain="-2.6402"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="269.8531" gain="-2.2792"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="275.0469" gain="-2.0317"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="280.0114" gain="-1.9335"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="284.878" gain="-1.9173"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="290.2662" gain="-2.0788"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="295.8127" gain="-2.378"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="300.404" gain="-2.5847"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="305.6719" gain="-2.8262"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="310.5508" gain="-2.8579"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="315.4971" gain="-2.7451"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="320.103" gain="-2.529"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="324.5693" gain="-2.2027"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="330.2281" gain="-1.7494"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="334.6564" gain="-1.3386"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="340.1584" gain="-1.0008"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="344.7204" gain="-0.7579"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="349.6278" gain="-0.6702"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="352.0556" gain="-0.7937"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="354.1204" gain="-0.6653"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="10438" angle="357.5545" gain="-0.9121"/>
+      </radiationPatternList>
+    </antennaList>
+    <comment name="CBC/ Radio-Canada" address="Regulatory Affairs" address2="P.O. Box 3220, Station C" city="Ottawa" province="ON">
+      <commentPK callSign="CBCD-FM" banner="OP"/>
+    </comment>
+  </canadaStationFm>
+  <canadaStationTv allocZone="2" antMode="68" beamTilt="0.0" closedCaptioning="78" haat="0.0" erpaav="0.0" erpapk="0.0" erpata="0" erpvpk="45.0" erpvav="0.0" erpvta="0.0" towerElevation="830.6" offSetPrecision="70" offSetCode="0" overallHag="15.2" radCenter="842.8" stationType="TV" channel="7" latitude="55.72777777777778" longitude="-120.06833333333333" bcMode="77" border="619.3" brdrLat="554340" brdrLong="1200401" certNumb="TP0531" city="Pouce Coupe" stationClass="LP" decNumber="930459" docFile="2523" frequency="0.174" network="CBCE" okDump="1986-01-21T00:00:00-05:00" province="BC" stCreat="1986-01-21T00:00:00-05:00" stMod="2011-08-24T00:00:00-04:00" unattended="78" landDistanceCanada="619.3" landDistanceFrenchNewfoundland="4349.5" landDistanceUSA="619.3">
+    <canadaStationPK banner="OP" callSign="CBCD-TV-1"/>
+    <comment name="CBC/ Radio-Canada" address="Regulatory Affairs" address2="P.O. Box 3220, Station C" city="Ottawa" province="ON">
+      <commentPK callSign="CBCD-TV-1" banner="OP"/>
+    </comment>
+  </canadaStationTv>
+  <canadaStationTv allocZone="2" antMode="68" beamTilt="0.0" closedCaptioning="78" haat="212.5" erpaav="2.0" erpapk="6.0" erpata="0" erpvpk="55.0" erpvav="16.0" erpvta="0.0" towerElevation="1005.8" offSetPrecision="70" offSetCode="90" overallHag="30.5" radCenter="1036.3" stationType="TV" channel="7" latitude="55.66833333333333" longitude="-121.58305555555555" bcMode="77" border="525.7" brdrLat="554006" brdrLong="1213454" certNumb="TP0509" city="Chetwynd" stationClass="R" decNumber="930459" docFile="2380" frequency="0.174" network="CBCE" okDump="2000-09-18T00:00:00-04:00" province="BC" stCreat="1986-01-21T00:00:00-05:00" stMod="2014-08-18T00:00:00-04:00" unattended="89" landDistanceCanada="525.7" landDistanceFrenchNewfoundland="4442.7" landDistanceUSA="525.7">
+    <canadaStationPK banner="OP" callSign="CBCD-TV-2"/>
+    <antennaList pattKey="69" polarization="H" pattNumb="1.0" pattType="BRIEF" punits="1.0" numpoints="8.0">
+      <radiationPatternList>
+        <radiationPatternPK pattKey="69" angle="0.0" gain="-7.3176"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="69" angle="45.0" gain="-7.3176"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="69" angle="90.0" gain="-4.5706"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="69" angle="135.0" gain="-17.4036"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="69" angle="180.0" gain="-17.4036"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="69" angle="225.0" gain="-17.4036"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="69" angle="270.0" gain="-4.7319"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="69" angle="315.0" gain="0.0"/>
+      </radiationPatternList>
+    </antennaList>
+    <antennaList pattKey="1754" polarization="V" pattNumb="1.0" pattType="PRECISE" punits="1.0" numpoints="181.0">
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="0.0" gain="0.0"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="0.5" gain="-0.0052"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="1.0" gain="-0.0113"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="1.5" gain="-0.0165"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="2.0" gain="-0.0226"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="2.5" gain="-0.0278"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="3.0" gain="-0.0383"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="3.5" gain="-0.0531"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="4.0" gain="-0.0671"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="4.5" gain="-0.082"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="5.0" gain="-0.097"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="5.5" gain="-0.111"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="6.0" gain="-0.126"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="6.5" gain="-0.141"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="7.0" gain="-0.1551"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="7.5" gain="-0.1702"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="8.0" gain="-0.1897"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="8.5" gain="-0.211"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="9.0" gain="-0.2315"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="9.5" gain="-0.2529"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="10.0" gain="-0.2735"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="10.5" gain="-0.3095"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="11.0" gain="-0.3455"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="11.5" gain="-0.3809"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="12.0" gain="-0.4172"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="12.5" gain="-0.4528"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="13.0" gain="-0.4895"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="13.5" gain="-0.5254"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="14.0" gain="-0.5624"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="14.5" gain="-0.5996"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="15.0" gain="-0.6359"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="15.5" gain="-0.6734"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="16.0" gain="-0.7101"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="16.5" gain="-0.7479"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="17.0" gain="-0.7858"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="17.5" gain="-0.823"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="18.0" gain="-0.8613"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="18.5" gain="-0.8988"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="19.0" gain="-0.9374"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="19.5" gain="-0.9762"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="20.0" gain="-1.0142"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="20.5" gain="-1.0818"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="21.0" gain="-1.1489"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="21.5" gain="-1.2166"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="22.0" gain="-1.2848"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="22.5" gain="-1.3546"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="23.0" gain="-1.4239"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="23.5" gain="-1.4938"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="24.0" gain="-1.5642"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="24.5" gain="-1.6373"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="25.0" gain="-1.7089"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="25.5" gain="-1.7811"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="26.0" gain="-1.855"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="26.5" gain="-1.9284"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="27.0" gain="-2.0025"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="27.5" gain="-2.0772"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="28.0" gain="-2.1537"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="28.5" gain="-2.2297"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="29.0" gain="-2.3064"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="29.5" gain="-2.3837"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="30.0" gain="-2.4629"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="30.5" gain="-2.5417"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="31.0" gain="-2.6212"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="31.5" gain="-2.7015"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="32.0" gain="-2.7837"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="32.5" gain="-2.8654"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="33.0" gain="-2.948"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="33.5" gain="-3.0313"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="34.0" gain="-3.1167"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="34.5" gain="-3.2016"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="35.0" gain="-3.2875"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="35.5" gain="-3.3741"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="36.0" gain="-3.463"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="36.5" gain="-3.5514"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="37.0" gain="-3.6408"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="37.5" gain="-3.7324"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="38.0" gain="-3.825"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="38.5" gain="-3.9172"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="39.0" gain="-4.0118"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="39.5" gain="-4.1075"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="40.0" gain="-4.2042"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="40.5" gain="-4.302"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="41.0" gain="-4.4009"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="41.5" gain="-4.5009"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="42.0" gain="-4.6021"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="42.5" gain="-4.7045"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="43.0" gain="-4.8082"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="43.5" gain="-4.9115"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="44.0" gain="-5.0176"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="44.5" gain="-5.1251"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="45.0" gain="-5.2339"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="45.5" gain="-5.3441"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="46.0" gain="-5.4557"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="46.5" gain="-5.5687"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="47.0" gain="-5.6799"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="47.5" gain="-5.7875"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="48.0" gain="-5.8981"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="48.5" gain="-6.0084"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="49.0" gain="-6.1237"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="49.5" gain="-6.2369"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="50.0" gain="-6.3535"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="50.5" gain="-6.4698"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="51.0" gain="-6.5895"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="51.5" gain="-6.709"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="52.0" gain="-6.8321"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="52.5" gain="-6.9551"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="53.0" gain="-7.0817"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="53.5" gain="-7.1844"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="54.0" gain="-7.2883"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="54.5" gain="-7.3914"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="55.0" gain="-7.4958"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="55.5" gain="-7.6014"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="56.0" gain="-7.7105"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="56.5" gain="-7.8188"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="57.0" gain="-7.9285"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="57.5" gain="-8.0395"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="58.0" gain="-8.152"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="58.5" gain="-8.2683"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="59.0" gain="-8.3838"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="59.5" gain="-8.5009"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="60.0" gain="-8.6195"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="60.5" gain="-8.7399"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="61.0" gain="-8.8571"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="61.5" gain="-8.9686"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="62.0" gain="-9.0815"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="62.5" gain="-9.1959"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="63.0" gain="-9.3119"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="63.5" gain="-9.4294"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="64.0" gain="-9.5485"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="64.5" gain="-9.6719"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="65.0" gain="-9.7945"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="65.5" gain="-9.9187"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="66.0" gain="-10.0725"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="66.5" gain="-10.2459"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="67.0" gain="-10.4229"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="67.5" gain="-10.6036"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="68.0" gain="-10.785"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="68.5" gain="-10.9735"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="69.0" gain="-11.1661"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="69.5" gain="-11.3631"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="70.0" gain="-11.5154"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="70.5" gain="-11.5811"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="71.0" gain="-11.6472"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="71.5" gain="-11.7139"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="72.0" gain="-11.7811"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="72.5" gain="-11.8522"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="73.0" gain="-11.9239"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="73.5" gain="-12.01"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="74.0" gain="-12.097"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="74.5" gain="-12.1848"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="75.0" gain="-12.3381"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="75.5" gain="-12.5087"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="76.0" gain="-12.6828"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="76.5" gain="-12.8604"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="77.0" gain="-13.0417"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="77.5" gain="-13.2269"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="78.0" gain="-13.4161"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="78.5" gain="-13.6806"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="79.0" gain="-13.9707"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="79.5" gain="-14.2709"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="80.0" gain="-14.5168"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="80.5" gain="-14.5539"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="81.0" gain="-14.5957"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="81.5" gain="-14.6378"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="82.0" gain="-14.6801"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="82.5" gain="-14.7225"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="83.0" gain="-14.7652"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="83.5" gain="-14.832"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="84.0" gain="-14.8994"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="84.5" gain="-14.9672"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="85.0" gain="-15.0405"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="85.5" gain="-15.1046"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="86.0" gain="-15.1442"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="86.5" gain="-15.184"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="87.0" gain="-15.219"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="87.5" gain="-15.2592"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="88.0" gain="-15.2945"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="88.5" gain="-15.3299"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="89.0" gain="-15.3706"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="89.5" gain="-15.4064"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="1754" angle="90.0" gain="-15.4423"/>
+      </radiationPatternList>
+    </antennaList>
+    <antennaList pattKey="2431" polarization="H" pattNumb="1.0" pattType="PRECISE" punits="1.0" numpoints="70.0">
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="2.0138" gain="-8.2391"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="5.0617" gain="-9.5956"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="12.288" gain="-8.2863"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="19.8499" gain="-6.4333"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="25.1613" gain="-6.3265"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="29.8198" gain="-7.0055"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="39.695" gain="-9.0939"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="45.435" gain="-7.4037"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="51.1364" gain="-5.3779"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="57.5957" gain="-3.654"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="60.6741" gain="-3.0338"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="64.891" gain="-2.6259"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="69.8694" gain="-2.3404"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="75.0836" gain="-2.4514"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="79.8416" gain="-2.8872"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="86.1198" gain="-4.0297"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="94.4647" gain="-5.8622"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="100.4866" gain="-7.9762"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="106.1706" gain="-10.2714"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="114.9276" gain="-14.2574"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="120.0604" gain="-18.6437"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="125.585" gain="-22.6861"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="136.4989" gain="-18.3085"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="144.1708" gain="-14.977"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="148.551" gain="-14.7747"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="153.5415" gain="-16.5246"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="158.163" gain="-22.4641"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="164.0453" gain="-21.692"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="170.5304" gain="-17.7078"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="179.7737" gain="-13.8586"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="180.6231" gain="-13.7016"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="184.746" gain="-13.4161"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="188.6294" gain="-13.9707"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="192.077" gain="-15.9994"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="194.1294" gain="-17.9788"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="197.5699" gain="-21.14"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="204.7492" gain="-23.3882"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="208.4477" gain="-22.2028"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="211.3885" gain="-19.1564"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="214.3444" gain="-17.0712"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="218.9218" gain="-16.2383"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="222.1756" gain="-16.7607"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="225.7294" gain="-18.4164"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="228.1675" gain="-20.2735"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="229.2445" gain="-22.1248"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="238.1328" gain="-22.2589"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="240.5665" gain="-18.9538"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="242.7428" gain="-15.3452"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="248.2147" gain="-11.8284"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="256.4485" gain="-8.2167"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="265.3806" gain="-5.8981"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="272.7789" gain="-4.2721"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="277.8414" gain="-3.1291"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="282.3602" gain="-2.286"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="285.2194" gain="-1.8174"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="295.1606" gain="-0.607"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="300.1816" gain="-0.2915"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="305.2487" gain="-0.0838"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="310.6129" gain="-0.1401"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="315.0897" gain="0.0"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="320.2541" gain="-0.0812"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="324.9767" gain="-0.0191"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="330.3862" gain="-0.2048"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="335.3421" gain="-0.3772"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="340.0201" gain="-0.8901"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="344.326" gain="-1.4321"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="346.5459" gain="-1.9057"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="350.6506" gain="-2.9895"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="355.5666" gain="-4.9513"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2431" angle="358.0315" gain="-6.3535"/>
+      </radiationPatternList>
+    </antennaList>
+    <tsid province="BC" city="Chetwynd" channel="7" tsid="40A0">
+      <tsidPK callSign="CBCD-TV-2" banner="OP"/>
+    </tsid>
+    <comment name="CBC/ Radio-Canada" address="Regulatory Affairs" address2="P.O. Box 3220, Station C" city="Ottawa" province="ON">
+      <commentPK callSign="CBCD-TV-2" banner="OP"/>
+    </comment>
+  </canadaStationTv>
+  <canadaStationTv allocZone="2" antMode="68" beamTilt="0.0" closedCaptioning="78" haat="245.7" erpaav="18.0" erpapk="66.0" erpata="0" erpvpk="660.0" erpvav="180.0" erpvta="0.0" towerElevation="853.4" offSetPrecision="70" offSetCode="43" overallHag="61.0" radCenter="912.8" stationType="TV" channel="9" latitude="56.27972222222222" longitude="-121.0425" bcMode="77" border="554.9" brdrLat="561647" brdrLong="1210228" certNumb="TP0511" city="Fort St John" stationClass="R" decNumber="930459" docFile="2384" frequency="0.186" network="CBCE" okDump="1990-02-09T00:00:00-05:00" province="BC" stCreat="1986-01-21T00:00:00-05:00" stMod="2014-08-18T00:00:00-04:00" unattended="89" landDistanceCanada="554.9" landDistanceFrenchNewfoundland="4392.2" landDistanceUSA="554.9">
+    <canadaStationPK banner="OP" callSign="CBCD-TV-3"/>
+    <antennaList pattKey="70" polarization="H" pattNumb="1.0" pattType="BRIEF" punits="1.0" numpoints="8.0">
+      <radiationPatternList>
+        <radiationPatternPK pattKey="70" angle="0.0" gain="-10.5239"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="70" angle="45.0" gain="-6.0869"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="70" angle="90.0" gain="-3.9466"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="70" angle="135.0" gain="-4.0792"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="70" angle="180.0" gain="-14.0457"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="70" angle="225.0" gain="-4.5033"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="70" angle="270.0" gain="-5.4079"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="70" angle="315.0" gain="-12.1102"/>
+      </radiationPatternList>
+    </antennaList>
+    <antennaList pattKey="2321" polarization="V" pattNumb="1.0" pattType="PRECISE" punits="1.0" numpoints="181.0">
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="0.0" gain="0.0"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="0.5" gain="-0.0575"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="1.0" gain="-0.1145"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="1.5" gain="-0.1719"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="2.0" gain="-0.2297"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="2.5" gain="-0.2879"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="3.0" gain="-0.3464"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="3.5" gain="-0.4127"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="4.0" gain="-0.5254"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="4.5" gain="-0.6388"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="5.0" gain="-0.7526"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="5.5" gain="-0.8689"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="6.0" gain="-0.9878"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="6.5" gain="-1.1064"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="7.0" gain="-1.2276"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="7.5" gain="-1.3505"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="8.0" gain="-1.4762"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="8.5" gain="-1.6017"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="9.0" gain="-1.7301"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="9.5" gain="-1.8604"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="10.0" gain="-1.9938"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="10.5" gain="-2.127"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="11.0" gain="-2.3268"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="11.5" gain="-2.5359"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="12.0" gain="-2.7478"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="12.5" gain="-2.9675"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="13.0" gain="-3.1916"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="13.5" gain="-3.4216"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="14.0" gain="-3.6593"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="14.5" gain="-3.9009"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="15.0" gain="-4.1522"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="15.5" gain="-4.411"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="16.0" gain="-4.6747"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="16.5" gain="-4.9498"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="17.0" gain="-5.2307"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="17.5" gain="-5.5243"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="18.0" gain="-5.8282"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="18.5" gain="-6.1395"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="19.0" gain="-6.4661"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="19.5" gain="-6.8036"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="20.0" gain="-7.1329"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="20.5" gain="-7.3246"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="21.0" gain="-7.5205"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="21.5" gain="-7.7232"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="22.0" gain="-7.9263"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="22.5" gain="-8.1365"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="23.0" gain="-8.3542"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="23.5" gain="-8.5751"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="24.0" gain="-8.8019"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="24.5" gain="-9.0322"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="25.0" gain="-9.3653"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="25.5" gain="-9.8186"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="26.0" gain="-10.2941"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="26.5" gain="-10.8001"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="27.0" gain="-11.3374"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="27.5" gain="-11.9067"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="28.0" gain="-12.5197"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="28.5" gain="-13.1792"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="29.0" gain="-13.8887"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="29.5" gain="-14.666"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="30.0" gain="-15.4783"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="30.5" gain="-15.4217"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="31.0" gain="-15.3655"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="31.5" gain="-15.3046"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="32.0" gain="-15.2491"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="32.5" gain="-15.189"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="33.0" gain="-15.1343"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="33.5" gain="-15.075"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="34.0" gain="-15.0209"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="34.5" gain="-14.9624"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="35.0" gain="-14.909"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="35.5" gain="-14.8705"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="36.0" gain="-14.8416"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="36.5" gain="-14.8129"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="37.0" gain="-14.7795"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="37.5" gain="-14.751"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="38.0" gain="-14.7225"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="38.5" gain="-14.6895"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="39.0" gain="-14.6613"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="39.5" gain="-14.6331"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="40.0" gain="-14.6051"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="40.5" gain="-14.5725"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="41.0" gain="-14.5446"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="41.5" gain="-14.5168"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="42.0" gain="-14.4892"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="42.5" gain="-14.457"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="43.0" gain="-14.4295"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="43.5" gain="-14.4021"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="44.0" gain="-14.3702"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="44.5" gain="-14.3114"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="45.0" gain="-14.2574"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="45.5" gain="-14.1993"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="46.0" gain="-14.146"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="46.5" gain="-14.0887"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="47.0" gain="-14.036"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="47.5" gain="-13.9794"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="48.0" gain="-13.962"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="48.5" gain="-13.9577"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="49.0" gain="-13.9534"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="49.5" gain="-13.9447"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="50.0" gain="-13.9404"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="50.5" gain="-13.9318"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="51.0" gain="-13.9274"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="51.5" gain="-13.9188"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="52.0" gain="-13.9145"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="52.5" gain="-13.9059"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="53.0" gain="-13.9016"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="53.5" gain="-13.893"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="54.0" gain="-13.8887"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="54.5" gain="-13.9274"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="55.0" gain="-14.0535"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="55.5" gain="-14.1771"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="56.0" gain="-14.3069"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="56.5" gain="-14.4387"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="57.0" gain="-14.5678"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="57.5" gain="-14.7036"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="58.0" gain="-14.8416"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="58.5" gain="-14.9818"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="59.0" gain="-15.1194"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="59.5" gain="-15.2642"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="60.0" gain="-15.4115"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="60.5" gain="-15.4835"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="61.0" gain="-15.5353"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="61.5" gain="-15.5874"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="62.0" gain="-15.6398"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="62.5" gain="-15.6978"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="63.0" gain="-15.7562"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="63.5" gain="-15.8097"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="64.0" gain="-15.8689"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="64.5" gain="-15.9285"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="65.0" gain="-15.983"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="65.5" gain="-16.0434"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="66.0" gain="-16.1042"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="66.5" gain="-16.1598"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="67.0" gain="-16.2214"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="67.5" gain="-16.2835"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="68.0" gain="-16.3403"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="68.5" gain="-16.4032"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="69.0" gain="-16.4608"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="69.5" gain="-16.5246"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="70.0" gain="-16.5889"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="70.5" gain="-16.6477"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="71.0" gain="-16.7129"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="71.5" gain="-16.7786"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="72.0" gain="-16.8388"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="72.5" gain="-16.9176"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="73.0" gain="-17.0156"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="73.5" gain="-17.1085"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="74.0" gain="-17.2087"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="74.5" gain="-17.3037"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="75.0" gain="-17.4062"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="75.5" gain="-17.5034"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="76.0" gain="-17.6083"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="76.5" gain="-17.7078"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="77.0" gain="-17.8152"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="77.5" gain="-17.9239"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="78.0" gain="-18.0271"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="78.5" gain="-18.1316"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="79.0" gain="-18.1948"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="79.5" gain="-18.2586"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="80.0" gain="-18.3299"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="80.5" gain="-18.3947"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="81.0" gain="-18.4672"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="81.5" gain="-18.5256"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="82.0" gain="-18.5992"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="82.5" gain="-18.666"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="83.0" gain="-18.7408"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="83.5" gain="-18.8087"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="84.0" gain="-18.8772"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="84.5" gain="-18.9538"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="85.0" gain="-19.0234"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="85.5" gain="-19.1014"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="86.0" gain="-19.1721"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="86.5" gain="-19.2515"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="87.0" gain="-19.3235"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="87.5" gain="-19.4042"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="88.0" gain="-19.4775"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="88.5" gain="-19.5514"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="89.0" gain="-19.6343"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="89.5" gain="-19.7096"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2321" angle="90.0" gain="-19.794"/>
+      </radiationPatternList>
+    </antennaList>
+    <antennaList pattKey="2433" polarization="H" pattNumb="1.0" pattType="PRECISE" punits="1.0" numpoints="82.0">
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="4.0281" gain="-8.8619"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="10.3987" gain="-6.9493"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="15.5596" gain="-6.2548"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="20.1326" gain="-6.3265"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="24.4948" gain="-7.0896"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="29.3407" gain="-8.8306"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="31.9221" gain="-9.9079"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="34.8927" gain="-10.9673"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="36.9097" gain="-11.0259"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="37.891" gain="-10.8122"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="41.208" gain="-8.9808"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="46.3476" gain="-6.9938"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="51.1277" gain="-5.4769"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="56.4317" gain="-4.3262"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="61.1246" gain="-4.0173"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="65.0893" gain="-4.2281"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="70.4965" gain="-5.0487"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="75.7819" gain="-6.0084"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="80.1259" gain="-6.2762"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="83.2084" gain="-5.8146"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="86.2276" gain="-5.0829"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="89.828" gain="-3.9445"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="94.6159" gain="-2.3894"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="98.2855" gain="-1.4055"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="102.8228" gain="-0.5015"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="107.7523" gain="0.0"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="115.7807" gain="-0.1675"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="121.2107" gain="-0.7972"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="127.9264" gain="-2.075"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="133.1767" gain="-3.3869"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="137.3501" gain="-4.5404"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="140.3805" gain="-5.2228"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="145.6255" gain="-5.8112"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="151.2028" gain="-6.1343"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="154.5177" gain="-6.4497"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="158.5821" gain="-7.1745"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="162.6025" gain="-8.5845"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="165.8891" gain="-10.4605"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="168.4099" gain="-13.3917"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="170.5461" gain="-16.2102"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="170.8759" gain="-17.5885"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="173.6782" gain="-17.849"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="177.0325" gain="-16.1598"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="179.2533" gain="-13.9751"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="180.7982" gain="-13.4487"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="184.6432" gain="-11.0537"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="195.1873" gain="-9.7277"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="197.3802" gain="-10.142"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="200.2232" gain="-10.6715"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="202.5719" gain="-10.8091"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="207.6271" gain="-10.6065"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="211.3391" gain="-9.5694"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="216.6248" gain="-7.3935"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="221.5206" gain="-5.4899"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="226.6381" gain="-3.8479"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="231.6674" gain="-2.5557"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="236.2537" gain="-1.8378"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="239.6445" gain="-1.427"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="242.2418" gain="-1.3394"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="245.4584" gain="-1.4352"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="248.56" gain="-1.5777"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="250.7876" gain="-1.7779"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="254.576" gain="-2.3872"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="259.1063" gain="-3.1891"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="262.2679" gain="-3.8995"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="269.3814" gain="-5.4313"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="273.2391" gain="-5.9221"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="278.594" gain="-6.7694"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="282.9235" gain="-7.3367"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="289.3876" gain="-8.3542"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="296.5595" gain="-9.4422"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="305.7591" gain="-10.7341"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="317.4835" gain="-13.0495"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="321.4525" gain="-14.8897"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="324.5803" gain="-17.8966"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="328.2726" gain="-21.1202"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="335.0314" gain="-24.8369"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="345.6534" gain="-25.2086"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="353.0088" gain="-19.1249"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="353.4225" gain="-22.2364"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="355.1323" gain="-14.4616"/>
+      </radiationPatternList>
+      <radiationPatternList>
+        <radiationPatternPK pattKey="2433" angle="357.9147" gain="-12.0134"/>
+      </radiationPatternList>
+    </antennaList>
+    <tsid province="BC" city="Fort St John" channel="9" tsid="40C4">
+      <tsidPK callSign="CBCD-TV-3" banner="OP"/>
+    </tsid>
+    <comment name="CBC/ Radio-Canada" address="Regulatory Affairs" address2="P.O. Box 3220, Station C" city="Ottawa" province="ON">
+      <commentPK callSign="CBCD-TV-3" banner="OP"/>
+    </comment>
+  </canadaStationTv>
+  <canadaStationTv allocZone="2" antMode="68" beamTilt="0.0" closedCaptioning="78" haat="0.0" erpaav="0.0" erpapk="0.0" erpata="0" erpvpk="45.0" erpvav="0.0" erpvta="0.0" towerElevation="609.6" offSetPrecision="70" offSetCode="0" overallHag="18.3" radCenter="623.3" stationType="TV" channel="12" latitude="56.16694444444444" longitude="-120.64861111111112" bcMode="77" border="579.5" brdrLat="561001" brdrLong="1203850" certNumb="TP0710" city="Taylor" stationClass="LP" decNumber="930459" docFile="2499" frequency="0.204" network="CBCE" okDump="1994-02-03T00:00:00-05:00" province="BC" stCreat="1986-01-21T00:00:00-05:00" stMod="2011-08-24T00:00:00-04:00" unattended="78" landDistanceCanada="579.5" landDistanceFrenchNewfoundland="4371.9" landDistanceUSA="579.5">
+    <canadaStationPK banner="OP" callSign="CBCD-TV-4"/>
+    <comment name="CBC/ Radio-Canada" address="Regulatory Affairs" address2="P.O. Box 3220, Station C" city="Ottawa" province="ON">
+      <commentPK callSign="CBCD-TV-4" banner="OP"/>
+    </comment>
+  </canadaStationTv>
+
