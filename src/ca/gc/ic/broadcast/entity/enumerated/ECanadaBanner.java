@@ -1,5 +1,5 @@
 /* 
- * Copyright (C) 2014 Jesse Caulfield <jesse@caulfield.org>
+ * Copyright (C) 2014 Key Bridge Global LLC 
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ package ca.gc.ic.broadcast.entity.enumerated;
  * stations taken from the 'lookup' table and cross-referenced with the
  * respective station tables to ensure 100% coverage.
  * <p/>
- * @author Jesse Caulfield <jesse@caulfield.org>
+ * @author Key Bridge Global LLC 
  */
 public enum ECanadaBanner {
 

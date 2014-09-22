@@ -16,7 +16,7 @@ Home base
 Documentation about this project is available on the Key Bridge web site at https://keybridgeglobal.com/data/documentation/source/bdbs.xhtml
 
 ## Licensed under GPLv.3
-Copyright (C) 2014 Jesse Caulfield <jesse@caulfield.org>
+Copyright (C) 2014 Key Bridge Global LLC 
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
