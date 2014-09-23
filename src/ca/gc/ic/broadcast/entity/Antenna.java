@@ -217,7 +217,7 @@ public class Antenna implements Serializable {
   public Date getPattDate() {
     try {
       return new SimpleDateFormat("yyyyMMdd").parse(pattDate);
-    } catch (ParseException ex) {
+    } catch (ParseException | NullPointerException ex) {
       return null;
     }
   }
