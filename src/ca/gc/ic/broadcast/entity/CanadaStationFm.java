@@ -39,7 +39,7 @@ public class CanadaStationFm extends CanadaStation {
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
   @XmlAttribute(required = true)
-  private double erpvpk;
+  private Double erpvpk;
   @Column(name = "ant_mode")
   @XmlAttribute(required = true)
   private Character antMode;
@@ -48,29 +48,29 @@ public class CanadaStationFm extends CanadaStation {
   private String autoProg;
   @Column(name = "beam_tilt", precision = 12)
   @XmlAttribute
-  private double beamTilt;
+  private Double beamTilt;
   @Basic(optional = false)
   @Column(name = "ehaat", nullable = false)
   @XmlAttribute
-  private double ehaat;
+  private Double ehaat;
   @Column(name = "erphav", precision = 12)
   @XmlAttribute
-  private double erphav;
+  private Double erphav;
   @Column(name = "erphpk", precision = 12)
   @XmlAttribute
-  private double erphpk;
+  private Double erphpk;
   @Column(name = "erpvav", precision = 12)
   @XmlAttribute
-  private double erpvav;
+  private Double erpvav;
   @Column(name = "ground_lev", precision = 12)
   @XmlAttribute
-  private double groundLev;
+  private Double groundLev;
   @Column(name = "overall_h", precision = 12)
   @XmlAttribute
-  private double overallH;
+  private Double overallH;
   @Column(name = "rad_center", precision = 12)
   @XmlAttribute
-  private double radCenter;
+  private Double radCenter;
   @Column(name = "scmo")
   @XmlAttribute
   private Character scmo;
@@ -87,11 +87,11 @@ public class CanadaStationFm extends CanadaStation {
   }
 
   //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
-  public double getErpvpk() {
+  public Double getErpvpk() {
     return erpvpk;
   }
 
-  public void setErpvpk(double erpvpk) {
+  public void setErpvpk(Double erpvpk) {
     this.erpvpk = erpvpk;
   }
 
@@ -111,67 +111,67 @@ public class CanadaStationFm extends CanadaStation {
     this.autoProg = autoProg;
   }
 
-  public double getBeamTilt() {
+  public Double getBeamTilt() {
     return beamTilt;
   }
 
-  public void setBeamTilt(double beamTilt) {
+  public void setBeamTilt(Double beamTilt) {
     this.beamTilt = beamTilt;
   }
 
-  public double getEhaat() {
+  public Double getEhaat() {
     return ehaat;
   }
 
-  public void setEhaat(double ehaat) {
+  public void setEhaat(Double ehaat) {
     this.ehaat = ehaat;
   }
 
-  public double getErphav() {
+  public Double getErphav() {
     return erphav;
   }
 
-  public void setErphav(double erphav) {
+  public void setErphav(Double erphav) {
     this.erphav = erphav;
   }
 
-  public double getErphpk() {
+  public Double getErphpk() {
     return erphpk;
   }
 
-  public void setErphpk(double erphpk) {
+  public void setErphpk(Double erphpk) {
     this.erphpk = erphpk;
   }
 
-  public double getErpvav() {
+  public Double getErpvav() {
     return erpvav;
   }
 
-  public void setErpvav(double erpvav) {
+  public void setErpvav(Double erpvav) {
     this.erpvav = erpvav;
   }
 
-  public double getGroundLev() {
+  public Double getGroundLev() {
     return groundLev;
   }
 
-  public void setGroundLev(double groundLev) {
+  public void setGroundLev(Double groundLev) {
     this.groundLev = groundLev;
   }
 
-  public double getOverallH() {
+  public Double getOverallH() {
     return overallH;
   }
 
-  public void setOverallH(double overallH) {
+  public void setOverallH(Double overallH) {
     this.overallH = overallH;
   }
 
-  public double getRadCenter() {
+  public Double getRadCenter() {
     return radCenter;
   }
 
-  public void setRadCenter(double radCenter) {
+  public void setRadCenter(Double radCenter) {
     this.radCenter = radCenter;
   }
 
