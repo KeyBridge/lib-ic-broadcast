@@ -1,0 +1,40 @@
+
+Broadcast Data Extract (AM-FM-TV) — User Manual
+http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf10420.html
+
+Spectrum Management and Telecommunications
+http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/h_sf01842.html
+
+Broadcasting Database
+http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/h_sf09484.html
+
+Broadcasting database export
+  Broadcasting database files (ZIP, 5  MB), updated daily
+  http://spectrum.ic.gc.ca/engineering/engdoc/baserad.zip
+  
+  
+Broadcast Data Extract (AM-FM-TV) - Corrective Notes to User Manual
+http://spectrum.ic.gc.ca/engineering/engdoc/Bdbs_usr_corr_e.html
+
+2.1 Wrong height reference in TVSTATIO.DBF
+  In the table about TVSTATIO.DBF in section "C.0 BDBS RECORD LAYOUTS", the following part:
+
+  TVSTATIO.DBF "TV stations"
+  # FIELD NAME TYPE LEN DEC
+  --------------------------------
+  40 RAD_CENTER N 6 1 Radiating Center Above Ground Level
+  0.0 to 5,000.0 metres
+
+  Should read:
+
+  TVSTATIO.DBF "TV stations"
+  # FIELD NAME TYPE LEN DEC
+  --------------------------------
+  40 RAD_CENTER N 6 1 Radiating Center Above Mean Sea Level
+  0.0 to 5,000.0 metres
+  
+2.2 Wrong field description in TVSTATIO.DBF
+  In the table about TVSTATIO.DBF in section "C.0 BDBS RECORD LAYOUTS", the description for the following field should be:
+
+  37 ERPATA N 7 0
+  0 = Analog, 1 = Digital, 2 = Post-transition 

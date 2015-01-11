@@ -97,18 +97,23 @@ public class CanadaStationTv extends CanadaStation {
   @XmlAttribute
   private Double erpapk;
   /**
-   * The Documentation claims this is the ERP Average Power at Tilt Angle in
-   * watts [0 to 5,000,000]. However, FCC guidance and the data indicate that
-   * this field is used to positively differentiate Analog or Digital operation
-   * as follows:
+   * Indicator that the television transmitter is a Analog or Digital operation.
+   * This field is interpreted conveniently in the method {@link #isDigital()}.
+   * <p>
+   * The Canada 'tvstatio' database table contains the following values for this
+   * field [0, 1, 2], with active records showing the following values [0, 1].
+   * <p>
+   * BDBS Documentation claims this is the ERP Average Power at Tilt Angle in
+   * watts [0 to 5,000,000]. However, FCC guidance and the data indicate this
+   * field is used to positively differentiate Analog vs. Digital operation as
+   * follows:
    * <p/>
    * The modulation field specifies the type of operation (analog or digital).
    * TV modulation information is contained in the table column ERPATA and coded
    * as 0=Analog; 1=Digital and 2=Post-transition.
    * <p/>
-   * Developer note: 07/10/13: The canada 'tvstatio' database table contains the
-   * following values for this field [0, 1, 2], with active records showing the
-   * following values [0, 1].
+   * Corrected in May 2013 "Broadcast Data Extract (AM-FM-TV) - Corrective Notes
+   * to User Manual".
    */
   @Column(name = "erpata")
   @XmlAttribute
@@ -180,15 +185,19 @@ public class CanadaStationTv extends CanadaStation {
   @XmlAttribute
   private Double overallHag;
   /**
-   * Radiating Center Above Mean Sea Level in meters. (AMSL)
+   * Radiating Center Above Mean Sea Level (AMSL) in meters.
+   * <p>
    * <p/>
    * Developer note: The BDBS documentation appears to be in error and cites
    * this values as "Radiating Center Above Ground Level 0.0 to 5,000.0 metres".
    * However the earlier document entry for FM stations identifies this field as
-   * "Above Mean Sea Level 0.0 to 5000.0 metres"
+   * "Above Mean Sea Level 0.0 to 5000.0 metres".
+   * <p>
+   * Corrected in May 2013 "Broadcast Data Extract (AM-FM-TV) - Corrective Notes
+   * to User Manual": Radiating Center Above Mean Sea Level.
    * <p/>
    * Documentation allows range of 0.0 to 5,000.0 meters. Database range is 0 to
-   * 2790.
+   * 2632.
    */
   @Column(name = "rad_center", precision = 12)
   @XmlAttribute
@@ -399,10 +408,7 @@ public class CanadaStationTv extends CanadaStation {
    * @return TRUE for digital signals.
    */
   public boolean isDigital() {
-    if (erpata == null) {
-      return false;
-    }
-    return erpata > 0;
+    return erpata == null ? false : erpata > 0;
   }
 
   @Override
