@@ -14,10 +14,12 @@ Covered types are AM, FC and SD radio plus TV.
   </description>
   
   <organization>
-    <name>Industry Canada</name>
-    <url>http://www.ic.gc.ca</url>
-  </organization>
+    <name>Key Bridge</name>
+    <url>http://keybridge.ch</url>
+  </organization>  
   
+  <!--<organization>    <name>Industry Canada</name>    <url>http://www.ic.gc.ca</url>  </organization>-->
+    
   <url>http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/h_sf01842.html</url>
   
   <build>

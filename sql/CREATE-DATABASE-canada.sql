@@ -5,6 +5,7 @@
 -- -----------------------------------------------------------------------------
 -- HISTORY
 -- -----------------------------------------------------------------------------
+-- 01/14/15 - fix clazz length - change from 2 to 3 chars
 -- 06/01/14 - rename database from 'canada' to 'ic_bdbs' 
 --            all FCC databases now have the 'ic_' prefix
 -- 03/19/14 - allow null erpvpk entries - NULL for AM, required for all others
@@ -111,7 +112,7 @@ CREATE TABLE `ca_station` (
   `can_land` double,
   `cert_numb` char(6),
   `city` varchar(25),
-  `clazz` char(2),
+  `clazz` char(3),
   `close_cap` char(1),
   `dec_number` int(11),
   `doc_file` int(11),
