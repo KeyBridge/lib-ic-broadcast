@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,6 +63,6 @@ public enum ECanadaStationType {
 
   @Override
   public String toString() {
-    return name() + " - " + description;
+    return name();
   }
 }
