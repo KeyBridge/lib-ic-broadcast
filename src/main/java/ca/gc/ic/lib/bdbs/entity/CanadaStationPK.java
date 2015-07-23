@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@ package ca.gc.ic.lib.bdbs.entity;
 import ca.gc.ic.lib.bdbs.entity.enumerated.ECanadaBanner;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -76,18 +74,14 @@ public class CanadaStationPK implements Serializable {
    * CanadaStationPK. This enables the convenient serialization and
    * unmarshalling of CanadaStationPK objects.
    * <p/>
-   * @param canadaStationPkString the toString output of a CanadaStationPK
+   * @param canadaStationPkString the toString output of a CanadaStationPK. e.g.
+   *                              a colon-delimited string 'CALLSIGN:BANNER'
    * @throws Exception if the input string does not match the required regex
    *                   pattern and no parameters can be found
    */
   public CanadaStationPK(String canadaStationPkString) {
-    String toString = "banner \\[(\\w+)\\] callSign \\[(\\S+)\\]";
-    Pattern p = Pattern.compile(toString);
-    Matcher m = p.matcher(canadaStationPkString);
-    if (m.find()) {
-      this.banner = ECanadaBanner.valueOf(m.group(1));
-      this.callSign = m.group(2);
-    }
+    this.callSign = canadaStationPkString.split(":")[0];
+    this.banner = ECanadaBanner.valueOf(canadaStationPkString.split(":")[1]);
   }
 
   public ECanadaBanner getBanner() {
@@ -130,16 +124,13 @@ public class CanadaStationPK implements Serializable {
   }
 
   /**
-   * Return a class-friendly output. e.g. CanadaStation banner [" + banner + "]
-   * callSign [" + callSign + "]"
+   * Return a class-friendly output.
    * <p>
-   * @return the call sign and banner.
+   * @return the call sign and banner encoded as
+   *         <code>callSign + ":" + banner</code>
    */
   @Override
   public String toString() {
-    return "CanadaStation"
-      + " " + callSign
-      + " banner [" + banner
-      + "]";
+    return callSign + ":" + banner;
   }
 }

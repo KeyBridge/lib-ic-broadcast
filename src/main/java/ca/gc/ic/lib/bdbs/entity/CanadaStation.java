@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -722,8 +722,8 @@ public abstract class CanadaStation implements Serializable {
   @Override
   public String toString() {
     return canadaStationPK != null
-      ? canadaStationPK.toString()
-      : "CanadaStation stationType[" + stationType + "]";
+           ? canadaStationPK.toString()
+           : "CanadaStation stationType[" + stationType + "]";
   }
 
   /**
@@ -733,38 +733,38 @@ public abstract class CanadaStation implements Serializable {
    */
   public String toStringFull() {
     return "CanadaStation"
-      + " canadaStationPK [" + canadaStationPK
-      + "]\n stationType [" + stationType
-      + "] channel [" + channel
-      + "] latitude [" + latitude
-      + "] longitude [" + longitude
-      + "] bcMode [" + bcMode
-      + "] border [" + border
-      + "] brdrLat [" + brdrLat
-      + "] brdrLong [" + brdrLong
-      + "] certNumb [" + certNumb
-      + "] city [" + city
-      + "] stationClass [" + stationClass
-      + "] decNumber [" + decNumber
-      + "] docFile [" + docFile
-      + "] frequency [" + frequency
-      + "] network [" + network
-      + "] okDump [" + okDump
-      + "] province [" + province
-      + "] ssCode [" + ssCode
-      + "] stCreat [" + stCreat
-      + "] stMod [" + stMod
-      + "] unattended [" + unattended
-      + "] landDistanceCanada [" + landDistanceCanada
-      + "] landDistanceFrenchNewfoundland [" + landDistanceFrenchNewfoundland
-      + "] landDistanceUSA [" + landDistanceUSA
-      + "]\n comment [" + comment
-      + "]\n regionalFiling [" + regionalFiling
-      + "]\n feedSignal [" + feedSignal
-      + "]\n tsid [" + tsid
-      + "]\n comment [" + comment
-      + "]\n antennaList [" + antennaList
-      + ']';
+           + " canadaStationPK [" + canadaStationPK
+           + "]\n stationType [" + stationType
+           + "] channel [" + channel
+           + "] latitude [" + latitude
+           + "] longitude [" + longitude
+           + "] bcMode [" + bcMode
+           + "] border [" + border
+           + "] brdrLat [" + brdrLat
+           + "] brdrLong [" + brdrLong
+           + "] certNumb [" + certNumb
+           + "] city [" + city
+           + "] stationClass [" + stationClass
+           + "] decNumber [" + decNumber
+           + "] docFile [" + docFile
+           + "] frequency [" + frequency
+           + "] network [" + network
+           + "] okDump [" + okDump
+           + "] province [" + province
+           + "] ssCode [" + ssCode
+           + "] stCreat [" + stCreat
+           + "] stMod [" + stMod
+           + "] unattended [" + unattended
+           + "] landDistanceCanada [" + landDistanceCanada
+           + "] landDistanceFrenchNewfoundland [" + landDistanceFrenchNewfoundland
+           + "] landDistanceUSA [" + landDistanceUSA
+           + "]\n comment [" + comment
+           + "]\n regionalFiling [" + regionalFiling
+           + "]\n feedSignal [" + feedSignal
+           + "]\n tsid [" + tsid
+           + "]\n comment [" + comment
+           + "]\n antennaList [" + antennaList
+           + ']';
   }
 
 }
