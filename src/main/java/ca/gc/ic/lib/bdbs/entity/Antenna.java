@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,19 +51,19 @@ public class Antenna implements Serializable {
   @Id
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Integer pattKey;
   /**
    * Orientation. "H" for horizontal and "V" for vertical.
    */
   @Column(name = "hor_ver", length = 1)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private String polarization;
   /**
    * @deprecated Future use.
    */
   @Column(name = "patt_numb", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double pattNumb;
   /**
    * Type of pattern: 'PRECISE', 'BRIEF', 'THEORETICAL'.
@@ -97,19 +97,19 @@ public class Antenna implements Serializable {
    * from antenna diagrams, PATT_TYPE is set to "PRECISE".
    */
   @Column(name = "patt_type", length = 12)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private String pattType;
   /**
    * @deprecated Future use.
    */
   @Column(name = "punits", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double punits;
   /**
    * Number of points in the pattern.
    */
   @Column(name = "numpoints", precision = 12)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Double numpoints;
   /**
    * Date pattern added to system.
@@ -289,15 +289,15 @@ public class Antenna implements Serializable {
   @Override
   public String toString() {
     return "Antenna"
-      + " pattKey [" + pattKey
-      + " polarization [" + polarization
-      //      + "] pattNumb [" + pattNumb
-      + "] pattType [" + pattType
-      //      + "] punits [" + punits
-      + "] numpoints [" + numpoints
-      //      + "] pattDate [" + pattDate
-      //      + "] canadaStationList [" + canadaStationList
-      + "]\n radiationPatternMap [" + getRadiationPatternMap()
-      + ']';
+           + " pattKey [" + pattKey
+           + " polarization [" + polarization
+           //      + "] pattNumb [" + pattNumb
+           + "] pattType [" + pattType
+           //      + "] punits [" + punits
+           + "] numpoints [" + numpoints
+           //      + "] pattDate [" + pattDate
+           //      + "] canadaStationList [" + canadaStationList
+           + "]\n radiationPatternMap [" + getRadiationPatternMap()
+           + ']';
   }
 }

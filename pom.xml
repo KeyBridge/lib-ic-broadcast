@@ -4,24 +4,27 @@
 
   <groupId>ca.gc.ic.lib</groupId>
   <artifactId>ic-bdbs</artifactId>
-  <version>1.0</version>
+  <version>2.0.0</version>
   <packaging>jar</packaging>
   <name>lib-ic-bdbs</name>
-  <description>BDBS (Broadcast DataBaSe) entity class library.
+  <description>Industry Canada BDBS (Broadcast DataBaSe) entity class library.
 
-BDBS is the relational database used by Industry Canada to process broadcast licenses. 
-Covered types are AM, FC and SD radio plus TV.
+    BDBS is the relational database used by Industry Canada to process
+    broadcast licenses. Covered types are AM, FC and SD radio plus TV.
+
+    v1.0.0 - first release of entity classes and ERD
+    v2.0.0 - convert XML annotations to elements
   </description>
-  
+
   <organization>
     <name>Key Bridge</name>
     <url>http://keybridge.ch</url>
-  </organization>  
-  
+  </organization>
+
   <!--<organization>    <name>Industry Canada</name>    <url>http://www.ic.gc.ca</url>  </organization>-->
-    
+
   <url>http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/h_sf01842.html</url>
-  
+
   <build>
     <plugins>
       <plugin>
@@ -57,7 +60,7 @@ Covered types are AM, FC and SD radio plus TV.
     </dependency>
   </dependencies>
 
-  
+
   <distributionManagement>
     <repository>
       <id>archiva.internal</id>

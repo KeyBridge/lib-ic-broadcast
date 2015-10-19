@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -43,14 +43,14 @@ public class LookupDbCodePK implements Serializable {
    */
   @Basic(optional = false)
   @Column(name = "fieldname", nullable = false, length = 32)
-  @XmlAttribute
+  @XmlElement
   private String fieldname;
   /**
    * The field code.
    */
   @Basic(optional = false)
   @Column(name = "code", nullable = false, length = 8)
-  @XmlAttribute
+  @XmlElement
   private String code;
 
   public LookupDbCodePK() {

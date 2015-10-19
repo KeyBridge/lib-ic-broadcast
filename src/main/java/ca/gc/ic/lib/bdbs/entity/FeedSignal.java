@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,25 +57,25 @@ public class FeedSignal implements Serializable {
    * Feed Identifier; A or B
    */
   @Column(name = "feed_id", length = 1)
-  @XmlAttribute
+  @XmlElement
   private String feedId;
   /**
    * Feed input channel: 0, 2 - 83, or 2500 - 2680
    */
   @Column(name = "feed_chan", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double feedChannel;
   /**
    * Type of FEED LINK; O, U, S, C
    */
   @Column(name = "link_type", length = 1)
-  @XmlAttribute
+  @XmlElement
   private String linkType;
   /**
    * Name of the SOURCE of the FEED. Call sign reference.
    */
   @Column(name = "feed_call", length = 12)
-  @XmlAttribute
+  @XmlElement
   private String feedCallSign;
   /**
    * N.Latitude of the FEED SOURCE (ddmmss)
@@ -94,13 +94,13 @@ public class FeedSignal implements Serializable {
    * The calculated latitude value.
    */
   @Transient
-  @XmlAttribute
+  @XmlElement
   private Double latitude;
   /**
    * The calculated longitude value.
    */
   @Transient
-  @XmlAttribute
+  @XmlElement
   private Double longitude;
 
   @JoinColumns({
@@ -283,10 +283,10 @@ public class FeedSignal implements Serializable {
   @Override
   public String toString() {
     return "FeedSignal"
-      + " feedCallSign [" + feedCallSign
-      + " feedChannel [" + feedChannel
-      + "] latitude [" + getLatitude()
-      + "] longitude [" + getLongitude()
-      + "]";
+           + " feedCallSign [" + feedCallSign
+           + " feedChannel [" + feedChannel
+           + "] latitude [" + getLatitude()
+           + "] longitude [" + getLongitude()
+           + "]";
   }
 }

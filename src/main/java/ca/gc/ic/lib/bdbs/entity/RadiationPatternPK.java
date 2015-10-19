@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -44,21 +44,21 @@ public class RadiationPatternPK implements Serializable {
    */
   @Basic(optional = false)
   @Column(name = "patt_key", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Integer pattKey;
   /**
    * Pattern data point azimuth from true north (degrees).
    */
   @Basic(optional = false)
   @Column(name = "angle", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Double angle;
   /**
    * Pattern data point gain at the given angle (dB).
    */
   @Basic(optional = false)
   @Column(name = "gain", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Double gain;
 
   public RadiationPatternPK() {
@@ -130,8 +130,8 @@ public class RadiationPatternPK implements Serializable {
   @Override
   public String toString() {
     return "RadiationPattern "
-      + " angle [" + angle
-      + "] gain [" + gain
-      + "]";
+           + " angle [" + angle
+           + "] gain [" + gain
+           + "]";
   }
 }

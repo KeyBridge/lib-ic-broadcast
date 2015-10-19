@@ -37,61 +37,69 @@
 
 
   <xs:complexType name="amStationAugmentPK">
-    <xs:sequence/>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="dncCode" type="xs:string"/>
-    <xs:attribute name="number" type="xs:double" use="required"/>
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="dncCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="number" type="xs:double"/>
+    </xs:sequence>
   </xs:complexType>
 
 
   <xs:complexType name="amStationExtendedHoursPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string"/>
-    <xs:attribute name="banner" type="eCanadaBanner"/>
+    <xs:sequence>
+      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
+      <xs:element name="banner" type="eCanadaBanner" minOccurs="0"/>
+    </xs:sequence>
   </xs:complexType>
 
 
   <xs:complexType name="amStationParameterPK">
-    <xs:sequence/>
-    <xs:attribute name="dncCode" type="xs:string"/>
-    <xs:attribute name="towerNumb" type="xs:int" use="required"/>
+    <xs:sequence>
+      <xs:element name="dncCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="towerNumb" type="xs:int"/>
+    </xs:sequence>
   </xs:complexType>
 
 
 
   <xs:complexType name="radiationPatternPK">
-    <xs:sequence/>
-    <xs:attribute name="pattKey" type="xs:int" use="required"/>
-    <xs:attribute name="angle" type="xs:double" use="required"/>
-    <xs:attribute name="gain" type="xs:double" use="required"/>
+    <xs:sequence>
+      <xs:element name="pattKey" type="xs:int"/>
+      <xs:element name="angle" type="xs:double"/>
+      <xs:element name="gain" type="xs:double"/>
+    </xs:sequence>
   </xs:complexType>
 
 
   <xs:complexType name="canadaStationPK">
-    <xs:sequence/>
-    <xs:attribute name="banner" type="eCanadaBanner" use="required"/>
-    <xs:attribute name="callSign" type="xs:string" use="required"/>
+    <xs:sequence>
+      <xs:element name="banner" type="eCanadaBanner"/>
+      <xs:element name="callSign" type="xs:string"/>
+    </xs:sequence>
   </xs:complexType>
 
 
   <xs:complexType name="feedSignalPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string" use="required"/>
-    <xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+    <xs:sequence>
+      <xs:element name="callSign" type="xs:string"/>
+      <xs:element name="banner" type="eCanadaBanner"/>
+    </xs:sequence>
   </xs:complexType>
 
 
   <xs:complexType name="tsidPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string" use="required"/>
-    <xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+    <xs:sequence>
+      <xs:element name="callSign" type="xs:string"/>
+      <xs:element name="banner" type="eCanadaBanner"/>
+    </xs:sequence>
   </xs:complexType>
 
 
   <xs:complexType name="commentPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string" use="required"/>
-    <xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+    <xs:sequence>
+      <xs:element name="callSign" type="xs:string"/>
+      <xs:element name="banner" type="eCanadaBanner"/>
+    </xs:sequence>
   </xs:complexType>
 
 
@@ -100,24 +108,27 @@
 
 
   <xs:complexType name="contourPK">
-    <xs:sequence/>
-    <xs:attribute name="callsBanr" type="xs:string"/>
-    <xs:attribute name="azimuth" type="xs:double" use="required"/>
-    <xs:attribute name="valuDist" type="xs:double" use="required"/>
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="azimuth" type="xs:double"/>
+      <xs:element name="valuDist" type="xs:double"/>
+    </xs:sequence>
   </xs:complexType>
 
 
   <xs:complexType name="lookupDbCodePK">
-    <xs:sequence/>
-    <xs:attribute name="fieldname" type="xs:string"/>
-    <xs:attribute name="code" type="xs:string"/>
+    <xs:sequence>
+      <xs:element name="fieldname" type="xs:string" minOccurs="0"/>
+      <xs:element name="code" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
   </xs:complexType>
 
 
   <xs:complexType name="regionalFilingPK">
-    <xs:sequence/>
-    <xs:attribute name="callSign" type="xs:string" use="required"/>
-    <xs:attribute name="banner" type="eCanadaBanner" use="required"/>
+    <xs:sequence>
+      <xs:element name="callSign" type="xs:string"/>
+      <xs:element name="banner" type="eCanadaBanner"/>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:simpleType name="eCanadaBanner">

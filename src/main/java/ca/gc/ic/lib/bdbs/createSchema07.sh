@@ -17,6 +17,8 @@ schemagen -cp $CLASSPATH:.:entity/ \
 
 find . -name "*.class" -exec rm {} \;
 
+
+
 echo
 echo "+------------------------------------------------------------------------+"
 echo "|  done                                                                  |"

@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -35,17 +35,18 @@ public class AmStationAugmentPK implements Serializable {
 
   @XmlTransient
   private static final long serialVersionUID = 1L;
+
   @Basic(optional = false)
   @Column(name = "calls_banr", nullable = false, length = 32)
-  @XmlAttribute
+  @XmlElement
   private String callsBanr;
   @Basic(optional = false)
   @Column(name = "dnc_code", nullable = false, length = 1)
-  @XmlAttribute
+  @XmlElement
   private String dncCode;
   @Basic(optional = false)
   @Column(name = "number", nullable = false)
-  @XmlAttribute
+  @XmlElement
   private double number;
 
   public AmStationAugmentPK() {

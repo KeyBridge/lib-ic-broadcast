@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -66,20 +66,20 @@ public class Tsid implements Serializable {
   @XmlElement(required = true)
   protected TsidPK tsidPK;
   @Column(name = "province", length = 2)
-  @XmlAttribute
+  @XmlElement
   private String province;
   @Column(name = "city", length = 32)
-  @XmlAttribute
+  @XmlElement
   private String city;
   @Column(name = "channel")
-  @XmlAttribute
+  @XmlElement
   private int channel;
   /**
    * The Transmission Signal Identifier. A 16-bit packet contained within the
    * MPEG-2 Extended Data Services (XDS) of EIA-608B.
    */
   @Column(name = "tsid", length = 4)
-  @XmlAttribute
+  @XmlElement
   private String tsid;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),

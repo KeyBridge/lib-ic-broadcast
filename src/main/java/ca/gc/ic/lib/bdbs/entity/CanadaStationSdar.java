@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,56 +38,56 @@ public class CanadaStationSdar extends CanadaStation {
   private static final long serialVersionUID = 1L;
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private double erpvpk;
   @Column(name = "alloc_zone")
-  @XmlAttribute
+  @XmlElement
   private int allocZone;
   @Column(name = "ant_mode")
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Character antMode;
   @Column(name = "beam_tilt", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double beamTilt;
   @Column(name = "close_cap")
-  @XmlAttribute
+  @XmlElement
   private Character closeCap;
   @Basic(optional = false)
   @Column(name = "ehaat", nullable = false)
-  @XmlAttribute
+  @XmlElement
   private double ehaat;
   @Column(name = "erpaav", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double erpaav;
   @Column(name = "erpapk", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double erpapk;
   @Column(name = "erpata")
-  @XmlAttribute
+  @XmlElement
   private int erpata;
   @Column(name = "erpvav", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double erpvav;
   @Column(name = "erpvta", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double erpvta;
   @Column(name = "ground_lev", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double groundLev;
   @Column(name = "limit_code", length = 8)
-  @XmlAttribute
+  @XmlElement
   private String limitCode;
   @Column(name = "off_prec")
-  @XmlAttribute
+  @XmlElement
   private Character offPrec;
   @Column(name = "offset")
-  @XmlAttribute
+  @XmlElement
   private Character offset;
   @Column(name = "overall_h", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double overallH;
   @Column(name = "rad_center", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double radCenter;
 
   public CanadaStationSdar() {
@@ -241,23 +241,23 @@ public class CanadaStationSdar extends CanadaStation {
   @Override
   public String toStringFull() {
     return "CanadaStationTv"
-      + super.toString()
-      + " erpvpk [" + erpvpk
-      + "] allocZone [" + allocZone
-      + "] antMode [" + antMode
-      + "] beamTilt [" + beamTilt
-      + "] closeCap [" + closeCap
-      + "] erpaav [" + erpaav
-      + "] erpapk [" + erpapk
-      + "] erpata [" + erpata
-      + "] erpvav [" + erpvav
-      + "] erpvta [" + erpvta
-      + "] groundLev [" + groundLev
-      + "] limitCode [" + limitCode
-      + "] offPrec [" + offPrec
-      + "] offset [" + offset
-      + "] overallH [" + overallH
-      + "] radCenter [" + radCenter
-      + ']';
+           + super.toString()
+           + " erpvpk [" + erpvpk
+           + "] allocZone [" + allocZone
+           + "] antMode [" + antMode
+           + "] beamTilt [" + beamTilt
+           + "] closeCap [" + closeCap
+           + "] erpaav [" + erpaav
+           + "] erpapk [" + erpapk
+           + "] erpata [" + erpata
+           + "] erpvav [" + erpvav
+           + "] erpvta [" + erpvta
+           + "] groundLev [" + groundLev
+           + "] limitCode [" + limitCode
+           + "] offPrec [" + offPrec
+           + "] offset [" + offset
+           + "] overallH [" + overallH
+           + "] radCenter [" + radCenter
+           + ']';
   }
 }

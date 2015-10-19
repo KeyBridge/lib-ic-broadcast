@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,58 +39,58 @@ public class CanadaStationAm extends CanadaStation {
    * RSS Night Interference Free Value
    */
   @Column(name = "euvalu", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double euvalu;
   /**
    * IFRB Number for day time
    */
   @Column(name = "ifrbn_d", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double ifrbnD;
   /**
    * IFRB Number for night time
    */
   @Column(name = "ifrbn_n", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double ifrbnN;
   @Column(name = "latitude2", length = 6)
-  @XmlAttribute
+  @XmlElement
   private String latitude2;
   @Column(name = "longitude2", length = 7)
-  @XmlAttribute
+  @XmlElement
   private String longitude2;
   @Column(name = "par_rms_c", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double parRmsC;
   @Column(name = "par_rms_d", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double parRmsD;
   @Column(name = "par_rms_n", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double parRmsN;
   @Column(name = "powercrit", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double powercrit;
   @Column(name = "powerday", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double powerday;
   @Column(name = "powernight", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double powernight;
   @Column(name = "q_crit", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double qCrit;
   @Column(name = "q_day", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double qDay;
   @Column(name = "q_night", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double qNight;
   @Column(name = "status1", length = 2)
-  @XmlAttribute
+  @XmlElement
   private String status1;
   @Column(name = "status2", length = 2)
-  @XmlAttribute
+  @XmlElement
   private String status2;
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
   private AmStationExtendedHours amStationExtendedHours;
@@ -267,26 +267,26 @@ public class CanadaStationAm extends CanadaStation {
   @Override
   public String toStringFull() {
     return "CanadaStationAm"
-      + super.toString()
-      + " euvalu [" + euvalu
-      + "] ifrbnD [" + ifrbnD
-      + "] ifrbnN [" + ifrbnN
-      + "] latitude2 [" + latitude2
-      + "] longitude2 [" + longitude2
-      + "] parRmsC [" + parRmsC
-      + "] parRmsD [" + parRmsD
-      + "] parRmsN [" + parRmsN
-      + "] powercrit [" + powercrit
-      + "] powerday [" + powerday
-      + "] powernight [" + powernight
-      + "] qCrit [" + qCrit
-      + "] qDay [" + qDay
-      + "] qNight [" + qNight
-      + "] status1 [" + status1
-      + "] status2 [" + status2
-      + "]\n amStationExtendedHours [" + amStationExtendedHours
-      + "]\n amStationParameterList [" + amStationParameterList
-      + "]\n amStationAugmentList [" + amStationAugmentList
-      + ']';
+           + super.toString()
+           + " euvalu [" + euvalu
+           + "] ifrbnD [" + ifrbnD
+           + "] ifrbnN [" + ifrbnN
+           + "] latitude2 [" + latitude2
+           + "] longitude2 [" + longitude2
+           + "] parRmsC [" + parRmsC
+           + "] parRmsD [" + parRmsD
+           + "] parRmsN [" + parRmsN
+           + "] powercrit [" + powercrit
+           + "] powerday [" + powerday
+           + "] powernight [" + powernight
+           + "] qCrit [" + qCrit
+           + "] qDay [" + qDay
+           + "] qNight [" + qNight
+           + "] status1 [" + status1
+           + "] status2 [" + status2
+           + "]\n amStationExtendedHours [" + amStationExtendedHours
+           + "]\n amStationParameterList [" + amStationParameterList
+           + "]\n amStationAugmentList [" + amStationAugmentList
+           + ']';
   }
 }

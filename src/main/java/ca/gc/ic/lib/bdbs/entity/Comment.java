@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,32 +59,32 @@ public class Comment implements Serializable {
    * The entity (company) name.
    */
   @Column(name = "name", length = 40)
-  @XmlAttribute
+  @XmlElement
   private String name;
   /**
    * The street address.
    */
   @Column(name = "addr1", length = 40)
-  @XmlAttribute
+  @XmlElement
   private String address;
   /**
    * The street address, continued. If present this typically contains a suite
    * number, etc.
    */
   @Column(name = "addr2", length = 40)
-  @XmlAttribute
+  @XmlElement
   private String address2;
   /**
    * The city.
    */
   @Column(name = "addr3", length = 40)
-  @XmlAttribute
+  @XmlElement
   private String city;
   /**
    * The Province (Canada) or State (USA)
    */
   @Column(name = "addr4", length = 40)
-  @XmlAttribute
+  @XmlElement
   private String province;
   /**
    * General Headquarters comment code.
@@ -285,11 +285,11 @@ public class Comment implements Serializable {
   @Override
   public String toString() {
     return "Comment"
-      + " name [" + name
-      + "] address [" + address
-      + "] address2 [" + address2
-      + "] city [" + city
-      + "] province [" + province
-      + ']';
+           + " name [" + name
+           + "] address [" + address
+           + "] address2 [" + address2
+           + "] city [" + city
+           + "] province [" + province
+           + ']';
   }
 }

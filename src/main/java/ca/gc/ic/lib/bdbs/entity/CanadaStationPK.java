@@ -22,7 +22,7 @@ import java.util.Objects;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -50,7 +50,7 @@ public class CanadaStationPK implements Serializable {
   @Enumerated(EnumType.STRING)
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private ECanadaBanner banner;
   /**
    * The station call sign. All Canadian station call signs begin with the
@@ -58,7 +58,7 @@ public class CanadaStationPK implements Serializable {
    */
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private String callSign;
 
   public CanadaStationPK() {

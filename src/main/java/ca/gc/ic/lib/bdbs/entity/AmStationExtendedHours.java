@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,32 +50,32 @@ public class AmStationExtendedHours implements Serializable {
   @EmbeddedId
   protected AmStationExtendedHoursPK amStationExtendedHoursPK;
   @Column(name = "calls_banr", length = 32)
-  @XmlAttribute
+  @XmlElement
   private String callsBanr;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "number", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double number;
   @Column(name = "ant_system", length = 1)
-  @XmlAttribute
+  @XmlElement
   private String antSystem;
   @Column(name = "start1", length = 4)
-  @XmlAttribute
+  @XmlElement
   private String start1;
   @Column(name = "end1", length = 4)
-  @XmlAttribute
+  @XmlElement
   private String end1;
   @Column(name = "start2", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double start2;
   @Column(name = "end2", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double end2;
   @Column(name = "power", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double power;
   @Column(name = "rms")
-  @XmlAttribute
+  @XmlElement
   private int rms;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),

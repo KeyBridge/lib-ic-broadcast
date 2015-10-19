@@ -85,7 +85,7 @@ public abstract class CanadaStation implements Serializable {
   @Enumerated(EnumType.STRING)
   @Basic(optional = false)
   @Column(name = "station_type", nullable = false, length = 4)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private ECanadaStationType stationType;
   /**
    * The transmitting CHANNEL; The channel value varies by Station Type and is
@@ -93,58 +93,58 @@ public abstract class CanadaStation implements Serializable {
    */
   @Basic(optional = false)
   @Column(name = "channel", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private int channel;
   /**
    * Latitude coordinate in decimal degrees of the Station Transmitter
    */
   @Basic(optional = false)
   @Column(name = "latitude", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Double latitude;
   /**
    * Longitude coordinate in decimal degrees of the Station Transmitter
    */
   @Basic(optional = false)
   @Column(name = "longitude", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Double longitude;
   /**
    * Broadcasting Mode; [S: Stereo, M: Mono, P: Second Audio Channels or B:
    * Both]
    */
   @Column(name = "bc_mode")
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Character bcMode;
   /**
    * Closest distance to Canada / U.S. Border (km)
    */
   @Column(name = "border", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double border;
   /**
    * N.Latitude used when BORDER last calculated
    */
   @Column(name = "brdr_lat", length = 6)
-  @XmlAttribute
+  @XmlElement
   private String brdrLat;
   /**
    * W.Longitude used when BORDER last calculated
    */
   @Column(name = "brdr_long", length = 7)
-  @XmlAttribute
+  @XmlElement
   private String brdrLong;
   /**
    * Broadcasting Certificate Number. Format is "FANNNN"
    */
   @Column(name = "cert_numb", length = 6)
-  @XmlAttribute
+  @XmlElement
   private String certNumb;
   /**
    * The station City name.
    */
   @Column(name = "city", length = 25)
-  @XmlAttribute
+  @XmlElement
   private String city;
   /**
    * The (enumerated) Canadian class code of this Station;
@@ -154,7 +154,7 @@ public abstract class CanadaStation implements Serializable {
    * For Non-Canadian Stations: [A, B, B1, C, C1, C2, D]
    */
   @Column(name = "clazz", length = 2)
-  @XmlAttribute
+  @XmlElement
   @Enumerated(EnumType.STRING)
   private ECanadaStationClass stationClass;
   /**
@@ -162,13 +162,13 @@ public abstract class CanadaStation implements Serializable {
    * Number. Format is "YYNNNN"
    */
   @Column(name = "dec_number")
-  @XmlAttribute
+  @XmlElement
   private int decNumber;
   /**
    * Industry Canada document file number
    */
   @Column(name = "doc_file")
-  @XmlAttribute
+  @XmlElement
   private int docFile;
   /**
    * Broadcast frequency in MHz.
@@ -177,70 +177,70 @@ public abstract class CanadaStation implements Serializable {
    * converted to MHz upon import into the ca_station table.
    */
   @Column(name = "frequency", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double frequency;
   /**
    * The broadcast Network (CBCE, CBCF, IND, INDE, INDF, BCMH, or none)
    */
   @Column(name = "network", length = 4)
-  @XmlAttribute
+  @XmlElement
   private String network;
   /**
    * Last date of record update for the "Consultants" database export dump
    */
   @Column(name = "ok_dump", length = 8)
   @Temporal(javax.persistence.TemporalType.DATE)
-  @XmlAttribute
+  @XmlElement
   private Date okDump;
   /**
    * The station province (Canada) or state (US)
    */
   @Column(name = "province", length = 2)
-  @XmlAttribute
+  @XmlElement
   private String province;
   /**
    * Short Spacing Code; "*O#aa"
    */
   @Column(name = "ss_code", length = 5)
-  @XmlAttribute
+  @XmlElement
   private String ssCode;
   /**
    * Date the station was first entered in the database
    */
   @Column(name = "st_creat", length = 8)
   @Temporal(javax.persistence.TemporalType.DATE)
-  @XmlAttribute
+  @XmlElement
   private Date stCreat;
   /**
    * Date the station record was last modified in the database
    */
   @Column(name = "st_mod", length = 8)
   @Temporal(javax.persistence.TemporalType.DATE)
-  @XmlAttribute
+  @XmlElement
   private Date stMod;
   /**
    * Unattended Operation Code (Y, N)
    */
   @Column(name = "unattended")
-  @XmlAttribute
+  @XmlElement
   private Character unattended;
   /**
    * Closest distance to Canada Land Edge
    */
   @Column(name = "can_land", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double landDistanceCanada;
   /**
    * Closest distance to French Land Edge near Newfoundland
    */
   @Column(name = "fre_land", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double landDistanceFrenchNewfoundland;
   /**
    * Closest distance to USA Land Edge
    */
   @Column(name = "usa_land", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double landDistanceUSA;
   /**
    * List of Antenna objects. In the Canada database each antenna record

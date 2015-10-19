@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,25 +51,25 @@ public class CanadaStationTv extends CanadaStation {
    * Allocation Planning Zone 0, 1 or 2
    */
   @Column(name = "alloc_zone")
-  @XmlAttribute
+  @XmlElement
   private Integer allocZone;
   /**
    * Antenna Mode: O, D, Space; Omnidirectional or Directional
    */
   @Column(name = "ant_mode")
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Character antMode;
   /**
    * Beam Tilt Angle in Degrees; -10.0 to 10.0
    */
   @Column(name = "beam_tilt", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double beamTilt;
   /**
    * Closed Captioning; Y or N
    */
   @Column(name = "close_cap")
-  @XmlAttribute
+  @XmlElement
   private Character closedCaptioning;
   /**
    * Effective Height of Antenna Above Terrain
@@ -78,7 +78,7 @@ public class CanadaStationTv extends CanadaStation {
    */
   @Basic(optional = false)
   @Column(name = "ehaat", nullable = false)
-  @XmlAttribute
+  @XmlElement
   private Double haat;
   /**
    * ERP Aural Average in Watts
@@ -86,7 +86,7 @@ public class CanadaStationTv extends CanadaStation {
    * 0 to 1,000,000
    */
   @Column(name = "erpaav", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double erpaav;
   /**
    * ERP Aural Peak Power in Watts
@@ -94,7 +94,7 @@ public class CanadaStationTv extends CanadaStation {
    * 0 to 1,000,000
    */
   @Column(name = "erpapk", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double erpapk;
   /**
    * Indicator that the television transmitter is a Analog or Digital operation.
@@ -116,7 +116,7 @@ public class CanadaStationTv extends CanadaStation {
    * to User Manual".
    */
   @Column(name = "erpata")
-  @XmlAttribute
+  @XmlElement
   private Integer erpata;
   /**
    * ERP Visual Peak Power in Watts.
@@ -129,7 +129,7 @@ public class CanadaStationTv extends CanadaStation {
    */
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Double erpvpk;
   /**
    * ERP Visual Average in Watts
@@ -137,7 +137,7 @@ public class CanadaStationTv extends CanadaStation {
    * Database range is 0 to 609,000.
    */
   @Column(name = "erpvav", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double erpvav;
   /**
    * ERP Peak Visual Power at Tilt Angle in Watts
@@ -146,7 +146,7 @@ public class CanadaStationTv extends CanadaStation {
    * the database (always zero).
    */
   @Column(name = "erpvta", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double erpvta;
   /**
    * Ground Level at Tower Base above Sea Level in Meters. (AMSL)
@@ -154,7 +154,7 @@ public class CanadaStationTv extends CanadaStation {
    * Documentation allows range of 0.0 to 9,999.9. Database range is 0 to 2955.
    */
   @Column(name = "ground_lev", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double towerElevation;
   /**
    * Limitation Identification code "LAAAA".
@@ -168,13 +168,13 @@ public class CanadaStationTv extends CanadaStation {
    * Refers to Off-set Precision. Valid Y, Space.
    */
   @Column(name = "off_prec")
-  @XmlAttribute
+  @XmlElement
   private Character offSetPrecision;
   /**
    * Refers to TV Off-set Code. Space, +, -, Z.
    */
   @Column(name = "offset")
-  @XmlAttribute
+  @XmlElement
   private Character offSetCode;
   /**
    * Overall Height Above ground in Meters
@@ -182,7 +182,7 @@ public class CanadaStationTv extends CanadaStation {
    * Documentation allows range of 0.0 to 999.9. Database range is 0 to 797.
    */
   @Column(name = "overall_h", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double overallHag;
   /**
    * Radiating Center Above Mean Sea Level (AMSL) in meters.
@@ -200,7 +200,7 @@ public class CanadaStationTv extends CanadaStation {
    * 2632.
    */
   @Column(name = "rad_center", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double radCenter;
 
   public CanadaStationTv() {
@@ -414,23 +414,23 @@ public class CanadaStationTv extends CanadaStation {
   @Override
   public String toStringFull() {
     return "CanadaStationTv"
-      + super.toString()
-      + " allocZone [" + allocZone
-      + "] antMode [" + antMode
-      + "] beamTilt [" + beamTilt
-      + "] closeCap [" + closedCaptioning
-      + "] erpaav [" + erpaav
-      + "] erpapk [" + erpapk
-      + "] erpata [" + erpata
-      + "] erpvpk [" + erpvpk
-      + "] erpvav [" + erpvav
-      + "] erpvta [" + erpvta
-      + "] groundLev [" + towerElevation
-      + "] limitCode [" + limitCode
-      + "] offSetPrecision [" + offSetPrecision
-      + "] offSetCode [" + offSetCode
-      + "] overallHag [" + overallHag
-      + "] radCenter [" + radCenter
-      + ']';
+           + super.toString()
+           + " allocZone [" + allocZone
+           + "] antMode [" + antMode
+           + "] beamTilt [" + beamTilt
+           + "] closeCap [" + closedCaptioning
+           + "] erpaav [" + erpaav
+           + "] erpapk [" + erpapk
+           + "] erpata [" + erpata
+           + "] erpvpk [" + erpvpk
+           + "] erpvav [" + erpvav
+           + "] erpvta [" + erpvta
+           + "] groundLev [" + towerElevation
+           + "] limitCode [" + limitCode
+           + "] offSetPrecision [" + offSetPrecision
+           + "] offSetCode [" + offSetCode
+           + "] overallHag [" + overallHag
+           + "] radCenter [" + radCenter
+           + ']';
   }
 }

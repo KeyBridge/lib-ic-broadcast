@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,13 +44,13 @@ public class AmStationAugment implements Serializable {
   @EmbeddedId
   protected AmStationAugmentPK amStationAugmentPK;
   @Column(name = "radiation")
-  @XmlAttribute
+  @XmlElement
   private int radiation;
   @Column(name = "center_az")
-  @XmlAttribute
+  @XmlElement
   private int centerAz;
   @Column(name = "span")
-  @XmlAttribute
+  @XmlElement
   private int span;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),

@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,13 +44,13 @@ public class Contour implements Serializable {
   @EmbeddedId
   protected ContourPK contourPK;
   @Column(name = "name", length = 4)
-  @XmlAttribute
+  @XmlElement
   private String name;
   @Column(name = "lat_end", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double latEnd;
   @Column(name = "long_end", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double longEnd;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),

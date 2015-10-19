@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,13 +49,13 @@ public class LookupDbCode implements Serializable {
    * Description of the field code (in lookupDbCodePK); English.
    */
   @Column(name = "description_english", length = 128)
-  @XmlAttribute
+  @XmlElement
   private String descriptionEnglish;
   /**
    * Description of the field code (in lookupDbCodePK); French.
    */
   @Column(name = "description_french", length = 128)
-  @XmlAttribute
+  @XmlElement
   private String descriptionFrench;
 
   public LookupDbCode() {

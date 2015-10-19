@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
@@ -36,11 +36,11 @@ public class RegionalFilingPK implements Serializable {
   private static final long serialVersionUID = 1L;
   @Basic(optional = false)
   @Column(name = "call_sign", nullable = false, length = 12)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private String callSign;
   @Basic(optional = false)
   @Column(name = "banner", nullable = false, length = 2)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   @Enumerated(EnumType.STRING)
   private ECanadaBanner banner;
 

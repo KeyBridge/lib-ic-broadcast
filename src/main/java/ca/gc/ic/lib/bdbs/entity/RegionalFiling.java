@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,50 +57,50 @@ public class RegionalFiling implements Serializable {
   @XmlElement(required = true)
   protected RegionalFilingPK regionalFilingPK;
   @Column(name = "calls_banr", length = 32)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private String callsBanr;
   @Column(name = "region", length = 1)
-  @XmlAttribute
+  @XmlElement
   private String region;
   @Column(name = "district", length = 2)
-  @XmlAttribute
+  @XmlElement
   private String district;
   @Column(name = "inspec_rep", length = 1)
-  @XmlAttribute
+  @XmlElement
   private String inspecRep;
   @Column(name = "painting", length = 4)
-  @XmlAttribute
+  @XmlElement
   private String painting;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "spr_dat", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double sprDat;
   @Column(name = "rsp_dat", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double rspDat;
   @Column(name = "stdett", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double stdett;
   @Column(name = "air_clear", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double airClear;
   @Column(name = "inspec_dat", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double inspecDat;
   @Column(name = "rcf_dat", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double rcfDat;
   @Column(name = "stat_type", length = 2)
-  @XmlAttribute
+  @XmlElement
   private String statType;
   @Column(name = "docfex", length = 4)
-  @XmlAttribute
+  @XmlElement
   private String docfex;
   @Column(name = "province", length = 2)
-  @XmlAttribute
+  @XmlElement
   private String province;
   @Column(name = "country", length = 2)
-  @XmlAttribute
+  @XmlElement
   private String country;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),

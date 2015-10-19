@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,34 +52,34 @@ public class AmStationParameter implements Serializable {
   protected AmStationParameterPK amStationParameterPK;
   // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   @Column(name = "fieldratio", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double fieldratio;
   @Column(name = "spacing", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double spacing;
   @Column(name = "orienta", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double orienta;
   @Column(name = "phasing", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double phasing;
   @Column(name = "height", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double height;
   @Column(name = "type_ant")
-  @XmlAttribute
+  @XmlElement
   private int typeAnt;
   @Column(name = "a", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double a;
   @Column(name = "b", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double b;
   @Column(name = "c", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double c;
   @Column(name = "d", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private double d;
   @JoinColumns({
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign"),

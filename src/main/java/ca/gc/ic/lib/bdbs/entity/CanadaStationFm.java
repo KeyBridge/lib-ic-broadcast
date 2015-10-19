@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,41 +38,41 @@ public class CanadaStationFm extends CanadaStation {
   private static final long serialVersionUID = 1L;
   @Basic(optional = false)
   @Column(name = "erpvpk", nullable = false)
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Double erpvpk;
   @Column(name = "ant_mode")
-  @XmlAttribute(required = true)
+  @XmlElement(required = true)
   private Character antMode;
   @Column(name = "auto_prog", length = 1)
-  @XmlAttribute
+  @XmlElement
   private String autoProg;
   @Column(name = "beam_tilt", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double beamTilt;
   @Basic(optional = false)
   @Column(name = "ehaat", nullable = false)
-  @XmlAttribute
+  @XmlElement
   private Double ehaat;
   @Column(name = "erphav", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double erphav;
   @Column(name = "erphpk", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double erphpk;
   @Column(name = "erpvav", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double erpvav;
   @Column(name = "ground_lev", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double groundLev;
   @Column(name = "overall_h", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double overallH;
   @Column(name = "rad_center", precision = 12)
-  @XmlAttribute
+  @XmlElement
   private Double radCenter;
   @Column(name = "scmo")
-  @XmlAttribute
+  @XmlElement
   private Character scmo;
 
   public CanadaStationFm() {
@@ -186,18 +186,18 @@ public class CanadaStationFm extends CanadaStation {
   @Override
   public String toStringFull() {
     return "CanadaStationFm"
-      + super.toString()
-      + " autoProg [" + autoProg
-      + "] scmo [" + scmo
-      + "] erpvpk [" + erpvpk
-      + "] antMode [" + antMode
-      + "] beamTilt [" + beamTilt
-      + "] erphav [" + erphav
-      + "] erphpk [" + erphpk
-      + "] erpvav [" + erpvav
-      + "] groundLev [" + groundLev
-      + "] overallH [" + overallH
-      + "] radCenter [" + radCenter
-      + ']';
+           + super.toString()
+           + " autoProg [" + autoProg
+           + "] scmo [" + scmo
+           + "] erpvpk [" + erpvpk
+           + "] antMode [" + antMode
+           + "] beamTilt [" + beamTilt
+           + "] erphav [" + erphav
+           + "] erphpk [" + erphpk
+           + "] erpvav [" + erpvav
+           + "] groundLev [" + groundLev
+           + "] overallH [" + overallH
+           + "] radCenter [" + radCenter
+           + ']';
   }
 }
