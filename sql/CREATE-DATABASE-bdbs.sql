@@ -1,25 +1,29 @@
 -- -----------------------------------------------------------------------------
--- MYSQL BOOTSTRAP SCRIPT FOR CANADIAN STATION DATA
+-- MYSQL BOOTSTRAP SCRIPT FOR INDUSTRY CANADA BDBS DATABASE
+--
 -- use this script from the command line to create a complete canada database
 --   % mysql < CREATE-database-CANADA.sql
--- -----------------------------------------------------------------------------
+--
 -- HISTORY
 -- -----------------------------------------------------------------------------
--- 01/14/15 - fix clazz length - change from 2 to 3 chars
--- 06/01/14 - rename database from 'canada' to 'ic_bdbs' 
---            all FCC databases now have the 'ic_' prefix
--- 03/19/14 - allow null erpvpk entries - NULL for AM, required for all others
---            same for ehaat - null or AM, required for all others
---            remove the table tvstatio_staging - FCC Data is duplicatative  of 
---            and identical to our own SQL query
--- 01/04/13 - add tvstatio_staging table, loaded from FCC extracted data
+-- 08/02/12 - created
+-- 08/03/12 - add custom fields to enable foreign keys
+-- 08/04/12 - redesign with KB table ca_station, consolidated FK and functions
+-- 08/13/12 - fix misspelled ehaatt to ehaat
+-- 08/13/12 - add staging table for WSIF builder ca_station_staging
 -- 12/18/12 - fix feeds lat/long fields from float to string
 --          - change float to double
--- 08/13/12 - add staging table for WSIF builder ca_station_staging
--- 08/13/12 - fix misspelled ehaatt to ehaat
--- 08/04/12 - redesign with KB table ca_station, consolidated FK and functions
--- 08/03/12 - add custom fields to enable foreign keys
--- 08/02/12 - created
+-- 01/04/13 - add tvstatio_staging table, loaded from FCC extracted data
+-- 03/19/14 - allow null erpvpk entries - NULL for AM, required for all others
+--            same for ehaat - null or AM, required for all others
+--            remove the table tvstatio_staging - FCC Data is duplicatative  of
+--            and identical to our own SQL query
+-- 06/01/14 - rename database from 'canada' to 'ic_bdbs'
+--            all FCC databases now have the 'ic_' prefix
+-- 01/14/15 - fix clazz length - change from 2 to 3 chars
+
+
+
 
 -- -----------------------------------------------------------------------------
 -- CREATE THE DATABASE
@@ -39,17 +43,17 @@ USE ic_bdbs;
 -- -----------------------------------------------------------------------------
 DROP function if EXISTS ic_bdbs.asdate;
 DELIMITER //
-CREATE FUNCTION ic_bdbs.asdate(col char(8)) 
+CREATE FUNCTION ic_bdbs.asdate(col char(8))
   RETURNS DATE
   DETERMINISTIC
   READS SQL DATA
-  BEGIN 
+  BEGIN
   DECLARE d DATE;
     SET d =  concat(substr(col,1,4),"-",substr(col,5,2) ,"-",substr(col,7,2));
     IF d = date("0000-00-00") THEN SET d = DATE("1900-01-01");
     END IF;
     RETURN d;
-END // 
+END //
 DELIMITER ;
 
 
@@ -62,17 +66,17 @@ DELIMITER ;
 -- -----------------------------------------------------------------------------
 DROP function if EXISTS ic_bdbs.dms2dec;
 DELIMITER //
-CREATE FUNCTION ic_bdbs.dms2dec(col varchar(7)) 
+CREATE FUNCTION ic_bdbs.dms2dec(col varchar(7))
   RETURNS double
   DETERMINISTIC
   READS SQL DATA
-  BEGIN 
+  BEGIN
   DECLARE d double;
     IF LENGTH(col) = 7 THEN SET d =  substr(col,1,3) + substr(col,4,2)/60 + substr(col,6,2)/3600;
     ELSE SET d =  substr(col,1,2) + substr(col,3,2)/60 + substr(col,5,2)/3600;
     END IF;
     RETURN d;
-END // 
+END //
 DELIMITER ;
 
 
@@ -90,6 +94,7 @@ DELIMITER ;
 -- -----------------------------------------------------------------------------
 -- 1 CA_STATION  (KEY BRIDGE TABLE)
 -- -----------------------------------------------------------------------------
+
 -- Generic container for all station type, differentiated by the station_type field
 DROP TABLE IF EXISTS `ca_station`;
 CREATE TABLE `ca_station` (
@@ -160,7 +165,7 @@ CREATE TABLE `ca_station` (
   KEY (`station_type`),
   KEY (`channel`),
   KEY (`latitude`),
-  KEY (`longitude`)  
+  KEY (`longitude`)
 ) ENGINE=MyISAM;
 
 -- -----------------------------------------------------------------------------
@@ -285,7 +290,7 @@ CREATE TABLE `extend` (
   PRIMARY KEY (`calls_banr`),
 -- ISAM ONLY
 --  PRIMARY KEY (`call_sign`,`banner`),
-  KEY `call_sign` (`call_sign`),  
+  KEY `call_sign` (`call_sign`),
   KEY `banner` (`banner`),
   -- Reference to the generic station
   FOREIGN KEY (call_sign, banner) REFERENCES ca_station (call_sign, banner) ON UPDATE CASCADE ON DELETE CASCADE
@@ -588,4 +593,6 @@ CREATE TABLE `tvstatio` (
 ) ENGINE=MyISAM;
 
 
+-- -----------------------------------------------------------------------------
+-- END
 

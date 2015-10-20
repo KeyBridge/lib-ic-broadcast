@@ -1,4 +1,4 @@
-Update Canada BDBS database with correct call sign and banner fields
+-- Script to Update Canada BDBS database with correct call sign and banner fields
 
 
 UPDATE apatstat SET banner    = TRIM(SUBSTRING(calls_banr, -2, 2));
