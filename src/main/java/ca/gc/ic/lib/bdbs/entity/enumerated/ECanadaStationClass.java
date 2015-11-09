@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,13 +19,13 @@ package ca.gc.ic.lib.bdbs.entity.enumerated;
 /**
  * An enumeration of the allowed 'CLASS' field values in the Canada station
  * tables 'am_statio', 'fm_statio', 'tv_statio' and 'sdars'.
- * <p/>
- To prevent Java language conflict the table field is named 'clazz' and the
- Java object (this) is named 'ECanadaStationClass'.
- <p/>
+ * <p>
+ * To prevent Java language conflict the table field is named 'clazz' and the
+ * Java object (this) is named 'ECanadaStationClass'.
+ * <p>
  * Some classes are used across service types. For example. 'A' is used for AM,
  * FM and TV stations.
- * <p/>
+ *
  * @author jesse
  */
 public enum ECanadaStationClass {
@@ -121,7 +121,7 @@ public enum ECanadaStationClass {
 
   /**
    * Find an ECanadaStationClass object by its 2 or 3-character database code.
-   * <p/>
+   *
    * @param dbCode The 2 or 3-character database code (not case-sensistive)
    * @return null if no match
    */

@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlTransient;
 /**
  * Logical data model container for the CANADA RadiationPattern (apatdat) table
  * compound primary key.
- * <p/>
+ *
  * @author jesse
  */
 @Embeddable

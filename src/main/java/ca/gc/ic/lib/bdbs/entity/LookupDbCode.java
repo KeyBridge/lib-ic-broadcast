@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.*;
 
 /**
  * Logical data model container for the CANADA LookupDbCode (lookup) table.
- * <p/>
+ *
  * @author jesse
  */
 @Entity

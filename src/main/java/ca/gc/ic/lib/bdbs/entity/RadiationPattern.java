@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,13 +23,13 @@ import javax.xml.bind.annotation.*;
 
 /**
  * Logical data model container for the CANADA RadiationPattern (apatdat) table.
- * <p/>
+ * <p>
  * Contains the 'gains' versus 'angle' data points defining the patterns. The
  * record format permits to store one data point per record, therefore the
  * storage of one pattern requires as many records as there are data points.
- * <p/>
  *
- * <p/>
+ *
+ *
  * @author jesse
  */
 @Entity
@@ -48,7 +48,7 @@ public class RadiationPattern implements Serializable {
   private static final long serialVersionUID = 1L;
   /**
    * The RadiationPattern compound primary key.
-   * <p/>
+   * <p>
    * This contains the useful field values.
    */
   @EmbeddedId
@@ -101,7 +101,7 @@ public class RadiationPattern implements Serializable {
 
   /**
    * Shortcut method to get the radiationPatternPK angle value.
-   * <p/>
+   *
    * @return Pattern data point azimuth from true north (degrees).
    */
   public Double getAngle() {
@@ -110,7 +110,7 @@ public class RadiationPattern implements Serializable {
 
   /**
    * Shortcut method to get the radiationPatternPK gain value.
-   * <p/>
+   *
    * @return Pattern data point gain at the given angle (dB).
    */
   public Double getGain() {

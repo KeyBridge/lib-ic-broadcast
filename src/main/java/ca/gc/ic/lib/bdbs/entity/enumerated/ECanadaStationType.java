@@ -18,7 +18,7 @@ package ca.gc.ic.lib.bdbs.entity.enumerated;
 
 /**
  * Enumerated values for the CanadaStation station_type field.
- * <p/>
+ *
  * @author jesse
  */
 public enum ECanadaStationType {

@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Compound primary key for the Canada TSID table.
- * <p/>
+ *
  * @author jesse
  */
 @Embeddable

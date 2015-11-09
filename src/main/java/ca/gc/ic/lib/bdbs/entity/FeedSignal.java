@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.*;
  * <p>
  * This table is used to identify the upstream transmitter system for repeater
  * and translator stations.
- * <p/>
+ *
  * @author jesse
  */
 @Entity
@@ -227,7 +227,7 @@ public class FeedSignal implements Serializable {
 
   /**
    * Convert DMS to decimal
-   * <p/>
+   *
    * @param deg       degrees
    * @param min       minutes
    * @param sec       seconds

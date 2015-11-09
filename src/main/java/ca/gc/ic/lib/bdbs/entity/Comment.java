@@ -24,9 +24,9 @@ import javax.xml.bind.annotation.*;
 
 /**
  * Logical data model container for the CANADA Comment (comment) table.
- * <p/>
+ * <p>
  * This table contains user contact information for the service.
- * <p/>
+ *
  * @author jesse
  */
 @Entity
@@ -88,7 +88,7 @@ public class Comment implements Serializable {
   private String province;
   /**
    * General Headquarters comment code.
-   * <p/>
+   *
    * @deprecated Present in the database but not used in logical data model.
    */
   @Column(name = "hqcomm", precision = 12)
@@ -96,7 +96,7 @@ public class Comment implements Serializable {
   private int hqcomm;
   /**
    * General Regional comment code.
-   * <p/>
+   *
    * @deprecated Present in the database but not used in logical data model.
    */
   @Column(name = "rgcomm", precision = 12)
@@ -104,7 +104,7 @@ public class Comment implements Serializable {
   private int rgcomm;
   /**
    * Details on Limitations; English.
-   * <p/>
+   *
    * @deprecated Present in the database but not used in logical data model.
    */
   @Column(name = "edetails", precision = 12)
@@ -112,7 +112,7 @@ public class Comment implements Serializable {
   private int edetails;
   /**
    * Details on Limitations; French.
-   * <p/>
+   *
    * @deprecated Present in the database but not used in logical data model.
    */
   @Column(name = "fdetails", precision = 12)

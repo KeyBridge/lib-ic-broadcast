@@ -25,12 +25,12 @@ import javax.xml.bind.annotation.*;
 
 /**
  * Logical data model container for the CANADA Antenna (apatdesc) table.
- * <p/>
+ * <p>
  * The APATDESC file contains a single "header" type record describing the
  * attributes of the antenna patterns. All the parameters describing the
  * patterns are found in this file with the exception of the data points
  * describing the actual patterns.
- * <p/>
+ *
  * @author jesse
  */
 @Entity
@@ -67,31 +67,31 @@ public class Antenna implements Serializable {
   private Double pattNumb;
   /**
    * Type of pattern: 'PRECISE', 'BRIEF', 'THEORETICAL'.
-   * <p/>
+   * <p>
    * As part of the analysis of broadcast undertakings, antenna pattern data is
    * lifted from tables in the brief or digitized from diagrams of the
    * horizontal and vertical pattern.
-   * <p/>
+   * <p>
    * When no vertical antenna pattern data appears in the brief, a theoretical
    * pattern for an antenna with the same number of bays is selected. In this
    * case PATT_TYPE is set to "THEORETICAL".
-   * <p/>
+   * <p>
    * Omnidirectional Patterns: In the case of an Omnidirectional antenna, the
    * Effective Radiated Power value from the main database is assumed to be the
    * same for all azimuths. For this reason, no Horizontal pattern data is
    * stored for Omnidirectional stations.
-   * <p/>
+   * <p>
    * Vertical Patterns: As described in the record layouts, the HOR_VER field is
    * used to indicate a (H)orizontal or (V)ertical pattern. It is possible that
    * a station with an Omnidirectional antenna may still have a Vertical antenna
    * pattern, and this is supported.
-   * <p/>
+   * <p>
    * "THEORETICAL" Patterns: Very often measured patterns are not available at
    * the time of the brief's analysis. In such cases, the department uses
    * theoretical vertical patterns based on the Cosine Law. They have names from
    * BAY-2 to BAY-12, corresponding to the theoretical vertical patterns of a
    * two bay antenna, up to that of a twelve bay antenna.
-   * <p/>
+   * <p>
    * "BRIEF"/"PRECISE" Patterns: When pattern values area taken from a table in
    * a technical brief, PATT_TYPE is set to "BRIEF". If the values are digitized
    * from antenna diagrams, PATT_TYPE is set to "PRECISE".
@@ -113,7 +113,7 @@ public class Antenna implements Serializable {
   private Double numpoints;
   /**
    * Date pattern added to system.
-   * <p/>
+   * <p>
    */
   @Column(name = "patt_date", precision = 12)
   @XmlTransient
@@ -145,7 +145,7 @@ public class Antenna implements Serializable {
   //<editor-fold defaultstate="collapsed" desc="Getter and Setter">
   /**
    * The Antenna Radiation Pattern Key.
-   * <p/>
+   *
    * @return the Antenna Radiation Pattern Key
    */
   public Integer getPattKey() {
@@ -240,7 +240,7 @@ public class Antenna implements Serializable {
   /**
    * Recommend using getRadiationPatternMap for convenience unless you need to
    * address a specific entry.
-   * <p/>
+   *
    * @return A list of 'gains' versus 'angle' data points defining the antenna
    *         pattern.
    */

@@ -31,11 +31,11 @@ import javax.xml.bind.annotation.*;
  * Television and not used by other station types. The total complement of
  * fields supported by this record is the union of both the the CanadaStation
  * and CanadaStationTv field set.
- * <p/>
+ * <p>
  * Developer note: Some fields in the logical data model (e.g. this
  * implementation) are named differently from the physical data model (e.g.
  * database table) names to improve software clarity and usability.
- * <p/>
+ *
  * @author jesse
  */
 @Entity
@@ -73,7 +73,7 @@ public class CanadaStationTv extends CanadaStation {
   private Character closedCaptioning;
   /**
    * Effective Height of Antenna Above Terrain
-   * <p/>
+   * <p>
    * -1,200.0 to 2,000.0 meters
    */
   @Basic(optional = false)
@@ -82,7 +82,7 @@ public class CanadaStationTv extends CanadaStation {
   private Double haat;
   /**
    * ERP Aural Average in Watts
-   * <p/>
+   * <p>
    * 0 to 1,000,000
    */
   @Column(name = "erpaav", precision = 12)
@@ -90,7 +90,7 @@ public class CanadaStationTv extends CanadaStation {
   private Double erpaav;
   /**
    * ERP Aural Peak Power in Watts
-   * <p/>
+   * <p>
    * 0 to 1,000,000
    */
   @Column(name = "erpapk", precision = 12)
@@ -107,11 +107,11 @@ public class CanadaStationTv extends CanadaStation {
    * watts [0 to 5,000,000]. However, FCC guidance and the data indicate this
    * field is used to positively differentiate Analog vs. Digital operation as
    * follows:
-   * <p/>
+   * <p>
    * The modulation field specifies the type of operation (analog or digital).
    * TV modulation information is contained in the table column ERPATA and coded
    * as 0=Analog; 1=Digital and 2=Post-transition.
-   * <p/>
+   * <p>
    * Corrected in May 2013 "Broadcast Data Extract (AM-FM-TV) - Corrective Notes
    * to User Manual".
    */
@@ -123,7 +123,7 @@ public class CanadaStationTv extends CanadaStation {
    * <p>
    * This value is used by default. If not set then the ERP Visual Average
    * {@link #erpvav} is used.
-   * <p/>
+   * <p>
    * Documentation allows range of 0 to over 5,000,000. Database range is 0 to
    * 846,000.
    */
@@ -141,7 +141,7 @@ public class CanadaStationTv extends CanadaStation {
   private Double erpvav;
   /**
    * ERP Peak Visual Power at Tilt Angle in Watts
-   * <p/>
+   * <p>
    * Documentation allows range of 0 to over 5,000,000. This field is not set in
    * the database (always zero).
    */
@@ -150,7 +150,7 @@ public class CanadaStationTv extends CanadaStation {
   private Double erpvta;
   /**
    * Ground Level at Tower Base above Sea Level in Meters. (AMSL)
-   * <p/>
+   * <p>
    * Documentation allows range of 0.0 to 9,999.9. Database range is 0 to 2955.
    */
   @Column(name = "ground_lev", precision = 12)
@@ -158,7 +158,7 @@ public class CanadaStationTv extends CanadaStation {
   private Double towerElevation;
   /**
    * Limitation Identification code "LAAAA".
-   * <p/>
+   *
    * @deprecated Not used in logical data model.
    */
   @Column(name = "limit_code", length = 8)
@@ -178,7 +178,7 @@ public class CanadaStationTv extends CanadaStation {
   private Character offSetCode;
   /**
    * Overall Height Above ground in Meters
-   * <p/>
+   * <p>
    * Documentation allows range of 0.0 to 999.9. Database range is 0 to 797.
    */
   @Column(name = "overall_h", precision = 12)
@@ -187,7 +187,7 @@ public class CanadaStationTv extends CanadaStation {
   /**
    * Radiating Center Above Mean Sea Level (AMSL) in meters.
    * <p>
-   * <p/>
+   * <p>
    * Developer note: The BDBS documentation appears to be in error and cites
    * this values as "Radiating Center Above Ground Level 0.0 to 5,000.0 metres".
    * However the earlier document entry for FM stations identifies this field as
@@ -195,7 +195,7 @@ public class CanadaStationTv extends CanadaStation {
    * <p>
    * Corrected in May 2013 "Broadcast Data Extract (AM-FM-TV) - Corrective Notes
    * to User Manual": Radiating Center Above Mean Sea Level.
-   * <p/>
+   * <p>
    * Documentation allows range of 0.0 to 5,000.0 meters. Database range is 0 to
    * 2632.
    */
@@ -404,7 +404,7 @@ public class CanadaStationTv extends CanadaStation {
 
   /**
    * Boolean indicator that the television transmitter is a digital signal.
-   * <p/>
+   *
    * @return TRUE for digital signals.
    */
   public boolean isDigital() {

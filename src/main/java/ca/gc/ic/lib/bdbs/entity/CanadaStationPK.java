@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
 /**
  * Logical data model container for the CANADA CanadaStation (ca_station)
  * compound primary key.
- * <p/>
+ *
  * @author jesse
  */
 @Embeddable
@@ -73,7 +73,7 @@ public class CanadaStationPK implements Serializable {
    * Constructor taking the serialized (toString) output from another
    * CanadaStationPK. This enables the convenient serialization and
    * unmarshalling of CanadaStationPK objects.
-   * <p/>
+   *
    * @param canadaStationPkString the toString output of a CanadaStationPK. e.g.
    *                              a colon-delimited string 'CALLSIGN:BANNER'
    * @throws Exception if the input string does not match the required regex

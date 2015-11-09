@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2014 Key Bridge Global LLC 
+/*
+ * Copyright (C) 2014 Key Bridge Global LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,12 +18,12 @@ package ca.gc.ic.lib.bdbs.entity.enumerated;
 
 /**
  * Enumerated values for the CanadaStation banner field.
- * <p/>
+ * <p>
  * This is a consolidated list of all banner codes including AM, FM, TV and SDAR
  * stations taken from the 'lookup' table and cross-referenced with the
  * respective station tables to ensure 100% coverage.
- * <p/>
- * @author Key Bridge Global LLC 
+ *
+ * @author Key Bridge Global LLC
  */
 public enum ECanadaBanner {
 

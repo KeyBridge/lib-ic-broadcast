@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.*;
  * <p>
  * Station implementations are differentiated in the database by the stationType
  * ("station_type") field.
- * <p/>
+ *
  * @author jesse
  */
 @Entity
@@ -79,7 +79,7 @@ public abstract class CanadaStation implements Serializable {
   /**
    * The (Enumerated) station type discriminator. This column is used to
    * identify the type of station in the database that this record represents.
-   * <p/>
+   * <p>
    * Supported valued are: [AM, FM, SDAR, TV].
    */
   @Enumerated(EnumType.STRING)
@@ -148,9 +148,9 @@ public abstract class CanadaStation implements Serializable {
   private String city;
   /**
    * The (enumerated) Canadian class code of this Station;
-   * <p/>
+   * <p>
    * For Canadian Stations: [A, A1, B, C, C1, LP, VLP]
-   * <p/>
+   * <p>
    * For Non-Canadian Stations: [A, B, B1, C, C1, C2, D]
    */
   @Column(name = "clazz", length = 2)
@@ -172,7 +172,7 @@ public abstract class CanadaStation implements Serializable {
   private int docFile;
   /**
    * Broadcast frequency in MHz.
-   * <p/>
+   * <p>
    * AM Station frequencies are originally recorded in kHz but are automatically
    * converted to MHz upon import into the ca_station table.
    */
@@ -257,7 +257,7 @@ public abstract class CanadaStation implements Serializable {
   private RegionalFiling regionalFiling;
   /**
    * Feed Signal table reference.
-   * <p/>
+   * <p>
    * This defines the source of a feed signal for a TV service.
    */
   @OneToOne(cascade = CascadeType.ALL, mappedBy = "canadaStation")
@@ -367,7 +367,7 @@ public abstract class CanadaStation implements Serializable {
 
   /**
    * Closest distance to Canada US Border (km)
-   * <p/>
+   *
    * @return the closest distance to Canada US Border (km)
    */
   public double getBorder() {
@@ -574,7 +574,7 @@ public abstract class CanadaStation implements Serializable {
    * In the Canada database each antenna record describes a different
    * polarization for the same physical antenna. A list of antenna objects is
    * therefore required.
-   * <p/>
+   *
    * @return List of Antenna objects for this station.
    */
   public List<Antenna> getAntennaList() {
@@ -657,7 +657,7 @@ public abstract class CanadaStation implements Serializable {
   /**
    * Test this Entity record to determine if it represents a valid transmitter
    * configuration.
-   * <p/>
+   *
    * @return TRUE if the Provinces are in Canada and the banner code indicates
    *         the record is current and transmitting.
    * @throws Exception If the station is not transmitting.
