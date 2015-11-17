@@ -549,6 +549,44 @@ public abstract class CanadaStation implements Serializable {
   }
 
   /**
+   * Hack to return the effective date. This method always returns a non-null
+   * Date instance. If the internal {@link #stCreat} date is not set then a date
+   * of {@code January 01, 2010} is returned.
+   *
+   * @return a non-null Date instance.
+   */
+  public Date getDateEffective() {
+    if (stCreat != null) {
+      return stCreat;
+    }
+    Calendar start = Calendar.getInstance();
+    start.set(2010, 01, 01);
+    return start.getTime();
+  }
+
+  /**
+   * Hack to return the expiration date. This method always returns a non-null
+   * Date instance. If the internal Banner is transmitting then the expire date
+   * is set to +5 years. If the station is not transmitting then set the expire
+   * date to the last record modification date.
+   *
+   * @return a non-null Date instance
+   */
+  public Date getDateExpiration() {
+    Calendar end = Calendar.getInstance();
+    if (canadaStationPK.getBanner().isTransmitting()) {
+      end.add(Calendar.YEAR, 5);
+    } else if (stMod != null && stCreat != null) {
+      if (stMod.before(stCreat)) {
+        end.setTime(stCreat);
+      } else {
+        end.setTime(stMod);
+      }
+    }
+    return end.getTime();
+  }
+
+  /**
    * @return Date station last modified
    */
   public Date getStMod() {
