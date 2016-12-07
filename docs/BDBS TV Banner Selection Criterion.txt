@@ -1,0 +1,27 @@
+Banner  Description                    Accept
+  AP    Approved By CRTC               TRUE
+  AU    Authorized By Industry Canada  TRUE
+  O     Operating                      TRUE
+  OP    Operational                    TRUE
+  TO    Temporary Operation            TRUE
+  A     Allotment                      FALSE
+  AL    Allotment                      FALSE
+  C     Second Allotment               FALSE
+  CN    Conditionally Approved         FALSE
+  CP    Contruction Permit             FALSE
+  IC    Incomplete                     FALSE
+  IL    Illegal                        FALSE
+  P     Proposal                       FALSE
+  PC    Proposed Channel               FALSE
+  PR    Preliminary                    FALSE
+  RE    Referred To CRTC               FALSE
+  SD    Short Duration                 FALSE
+  TD    Tentative Deletion             FALSE
+  TP    Temporary Proposal             FALSE
+  UC    Under Consideration            FALSE
+  UN    Unacceptable Application       FALSE
+  X     Cancelled Permit               FALSE
+  XX    Cancelled Application          FALSE
+
+
+
