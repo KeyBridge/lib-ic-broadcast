@@ -84,7 +84,7 @@ public enum StationClassType {
    */
   N("UHF Regular (U.S. Analog)"),
   /**
-   * Regular VHF & MCTV. Present in TV stations.
+   * Regular VHF and MCTV. Present in TV stations.
    */
   R("Regular VHF & MCTV"),
   /**

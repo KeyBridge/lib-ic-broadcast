@@ -106,7 +106,6 @@ public class Apatdesc implements Serializable {
   private Double numpoints;
   /**
    * Date pattern added to system.
-   * <p>
    */
   @Column(name = "patt_date")
   private String pattDate;

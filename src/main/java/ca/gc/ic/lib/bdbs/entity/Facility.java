@@ -204,7 +204,6 @@ public class Facility implements Serializable {
   /**
    * Radiating Center Above Mean Sea Level (AMSL) in meters.
    * <p>
-   * <p>
    * Developer note: The BDBS documentation appears to be in error and cites
    * this values as "Radiating Center Above Ground Level 0.0 to 5,000.0 metres".
    * However the earlier document entry for FM stations identifies this field as
@@ -257,7 +256,8 @@ public class Facility implements Serializable {
   private Collection<Feeds> feeds;
   /**
    * List of Antenna objects. In the Canada database each antenna record
-   * describes a different polarization for the same physical antenna.
+   * describes a different polarization for the same physical antenna. A list of
+   * antenna objects is therefore required.
    */
   @OneToMany(mappedBy = "facility")
   private Collection<Apatstat> antennaPatterns;
@@ -374,7 +374,8 @@ public class Facility implements Serializable {
   private Double erpapk;
   /**
    * Indicator that the television transmitter is a Analog or Digital operation.
-   * This field is interpreted conveniently in the method {@link #isDigital()}.
+   * This field is interpreted conveniently in the method
+   * {@link #isDigitalTv()}.
    * <p>
    * The Canada 'tvstatio' database table contains the following values for this
    * field [0, 1, 2], with active records showing the following values [0, 1].
@@ -1155,6 +1156,15 @@ public class Facility implements Serializable {
       throw new Exception(toString() + " (" + facilityPK.getBanner().getDescription() + ") is a non-transmitting configuration.");
     }
     return true;
+  }
+
+  /**
+   * Boolean indicator that the television transmitter is a digital signal.
+   *
+   * @return TRUE for digital signals.
+   */
+  public boolean isDigitalTv() {
+    return erpata == null ? false : erpata > 0;
   }
 
   @Override
