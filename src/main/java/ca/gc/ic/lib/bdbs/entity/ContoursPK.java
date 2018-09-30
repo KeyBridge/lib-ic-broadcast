@@ -28,58 +28,74 @@ import javax.persistence.Embeddable;
  * @author Key Bridge
  */
 @Embeddable
-public class TsidPK implements Serializable {
+public class ContoursPK implements Serializable {
 
   @Basic(optional = false)
-  @Column(name = "call_sign")
-  private String callSign;
+  @Column(name = "calls_banr")
+  private String callsBanr;
   @Basic(optional = false)
-  @Column(name = "banner")
-  private String banner;
+  @Column(name = "azimuth")
+  private double azimuth;
+  @Basic(optional = false)
+  @Column(name = "valu_dist")
+  private double valuDist;
 
-  public TsidPK() {
+  public ContoursPK() {
   }
 
-  public TsidPK(String callSign, String banner) {
-    this.callSign = callSign;
-    this.banner = banner;
+  public ContoursPK(String callsBanr, double azimuth, double valuDist) {
+    this.callsBanr = callsBanr;
+    this.azimuth = azimuth;
+    this.valuDist = valuDist;
   }
 
-  public String getCallSign() {
-    return callSign;
+  public String getCallsBanr() {
+    return callsBanr;
   }
 
-  public void setCallSign(String callSign) {
-    this.callSign = callSign;
+  public void setCallsBanr(String callsBanr) {
+    this.callsBanr = callsBanr;
   }
 
-  public String getBanner() {
-    return banner;
+  public double getAzimuth() {
+    return azimuth;
   }
 
-  public void setBanner(String banner) {
-    this.banner = banner;
+  public void setAzimuth(double azimuth) {
+    this.azimuth = azimuth;
+  }
+
+  public double getValuDist() {
+    return valuDist;
+  }
+
+  public void setValuDist(double valuDist) {
+    this.valuDist = valuDist;
   }
 
   @Override
   public int hashCode() {
     int hash = 0;
-    hash += (callSign != null ? callSign.hashCode() : 0);
-    hash += (banner != null ? banner.hashCode() : 0);
+    hash += (callsBanr != null ? callsBanr.hashCode() : 0);
+    hash += (int) azimuth;
+    hash += (int) valuDist;
     return hash;
   }
 
   @Override
   public boolean equals(Object object) {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof TsidPK)) {
+    if (!(object instanceof ContoursPK)) {
       return false;
     }
-    TsidPK other = (TsidPK) object;
-    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
+    ContoursPK other = (ContoursPK) object;
+    if ((this.callsBanr == null && other.callsBanr != null) || (this.callsBanr != null && !this.callsBanr.equals(other.callsBanr))) {
       return false;
     }
-    if ((this.banner == null && other.banner != null) || (this.banner != null && !this.banner.equals(other.banner))) {
+    if (this.azimuth != other.azimuth) {
+      return false;
+    }
+    if (this.valuDist != other.valuDist) {
       return false;
     }
     return true;
@@ -87,7 +103,7 @@ public class TsidPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.lib.bdbs.entity.TsidPK[ callSign=" + callSign + ", banner=" + banner + " ]";
+    return "ca.gc.ic.lib.bdbs.entity.ContoursPK[ callsBanr=" + callsBanr + ", azimuth=" + azimuth + ", valuDist=" + valuDist + " ]";
   }
 
 }

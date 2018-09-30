@@ -28,58 +28,74 @@ import javax.persistence.Embeddable;
  * @author Key Bridge
  */
 @Embeddable
-public class TsidPK implements Serializable {
+public class AugmentPK implements Serializable {
 
   @Basic(optional = false)
-  @Column(name = "call_sign")
-  private String callSign;
+  @Column(name = "calls_banr")
+  private String callsBanr;
   @Basic(optional = false)
-  @Column(name = "banner")
-  private String banner;
+  @Column(name = "dnc_code")
+  private String dncCode;
+  @Basic(optional = false)
+  @Column(name = "number")
+  private double number;
 
-  public TsidPK() {
+  public AugmentPK() {
   }
 
-  public TsidPK(String callSign, String banner) {
-    this.callSign = callSign;
-    this.banner = banner;
+  public AugmentPK(String callsBanr, String dncCode, double number) {
+    this.callsBanr = callsBanr;
+    this.dncCode = dncCode;
+    this.number = number;
   }
 
-  public String getCallSign() {
-    return callSign;
+  public String getCallsBanr() {
+    return callsBanr;
   }
 
-  public void setCallSign(String callSign) {
-    this.callSign = callSign;
+  public void setCallsBanr(String callsBanr) {
+    this.callsBanr = callsBanr;
   }
 
-  public String getBanner() {
-    return banner;
+  public String getDncCode() {
+    return dncCode;
   }
 
-  public void setBanner(String banner) {
-    this.banner = banner;
+  public void setDncCode(String dncCode) {
+    this.dncCode = dncCode;
+  }
+
+  public double getNumber() {
+    return number;
+  }
+
+  public void setNumber(double number) {
+    this.number = number;
   }
 
   @Override
   public int hashCode() {
     int hash = 0;
-    hash += (callSign != null ? callSign.hashCode() : 0);
-    hash += (banner != null ? banner.hashCode() : 0);
+    hash += (callsBanr != null ? callsBanr.hashCode() : 0);
+    hash += (dncCode != null ? dncCode.hashCode() : 0);
+    hash += (int) number;
     return hash;
   }
 
   @Override
   public boolean equals(Object object) {
     // TODO: Warning - this method won't work in the case the id fields are not set
-    if (!(object instanceof TsidPK)) {
+    if (!(object instanceof AugmentPK)) {
       return false;
     }
-    TsidPK other = (TsidPK) object;
-    if ((this.callSign == null && other.callSign != null) || (this.callSign != null && !this.callSign.equals(other.callSign))) {
+    AugmentPK other = (AugmentPK) object;
+    if ((this.callsBanr == null && other.callsBanr != null) || (this.callsBanr != null && !this.callsBanr.equals(other.callsBanr))) {
       return false;
     }
-    if ((this.banner == null && other.banner != null) || (this.banner != null && !this.banner.equals(other.banner))) {
+    if ((this.dncCode == null && other.dncCode != null) || (this.dncCode != null && !this.dncCode.equals(other.dncCode))) {
+      return false;
+    }
+    if (this.number != other.number) {
       return false;
     }
     return true;
@@ -87,7 +103,7 @@ public class TsidPK implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.lib.bdbs.entity.TsidPK[ callSign=" + callSign + ", banner=" + banner + " ]";
+    return "ca.gc.ic.lib.bdbs.entity.AugmentPK[ callsBanr=" + callsBanr + ", dncCode=" + dncCode + ", number=" + number + " ]";
   }
 
 }

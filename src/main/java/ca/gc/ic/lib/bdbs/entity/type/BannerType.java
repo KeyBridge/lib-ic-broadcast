@@ -14,10 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package ca.gc.ic.lib.bdbs.entity.enumerated;
+package ca.gc.ic.lib.bdbs.entity.type;
 
 /**
- * Enumerated values for the CanadaStation banner field.
+ * Enumerated values for the facility banner field.
  * <p>
  * This is a consolidated list of all banner codes including AM, FM, TV and SDAR
  * stations taken from the 'lookup' table and cross-referenced with the
@@ -25,7 +25,7 @@ package ca.gc.ic.lib.bdbs.entity.enumerated;
  *
  * @author Key Bridge Global LLC
  */
-public enum ECanadaBanner {
+public enum BannerType {
 
   /**
    * Allotment
@@ -129,7 +129,7 @@ public enum ECanadaBanner {
    */
   private final boolean transmitting;
 
-  private ECanadaBanner(String description, boolean transmitting) {
+  private BannerType(String description, boolean transmitting) {
     this.description = description;
     this.transmitting = transmitting;
   }

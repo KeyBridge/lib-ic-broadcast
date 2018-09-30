@@ -1,25 +1,28 @@
 /*
- * Copyright (C) 2014 Key Bridge Global LLC
+ * Copyright 2018 Key Bridge. All rights reserved. Use is subject to license
+ * terms.
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * This software code is protected by Copyrights and remains the property of
+ * Key Bridge and its suppliers, if any. Key Bridge reserves all rights in and to
+ * Copyrights and no license is granted under Copyrights in this Software
+ * License Agreement.
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * Key Bridge generally licenses Copyrights for commercialization pursuant to
+ * the terms of either a Standard Software Source Code License Agreement or a
+ * Standard Product License Agreement. A copy of either Agreement can be
+ * obtained upon request by sending an email to info@keybridgewireless.com.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * All information contained herein is the property of Key Bridge and its
+ * suppliers, if any. The intellectual and technical concepts contained herein
+ * are proprietary.
  */
 package ca.gc.ic.lib.bdbs.entity;
 
-import ca.gc.ic.lib.bdbs.entity.enumerated.ECanadaBanner;
 import java.io.Serializable;
 import javax.persistence.*;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Logical data model container for the CANADA Tsid (tsid) table.
@@ -43,50 +46,34 @@ import javax.xml.bind.annotation.*;
  * corresponding NTSC broadcast, verifying that the NTSC signal referenced in
  * the PSIP is actually the desired signal.
  *
- * @author jesse
+ * @author Key Bridge
  */
 @Entity
 @Table(name = "tsid")
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "http://ca.gc.ic/broadcast/entity")
-@NamedQueries({
-  @NamedQuery(name = "Tsid.findAll", query = "SELECT t FROM Tsid t"),
-  @NamedQuery(name = "Tsid.findByProvince", query = "SELECT t FROM Tsid t WHERE t.province = :province"),
-  @NamedQuery(name = "Tsid.findByCity", query = "SELECT t FROM Tsid t WHERE t.city = :city"),
-  @NamedQuery(name = "Tsid.findByCallSign", query = "SELECT t FROM Tsid t WHERE t.tsidPK.callSign = :callSign"),
-  @NamedQuery(name = "Tsid.findByBanner", query = "SELECT t FROM Tsid t WHERE t.tsidPK.banner = :banner"),
-  @NamedQuery(name = "Tsid.findByChannel", query = "SELECT t FROM Tsid t WHERE t.channel = :channel"),
-  @NamedQuery(name = "Tsid.findByTsid", query = "SELECT t FROM Tsid t WHERE t.tsid = :tsid")})
 public class Tsid implements Serializable {
 
-  @XmlTransient
   private static final long serialVersionUID = 1L;
   @EmbeddedId
-  @XmlElement(required = true)
   protected TsidPK tsidPK;
-  @Column(name = "province", length = 2)
-  @XmlElement
+  @Column(name = "province")
   private String province;
-  @Column(name = "city", length = 32)
-  @XmlElement
+  @Column(name = "city")
   private String city;
   @Column(name = "channel")
-  @XmlElement
-  private int channel;
+  private Integer channel;
   /**
    * The Transmission Signal Identifier. A 16-bit packet contained within the
    * MPEG-2 Extended Data Services (XDS) of EIA-608B.
    */
-  @Column(name = "tsid", length = 4)
-  @XmlElement
+  @Column(name = "tsid")
   private String tsid;
   @JoinColumns({
-    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", nullable = false, insertable = false, updatable = false),
-    @JoinColumn(name = "banner", referencedColumnName = "banner", nullable = false, insertable = false, updatable = false)})
+    @JoinColumn(name = "call_sign", referencedColumnName = "call_sign", insertable = false, updatable = false)
+    , @JoinColumn(name = "banner", referencedColumnName = "banner", insertable = false, updatable = false)})
   @OneToOne(optional = false)
   @XmlTransient
-  private CanadaStation canadaStation;
+  private Facility facility;
 
   public Tsid() {
   }
@@ -95,7 +82,7 @@ public class Tsid implements Serializable {
     this.tsidPK = tsidPK;
   }
 
-  public Tsid(String callSign, ECanadaBanner banner) {
+  public Tsid(String callSign, String banner) {
     this.tsidPK = new TsidPK(callSign, banner);
   }
 
@@ -123,11 +110,11 @@ public class Tsid implements Serializable {
     this.city = city;
   }
 
-  public int getChannel() {
+  public Integer getChannel() {
     return channel;
   }
 
-  public void setChannel(int channel) {
+  public void setChannel(Integer channel) {
     this.channel = channel;
   }
 
@@ -139,12 +126,12 @@ public class Tsid implements Serializable {
     this.tsid = tsid;
   }
 
-  public CanadaStation getCanadaStation() {
-    return canadaStation;
+  public Facility getFacility() {
+    return facility;
   }
 
-  public void setCanadaStation(CanadaStation canadaStation) {
-    this.canadaStation = canadaStation;
+  public void setFacility(Facility facility) {
+    this.facility = facility;
   }
 
   @Override
@@ -156,7 +143,7 @@ public class Tsid implements Serializable {
 
   @Override
   public boolean equals(Object object) {
-
+    // TODO: Warning - this method won't work in the case the id fields are not set
     if (!(object instanceof Tsid)) {
       return false;
     }
@@ -169,6 +156,7 @@ public class Tsid implements Serializable {
 
   @Override
   public String toString() {
-    return "ca.gc.ic.broadcast.entity.Tsid[ tsidPK=" + tsidPK + " ]";
+    return "ca.gc.ic.lib.bdbs.entity.Tsid[ tsidPK=" + tsidPK + " ]";
   }
+
 }

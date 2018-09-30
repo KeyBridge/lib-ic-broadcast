@@ -4,7 +4,7 @@
 
   <groupId>ca.gc.ic.lib</groupId>
   <artifactId>ic-bdbs</artifactId>
-  <version>2.0.1</version>
+  <version>3.0.0</version>
   <packaging>jar</packaging>
   <name>lib-ic-bdbs</name>
   <description>Industry Canada BDBS (Broadcast DataBaSe) entity class library.
@@ -15,6 +15,9 @@
     v1.0.0 - first release of entity classes and ERD
     v2.0.0 - convert XML annotations to elements
     v2.0.1 - add date handlers in ca_station
+    v3.0.0 - recompile entity classes to more closely match the physical data model
+
+
 
   </description>
 

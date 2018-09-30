@@ -14,14 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package ca.gc.ic.lib.bdbs.entity.enumerated;
+package ca.gc.ic.lib.bdbs.entity.type;
 
 /**
- * Enumerated values for the CanadaStation station_type field.
+ * Enumerated values for the CanadaStation facility_type field.
  *
  * @author jesse
  */
-public enum ECanadaStationType {
+public enum FacilityType {
 
   /**
    * AM Radio
@@ -44,7 +44,7 @@ public enum ECanadaStationType {
    */
   private final String description;
 
-  private ECanadaStationType(String description) {
+  private FacilityType(String description) {
     this.description = description;
   }
 

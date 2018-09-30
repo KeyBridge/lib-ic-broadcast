@@ -14,21 +14,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package ca.gc.ic.lib.bdbs.entity.enumerated;
+package ca.gc.ic.lib.bdbs.entity.type;
 
 /**
- * An enumeration of the allowed 'CLASS' field values in the Canada station
+ * An enumeration of the allowed 'CLASS' field values in the Canada facility
  * tables 'am_statio', 'fm_statio', 'tv_statio' and 'sdars'.
  * <p>
  * To prevent Java language conflict the table field is named 'clazz' and the
- * Java object (this) is named 'ECanadaStationClass'.
+ * Java object (this) is named 'StationClassType'.
  * <p>
  * Some classes are used across service types. For example. 'A' is used for AM,
  * FM and TV stations.
  *
  * @author jesse
  */
-public enum ECanadaStationClass {
+public enum StationClassType {
 
   /**
    * Class A. Present in AM stations. Present in FM and TV stations. For TV
@@ -111,7 +111,7 @@ public enum ECanadaStationClass {
   VU("DTV Upper VHF");
   private final String description;
 
-  private ECanadaStationClass(String description) {
+  private StationClassType(String description) {
     this.description = description;
   }
 
@@ -120,13 +120,13 @@ public enum ECanadaStationClass {
   }
 
   /**
-   * Find an ECanadaStationClass object by its 2 or 3-character database code.
+   * Find an StationClassType object by its 2 or 3-character database code.
    *
    * @param dbCode The 2 or 3-character database code (not case-sensistive)
    * @return null if no match
    */
-  public static ECanadaStationClass findByDbCode(String dbCode) {
-    for (ECanadaStationClass enum_Banner : ECanadaStationClass.values()) {
+  public static StationClassType findByDbCode(String dbCode) {
+    for (StationClassType enum_Banner : StationClassType.values()) {
       if (enum_Banner.name().equalsIgnoreCase(dbCode)) {
         return enum_Banner;
       }
