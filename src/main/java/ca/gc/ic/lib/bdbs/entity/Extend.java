@@ -20,7 +20,9 @@ package ca.gc.ic.lib.bdbs.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -28,9 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "extend")
-@XmlRootElement
-@NamedQueries({
-  @NamedQuery(name = "Extend.findAll", query = "SELECT e FROM Extend e")})
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Extend implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -59,6 +59,7 @@ public class Extend implements Serializable {
     @JoinColumn(name = "call_sign", referencedColumnName = "call_sign")
     , @JoinColumn(name = "banner", referencedColumnName = "banner")})
   @ManyToOne
+  @XmlTransient
   private Facility facility;
 
   public Extend() {

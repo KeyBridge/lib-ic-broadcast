@@ -41,6 +41,9 @@ import javax.xml.bind.annotation.*;
  * <p>
  * Facility implementations are differentiated in the database by the
  * facilityType ("station_type") field.
+ * <p>
+ * Note: Facility records are pre-filtered by the SQL loader to only contain
+ * records with {@code banner} values that indicate a valid transmitter.
  *
  * @author Key Bridge
  * @since v3.0.0 rebuild 09/30/18 to mirror the physical data model.
@@ -52,7 +55,8 @@ import javax.xml.bind.annotation.*;
   /**
    * Find facilities of the indicated type and Banner code.
    */
-  , @NamedQuery(name = "Facility.findByFacilityTypeAndBanner", query = "SELECT f FROM Facility f WHERE f.facilityType  = :facilityType AND f.facilityPK.banner = :banner")
+  , @NamedQuery(name = "Facility.findByFacilityType", query = "SELECT f FROM Facility f WHERE f.facilityType  = :facilityType")
+  , @NamedQuery(name = "Facility.countByFacilityType", query = "SELECT COUNT(f) FROM Facility f WHERE f.facilityType  = :facilityType")
   , @NamedQuery(name = "Facility.findByCallSign", query = "SELECT f FROM Facility f WHERE f.facilityPK.callSign LIKE :callSign")
 })
 @XmlRootElement(name = "Facility")
@@ -322,11 +326,11 @@ public class Facility implements Serializable {
   @Column(name = "status2")
   private String status2;
   @OneToMany(mappedBy = "facility")
-  private Collection<Extend> extendCollection;
+  private Collection<Extend> extendedHours;
   @OneToMany(mappedBy = "facility")
-  private Collection<Params> paramsCollection;
+  private Collection<Params> params;
   @OneToMany(mappedBy = "facility")
-  private Collection<Augment> augmentCollection;
+  private Collection<Augment> augments;
   //</editor-fold>
 
   //<editor-fold defaultstate="collapsed" desc="FM broadcast facility fields">
@@ -1022,21 +1026,21 @@ public class Facility implements Serializable {
   }
 
   @XmlTransient
-  public Collection<Augment> getAugmentCollection() {
-    return augmentCollection;
+  public Collection<Augment> getAugments() {
+    return augments;
   }
 
-  public void setAugmentCollection(Collection<Augment> augmentCollection) {
-    this.augmentCollection = augmentCollection;
+  public void setAugments(Collection<Augment> augments) {
+    this.augments = augments;
   }
 
   @XmlTransient
-  public Collection<Extend> getExtendCollection() {
-    return extendCollection;
+  public Collection<Extend> getExtendedHours() {
+    return extendedHours;
   }
 
-  public void setExtendCollection(Collection<Extend> extendCollection) {
-    this.extendCollection = extendCollection;
+  public void setExtendedHours(Collection<Extend> extendedHours) {
+    this.extendedHours = extendedHours;
   }
 
   @XmlTransient
@@ -1076,15 +1080,15 @@ public class Facility implements Serializable {
   }
 
   @XmlTransient
-  public Collection<Params> getParamsCollection() {
-    if (paramsCollection == null) {
-      paramsCollection = new ArrayList<>();
+  public Collection<Params> getParams() {
+    if (params == null) {
+      params = new ArrayList<>();
     }
-    return paramsCollection;
+    return params;
   }
 
-  public void setParamsCollection(Collection<Params> paramsCollection) {
-    this.paramsCollection = paramsCollection;
+  public void setParams(Collection<Params> params) {
+    this.params = params;
   }
 
   @XmlTransient
@@ -1191,7 +1195,7 @@ public class Facility implements Serializable {
 
   @Override
   public String toString() {
-    return "Facility  " + facilityPK;
+    return facilityType + " facility " + facilityPK;
   }
 
 }
