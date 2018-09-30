@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://ic.gc.ca/bdbs/entity" xmlns:tns="http://ic.gc.ca/bdbs/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://ic.gc.ca/bdbs/entity/type">
+
+  <xs:import namespace="http://ic.gc.ca/bdbs/entity/type" schemaLocation="schema1.xsd.ised-bdbs.2018-09-30.xsd"/>
+
+  <xs:element name="Facility" type="tns:Facility"/>
+
+  <xs:complexType name="apatdat">
+    <xs:sequence>
+      <xs:element name="apatdatPK" type="tns:apatdatPK" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="apatdatPK">
+    <xs:sequence>
+      <xs:element name="angle" type="xs:double"/>
+      <xs:element name="gain" type="xs:double"/>
+      <xs:element name="pattKey" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="apatstat">
+    <xs:sequence>
+      <xs:element name="apatstatPK" type="tns:apatstatPK" minOccurs="0"/>
+      <xs:element name="apatdesc" type="tns:apatdesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="apatstatPK">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="pattKey" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="apatdesc">
+    <xs:sequence>
+      <xs:element name="pattKey" type="xs:int" minOccurs="0"/>
+      <xs:element name="horVer" type="xs:string" minOccurs="0"/>
+      <xs:element name="pattNumb" type="xs:double" minOccurs="0"/>
+      <xs:element name="pattType" type="xs:string" minOccurs="0"/>
+      <xs:element name="punits" type="xs:double" minOccurs="0"/>
+      <xs:element name="numpoints" type="xs:double" minOccurs="0"/>
+      <xs:element name="pattDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="apatdatCollection" type="tns:apatdat" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contours">
+    <xs:sequence>
+      <xs:element name="contoursPK" type="tns:contoursPK" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="latEnd" type="xs:double" minOccurs="0"/>
+      <xs:element name="longEnd" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contoursPK">
+    <xs:sequence>
+      <xs:element name="azimuth" type="xs:double"/>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="valuDist" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="params">
+    <xs:sequence>
+      <xs:element name="paramsPK" type="tns:paramsPK" minOccurs="0"/>
+      <xs:element name="fieldratio" type="xs:double" minOccurs="0"/>
+      <xs:element name="spacing" type="xs:double" minOccurs="0"/>
+      <xs:element name="orienta" type="xs:double" minOccurs="0"/>
+      <xs:element name="phasing" type="xs:double" minOccurs="0"/>
+      <xs:element name="height" type="xs:double" minOccurs="0"/>
+      <xs:element name="typeAnt" type="xs:int" minOccurs="0"/>
+      <xs:element name="a" type="xs:double" minOccurs="0"/>
+      <xs:element name="b" type="xs:double" minOccurs="0"/>
+      <xs:element name="c" type="xs:double" minOccurs="0"/>
+      <xs:element name="d" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="paramsPK">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="dncCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="towerNumb" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tsid">
+    <xs:sequence>
+      <xs:element name="tsidPK" type="tns:tsidPK" minOccurs="0"/>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="channel" type="xs:int" minOccurs="0"/>
+      <xs:element name="tsid" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tsidPK">
+    <xs:sequence>
+      <xs:element name="banner" type="xs:string" minOccurs="0"/>
+      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="augment">
+    <xs:sequence>
+      <xs:element name="augmentPK" type="tns:augmentPK" minOccurs="0"/>
+      <xs:element name="radiation" type="xs:int" minOccurs="0"/>
+      <xs:element name="centerAz" type="xs:int" minOccurs="0"/>
+      <xs:element name="span" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="augmentPK">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="dncCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="number" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="region">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="region" type="xs:string" minOccurs="0"/>
+      <xs:element name="district" type="xs:string" minOccurs="0"/>
+      <xs:element name="inspecRep" type="xs:string" minOccurs="0"/>
+      <xs:element name="painting" type="xs:string" minOccurs="0"/>
+      <xs:element name="sprDat" type="xs:double" minOccurs="0"/>
+      <xs:element name="rspDat" type="xs:double" minOccurs="0"/>
+      <xs:element name="stdett" type="xs:double" minOccurs="0"/>
+      <xs:element name="airClear" type="xs:double" minOccurs="0"/>
+      <xs:element name="inspecDat" type="xs:double" minOccurs="0"/>
+      <xs:element name="rcfDat" type="xs:double" minOccurs="0"/>
+      <xs:element name="statType" type="xs:string" minOccurs="0"/>
+      <xs:element name="docfex" type="xs:string" minOccurs="0"/>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="comments">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="addr1" type="xs:string" minOccurs="0"/>
+      <xs:element name="addr2" type="xs:string" minOccurs="0"/>
+      <xs:element name="addr3" type="xs:string" minOccurs="0"/>
+      <xs:element name="addr4" type="xs:string" minOccurs="0"/>
+      <xs:element name="hqcomm" type="xs:int" minOccurs="0"/>
+      <xs:element name="rgcomm" type="xs:int" minOccurs="0"/>
+      <xs:element name="edetails" type="xs:int" minOccurs="0"/>
+      <xs:element name="fdetails" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="feeds">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedId" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedChan" type="xs:double" minOccurs="0"/>
+      <xs:element name="linkType" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedCall" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedLat" type="xs:string" minOccurs="0"/>
+      <xs:element name="feedLong" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Facility">
+    <xs:sequence>
+      <xs:element name="facilityPK" type="tns:facilityPK" minOccurs="0"/>
+      <xs:element name="facilityType" type="ns1:facilityType" minOccurs="0"/>
+      <xs:element name="channel" type="xs:int"/>
+      <xs:element name="latitude" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitude" type="xs:string" minOccurs="0"/>
+      <xs:element name="bcMode" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="beamTilt" type="xs:double" minOccurs="0"/>
+      <xs:element name="border" type="xs:double" minOccurs="0"/>
+      <xs:element name="brdrLat" type="xs:string" minOccurs="0"/>
+      <xs:element name="brdrLong" type="xs:string" minOccurs="0"/>
+      <xs:element name="canLand" type="xs:double" minOccurs="0"/>
+      <xs:element name="certNumb" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string" minOccurs="0"/>
+      <xs:element name="clazz" type="xs:string" minOccurs="0"/>
+      <xs:element name="decNumber" type="xs:int" minOccurs="0"/>
+      <xs:element name="docFile" type="xs:int" minOccurs="0"/>
+      <xs:element name="ehaat" type="xs:double" minOccurs="0"/>
+      <xs:element name="freLand" type="xs:double" minOccurs="0"/>
+      <xs:element name="frequency" type="xs:double" minOccurs="0"/>
+      <xs:element name="groundLev" type="xs:double" minOccurs="0"/>
+      <xs:element name="network" type="xs:string" minOccurs="0"/>
+      <xs:element name="okDump" type="xs:string" minOccurs="0"/>
+      <xs:element name="overallH" type="xs:double" minOccurs="0"/>
+      <xs:element name="province" type="xs:string" minOccurs="0"/>
+      <xs:element name="radCenter" type="xs:double" minOccurs="0"/>
+      <xs:element name="ssCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="stCreat" type="xs:string" minOccurs="0"/>
+      <xs:element name="stMod" type="xs:string" minOccurs="0"/>
+      <xs:element name="unattended" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="usaLand" type="xs:double" minOccurs="0"/>
+      <xs:element name="comments" type="tns:comments" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="feeds" type="tns:feeds" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="antennaPatterns" type="tns:apatstat" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="regions" type="tns:region" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="tsid" type="tns:tsid" minOccurs="0"/>
+      <xs:element name="contours" type="tns:contours" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="euvalu" type="xs:double" minOccurs="0"/>
+      <xs:element name="ifrbnD" type="xs:double" minOccurs="0"/>
+      <xs:element name="ifrbnN" type="xs:double" minOccurs="0"/>
+      <xs:element name="latitude2" type="xs:string" minOccurs="0"/>
+      <xs:element name="longitude2" type="xs:string" minOccurs="0"/>
+      <xs:element name="parRmsC" type="xs:double" minOccurs="0"/>
+      <xs:element name="parRmsD" type="xs:double" minOccurs="0"/>
+      <xs:element name="parRmsN" type="xs:double" minOccurs="0"/>
+      <xs:element name="powercrit" type="xs:double" minOccurs="0"/>
+      <xs:element name="powerday" type="xs:double" minOccurs="0"/>
+      <xs:element name="powernight" type="xs:double" minOccurs="0"/>
+      <xs:element name="qCrit" type="xs:double" minOccurs="0"/>
+      <xs:element name="qDay" type="xs:double" minOccurs="0"/>
+      <xs:element name="qNight" type="xs:double" minOccurs="0"/>
+      <xs:element name="status1" type="xs:string" minOccurs="0"/>
+      <xs:element name="status2" type="xs:string" minOccurs="0"/>
+      <xs:element name="extendedHours" type="tns:extend" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="params" type="tns:params" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="augments" type="tns:augment" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="erpvpk" type="xs:double" minOccurs="0"/>
+      <xs:element name="autoProg" type="xs:string" minOccurs="0"/>
+      <xs:element name="erphav" type="xs:double" minOccurs="0"/>
+      <xs:element name="erphpk" type="xs:double" minOccurs="0"/>
+      <xs:element name="scmo" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="allocZone" type="xs:int" minOccurs="0"/>
+      <xs:element name="antMode" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="closeCap" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="erpaav" type="xs:double" minOccurs="0"/>
+      <xs:element name="erpapk" type="xs:double" minOccurs="0"/>
+      <xs:element name="erpata" type="xs:int" minOccurs="0"/>
+      <xs:element name="erpvav" type="xs:double" minOccurs="0"/>
+      <xs:element name="erpvta" type="xs:double" minOccurs="0"/>
+      <xs:element name="limitCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="offPrec" type="xs:unsignedShort" minOccurs="0"/>
+      <xs:element name="offset" type="xs:unsignedShort" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="facilityPK">
+    <xs:sequence>
+      <xs:element name="banner" type="ns1:bannerType" minOccurs="0"/>
+      <xs:element name="callSign" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="extend">
+    <xs:sequence>
+      <xs:element name="callsBanr" type="xs:string" minOccurs="0"/>
+      <xs:element name="number" type="xs:double" minOccurs="0"/>
+      <xs:element name="antSystem" type="xs:string" minOccurs="0"/>
+      <xs:element name="start1" type="xs:string" minOccurs="0"/>
+      <xs:element name="end1" type="xs:string" minOccurs="0"/>
+      <xs:element name="start2" type="xs:double" minOccurs="0"/>
+      <xs:element name="end2" type="xs:double" minOccurs="0"/>
+      <xs:element name="power" type="xs:double" minOccurs="0"/>
+      <xs:element name="rms" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

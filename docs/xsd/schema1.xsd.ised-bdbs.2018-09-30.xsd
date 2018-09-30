@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ic.gc.ca/bdbs/entity/type" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="bannerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A"/>
+      <xs:enumeration value="AL"/>
+      <xs:enumeration value="AP"/>
+      <xs:enumeration value="AU"/>
+      <xs:enumeration value="C"/>
+      <xs:enumeration value="CN"/>
+      <xs:enumeration value="CP"/>
+      <xs:enumeration value="IC"/>
+      <xs:enumeration value="IL"/>
+      <xs:enumeration value="O"/>
+      <xs:enumeration value="OP"/>
+      <xs:enumeration value="P"/>
+      <xs:enumeration value="PC"/>
+      <xs:enumeration value="PR"/>
+      <xs:enumeration value="RE"/>
+      <xs:enumeration value="SD"/>
+      <xs:enumeration value="TD"/>
+      <xs:enumeration value="TO"/>
+      <xs:enumeration value="TP"/>
+      <xs:enumeration value="UC"/>
+      <xs:enumeration value="UN"/>
+      <xs:enumeration value="X"/>
+      <xs:enumeration value="XX"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="facilityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AM"/>
+      <xs:enumeration value="FM"/>
+      <xs:enumeration value="SDAR"/>
+      <xs:enumeration value="TV"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
